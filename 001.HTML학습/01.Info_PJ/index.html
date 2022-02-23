@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>네이버 요약 뉴스</title>
+    <meta charset="utf-8">
+    <!-- 스타일시트 코딩구역 : 인터널방식 -->
+    <style>
+      /* 스타일시트를 사용하는 영역 */
+      /* css 문법만 쓸 수 있음 */
+      /* 
+        기본 사용법:
+
+        선택자 {
+          속성명:값;
+        }
+
+        -선택자: 태그명, 아이디명, 클래스명 등
+        -속성명: 각 요소를 구성하는 상세속성들
+        -값: 각 속성에서 사용할 수 있는 값들
+        
+        [CSS 선택자]
+        1. 타입 선택자 : 요소명 (예: h1/ a/ p/ div 등)
+        2. 자손 선택자 : 띄어쓰기 (예: h1 a)
+        3. id 선택자 : # (예: #top)
+        4. class 선택자 : . (예: .go)
+        5. 직계자손 선택자 : > (예: div>a)
+        6. 그룹 선택자: , (예: h1, h2)
+        7. 종속 선택자: 태그명+id/class (예: header#top)
+        8. 속성 선택자: [] (예: a[href=#])
+        9. 형제 선택자: + (예: li+li)
+        10. 다중 형제 선택자: ~ (예: li:nth-child(4)~li)
+
+
+        [요소의 박스모델] - 네모난 세상
+        -네모의 구성요소는?
+        1. 가로크기 : width
+        2. 세로크기 : height
+        3. 경계선 : border
+        4. 안쪽여백 : padding
+        5. 바깥여백 : margin
+
+
+      */
+
+      /* 공통 클래스 */
+      /* box center 의 의미로 이름 지음 */
+      .bxc{
+        width: 727px;
+        /* 가로크기 */
+        margin: 0 auto;
+        /* 마영오 */
+        padding: 10px;
+        /* 패딩 */
+        box-sizing: border-box;
+        /* 크기 유지 */
+        text-align: center;
+        /* 내부 콘텐츠 inline 중앙 */
+      }
+      /* 다중 클래스 적용연습 */
+      /* 글자색,글자 그림자 클래스 */
+      .fc{
+        color: aquamarine;
+        text-shadow: 1px 1px 1px #000;
+      }
+      /* 밑줄 */
+      .fu{
+        /* 밑줄 */
+        text-decoration: underline;
+        /* 데코레이션 선 스타일 - 점선 */
+        text-decoration-style: dotted;
+      }
+
+      /* 1. 상단 영역 */
+      #top {
+        /* 블록박스 셋팅 */
+        width: 727px;
+        /* height: 200px; */
+        border: 0px solid silver;
+        padding: 10px;
+        margin: 20px auto;
+        /* 블록박스 중앙정렬
+            margin: o auto;
+            마영오
+
+            margin: 값 ; (4방향 공통)
+            margin: 값 값 ; (위아래 양쪽)
+            margin: 값 값 값 ; (위 양쪽 아래)
+            margin: 값 값 값 값 ; (위 오른 아래 왼)
+            ->padding 도 위와 같음
+
+            개별설정은
+            margin-top
+            margin-bottom
+            margin-left
+            margin-right
+            ->padding 도 위와 같음
+         */
+
+        /* width / height 크기를 안 주면 기본값 auto다
+        블록박스인 경우 width는 부모 끝까지 차지하고 height 는 내용만큼 늘어남 */
+
+        /* 내부의 텍스트 또는 인라인 요소 중앙 정렬 */
+        text-align: center;
+        background-color: #fff3df;
+
+        /* border/padding 사이즈 내부에 포함시키기 */
+        box-sizing: border-box;
+        /* 원래는 border와 padding 만큼 커지는게 기본 속성이지만 이것을 내부에 포함시키는 속성은 위와 같다
+        기본값은 content-box
+        */
+        box-shadow: 0px 1px 16px 5px #ffe9c4;
+        
+      }
+      /* 띄어쓰기는 자손 선택자 */
+      /* id 가 top 인 요소의 자손 중 h1 선택 */
+      #top h1{
+        /* 글자색 */
+        color: #e62b2bef;
+        /* 글자 그림자 */
+        text-shadow: 0px 1px 12px #b63a3a;
+      }
+      /* 메뉴 */
+      .gnb a {
+        color: #ff1493;
+        /* 밑줄 없앰 */
+        text-decoration: none; /* 에밋 tdn */
+        /* 
+          text-decoration 속성
+          -underline 밑줄
+          -overline 윗줄
+          -linethrough 중간줄
+          -none 없음
+        */
+        /* 글씨 두껍게 */
+        font-weight: bold; /* 에밋 fwb */
+        /* 
+          font-weight 속성
+          -bold 두껍게
+          -bolder 더 두껍게
+          -lighter 얇게
+          -100~900
+          (단, 해당 폰트가 지원해야함)
+        */
+        text-shadow: 0px 1px 12px #ff6ec7;
+      }
+
+      /* 메뉴 a에 마우스 오버 시 */
+      /* 선택자 :hover -> 마우스 오버 시 가상 클래스 */
+
+      .gnb>a:hover{
+        text-decoration: overline; /* 에밋 tdo */
+      }
+
+      /* 로고 이미지 */
+      /* nav 태그인데 클래스가 gnb인 요소 아래 자손 중 img 요소 선택 */
+      nav.gnb img{
+        /* inline 요소가 세로정렬 */
+        vertical-align: -5px; /* 에밋 va */
+        /* 
+        값은 수치로 줄 수 있고
+        top, middle, bottom, baseline 등이 있음
+        */
+      }
+
+      /* 하단 주소 */
+      footer#info address{
+        background-color: #ffdede;
+        /*
+         글자 스타일
+        - italic: 이탤릭체
+        - normal: 특징 없음
+        */
+        font-style: normal;
+        padding: 20px;
+        color: #555;
+        /* 
+        글자 크기
+        -기본 크기는 16px
+        16px = 12pt
+        */
+        font-size: 14px;
+        /* 
+        줄간격
+        -단위 없이 사용하면 글자 크기의 배수
+        -px, em 등 여러가지 단위 사용 가능
+        */
+        line-height: 1.5;
+        box-shadow: 0px 1px 16px 5px #e9c4ff;
+        color: darkblue;
+        text-shadow: 0px 1px 12px skyblue;
+      }
+
+      /* 영문 이름만 이탤릭체 */
+      footer#info address span{
+        font-style: italic;
+      }
+      body{
+        background-color: #04031d
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 상단영역 -->
+    <header id="top">
+      <!-- 1-1. 제목 -->
+      <h1>네이버 요약뉴스</h1>
+      <!-- 1-2. 메뉴 -->
+      <nav class="gnb">
+        <a href="index.html" title="메인페이지 가기">
+          <img src="images/naver_logo.png" alt="네이버 로고" style="width: 20px;">
+        </a> | 
+        <a href="sub1.html">정치</a> | 
+        <a href="sub2.html">경제</a> | 
+        <a href="sub3.html">사회</a> | 
+        <a href="sub4.html">IT/경제</a> | 
+        <a href="sub5.html">TV/연예</a> | 
+      </nav>
+    </header>
+    <!-- 2. 메인영역 -->
+    <main id="cont" class="bxc">
+      <!-- 메인 이미지 -->
+      <img src="images/main.jpg" alt="뉴스 메인 이미지" title="요약뉴스 보고싶다" style="width: 600px;">
+    </main>
+    <!-- 3. 하단영역 -->
+    <footer id="info" class="bxc">
+      <!-- 회사주소 및 정보 -->
+      <address>
+        서울시 강남구 역삼동 119 대호B 8F <br>
+        대표: <span class="fc fu">Logan</span> <br>
+        Tel: 010-2938-5571
+      </address>
+    </footer>
+    <!-- 
+      [html 요소들]
+
+      1.div: 콘텐츠 구분 박스
+      (division)
+      -> 옆에 아무것도 못옴 -> 블록박스
+
+      2.div의 형제들 소개
+      -> 어떤 부분인지 알 수 있도록
+      태그에 의미가 있다-> 시멘틱태그
+      (1) header - 상단영역
+      (2) footer - 하단영역
+      (3) main - 메인영역(한 페이지에 한 번만 사용 가능)
+      (4) nav - 네비게이션 메뉴
+      (5) aside - 부수적인 내용
+
+      3.img 요소: 이미지를 불러오는 요소
+      -src 속성 - 이미지 경로 셋팅
+      (source)
+      -alt 속성 - 이미지 설명 -> 필수 속성으로 웹 접근성을 위한 속성
+      (웹 접근성은 평등의 원칙으로 누구나 이미지의 설명을 들을 수 있게 함 - 스크린 리더기에서 이것을 읽어줌)
+
+      4. address 요소 : 주소나 대표자, 전화번호 등을 담는 요소
+      -> 태그명이 "주소" 라는 뜻이 있으므로 시멘틱하다
+
+      5. span 요소 : inline 요소 범위 지정
+      __________________________________________________________________________
+
+      [요소 공통 특성 - 어느 요소나 쓸 수 있음]
+      1.style 속성 - css 셋팅을 해주는 인라인 속성
+        -> 값은 아래와 같이 셋팅함
+        style="속성명:값; 속성명:값;"
+
+
+      2.title 속성 - 툴팁을 띄워주는 속성 
+
+
+
+      __________________________________________________________________________
+
+      [html 요소 이름]
+      1. id명: 요소를 구분해주는 이름(유일함)
+      2. class명: 요소를 공통적으로 구분하는 이름
+      ->class는 한 요소에 여러 개 적용할 수 있다
+      (띄어쓰기로 구분함)
+      예) <h1 id="my" class="rbb kdk tjt">
+      
+     -->
+
+  </body>
+</html>
