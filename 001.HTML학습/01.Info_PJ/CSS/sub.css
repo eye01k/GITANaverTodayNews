@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* 서브 페이지용 css - sub.css */
+
+/* 공통 클래스 불러오기 */
+/* import로 파일 합치기 */
+/* 
+  외부 CSS파일에서 다른 외부 CSS를 import방식으로 불러올 때 장점은? 
+  html파일에서 link요소로 호출할 경우 http request(웹요청)이 많아져서 페이지 랜더링 속도가 느려짐
+  하지만, 이 방식을 쓰면 한 번에 여러 CSS를 불러올 수 있어서 속도 면에 있어서 유리하다
+*/
+/* @import url(파일주소); */
+@import url(./style.css);
+
+/* 메인 전체박스 */
+#cont{
+  text-align: left;
+  /* bxc에서 중앙 정렬값 왼쪽 정렬로 덮어쓰기 */
+}
