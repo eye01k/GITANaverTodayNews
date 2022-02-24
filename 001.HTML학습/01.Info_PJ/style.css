@@ -1,0 +1,168 @@
+@charset "utf-8";
+/* 외부 CSS파일은 반드시 상단 맨 위에 문자셋 인코딩 셋팅을 해야함 */
+/* @charset "utf-8" 은 2byte 문자까지 문제없이 인코딩해주는 형식이다 */
+
+/* 공통 클래스 */
+/* box center 의 의미로 이름 지음 */
+.bxc {
+  width: 727px;
+  /* 가로크기 */
+  margin: 0 auto;
+  /* 마영오 */
+  padding: 10px;
+  /* 패딩 */
+  box-sizing: border-box;
+  /* 크기 유지 */
+  text-align: center;
+  /* 내부 콘텐츠 inline 중앙 */
+}
+
+/* 다중 클래스 적용연습 */
+/* 글자색,글자 그림자 클래스 */
+.fc {
+  color: aquamarine;
+  text-shadow: 1px 1px 1px #000;
+}
+
+/* 밑줄 */
+.fu {
+  /* 밑줄 */
+  text-decoration: underline;
+  /* 데코레이션 선 스타일 - 점선 */
+  text-decoration-style: dotted;
+}
+
+/* 1. 상단 영역 */
+#top {
+  /* 블록박스 셋팅 */
+  width: 727px;
+  /* height: 200px; */
+  border: 0px solid silver;
+  padding: 10px;
+  margin: 20px auto;
+  /* 블록박스 중앙정렬
+            margin: o auto;
+            마영오
+
+            margin: 값 ; (4방향 공통)
+            margin: 값 값 ; (위아래 양쪽)
+            margin: 값 값 값 ; (위 양쪽 아래)
+            margin: 값 값 값 값 ; (위 오른 아래 왼)
+            ->padding 도 위와 같음
+
+            개별설정은
+            margin-top
+            margin-bottom
+            margin-left
+            margin-right
+            ->padding 도 위와 같음
+         */
+
+  /* width / height 크기를 안 주면 기본값 auto다
+        블록박스인 경우 width는 부모 끝까지 차지하고 height 는 내용만큼 늘어남 */
+
+  /* 내부의 텍스트 또는 인라인 요소 중앙 정렬 */
+  text-align: center;
+  background-color: #fff3df;
+
+  /* border/padding 사이즈 내부에 포함시키기 */
+  box-sizing: border-box;
+  /* 원래는 border와 padding 만큼 커지는게 기본 속성이지만 이것을 내부에 포함시키는 속성은 위와 같다
+        기본값은 content-box
+        */
+  box-shadow: 0px 1px 16px 5px #ffe9c4;
+
+}
+
+/* 띄어쓰기는 자손 선택자 */
+/* id 가 top 인 요소의 자손 중 h1 선택 */
+#top h1 {
+  /* 글자색 */
+  color: #e62b2bef;
+  /* 글자 그림자 */
+  text-shadow: 0px 1px 12px #b63a3a;
+}
+
+/* 메뉴 */
+.gnb a {
+  color: #ff1493;
+  /* 밑줄 없앰 */
+  text-decoration: none;
+  /* 에밋 tdn */
+  /* 
+          text-decoration 속성
+          -underline 밑줄
+          -overline 윗줄
+          -linethrough 중간줄
+          -none 없음
+        */
+  /* 글씨 두껍게 */
+  font-weight: bold;
+  /* 에밋 fwb */
+  /* 
+          font-weight 속성
+          -bold 두껍게
+          -bolder 더 두껍게
+          -lighter 얇게
+          -100~900
+          (단, 해당 폰트가 지원해야함)
+        */
+  text-shadow: 0px 1px 12px #ff6ec7;
+}
+
+/* 메뉴 a에 마우스 오버 시 */
+/* 선택자 :hover -> 마우스 오버 시 가상 클래스 */
+
+.gnb>a:hover {
+  text-decoration: overline;
+  /* 에밋 tdo */
+}
+
+/* 로고 이미지 */
+/* nav 태그인데 클래스가 gnb인 요소 아래 자손 중 img 요소 선택 */
+nav.gnb img {
+  /* inline 요소가 세로정렬 */
+  vertical-align: -5px;
+  /* 에밋 va */
+  /* 
+        값은 수치로 줄 수 있고
+        top, middle, bottom, baseline 등이 있음
+        */
+}
+
+/* 하단 주소 */
+footer#info address {
+  background-color: #ffdede;
+  /*
+         글자 스타일
+        - italic: 이탤릭체
+        - normal: 특징 없음
+        */
+  font-style: normal;
+  padding: 20px;
+  color: #555;
+  /* 
+        글자 크기
+        -기본 크기는 16px
+        16px = 12pt
+        */
+  font-size: 14px;
+  /* 
+        줄간격
+        -단위 없이 사용하면 글자 크기의 배수
+        -px, em 등 여러가지 단위 사용 가능
+        */
+  line-height: 1.5;
+  box-shadow: 0px 1px 16px 5px #e9c4ff;
+  color: darkblue;
+  text-shadow: 0px 1px 12px skyblue;
+}
+
+/* 영문 이름만 이탤릭체 */
+footer#info address span {
+  font-style: italic;
+}
+
+body {
+  background-color: #04031d
+}
