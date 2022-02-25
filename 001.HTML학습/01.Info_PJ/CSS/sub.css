@@ -27,9 +27,10 @@
   여러 개를 쓰는 이유: 브라우저에서 해당 폰트를 지원하지 않는 경우 다음 폰트로 넘어감 */
   letter-spacing: -2px;
   /* 자간: 0이 기본값 */
-  word-spacing: 3px;
+  word-spacing: 1px;
   /* 단어 간 간격 */
-  white-space: nowrap;
+
+  /* white-space: nowrap; */
   /* 줄바꿈 방지 */
 }
 
@@ -71,7 +72,7 @@
   font-size: 14px;
 }
 #cont h4{
-  margin-top: 0px;
+  margin-top: 10px;
 }
 
 /* 인용구 박스 */
@@ -87,7 +88,7 @@
 }
 
 .Desc{
-  padding: 10px;
+  padding: 20px;
 }
 .Desc small{
   font-size: 12px;
@@ -100,3 +101,25 @@
   /* 위쪽 margin */
   margin-top: 15px;
 }
+
+.byline {
+  border-top: 1px solid aliceblue; 
+  padding-top: 15px;
+
+}
+
+.TodaysWork{
+  text-align: center;
+  padding: 10px;
+
+  /* background-clip: 배경색 옵션 */
+  /* 1. content-box
+    -> 콘텐츠 영역에만 배경색 넣기
+    (보더, 패딩 빠짐)
+     2. padding-box
+    -> 패딩 영역까지만 배경색 넣기
+    (보더 빠짐)
+     3. border-box
+    -> 보더 영역까지만 배경색 넣기*/
+}
+
