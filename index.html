@@ -3,12 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <title>나의 아카이브 페이지</title>
+  <style>
+    /* 기본셋팅 초기화 */
+    html,body,h1,h2{
+      margin: 0px;
+      padding: 0px;
+    }
+    body{
+      /* 배경 이미지 */
+      background-image: url(./imgs/worksbg.jpg);
+      /* 배경 반복 안함 */
+      background-repeat: no-repeat;
+      /* 배경 고정 */
+      background-attachment: fixed;
+      /* 배경 중앙 */
+      background-position: center;
+      /* 배경 크기 빈틈 없이 채우기 */
+      background-size: cover;
+    }
+
+    /* 전체 박스 */
+    .wrap{
+      width: 1200px;
+      /* 마영오: 블록 가로중앙 */
+      margin: 50px auto;
+      /* 배경색 반투명 흰색 */
+      background-color: rgba(255, 255, 255, 0.671);
+      padding: 15px;
+      /* 모서리 둥글게 */
+      border-radius: 15px;
+    }
+    /* 1.전체 제목 */
+    .tit{
+      /* 글자 중앙정렬: 글자가 아니어도 인라인 요소면 정렬됨 */
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <h1>나의 아카이브</h1>
-  <a href="001.HTML학습/01.Info_PJ/" target="_blank">
-    <h2>네이버 요약뉴스</h2>
-  </a>
+  <!-- 전체 박스 -->
+  <div class="wrap">
+    <!-- 1.전체 제목 -->
+    <h1 class="tit">
+      <img src="imgs/mylogo_14.png" alt="아카이브로고">
+    </h1>
+    <!-- 2.프로젝트 박스 -->
+    <div class="pbx">
+      <!-- 2-1.공통 프로젝트 -->
+      <section>
+        <h2>공통 프로젝트</h2>
+        <ul>
+          <li>
+            <a href="001.HTML학습/01.Info_PJ/info.html" target="_blank">기본 전달사항</a>
+          </li>
+          <li>
+            <a href="001.HTML학습/01.Info_PJ/" target="_blank">네이버 요약 뉴스</a>
+          </li>
+        </ul>
+      </section>
+      <!-- 2-2.개인 프로젝트 -->
+    </div>
+  </div>
 
 </body>
 </html>
