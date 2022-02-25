@@ -182,3 +182,11 @@ main ul a{
 main ol a{
   text-decoration: none;
 }
+
+main dl a {
+  text-decoration: none;
+}
+
+.Pnew a {
+  text-decoration: none;
+}

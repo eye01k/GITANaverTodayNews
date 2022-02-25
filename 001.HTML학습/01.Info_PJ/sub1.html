@@ -38,10 +38,10 @@
         </a>
       </div>
     <!-- 2-2.기사 제목 -->
-    <h2>정부 "러시아 전면전 감행시 제재 동참"…대응 수위 상향</h2>
+    <h2 class="ArticleTitle">정부 "러시아 전면전 감행시 제재 동참"…대응 수위 상향</h2>
 
     <!-- 2-3.기사 사진(+사진 설명) -->
-    <figure>
+    <figure class="ArticleFig">
       <img src="images/At1.jpg" alt="기사사진">
       <figcaption>
         <small>러시아의 우크라이나 돈바스 독립 승인으로 전운이 최고조에 달한 가운데 정부가 23일 우크라이나 현지 교민 철수와 안전 확보를 위해 긴급회의를 열었다. 연합뉴스</small>
@@ -102,7 +102,128 @@
       </h4>
     </article>
 
-    
+    <hr>
+    <!-- 언론사 주요 뉴스 -->
+    <article class="ImpNews">
+      <h3>언론사 주요 뉴스</h3>
+      <!-- 순서 없는 리스트 -->
+      <ul> <!-- 에밋 ul>li*숫자 -->
+        <li>
+          <a href="https://www.nocutnews.co.kr/news/5713284" target="_blank">택배노조 "대리점연합과 대화 계속할 것"</a>
+        </li>
+        <li>
+          <a href="https://www.nocutnews.co.kr/news/5713306" target="_blank">이주열 총재 "이번 기준금리 동결은 만장일치였다"</a>
+        </li>
+        <li>
+          <a href="https://www.nocutnews.co.kr/news/5713245" target="_blank">[칼럼]김만배의 마법, 이재명과 윤석열의 '우연'</a>
+        </li>
+      </ul>
+    </article>
+
+    <hr>
+    <!-- 랭킹 뉴스 -->
+    <article class="Rank">
+      <h3>랭킹 뉴스</h3>
+      <ol>
+        <li>
+          <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=079&aid=0003613890&rankingType=RANKING" target="_blank">우크라이나 사태에 윤석열 "文정부, 종전선언 집착 말라"</a>
+        </li>
+        <li>
+          <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=079&aid=0003613924&rankingType=RANKING" target="_blank">[영상]러, 우크라 함락플랜…미사일→탱크→참수작전</a>
+        </li>
+        <li>
+          <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=079&aid=0003613951&rankingType=RANKING" target="_blank">[속보]신규확진 16만명대로 감소…위중증 655명·사망 9 …</a>
+        </li>
+      </ol>
+    </article>
+
+    <hr>
+    <!-- 분야별 주요 뉴스 -->
+    <article>
+      <h3>분야별 주요 뉴스</h3>
+      <!-- 용어 정의 리스트(dl:Description List) 
+        dl > dt + dd
+        dt : 용어 정의 (defines the term)
+        dd : 용어 설명 (describes each term)
+          주의 : dl은 반드시 자식요소로 dt,dd를 한 번 이상 사용해야 함
+      -->
+      <dl>
+        <dt>경제</dt>
+        <dd>
+          <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=101&oid=016&aid=0001956257" target="_blank">	
+            뉴욕증시, 러-우크라 전쟁에 ‘롤러코스터’…나스닥 3%↑마감</a>
+        </dd>
+        <dd>
+          <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=101&oid=119&aid=0002579538" target="_blank">	
+            고승범 "우크라 사태 장기화 가능성…필요시 긴급 금융지원"</a>
+        </dd>
+        <dt>사회</dt>
+        <dd>
+          <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=102&oid=214&aid=0001180526" target="_blank">
+            60세 미만 식당·카페 방역패스 중단‥ 대구 즉시항고 검토</a>
+        </dd>
+        <dd>
+          <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=102&oid=022&aid=0003670721" target="_blank">	
+            "BTS·뽀로로로 투자"… 1300억원대 코인 다단계 사기 일당 적발</a>
+        </dd>
+        <dt>IT/과학</dt>
+        <dd>
+          <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=105&oid=009&aid=0004927094" target="_blank">	
+            SK스퀘어, 출범 후 첫 실적 공개…매출 1조1464억원·영업익 4198억원</a>
+        </dd>
+        <dd>
+          <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=105&oid=018&aid=0005154740" target="_blank">	
+            네이버웹툰, ‘하루만 네가 되고 싶어’ 제페토 팬미팅 개최</a>
+        </dd>
+      </dl>
+    </article>
+
+    <hr>
+
+    <!-- 사진 뉴스 -->
+    <article class="Pnew">
+      <h3>사진 뉴스</h3>
+      <!-- table요소
+          table: 테이블 박스 부모
+          tr: 테이블 행 요소 (table row)
+          td: 테이블 데이터 (table data)
+          참고) table>tr>td로 구성한 경우 브라우저 분석기로 보면 table>tbody가 들어가있다
+          이는 table 본문 파트로 인식하기 때문에 표시가 자동으로 된다
+          (원래 table은 thead, tbody, tfoot으로 구성됨)
+      -->
+      <table>
+        <tr>
+          <td>
+            <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=277&aid=0005049915&rankingType=RANKING" target="_blank">
+              "여자 주제에 감히" 시위 중인 여성 밀친 尹 지지자…외신 … </a></td>
+          <td>
+              <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=277&aid=0005049915&rankingType=RANKING" target="_blank">
+              <img src="images/Pn1.jpg" alt="포토뉴스이미지">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=015&aid=0004667814&rankingType=RANKING" target="_blank">
+              "한국인 관광객 이렇게 많을 줄이야"…한 달에 3000명 …</a></td>
+          <td>
+              <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=015&aid=0004667814&rankingType=RANKING" target="_blank">
+              <img src="images/Pn2.jpg" alt="포토뉴스이미지">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=366&aid=0000796028&rankingType=RANKING" target="_blank">
+              ‘한국만 러시아 제재 뒤늦게 동참했다’ 靑 반박 “이해할 …</a></td>
+          <td>
+              <a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=366&aid=0000796028&rankingType=RANKING" target="_blank">
+              <img src="images/Pn3.jpg" alt="포토뉴스이미지">
+            </a>
+          </td>
+        </tr>
+      </table>
+    </article>
     <!--
         [HTML 서식 요소]
 
