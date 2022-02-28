@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* 도깨비 메인 페이지 CSS - main.css */
+
+/* 기본 태그 초기화 - 마진, 패딩 없애기 */
+html, body, h1, h2, h3, h4, h5, h6, ol, ul, dl {
+  margin: 0;
+  padding: 0;
+}
+
+/* 헤딩 태그 글자 크기 초기화 */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  /* 글자크기 100%: 기본 글자 크기와 같아지는 셋팅 (기본 글자크기는 16px) */
+}
+
+/* 작업 진행 중 외곽선 */
+/* 별표시(*)는 모든 요소를 선택 시 사용 */
+body *{
+  outline: 1px dashed gray;
+  /* outline: 두께 종류 색상;
+    ->border와 달리 주변 요소에 전혀 영향을 주지 않는다
+    ->border는 박스 요소에 필수 포함요소지만 outline은 필수 요소가 아니다
+    ->요소의 외곽선 바깥으로 보임
+    */
+}
+
+/* 콘텐츠 파트 최상위 부모 */
+body{
+  /* 한 번에 배경 주기 */
+  /* background: 색상 이미지 반복여부 고정 위치/크기 */
+  background: url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+
+  /* 1.배경색 */
+  /* background-color: rgb(129, 223, 240); */
+
+  /* 2.배경 이미지 */
+  /* background-image: url(../images/bg_logo_a_01.png); */
+  /* 외부 css인 경우 css 파일 위치에서 한 단계 위로 올라간 후 이미지 폴더를 찾는다-> ../ */
+
+  /* 3.배경 반복 여부 */
+  /* background-repeat: no-repeat; */
+  /* no-repeat 반복 안 함
+     repeat-x x축 반복
+     repeat-y y축 반복
+  */
+
+  /* 4.배경 고정 */
+  /* background-attachment: fixed; */
+  /* fixed 보이는 화면에 고정 */
+
+  /* 5.배경 위치 조정 */
+  /* background-position: center; */
+  /* background-position: 가로 세로
+     -가로: px,% 등 단위 또는 left, center, right
+     -세로: px,% 등 단위 또는 top, center, bottom
+  */
+
+  /* 6.배경 이미지 크기 */
+  /* background-size: cover; */
+  /* background-size: 가로 세로; 
+     -가로: px,% 등 단위 또는 auto(고유 비율 유지)
+     -세로: px,% 등 단위 또는 auto
+
+     -특별한 값
+     contain(비율 유지 채우기. 이미지 모두 보임)
+     cover(비율 유지 채우기. 배경 박스에 빈틈 없이 채움)
+     */
+
+}
+
+/* 공통 클래스 */
+/* 속박스 클래스 */
+.ibx{
+  width: 1200%;
+  margin: 0 auto;
+  /* 위아래 양쪽(auto는 등분함) */
+  /* 마영오: 블록박스 가로중앙 */
+}
+
+/* 1. 상단 영역 */
+.top{
+  height: 125px;
+}
+/* 2. 메인 영역 */
+.cont{
+  height: 800px;
+}
+/* 3. 하단 영역 */
+.info{
+  height: 241px;
+}
