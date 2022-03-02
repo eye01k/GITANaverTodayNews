@@ -4,12 +4,70 @@
     <meta charset="UTF-8">
     <title>001.배경넣기 연습</title>
     <style>
-        
+        html, body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /* 세로 높이 값을 보이는 화면에 채움
+            기본적으로 height는 auto로 설정되어 있어서 내용만큼 높이가 생긴다 */
+            overflow: hidden;
+            /* 넘치는 자식 요소 숨기기
+            -> 여기서는 h1태그의 margin-top을 포함하기 위해서 */
+        }
+
+        h1{
+            text-align: center;
+            /* block요소 내부의 inline요소 중앙 정렬 */
+            /* h1에 설정된 기본 margin-top 값은 부모박스인 body바깥으로 나가서 표현됨 (block박스의 기본 특성)
+            ->부모박스에 overflow:hidden; 설정으로 막을 수 있다 */
+        }
+
+        body{
+            /* 1.배경색 */
+            background-color: skyblue;
+            /* 2.배경이미지 */
+            background-image: url(./imgs/bg_logo_a_01.png);
+            /* 3.배경 반복 설정 */
+            background-repeat: no-repeat;
+            /* 4.배경 고정 */
+            background-attachment: fixed;
+            /* 5.배경 위치 조정 */
+            background-position: right bottom;
+            /* 6.배경 크기 */
+            background-size: auto 200px;
+        }
+
+        /* 내부 박스 */
+        .wrap{
+            height: 100%;
+            /* 부모박스(body) 높이만큼 채우기 */
+            overflow: hidden;
+            /* 자식 요소 margin 포함 */
+
+            /* [ 배경 이미지 여러 개 설정하기] 
+                -> 배경 셋팅을 한 번에 주고 ,로 구분하여 여러 개 셋팅할 수 있다
+
+                background: 색 이미지 반복 고정 위치/크기;
+                ->유의사항: 여러 배경 이미지 사용 시 순서는 나중에 셋팅한 배경이 아래 깔린다
+                ->참고: 배경 이미지 크기 설정 시 값을 하나만 쓰면 가로가 설정되고 세로는 자동으로 auto
+                ->참고: 배경 위치 설정 시 가로 위치 기본 값은 left, 세로 위치 기본 값은 center
+                ->참고: 배경 위치 설정 시 가로 기본 값인 left와 세로 기본 값인 center를 사용하고자 하더라도 생략이 불가하다
+                이 때는 크기 설정 값 앞에 0을 쓰고 /하여 크기를 설정한다
+            */
+            background: url(./imgs/dc1.png) no-repeat center/400px,
+            url(./imgs/dc2.png) no-repeat right top/auto 200px,
+            url(./imgs/dc3.png) no-repeat left bottom/300px,
+            url(./imgs/dc4.png) no-repeat right center/350px,
+            url(./imgs/bg_mainvisual.jpg) no-repeat left/50% 
+            ;
+            
+        }
+
 
     </style>
 </head>
 <body>
-    <div>
+    <div class="wrap">
         <h1>001.배경넣기 연습</h1>
     </div>
 </body>

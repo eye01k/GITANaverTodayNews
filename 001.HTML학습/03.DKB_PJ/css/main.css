@@ -28,7 +28,9 @@ body *{
 body{
   /* 한 번에 배경 주기 */
   /* background: 색상 이미지 반복여부 고정 위치/크기 */
-  background: url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+  background: 
+  url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
+  url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
 
   /* 1.배경색 */
   /* background-color: rgb(129, 223, 240); */
@@ -71,7 +73,10 @@ body{
 /* 공통 클래스 */
 /* 속박스 클래스 */
 .ibx{
-  width: 1200%;
+  /* width: 1200%; */
+  max-width: 1200%;
+  /* 최대 가로 크기 1200px이다가 화면이 1200px보다 작아지면 auto로 자동 변경 
+  ->가로 스크롤이 생기지 않는다 */
   margin: 0 auto;
   /* 위아래 양쪽(auto는 등분함) */
   /* 마영오: 블록박스 가로중앙 */
@@ -83,9 +88,50 @@ body{
 }
 /* 2. 메인 영역 */
 .cont{
+  max-width: 1920px;
+  /* 가장 큰 일반 해상도 크기로 최대 크기 변경 */
   height: 800px;
+  overflow: hidden;
 }
+/* 캐릭터 부모 박스 */
+#cbx{
+  width: 90%;
+  /* 부모 박스 크기의 90% 크기 */
+  margin: 0 auto;
+  margin-top: 400px;
+  /* height: 300px; */
+  background-color: rgba(240, 128, 128, 0.479);
+  overflow: hidden;
+}
+
+/* 캐릭터 박스 공통 */
+.cha{
+  /* 가로 4등분 */
+  width: 25%;
+  float: left;
+  /* block요소를 옆으로 흘러가게 하기
+    float속성
+    ->left : 나는 왼쪽에 너는 오른쪽에
+    ->right : 나는 오른쪽에 너는 왼쪽에
+
+    자식 요소가 float된 경우 부모 요소는 높이 값 0
+    ->block 자식요소가 float으로 인해 부모 요소가 높이 값이 0인 경우 다음과 같이 해결한다
+    1) 부모 요소에 overflow:hidden 설정
+    2) float 자식 요소 중 마지막 요소에 float 해제 속성인 clear 설정
+  */
+
+  /* height: 200px; */
+  outline: 3px dotted rgb(48, 255, 41);
+}
+
+.ci>img{
+  width: 100%;
+  /* 이미지 크기를 부모 박스에 맞춰라 */
+
+}
+
 /* 3. 하단 영역 */
 .info{
   height: 241px;
 }
+
