@@ -1,6 +1,14 @@
 @charset "utf-8";
 /* 도깨비 메인 페이지 CSS - main.css */
 
+
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Song+Myung&display=swap');
+
+/* 
+font-family: 'East Sea Dokdo', cursive;
+font-family: 'Song Myung', serif;
+*/
+
 /* 기본 태그 초기화 - 마진, 패딩 없애기 */
 html, body, h1, h2, h3, h4, h5, h6, ol, ul, dl {
   margin: 0;
