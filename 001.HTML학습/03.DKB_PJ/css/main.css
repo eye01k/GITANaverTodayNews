@@ -126,6 +126,8 @@ body{
 
   /* height: 200px; */
   /* outline: 3px dotted rgb(48, 255, 41); */
+  cursor: pointer;
+  /* 마우스 커서 손가락 모양 */
 }
 
 .ci>img{
@@ -139,7 +141,43 @@ body{
   display: block;
   /* 부모박스 끝까지 차지함 */
   text-align: center;
+  margin-top: -20%;
+  /* 부모 높이 값 기준 20% 크기만큼 반대방향(위쪽)으로 위치 이동함 */
 }
+
+/* 캐릭터 이름 이미지 */
+.ci span img{
+  width: 40%;
+  /* 부모박스(span)의 가로 크기의 40% */
+}
+
+/* [자식요소 선택 가상 클래스]
+-전제조건: 자식요소가 같은 종류일 경우
+:first-child 첫번째 자식
+:last-child 마지막 자식
+:nth-child(순번) 몇번째 자식
+->순번은 1부터
+
+-전제조건: 자식요소가 여러 가지일 경우
+:first-of-type 첫번째 자식
+:last-of-type 마지막 자식
+:nth-of-type(순번) 몇번째 자식
+->순번은 1부터
+*/
+.ci span img:first-child{
+  display: none;
+}
+/* .cha에 마우스 오버 시 첫번째 이미지 보이기 */
+.cha:hover .ci span img:first-child{
+  display: inline;
+}
+/* .cha에 마우스 오버 시 마지막 이미지 숨기기 */
+.cha:hover .ci span img:last-child{
+  display: none;
+}
+
+
+
 /* 3. 하단 영역 */
 .info{
   height: 241px;
