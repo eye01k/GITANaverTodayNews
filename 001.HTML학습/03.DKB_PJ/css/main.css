@@ -74,7 +74,7 @@ body{
 /* 속박스 클래스 */
 .ibx{
   /* width: 1200%; */
-  max-width: 1200%;
+  max-width: 1200px;
   /* 최대 가로 크기 1200px이다가 화면이 1200px보다 작아지면 auto로 자동 변경 
   ->가로 스크롤이 생기지 않는다 */
   margin: 0 auto;
@@ -107,7 +107,11 @@ body{
 /* 캐릭터 박스 공통 */
 .cha{
   /* 가로 4등분 */
-  width: 25%;
+  width: 24%;
+  margin: 0 .5%;
+  /* 양쪽 margin 0.5%씩 2개이므로 합이 1%
+  이를 크기에 반영한다 
+  참고: 0.~ 에서는 일반적으로 0 생략*/
   float: left;
   /* block요소를 옆으로 흘러가게 하기
     float속성
@@ -121,7 +125,7 @@ body{
   */
 
   /* height: 200px; */
-  outline: 3px dotted rgb(48, 255, 41);
+  /* outline: 3px dotted rgb(48, 255, 41); */
 }
 
 .ci>img{
@@ -130,6 +134,12 @@ body{
 
 }
 
+/* 캐릭터 이름 이미지 박스 */
+.ci span{
+  display: block;
+  /* 부모박스 끝까지 차지함 */
+  text-align: center;
+}
 /* 3. 하단 영역 */
 .info{
   height: 241px;
