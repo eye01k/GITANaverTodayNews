@@ -137,7 +137,8 @@ border-radius: 5px;
 
 /* gnb 메뉴 */
 .gnb{
-
+width: 567px;
+margin: 0 auto;
 }
 
 .gnb>ul>li{
@@ -356,7 +357,42 @@ border-radius: 5px;
 
 
 /* 3. 하단 영역 */
-.info{
+#info{/* 겉박스 */
+  background-color: rgba(255, 255, 255, 0.657);
+
+}
+
+.info{/* 속박스 */
   height: 241px;
 }
 
+/* 하단링크 */
+.blink{
+
+}
+
+/* 가상요소 clear */
+.blink ul::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.blink>ul>li{
+  float: left;
+  padding: 0 15px;
+}
+
+/* 하단링크 a */
+.blink>ul>li>a{
+  text-decoration: none;
+  color: black;
+  font: bold 14px/39px 'Noto Sans KR', sans-serif;
+
+  /* font-family: 'Noto Sans KR', sans-serif; */
+
+  /* font 한 번에 설정하기
+  font: 스두크/줄체
+  font: 스타일 두께 크기/줄간격 글자체
+  */
+}
