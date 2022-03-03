@@ -50,10 +50,46 @@
 
              */
         /* h2요소 맨앞에 이미지 넣기 */
-        
+        h2::before{
+            content: url(./imgs/blogo.png);
+            /* width: 20px;
+            height: 20px; 
+            ->이미지는 원본 그대로 표시된다. 가로 세로 크기 조정 불가
+            */
+            margin-right: 20px;
+            vertical-align: middle;
+            /* inline요소 간 세로 정렬
+                -top, middle, bottom, 숫자px 등
+            */
+        }
 
         /* 맨뒤 추가요소 ::after */
-        
+        h2::after{
+            content: "";
+            /* content에 빈 채로 두면("") 마치 span 태그를 쓴 것과 같다 
+            ->크기(width,height)가 적용되지 않는다
+            ->display를 적용하여 변경 가능(div를 쓴 것과 비슷)
+            ->줄바꿈을 하지 않고 디자인을 적용하려면 display:inline-block
+            */
+            display: inline-block;
+            width: 50px;
+            height: 60px;
+            background: url(./imgs/bg_logo_a_01.png) no-repeat center/cover;
+            vertical-align: middle;
+            margin-left: 20px;
+            box-shadow: 0px 0px 7px rgb(129, 129, 129);
+            /* 박스 그림자
+            box-shadow(bsh):
+            inset-내부 그림자
+            hoff-x축 이동
+            voff-y축 이동
+            blur-경계선 흐림
+            spread-그림자 크기
+            color-그림자 색;
+            */
+
+            border-radius: 3px;
+        }
         
 
         /* dl요소 디자인 */
@@ -66,21 +102,55 @@
         }
 
         /* 반복되는 요소의 앞에 아이콘 가상요소로 넣기 */
-        
+        dl dt::before{
+            content: '♣';
+            color: steelblue;
+            font-size: 30px;
+            margin-right: 10px;
+            vertical-align: 2px;
+        }
+
         /* dd전체와 
         dd.story>h3에 가상요소 before적용하기 */
-        
+        dl dd::before, dd.story>h3::before{
+            content: '♥';
+            color: tomato;
+            margin-right: 4px;
+            vertical-align: -1px;
+        }
         
 
         /* 스토리의 dd는 가상요소 없애기 */
+        dd.story::before{
+            display: none;
+        }
         
         /* .story의 첫번째 p태그의 첫번째 글자 디자인 변경하기 */
+        dd.story p:first-of-type::first-letter{
+            font-size: 50px;
+            font-weight: bold;
+            color: skyblue;
+        }
+
+        dd.story p:first-of-type::first-line{
+            font-size: 30px;
+            color: sandybrown;
+        }
 
         /* .story의 첫번째 p태그의 첫번째줄 디자인 변경하기 */
         
 
         /* 두번째 p태그는 태그로 
         첫번째 글자(b태그), 첫번째 줄(span)변경 */
+        dd.story p:last-of-type b{
+            font-size: 50px;
+            color: skyblue;
+        }
+
+        dd.story p:last-of-type span{
+            font-size: 30px;
+            color: sandybrown;
+        }
         
         
 

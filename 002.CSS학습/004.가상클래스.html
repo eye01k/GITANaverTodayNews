@@ -94,7 +94,10 @@
         
 
         /* :hover 마우스 오버상태 */
-        
+        h2 a:hover{
+            color: red;
+            text-decoration: overline;
+        }
        
 
         /* :active 마우스로 눌려진상태(클!) */
@@ -111,7 +114,9 @@
         
 
         /* :focus 요소를 클릭하여 초점이 올때 */
-        
+        h2 a:focus{
+            outline: 5px dotted red;
+        }
         
 
         /* 시인이름 */
@@ -149,38 +154,85 @@
         }
 
         /* 1번 li */
-
+        ul.part1 li:first-child{
+            font-size: 40px;
+            font-family: "궁서";
+            color: red;
+        }
         /* 오버시(:hover) */  
-        
+        ul.part1 li:first-child:hover{
+            color: purple;
+
+        }
 
         /* 2번째 li */
-        
+        ul.part1 li:nth-child(2){
+            color: darkolivegreen;
+            font-weight: bold;
+            font-size: 30px;
+            font-family: "굴림";
+        }
        
         /* 오버시 */
-        
+        ul.part1 li:nth-child(2):hover{
+            text-decoration: underline;
+            color: aqua;
+        }
         
         /* 3번째 li */
-        
+        ul.part1 li:nth-child(3){
+            color: blue;
+            font-size: 15px;
+            font-family: "돋움";
+            font-weight: bold;
+            font-style: italic;
+        }
         /* 오버시 */
-        
+        ul.part1 li:nth-child(3):hover{
+            font-style: normal;
+        }
 
         /* 4번째 li */
-
+        ul.part1 li:nth-child(4){
+            font-size: 50px;
+            font-family: "궁서";
+            color: dodgerblue;
+        }
         /* 처음에 한글(b태그)숨기기 */
-
+        ul.part1 li:nth-child(4) b{
+            display: none;
+        }
         /* 오버시 한글(b태그)보이고 한자(span태그)숨기기 */
-
+        ul.part1 li:nth-child(4):hover b{
+            display: inline;
+        }
+        ul.part1 li:nth-child(4):hover span{
+            display: none;
+        }
         /* 오버시 li에 노란배경색 */
-
+        ul.part1 li:nth-child(4):hover{
+            background-color: gold;
+        }
 
         /* 4번 이후 모든 li 전부셋팅 */
         /* 틸드(~)를 사용한 다중형제 요소 선택 */
-
+        ul.part1 li:nth-child(4)~li{
+            font-size: 25px;
+            font-family: "궁서";
+            color: orangered;
+        }
         /* 오버시 */
-        
+        ul.part1 li:nth-child(4)~li:hover{
+            color: yellowgreen;
+            font-size: 30px;
+        }
 
         /* 마지막 li */
-       
+       body ul.part1 li:last-child{
+           font-size: 50px; 
+           font-family: "맑은 고딕"; 
+           color: coral; 
+       }
         /* 
             틸드(~)를 사용한 CSS가 한단계 더 선택하여서
             우선 순위가 높으므로 이것보다 우선순위를 
@@ -207,13 +259,25 @@
         }
 
         /* 두번째 div */
-        
+        .part2 div:nth-of-type(2){
+            font-size: 30px;
+            font-family: "궁서";
+            color: blueviolet;
+        }      
 
         /* 첫번째 i */
-        
+        .part2 i:first-of-type{
+            font-size: 20px;
+            font-weight: bold;
+            color: palevioletred
+        }
        
 
         /* 3번째 div 이후 div형제요소 모두 */
+        .part2 div:nth-of-type(3)~div{
+            font-family: "궁서";
+            color: red;
+        }
         /* .part2 div:nth-of-type(3)~i{ 이후의 i태그만 */
         /* .part2 div:nth-of-type(3)~*{ 이후의 모든 태그들 */
        
