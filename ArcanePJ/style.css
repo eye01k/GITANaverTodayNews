@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+
+html, body, h1, h2, h3, h4, h5, h6, ol, ul, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+ul, ol{
+  list-style: none;
+  /* 블릿 표시자 없앰 */
+}
+
+body *{
+  outline: 1px dashed gray;
+}
+
+body{
+  background: url(./img/bg1.jpg) no-repeat fixed center/cover;
+}
+
+.ibx{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* 상단 영역 */
+.top{
+  height: 125px;
+}
+/* 메인 영역 */
+.cont{
+  max-width: 1920px;
+  height: 800px;
+}
+/* 하단 영역 */
+.info{
+  height: 241px;
+}
