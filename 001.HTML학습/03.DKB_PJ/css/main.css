@@ -364,11 +364,15 @@ margin: 0 auto;
 
 .info{/* 속박스 */
   height: 241px;
+  padding: 15px;
+  box-sizing: border-box;
+  /* 크기 유지 - 보더 패딩 포함 */
 }
 
 /* 하단링크 */
 .blink{
-
+width: 791px;
+margin: 0 auto;
 }
 
 /* 가상요소 clear */
@@ -395,4 +399,27 @@ margin: 0 auto;
   font: 스두크/줄체
   font: 스타일 두께 크기/줄간격 글자체
   */
+}
+
+.blink a:hover{
+  color: red;
+  text-decoration: underline;
+}
+
+/* 회사주소 박스 */
+.addr{
+  width: 804px;
+  margin: 10px auto;
+  border: 4px double #222;
+  font: normal 14px/25px 'Noto Sans KR', sans-serif;
+  /* 원래 address요소는 italic체인데 font 한 번에 쓰기에서 스타일 설정을 안하면 기본 normal이 적용돼서 없어짐 */
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  /* 크기 유지 */
+}
+
+/* 하단로고 */
+.blogo{
+  text-align: center;
 }
