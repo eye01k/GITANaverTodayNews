@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position - absolute</title>
+    <style>
+        .bx{
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            text-align: center;
+            /* 글자가로중앙 */
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 100px;
+            /* 높이값과 같은 줄간격은 글자세로중앙! */
+        }
+
+        /*  */
+        #r1{
+            position: relative;
+            /* 
+            2.relative
+            -위치 이동 속성(top bottom left right)이 적용된다
+
+            -위치 이동의 기준은 원래 있던 위치
+            (상대적인 위치 조정 방법!)
+
+            -위치 이동 시 다른 요소에 영향이 없이 겹쳐질 수 있다
+
+            -원래 위치는 그대로 보존된다
+            ->기존 위치가 보존되기 때문에 이동시켜도 본래의 디자인이 망가지지 않는다
+
+            -위치값 설정 시 2가지 기준으로 세팅
+            1)위,아래 중 하나
+            2)좌우 중 하나
+            ->top, left / top, right/ bottom, left / bottom, right
+
+            -margin은 그대로 적용된다
+            (다른 static요소에 영향을 미친다)
+            ->원래 있던 위치에서 밀고 있는 것과 같다
+
+            -relative는 위치 이동값을 사용하지 않으면 static과 똑같은 특성을 가진다
+
+            -relative는 겹쳐질 수 있으므로 위아래(앞뒤) 관계(z축)가 성립한다
+            ->기본적인 위아래 관계
+                1) static보다 항상 위
+                2) static이 아닌 경우
+                나중에 그려진 요소가 위
+                3) z-index 속성으로 숫자가 크면 위
+            
+            -부모자격
+            
+                [z-index란?]
+                -겹치는 position을 주는 경우 위치 순서를 정하여 디스플레이를 변경하는 속성
+
+                -z는 화면 방향의 z축을 의미
+                기본값은 0. 이는 같은 층에 있다는 의미
+                
+                -position이 static인 경우,
+                z-index를 줘도 적용되지 않는다
+                why? 스스로 겹칠 수 없고 위치 이동값을 쓸 수 없기 때문
+                
+                ->즉, position이 설정되어 있는 경우에만 쓸 수 있다
+
+                *유의사항: z-index 비교 시 형제 레벨(같은 레벨)에 있어야 비교된다
+                만약 자손요소에 z-index가 또 있게 되면 위로 올라오지 않는 경우가 발생할 수 있다
+                ->z-index를 남발하지 않도록 한다
+            */
+            z-index: 1; /* z-index 값이 큰 요소가 위(앞) */
+            top: 50px;
+            left: 50px;
+            color: #fff;
+            background: url(./ab_img/ab5.jpg) no-repeat center/cover
+        }
+        #r2{
+            bottom: 75px;
+            right: -86px;
+            z-index: -1; /* static보다 아래(뒤) */
+            position: relative;
+            color: #fff;
+            background: url(./ab_img/ab4.jpg) no-repeat center/cover
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    1) .bx#s$*n
+    ->class가 bx이고 id가 sn인 div가 n개 생성
+
+    2) .bx#s${s$}*n
+    ->class가 bx이고 id가 sn인 div에 내용이 sn인 div n개 생성
+
+    $는 연속 번호를 의미함
+    []는 속성
+    {}는 내용(데이터)
+    *은 곱하기
+    -->
+    <div class="bx" id="r1">r1</div>
+    <div class="bx" id="s2">s2</div>
+    <div class="bx" id="a1">a1</div>
+    <div class="bx" id="r2">r2</div>
+    <div class="bx" id="s3">s3</div>
+    <div class="bx" id="a2">a2</div>
+</body>
+</html>
