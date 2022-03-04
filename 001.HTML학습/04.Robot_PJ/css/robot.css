@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* 로봇 PJ CSS - robot.css */
+
+html,body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: url(../images/bg.jpg) no-repeat fixed top/cover;
+}
+
+body *{
+  outline: 2px dashed lime;
+}
+
+/* 로봇 머리 */
+#head{
+  position: relative;
+  /* 부모 자격 */
+  width: 250px;
+  height: 250px;
+  background: url(../images/metal01.jpg) no-repeat center/cover;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+/* 눈 */
+#eye1{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  /* 부모는? */
+  width: 50px;
+  height: 50px;
+  background: url(../images/e1.jpg) no-repeat 0/100% 100%;
+}
+#eye2{
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  /* 부모는? */
+  width: 50px;
+  height: 50px;
+  background: url(../images/e2.jpg) no-repeat 0/100% 100%;
+}
+/* 코 */
+#nose{
+  position: absolute;
+  top: 108px;
+  left: 100px;
+  width: 50px;
+  height: 70px;
+  background: url(../images/nose.jpg) no-repeat 0/100% 100%;
+}
+/* 입 */
+#mouth{
+  position: absolute;
+  bottom: 8px;
+  left: 65px;
+  width: 120px;
+  height: 50px;
+  background: url(../images/mouth.png) no-repeat 0/100% 100%;
+}
+/* 귀 */
+#ear1{
+  position: absolute;
+  top: 50px;
+  left: -51px;
+  width: 50px;
+  height: 120px;
+  background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
+  border-radius: 20px 0 0 20px;
+}
+#ear2{
+  position: absolute;
+  top: 50px;
+  right: -51px;
+  width: 50px;
+  height: 120px;
+  background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
+  border-radius: 0 20px 20px 0 ;
+}
+#body{
+  position: relative;
+  width: 250px;
+  height: 300px;
+  background: url(../images/metal01.jpg) no-repeat 0/100% 100% ;
+  margin: 0 auto;
+  margin-top: 50px; 
+}
+#neck{
+  position: absolute;
+  top: -50px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+  background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
+}
+#sholder1{
+  position: absolute;
+  left: -70px;
+  top: -20px;
+  width: 70px;
+  height: 70px;
+  background: url(../images/metal01.jpg) no-repeat center/100% 100%;
+  border-radius: 50px 0 0 50px;
+}
+#sholder2{
+  position: absolute;
+  right: -70px;
+  top: -20px;
+  width: 70px;
+  height: 70px;
+  background: url(../images/metal01.jpg) no-repeat center/100% 100%;
+  border-radius: 0 50px 50px 0;
+}
+.part{
+  width: 50px;
+  height: 200px;
+  background: url(../images/metal02.jpg) repeat-y 0/100%;
+}
+
+#arm1{
+  position: absolute;
+  top: 50px;
+  left: -50px;
+}
+#arm2{
+  position: absolute;
+  top: 50px;
+  right: -50px;
+}
+#leg1{
+  position: absolute;
+  bottom: -200px;
+  left: 0px;
+}
+#leg2{
+  position: absolute;
+  bottom: -200px;
+  right: 0px;
+}
