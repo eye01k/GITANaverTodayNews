@@ -38,6 +38,25 @@ body{
   max-width: 1920px;
   height: 800px;
 }
+
+.cbx{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+
+.cbx::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.cha{
+  width: 24%;
+  height: 49%;
+  margin: .5%;
+  
+}
 /* 하단 영역 */
 .info{
   height: 241px;
