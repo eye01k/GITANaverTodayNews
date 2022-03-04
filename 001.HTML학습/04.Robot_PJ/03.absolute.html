@@ -18,59 +18,45 @@
         }
 
         /*  */
+        #a1{
+            position: absolute;
+            /* 
+                3.absolute
+                -absolute는 위치 이동값을 쓰기 전과 후로 나뉜다
+                1) 위치 이동값을 쓰지 않은 경우
+
+                (1)자기보다 위에 있는 static요소를 존중하여 그 아래에 위치한다(gentle absolute)
+                +어떤 요소의 자식요소로 absolute를 주는 경우 위치값을 안 쓰면 부모박스 안에 가만히 있는다
+
+                (2)자기보다 아래에 있는 요소는 asolute를 인식하지 못하여 같은 자리를 차지한다
+
+                2) 위치 이동값을 쓴 경우
+                :위치이동값을 사용한 부분에 대해서만 absolute가 위치를 잡을 때 부모를 찾는다
+                일반적으로는 싸고 있는 요소가 부모지만 absolute는 싸고 있는 요소들 중 position이 static이 아닌 요소가 부모
+
+                ->static이 아닌 position(relative, absolute, fixed, sticky)
+
+                ->위치 이동값을 쓰지 않은 부분은 gentle
+
+                ->부모자격이 있는 부모요소들 중 가장 가까운 것이 부모가 되어 그를 기준으로 위치 이동
+                *만약 부모자격이 있는 요소가 없으면 보이는 화면(창)이 기준이 된다
+            */
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover
+        }
+        #a2{
+            position: absolute;
+            top: 0;
+            right: 0;
+            /* 나의 부모는? */
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover
+        }
         #r1{
             position: relative;
-            /* 
-            2.relative
-            -위치 이동 속성(top bottom left right)이 적용된다
-
-            -위치 이동의 기준은 원래 있던 위치
-            (상대적인 위치 조정 방법!)
-
-            -위치 이동 시 다른 요소에 영향이 없이 겹쳐질 수 있다
-
-            -원래 위치는 그대로 보존된다
-            ->기존 위치가 보존되기 때문에 이동시켜도 본래의 디자인이 망가지지 않는다
-
-            -위치값 설정 시 2가지 기준으로 세팅
-            1)위,아래 중 하나
-            2)좌우 중 하나
-            ->top, left / top, right/ bottom, left / bottom, right
-
-            -margin은 그대로 적용된다
-            (다른 static요소에 영향을 미친다)
-            ->원래 있던 위치에서 밀고 있는 것과 같다
-
-            -relative는 위치 이동값을 사용하지 않으면 static과 똑같은 특성을 가진다
-
-            -relative는 겹쳐질 수 있으므로 위아래(앞뒤) 관계(z축)가 성립한다
-            ->기본적인 위아래 관계
-                1) static보다 항상 위
-                2) static이 아닌 경우
-                나중에 그려진 요소가 위
-                3) z-index 속성으로 숫자가 크면 위
-            
-            -부모자격
-            
-                [z-index란?]
-                -겹치는 position을 주는 경우 위치 순서를 정하여 디스플레이를 변경하는 속성
-
-                -z는 화면 방향의 z축을 의미
-                기본값은 0. 이는 같은 층에 있다는 의미
-                
-                -position이 static인 경우,
-                z-index를 줘도 적용되지 않는다
-                why? 스스로 겹칠 수 없고 위치 이동값을 쓸 수 없기 때문
-                
-                ->즉, position이 설정되어 있는 경우에만 쓸 수 있다
-
-                *유의사항: z-index 비교 시 형제 레벨(같은 레벨)에 있어야 비교된다
-                만약 자손요소에 z-index가 또 있게 되면 위로 올라오지 않는 경우가 발생할 수 있다
-                ->z-index를 남발하지 않도록 한다
-            */
-            z-index: 1; /* z-index 값이 큰 요소가 위(앞) */
             top: 50px;
             left: 50px;
+            z-index: 1px;
             color: #fff;
             background: url(./ab_img/ab5.jpg) no-repeat center/cover
         }
@@ -81,6 +67,41 @@
             position: relative;
             color: #fff;
             background: url(./ab_img/ab4.jpg) no-repeat center/cover
+        }
+
+        /* 부모박스들 */
+        .bx2{
+            border: 2px dotted orange;
+            padding: 50px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        /* 각 부모박스 */
+        .s5{
+            position: relative;
+            background-color: lightblue;
+        }
+
+        /* 부모 찾는 absolute */
+        .a3{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg)no-repeat center/cover;
+        }
+        .a4{
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 나의 부모는? */
+            width: 50px;
+            height: 50px;
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg)no-repeat center/cover;
         }
     </style>
 </head>
@@ -103,5 +124,21 @@
     <div class="bx" id="r2">r2</div>
     <div class="bx" id="s3">s3</div>
     <div class="bx" id="a2">a2</div>
+
+    <!-- 부모를 찾는 absolute요소 -->
+    <div class="bx2 s5">s5
+        <div class="bx2 s6">s6
+            <div class="bx2 s7">s7
+                <div class="bx2 s8">s8
+                    <div class="a3">a3</div>
+                    <div class="a4">a4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 </body>
 </html>
