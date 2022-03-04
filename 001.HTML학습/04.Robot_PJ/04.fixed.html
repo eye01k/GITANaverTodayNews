@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position - fixed</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+
+        .bx{
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            text-align: center;
+            /* 글자가로중앙 */
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 100px;
+            /* 높이값과 같은 줄간격은 글자세로중앙! */
+        }
+
+        .f1{
+            position: fixed;
+            /* 4.fixed 
+            1)위치값을 설정하지 않았을 때
+            -자신보다 위에 있는 static요소 아래에 그대로 있다가 스크롤 시 그 자리를 지키고 움직이지 않는다
+            ->gentle absolute와 유사. gentle fixed
+
+            2)위치 이동값을 설정했을 때
+            -부모를 기준하여 위치를 잡는다
+            ->부모는 보이는 화면 
+            ->보이는 화면에서 사라지지 않게 할 수 있다
+            ->스크롤에 영향을 받지 않는다
+            */
+
+            width: 100%;
+            height: 100px;
+            line-height: 50px;
+            text-align: center;
+            border: 4px double green;
+            font-size: 30px;
+            color: #fff;
+            background: url(./ab_img/ab0.jpg) repeat-x 0/auto 100%
+  
+        }
+
+        .f2{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            /* 앞으로 꺼내기 */
+            width: 100%;
+            height: 100px;
+            line-height: 50px;
+            text-align: center;
+            border: 4px double green;
+            font-size: 30px;
+            box-sizing: border-box;
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) repeat-x 0/auto 100%
+        }
+
+        /* fixed부모 아래 자식요소 absolute */
+        .newabs{
+            position: absolute;
+            bottom: 0;
+            left: 40%;
+            /* 부모는 .f2 */
+            background-color: hotpink;
+            line-height: 1;
+        }
+
+        .f3{
+            position: fixed;
+            top: 0;
+            right: -180px;
+            background-color: coral;
+
+            transition: right 0.4s ease-out;
+            width: 300px;
+            height: 100px;
+            text-align: center;
+            font-weight: bold;
+            z-index: 999999;
+
+        }
+
+        .f3:hover{
+            right: 0;
+        }
+        #a1{
+            position: absolute;
+            /* 
+                3.absolute
+                -absolute는 위치 이동값을 쓰기 전과 후로 나뉜다
+                1) 위치 이동값을 쓰지 않은 경우
+
+                (1)자기보다 위에 있는 static요소를 존중하여 그 아래에 위치한다(gentle absolute)
+                +어떤 요소의 자식요소로 absolute를 주는 경우 위치값을 안 쓰면 부모박스 안에 가만히 있는다
+
+                (2)자기보다 아래에 있는 요소는 asolute를 인식하지 못하여 같은 자리를 차지한다
+
+                2) 위치 이동값을 쓴 경우
+                :위치이동값을 사용한 부분에 대해서만 absolute가 위치를 잡을 때 부모를 찾는다
+                일반적으로는 싸고 있는 요소가 부모지만 absolute는 싸고 있는 요소들 중 position이 static이 아닌 요소가 부모
+
+                ->static이 아닌 position(relative, absolute, fixed, sticky)
+
+                ->위치 이동값을 쓰지 않은 부분은 gentle
+
+                ->부모자격이 있는 부모요소들 중 가장 가까운 것이 부모가 되어 그를 기준으로 위치 이동
+                *만약 부모자격이 있는 요소가 없으면 보이는 화면(창)이 기준이 된다
+
+                -absolute에 가로,세로 크기를 주지 않은 경우 
+                일반적으로 block요소이므로 width:auto로서 부모요소 끝까지 차지하지만 absolute는 내용만큼 그 크기가 자동으로 설정된다
+                ->absolute 판타롱스타킹
+
+                -inline요소에 absolute를 주는 경우 자동으로 display가 block으로 설정됨
+                ->일반적으로 모든 absolute는 block이다
+
+                -absolute에 margin을 주는 경우
+                설정이 반영되는 경우는 위치 설정과 같은 방향의 margin만 적용된다
+                예)
+                top을 적용했으면 margin-top
+                left을 적용했으면 margin-left
+                bottom을 적용했으면 margin-bottom
+                right을 적용했으면 margin-right
+
+                ->absolute margin은 위치 이동 후 개별요소를 미세조정할때
+                즉, 위치 이동값에 더 이상 손댈 수 없을 때 사용한다
+
+                ->위치 이동값이 설정되지 않은 경우
+                기본 위치 기준이 top, left이므로 margin-top,left만 적용된다
+
+                -위치 이동값의 초기화 
+                값으로 auto를 쓰면 된다
+                예) top: auto
+                ->기존에 top값으로 설정된 경우 이를 미디어쿼리 등으로 변경할 때 기존 설정값을 해제해야 새로운 기준값으로 변경할 수 있다
+
+                -absolute끼리는 서로 겹친다
+            */
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover
+        }
+        #a2{
+            position: absolute;
+            top: 0;
+            right: 0;
+            /* 나의 부모는? */
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover
+        }
+        #r1{
+            position: relative;
+            top: 50px;
+            left: 50px;
+            z-index: 1px;
+            color: #fff;
+            background: url(./ab_img/ab5.jpg) no-repeat center/cover
+        }
+        #r2{
+            bottom: 75px;
+            right: -86px;
+            z-index: -1; /* static보다 아래(뒤) */
+            position: relative;
+            color: #fff;
+            background: url(./ab_img/ab4.jpg) no-repeat center/cover
+        }
+
+        /* 부모박스들 */
+        .bx2{
+            border: 2px dotted orange;
+            padding: 50px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        /* 각 부모박스 */
+        .s5{
+            width: 60%;
+            margin: 0 auto;
+            position: relative;
+            /* position이 static이 아니므로 부모자격이 생김 */
+            background-color: lightblue;
+        }
+        .s6{
+            position: relative;
+            /* position이 static이 아니므로 부모자격이 생김 */
+            background-color: lightcoral;
+        }
+        .s7{
+            position: relative;
+            /* position이 static이 아니므로 부모자격이 생김 */
+            background-color: lightgreen;
+        }
+        .s8{
+            position: relative;
+            /* position이 static이 아니므로 부모자격이 생김 */
+            background-color: lightyellow;
+        }
+
+        /* 부모 찾는 absolute */
+        .a3{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg)no-repeat center/cover;
+        }
+        .a4{
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 나의 부모는? */
+            width: 50px;
+            height: 50px;
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg)no-repeat center/cover;
+        }
+
+        /* absolute 판타롱스타킹 */
+        .a5{
+            position: absolute;
+            /* 크기를 안 주면 내용만큼 늘어난다 */
+            top: 30%;
+            right: 10%;
+            /* 싸고 있는 게 없으므로 부모는 보이는 화면 */
+        }
+
+        .a5 img{
+            vertical-align: bottom;
+            /* 이미지가 박스에 들어갈 때 하단에 간극이 생기는 현상을 없애려면 vertical-align 설정 (값은 상관없다) */
+        }
+
+        /* span을 absolute로 */
+        .spab{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            /* 나의 부모는? .s8 */
+        }
+
+        /* absolute끼리는 서로 겹친다 */
+        .absimg{
+            width: 92px;
+            height: 115px;
+            border: 4px ridge purple;
+            /* 액자틀 모양 보더 */
+        }
+        /* 이미지가 absolute */
+        .absimg img{
+            position: absolute;
+            /* 겹치니까 마지막 이미지(닥스)만 보인다 */
+        }
+
+        /* 마지막 이미지를 투명하게 */
+        .absimg img:last-child{
+            opacity: 0;
+            /* 투명도 설정
+            (0 완전투명, 1 모두 보임, 0.몇 반투명) */
+            transition: 1s;
+            /* transition: 속시이지 -> 속성 생략 시 all */
+
+        }
+
+        /* 박스에 마우스 오버 시 마지막 이미지 보이기 */
+        .absimg:hover img:last-child{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    1) .bx#s$*n
+    ->class가 bx이고 id가 sn인 div가 n개 생성
+
+    2) .bx#s${s$}*n
+    ->class가 bx이고 id가 sn인 div에 내용이 sn인 div n개 생성
+
+    $는 연속 번호를 의미함
+    []는 속성
+    {}는 내용(데이터)
+    *은 곱하기
+    -->
+    <div class="bx" id="r1">r1</div>
+    <div class="bx" id="s2">s2</div>
+    <div class="bx" id="a1">a1</div>
+    <div class="bx" id="r2">r2</div>
+    <div class="bx" id="s3">s3</div>
+    <div class="bx" id="a2">a2</div>
+
+    <!-- absolute 판타롱스타킹 -->
+    <div class="a5">
+        <img src="./ab_img/ab2.jpg" alt="타노스">
+    </div>
+
+    <!-- absolute 끼리는 서로 겹친다 -->
+    <div class="absimg">
+        <img src="./ab_img/ab3.jpg" alt="thor">
+        <img src="./ab_img/ab4.jpg" alt="docs">
+    </div>
+
+    <!-- 화면고정 fixed -->
+    <div class="f1">f1</div>
+    <div class="f2">f2
+        <div class="newabs">나는 fixed 자식</div>
+    </div>
+
+    <!-- 부모를 찾는 absolute요소 -->
+    <div class="bx2 s5">s5
+        <div class="bx2 s6">s6
+            <div class="bx2 s7">s7
+                <div class="bx2 s8">s8
+                    <div class="a3">a3</div>
+                    <div class="a4">a4</div>
+                    <span class="spab">
+                        나는 spanabsolute
+                    </span>
+                    <div class="f3">
+                        나는 fixed
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
