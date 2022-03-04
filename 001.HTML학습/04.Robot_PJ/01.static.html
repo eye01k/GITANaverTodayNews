@@ -17,10 +17,47 @@
             /* 높이값과 같은 줄간격은 글자세로중앙! */
         }
 
-        
+        /*  */
+        #s1{
+            position: static;
+            /* [CSS position] 
+            -위치를 효과적으로 설정하기 위한 속성
+
+            1.static
+            -position속성의 기본값
+            -위치 이동값(top, bottom, left, right) 속성이 적용되지 않는다
+            -위치 이동을 하려면 margin을 사용
+            ->특징: margin으로 위치를 이동시키면 아래 또는 옆의 요소가 영향을 받아 같이 이동된다
+
+            *******위치 이동 속성*********
+            -선택 요소의 위치를 이동하기 위한 속성
+            -position에 따라 다르게 적용된다
+            -종류: top bottom left right
+            */
+
+            top: 100px;
+            left: 100px;
+            /* 위치 이동 속성은 static에 적용되지 않는다!!!!! */
+
+            /* margin으로 이동하기 */
+            margin-top: 100px;
+            margin-left: 100px;
+        }
     </style>
 </head>
 <body>
+    <!-- 
+    1) .bx#s$*n
+    ->class가 bx이고 id가 sn인 div가 n개 생성
+
+    2) .bx#s${s$}*n
+    ->class가 bx이고 id가 sn인 div에 내용이 sn인 div n개 생성
+
+    $는 연속 번호를 의미함
+    []는 속성
+    {}는 내용(데이터)
+    *은 곱하기
+    -->
     <div class="bx" id="s1">s1</div>
     <div class="bx" id="s2">s2</div>
     <div class="bx" id="s3">s3</div>
