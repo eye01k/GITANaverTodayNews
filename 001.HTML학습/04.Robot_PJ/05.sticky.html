@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Position - fixed</title>
+    <title>Position - sticky</title>
     <style>
         body{
             height: 3000px;
@@ -21,30 +21,27 @@
             /* 높이값과 같은 줄간격은 글자세로중앙! */
         }
 
+        #stk1{
+            position: sticky;
+            top: 100px;
+            left: 100px;
+            /* 
+                5.sticky
+
+                1)위치값 설정에 따라 보이는 화면에 고정되는 position
+
+                2)처음에는 relative하게 위치값이 적용되다가 top위치값 설정을 하면 화면 기준의 위치에 도달 시 위치를 fixed로 고정
+                ->만약 top값 설정을 하지 않으면 relative와 유사하게 그대로 있게 된다
+            */
+            width: 40%;
+            background-color: skyblue;
+            z-index: 99999999;
+
+        }
+
+
         .f1{
             position: fixed;
-            /* 4.fixed 
-            1)위치값을 설정하지 않았을 때
-            -자신보다 위에 있는 static요소 아래에 그대로 있다가 스크롤 시 그 자리를 지키고 움직이지 않는다
-            ->gentle absolute와 유사. gentle fixed
-
-            2)위치 이동값을 설정했을 때
-            -부모를 기준하여 위치를 잡는다
-            ->부모는 보이는 화면 
-            ->보이는 화면에서 사라지지 않게 할 수 있다
-            ->스크롤에 영향을 받지 않는다
-            ->부모를 제외한 모든 다른 특성은 absolute와 거의 동일
-
-            3)아무리 부모 요소가 여러 개일 지라도 자식 요소 중 fixed를 주면 화면을 기준으로 한다
-
-            4)부모 박스가 fixed이면 그 자식 요소들은 모두 화면에 고정된다
-            ->자식 요소에 fixed 설정을 할 필요없다
-
-            5)화면 바깥으로 숨겼다가 보이게 할 때 fixed를 사용함
-
-            6)z-index도 position이 있는 경우 값을 비교하여 앞뒤 관계를 결정
-            */
-
 
 
             width: 100%;
@@ -106,6 +103,7 @@
         #a1{
             position: absolute;
             /* 
+
                 3.absolute
                 -absolute는 위치 이동값을 쓰기 전과 후로 나뉜다
                 1) 위치 이동값을 쓰지 않은 경우
@@ -304,6 +302,7 @@
     <div class="bx" id="a1">a1</div>
     <div class="bx" id="r2">r2</div>
     <div class="bx" id="s3">s3</div>
+    <div class="bx" id="stk1">im sticky</div>
     <div class="bx" id="a2">a2</div>
 
     <!-- absolute 판타롱스타킹 -->
