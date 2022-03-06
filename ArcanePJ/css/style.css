@@ -39,7 +39,7 @@ body{
 
 /* 상단 영역 */
 .top{
-  height: 80px;
+  height: 90px;
   /* background-color: rgba(0, 0, 0, 0.753); */
   position: sticky;
   top: 0px;
@@ -89,11 +89,11 @@ body{
   display: block;
   clear: both;
 }
-.top:hover{
+.Tbox:hover{
   background-color: white;
   transition: background-color .4s ease-out 0s;
 }
-.top:hover .gnb>ul>li>a{
+.Tbox:hover .gnb>ul>li>a{
   color: black;
 }
 /* 메인 영역 */
@@ -175,7 +175,7 @@ body{
 
 .cd p{
   font-family: 'Nanum Myeongjo', serif;
-  font-size: 11px;
+  font-size: 16px;
   color: white;
   padding: 10px;
   text-align: justify;
@@ -184,7 +184,7 @@ body{
 }
 
 .zaun .cha{
-  height: 200px;
+  height: 250px;
 }
 
 .zaun .cha:hover{
@@ -199,7 +199,7 @@ body{
 
 
 .cha:hover .cd{
-  height: 140px;
+  height: 160px;
 }
 
 .cha:hover{
@@ -219,25 +219,39 @@ body{
   height: 241px;
   text-align: center;
 }
+.BLogo img{
+  width: 100px;
+  padding-top: 10px;
+}
 .term{
   padding: 8px 16px;
   float: left;
   text-decoration: none;
   color: white;
 }
+.Bbox address{
+  width: 500px;
+  margin: 0px auto;
+  padding: 10px 0px 20px 0px;
+  color: white;
+}
 .terms{
   width: 344px;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 .terms::after{
   content: "";
   display: block;
   clear: both;
 }
-.info:hover{
+.Bbox:hover{
   background-color: white;
   transition: background-color .4s ease-out 0s;
 }
-.info:hover .term{
+.Bbox:hover .term{
+  color: black;
+}
+
+.Bbox:hover .addr{
   color: black;
 }
