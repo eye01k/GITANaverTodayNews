@@ -217,4 +217,27 @@ body{
 /* 하단 영역 */
 .info{
   height: 241px;
+  text-align: center;
+}
+.term{
+  padding: 8px 16px;
+  float: left;
+  text-decoration: none;
+  color: white;
+}
+.terms{
+  width: 344px;
+  margin: 0 auto;
+}
+.terms::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.info:hover{
+  background-color: white;
+  transition: background-color .4s ease-out 0s;
+}
+.info:hover .term{
+  color: black;
 }
