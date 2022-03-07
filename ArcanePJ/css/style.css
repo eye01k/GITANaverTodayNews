@@ -32,7 +32,7 @@ body{
 }
 
 .ibx{
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -99,7 +99,7 @@ body{
 /* 메인 영역 */
 .cont{
   max-width: 1920px;
-  height: 800px;
+  height: 1000px;
 }
 
 .cbx{
@@ -184,7 +184,7 @@ body{
 }
 
 .zaun .cha{
-  height: 250px;
+  height: 350px;
 }
 
 .zaun .cha:hover{
@@ -236,7 +236,7 @@ body{
   color: white;
 }
 .terms{
-  width: 344px;
+  width: 385px;
   margin: 0px auto;
 }
 .terms::after{
