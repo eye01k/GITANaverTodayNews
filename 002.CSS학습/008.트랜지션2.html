@@ -3,14 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>트랜지션</title>
+    <title>트랜지션2 - 트랙4번 다름</title>
     <style>
         /* 
                 [ 트랜지션으로 애니메이션 설정하기 ]
 
                 - 트랜지션이란? CSS속성값이 변경되는 과정을
                 애니메이션으로 보여누는 속성
-                -마우스 오버 시 혹은 미리 셋팅된 클래스에 설정하여 JS로 클래스를 요소에 부여해도 적용할 수 있다
+                - 마우스 오버시 혹은 미리셋팅된 클래스에 설정하여
+                JS로 클래스를 요소에 부여해도 적용할 수 있다!
+
                 - 형식: 
                 transition: 속성명 시간 이징 지연시간
                 -> 속시이지!
@@ -46,6 +48,9 @@
                 ->>>> 마우스 오버시에 트랜지션설정을 양방향 동일하게
                 설정하려면 :hover가 아닌 원본에 설정하면 된다!
             */
+        body{
+            padding-bottom: 400px;
+        }
         h1 {
             text-align: center;
         }
@@ -68,38 +73,40 @@
             background-color: #ff0;
             border-radius: 50%;
         }
-
-        /* #tr4 span{
+        #tr4 span{
             position: relative;
             left: 0;
+            /* 현재위치로 부터 이동! */
             display: block;
             width: 200px;
             height: 200px;
+            border: none;
+            background-color: transparent;
         }
-
-        #tr4 b{
-            position: relative;
-            left: 0;
+        #tr4 span b{
             display: block;
             width: 200px;
             height: 200px;
-        } */
+            border: 5px solid #000;
+            background-color: #ff0;
+            border-radius: 50%;
+        }
 
 
         /* #tr1에 트랜지션 설정 */
         /* 트랜지션을 hover가 아닌 원래 요소에 주면
         양방향 모두 동시적용된다! */
         #tr1 span{
-            transition:  2s;
-            /* 앞에 속성을 생략하면 all과 같다
-            ->모든 변경사항에 트랜지션 적용 */
+            transition: 2s;
+            /* 앞에 속성을 생략하면 all과 같다! 
+            즉, 모든 속성이 변경될때 애니메이션 함! */
         }
         #tr1:hover span{
             left: 50%;
             background-color: #f00;
         }
 
-        /* #tr2에 트랜지션 설정하지 않음 */
+        /* #tr2에 트랜지션 설정 하지 않음! */
         #tr2 span{
             left: -5%;
             background-color: orange;
@@ -108,21 +115,26 @@
         #tr2:hover span{
             left: 70%;
             background-color: lime;
-            transition: all 2s;
+            transition: all 3s;
         }
         
 
         /* #tr3에 트랜지션 설정 */
         #tr3 span{
-            transition: all 5s ease-in-out .5s;
-            /* 원상복귀 시 적용되는 트랜지션 */
+            /* 원상복귀시 적용! */
+            transition: all 5s ease-in-out 2s;
+            /* 모든 속성이 5초동안 처음과 마지막에 천천히 2초후에 애니 */
         }
+        /* 오버시 트랜지션 별도 설정하기! */
         #tr3:hover span{
-            transition: all 3s ease-out;
-            /* 오버 시 적용되는 트랜지션 */
             left: 60%;
-            background-color: aqua;
-            border-radius: 0%;
+            background-color: pink;
+            border-radius: 0;
+            /* 원을 사각형으로! */
+
+            /* 트랜지션: 속시이지 -> 오버시 적용! */
+            transition: 1s ease-out;
+            /* 모든 속성을 1초간 마지막에 천천히 애니 */
         }
 
         /* #tr4에 트랜지션 설정 */
@@ -132,25 +144,26 @@
         */
         #tr4 span{
             transition: left 5s ease-in-out,
-                        /* left속성 트랜지션 */
-                        background-color 2s ease-in 3s,
-                        /* 배경색 트랜지션 */
-                        border-radius 3s ease-out 5s,
-                        /* 모서리 트랜지션 */
+                        /* left속성을 5초간 처음과 끝에 천천히 애니 */
                         transform 3s linear 5s;
+                        /* 트랜드폼 3초간 등속도로 5초후에 애니 */
         }
-        /* #tr4 b{
-            transition: transform 2s linear 2s;
-            display: block;
+        #tr4 span b{
+            transition: background-color 2s ease-in 3s,
+                        /* 배경색은 2초간 처음에 천천히 3초후 애니 */
+                        border-radius 3s ease-out 5s,
+                        /* 둥근모서리 3초간 나중에 천천히 5초후 애니 */
+                        transform 1s linear 8s;
+                        /* 트랜드폼 3초간 등속도로 5초후에 애니 */
         }
-        #tr4:hover b{
-            transform: scale(3);
-        } */
         #tr4:hover span{
             left: 70%;
+            transform: rotate(720deg);
+        }
+        #tr4:hover b{
             background-color: hotpink;
             border-radius: 0;
-            transform: rotate(720deg);
+            transform: scale(2);
         }
         
     </style>
@@ -174,7 +187,10 @@
         <span></span>
     </div>
 
-    <h2>4.원본에 트랜지션을 각 속성별로 다르게 준다</h2>
+    <h2>4.원본에 트랜지션을 각 속성별로 다르게 준다
+        <br>
+        트랜지션2는 여기만 다름!!!
+    </h2>
     <div id="tr4">
         <span><b></b></span>
     </div>

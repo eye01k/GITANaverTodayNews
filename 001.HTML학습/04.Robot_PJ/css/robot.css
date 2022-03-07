@@ -141,3 +141,25 @@ body *{
   bottom: -200px;
   right: 0px;
 }
+
+/* TV */
+#tv{
+  position: absolute;
+  top: 72px;
+  left: 24px;
+  /* 부모는? #body */
+  width: 200px;
+  height: 150px;
+  background: url(../images/tv.jpg) no-repeat 0/100% 100%;
+}
+/* 스크린 */
+#screen{
+  position: absolute;
+  top: 17px;
+  left: 12px;
+  /* 부모는? #tv */
+  width: 139px;
+  height: 106px;
+  background-color: red;
+  border-radius: 15px;
+}
