@@ -81,13 +81,24 @@
             - deg는 각도의 단위(도:degree)
          */
          #trans1:hover img{
-             
+             transform: rotateY(180deg);
+             filter: grayscale(100%);
+
+             /* 기본 transition 변경 */
+             /* transition: transform .6s; */
+             transition-property: all;
+             /* transition 속성 all로 변경 */
+             transition-duration: 2s;
+             /* transition 시간 2초로 변경 */
          }
         /* 
             2. rotateX(각도deg) - X축회전
          */
          #trans2:hover img{
-             
+             transform: rotateX(360deg);
+             filter: brightness(130%);
+             transition-property: all;
+             transition-duration: 1s;
          }
 
          /* 
@@ -108,7 +119,7 @@
             - 이동방향: + 는 오른쪽, - 는 왼쪽
           */
           #trans3:hover img{
-              
+              transform: translateX(-50%);
           }
           /* 
             4. translateY(거리) - Y축이동
@@ -119,7 +130,7 @@
             - 이동방향: + 는 아랫쪽, - 는 윗쪽
           */
           #trans4:hover img{
-              
+              transform: translateY(-100px);
           }
            /* 
             5. translate(X축거리,Y축거리) - X,Y축이동
@@ -132,7 +143,7 @@
                         - 는 왼쪽/윗쪽
           */
           #trans5:hover img{
-              
+              transform: translate(-50%, 100%);
           }
           /* 
             6. rotate(각도deg) - 원형회전
@@ -142,11 +153,12 @@
                 (변경가능: transform-origin)
            */
            #trans6:hover img{
-               
+               transform: rotate(10000deg);
+               transition-duration: 10s;
            }
            /* 회전축 변경하기 */
            #trans6 img{
-               
+               transform-origin: 80% 80%;
                /* 
                   [트랜스폼 축변경 속성]
                   transform-origin: 가로값 세로값;
@@ -161,7 +173,7 @@
                 - 각도가 양수/음수에 따라 기울임 방향달라짐                
             */
             #trans7:hover img{
-                
+                transform: skewX(30deg);
             }
             /* 
                8. scale(배수)
@@ -170,11 +182,11 @@
                - 값이 0이면 사라짐
              */
              #trans8 img{
-                 
+                 transform: scale(0.5);
                  /* 0.5배 -> 축소 */
              }
              #trans8:hover img{
-                 
+                 transform: scale(2, 2);
                  /* transform: scaleY(2); */
              }
              /* 

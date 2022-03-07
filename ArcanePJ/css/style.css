@@ -220,7 +220,7 @@ body{
   text-align: center;
 }
 .BLogo img{
-  width: 100px;
+  width: 10%;
   padding-top: 10px;
 }
 .term{
@@ -230,7 +230,7 @@ body{
   color: white;
 }
 .Bbox address{
-  width: 500px;
+  width: 60%;
   margin: 0px auto;
   padding: 10px 0px 20px 0px;
   color: white;
