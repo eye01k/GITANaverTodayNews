@@ -29,7 +29,21 @@ body *{
 
 body{
   background: url(../img/bg1.jpg) no-repeat fixed center/cover;
+
 }
+
+  .scbar::-webkit-scrollbar{
+  /* 전체 스크롤바 크기 변경 */
+  width: 7px;
+  }
+  .scbar::-webkit-scrollbar-thumb{
+  /* 스크롤바 */
+  background-color: #666;
+  }
+  .scbar::-webkit-scrollbar-track{
+  /* 스크롤바 트랙 */
+  background-color: #ddd;
+  }
 
 .ibx{
   max-width: 1600px;
@@ -38,11 +52,14 @@ body{
 
 
 /* 상단 영역 */
+/* .Tbox{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+} */
 .top{
   height: 90px;
   /* background-color: rgba(0, 0, 0, 0.753); */
-  position: sticky;
-  top: 0px;
 }
 .top div{
   float: left;
@@ -186,16 +203,15 @@ body{
 .pilt{
   margin-top: 150px;
 }
-.zaun .cha{
+/* .zaun .cha{
+  margin-bottom: 160px;
+  transition: margin-bottom 0s .4s;
+} */
 
-  /* margin-bottom: 160px; */
-  /* transition: margin-bottom 0s .4s; */
-}
-
-.zaun .cha:hover{
-  /* margin-bottom: 0; */
-  /* transition: margin-bottom 0s 0s; */
-}
+/* .zaun .cha:hover{
+  margin-bottom: 0;
+  transition: margin-bottom 0s 0s;
+} */
 
 .cha:hover .ci{
   /* position: relative;
@@ -208,9 +224,9 @@ body{
   height: 160px;
 }
 
-.cha:hover{
-  /* padding-top: 100px */
-}
+/* .cha:hover{
+  padding-top: 100px
+} */
 
 .cd{
   transition: height .4s ease-out 0s;

@@ -7,7 +7,11 @@
 font-family: 'Russo One', sans-serif;
 font-family: 'Smooch Sans', sans-serif;
 */
-
+html{
+  scroll-behavior: smooth;
+  /* 내부 아이디 위치로 이동 시 스크롤 애니메이션을 부드럽게 처리
+  최상위 요소인 html에 셋팅 */
+}
 html,body{
   margin: 0;
   padding: 0;
@@ -17,10 +21,71 @@ body{
   background: url(../images/bg.jpg) no-repeat fixed top/cover;
 }
 
-body *{
+/* body *{
   outline: 2px dashed lime;
-}
+} */
 
+h1#logo{
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  margin: 0;
+  text-align: center; /* 글자 가로 중앙정렬 */
+  line-height: 200px; /* 글자 세로 중앙정렬 */
+  color: rgb(137, 250, 126);
+  font-family: 'Russo One', sans-serif;
+  font-size: 40px;
+  text-shadow: 2px 2px 2px #000;
+  box-shadow: 0 0 20px 5px hotpink,
+              inset 0 0 20px 5px black;
+  background: pink url(../images/robot_03.png) no-repeat;
+  background-size: contain;
+  background-position: center 10px;
+}
+/* 내용보기 링크 타이틀 */
+.link{
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  /* 부모는? 보이는 화면 */
+}
+.link a{
+  font-family: 'Smooch Sans', sans-serif;
+  font-size: 70px;
+  color: rgb(96, 255, 96);
+  text-decoration: none;
+  text-shadow: 2px 2px 2px #000;
+}
+/* 마우스 오버 시 */
+.link a:hover{
+  color: red;
+  text-decoration: overline;
+}
+.btnTop{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  background: rgba(255, 255, 255, 0.76);
+  border-radius: 50%;
+  font-family: 'Smooch Sans', sans-serif;
+  font-size: 50px;
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* 버튼 오버 시 */
+.btnTop:hover{
+  background-color: #ff0;
+  color: red;
+}
 /* 로봇 머리 */
 #head{
   position: relative;
@@ -202,6 +267,9 @@ body *{
 
 /* 로봇 설명 제목 */
 #dcbx h2{
+  position:sticky;
+  top: 0;
+  /* 스크롤 시 top값 설정으로 위치 고정 */
   font-size: 40px;
   text-align: center;
   color: lime;
