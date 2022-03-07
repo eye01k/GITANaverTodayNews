@@ -189,7 +189,7 @@ body{
 .zaun .cha{
 
   /* margin-bottom: 160px; */
-  transition: margin-bottom 0s .4s;
+  /* transition: margin-bottom 0s .4s; */
 }
 
 .zaun .cha:hover{
