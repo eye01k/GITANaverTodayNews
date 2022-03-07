@@ -1,6 +1,13 @@
 @charset "utf-8";
 /* 로봇 PJ CSS - robot.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Smooch+Sans:wght@500&display=swap');
+
+/* 
+font-family: 'Russo One', sans-serif;
+font-family: 'Smooch Sans', sans-serif;
+*/
+
 html,body{
   margin: 0;
   padding: 0;
@@ -218,5 +225,21 @@ body *{
   /* 자간 */
   word-spacing: 1px;
   /* 단어 간격 */
-  
+
+  /* 가독성을 위한 다단 설정(다중열 속성) */
+  column-count: 3;
+  column-rule: 3px dotted rgb(0, 255, 170);
+  /* 다중열 구분선 */
+  column-gap: 50px;
+  /* 다중열 사이 간격 */
+
+  /* 문단 정렬 */
+  text-align: justify; /* 양쪽 정렬- 양쪽 끝라인 맞춤 */
+  word-break: break-all; /* 단어 깨기-영문자는 기본적으로 단어 단위로 붙어다니기 때문 */
+  text-indent: 20px;
+  /* 첫 줄 들여쓰기 */
+}
+/* 가상요소로 첫 글자 디자인 변경 */
+#dcbx p::first-letter{
+  font-size: 40px;
 }
