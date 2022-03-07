@@ -182,7 +182,7 @@
                - 값이 0이면 사라짐
              */
              #trans8 img{
-                 transform: scale(0.5);
+                 transform: scale(0);
                  /* 0.5배 -> 축소 */
              }
              #trans8:hover img{
@@ -194,7 +194,7 @@
                 transform: 속성1 속성2 속성3 .....;
               */
               #trans9:hover img{
-                  
+                  transform: rotate(135deg) scale(1.5) translateX(100%) rotateX(360deg);
               }
 
               /* 
@@ -206,13 +206,21 @@
                */
                /* 2개의 이미지를 겹치게한다 */
                #trans10 img{
-                   
+                    position: absolute;
+                    width: 200px;
+
+                   /* 위치값을 주지 않으면 싸고있는 박스에 그대로 위치함-gentle */
                }
+               /* 이미지 크기에 관하여
+               현재 이미지 크기는 100%로 설정되어 있는데 position이 없는 경우(static)일 때는 싸고있는 요소가 기준이 됨
+               하지만 position이 absolute일 경우 크기가 %이면 부모자격이 있는 요소를 기준으로 하여 %를 설정한다. 여기서는 부모자격을 가진 요소가 없기 때문에 보이는 화면이 기준이 된다. 따라서 편리하게 코딩하기 위해 크기를 200px로 설정한다
+               */
 
                /* 1. 보거미 처음상태(돌아옴) */
                /* Y축 0도로 돌아옴 - 0.4초 기다림 */
                #trans10 img:last-child{
-                   
+                   transform: rotateY(0deg);
+                   transition: transform .4s ease-out .4s ;
                    /* ease-out 처음엔 빠르고 나중엔 천천히 */
                }
                
@@ -220,14 +228,16 @@
                /* 2. 보거미 오버상태 */
                /* Y축 90도회전 - 회전후 안보임*/
                #trans10:hover img:last-child{
-                   
+                transform: rotateY(90deg);
+                transition: transform .4s ease-in 0s;
                    /* ease-in 처음엔 천천히 나중엔 빠르게 */
                }
 
                /* 3. 유정이 처음상태(돌아옴) */
                /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
                #trans10 img:first-child{
-                   
+                   transform: rotateY(90deg);
+                   transition: transform .4s ease-in;
                    /* ease-in 처음엔 천천히 나중엔 빠르게 */
                }
                
@@ -236,7 +246,8 @@
                /* Y축 0도로 회전 
                - 보거미 0.4초 돌동안 기다렸가 0.4초돌기 */
                #trans10:hover img:first-child{
-                   
+                   transform: rotateY(0deg);
+                   transition: transform .4s ease-out .4s ;
                    /* ease-out 처음엔 빠르고 나중엔 천천히 */
                }
                

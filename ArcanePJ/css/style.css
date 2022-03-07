@@ -123,9 +123,6 @@ body{
   font-size: 50px;
 }
 
-.cha{
-  padding: 0px;
-}
 
 .zaun h2{
   color: black;
@@ -153,6 +150,8 @@ body{
 }
 
 .cha{
+  position: relative;
+  padding: 0px;
   width: 23%;
   height: 49%;
   margin: 0 1%;
@@ -165,6 +164,7 @@ body{
 
 
 .cd{
+  position: absolute;
   background: url(../img/cdbg.jpeg) no-repeat center/cover;
   border: 4px ridge goldenrod;
   border-top: none;
@@ -183,18 +183,24 @@ body{
   margin: 0;
 }
 
+.pilt{
+  margin-top: 150px;
+}
 .zaun .cha{
-  height: 350px;
+
+  /* margin-bottom: 160px; */
+  transition: margin-bottom 0s .4s;
 }
 
 .zaun .cha:hover{
-  height: 0;
+  /* margin-bottom: 0; */
+  /* transition: margin-bottom 0s 0s; */
 }
 
 .cha:hover .ci{
   /* position: relative;
   top: -150px; */
-  margin-top: -60%;
+  margin-top: -30%;
 }
 
 
@@ -203,16 +209,16 @@ body{
 }
 
 .cha:hover{
-  padding-top: 100px
+  /* padding-top: 100px */
 }
 
 .cd{
   transition: height .4s ease-out 0s;
 }
 
-/* .ci{
+.ci{
   transition: margin-top .4s ease-out 0s;
-} */
+}
 
 /* 하단 영역 */
 .info{
