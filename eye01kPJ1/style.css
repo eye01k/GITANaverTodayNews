@@ -9,4 +9,7 @@ ul,ol{
   list-style: none;
 }
 
-
+.gnb a{
+  text-decoration: none;
+  color: black;
+}
