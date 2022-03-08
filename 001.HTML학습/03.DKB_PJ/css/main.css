@@ -29,14 +29,14 @@ ul, ol{
 
 /* 작업 진행 중 외곽선 */
 /* 별표시(*)는 모든 요소를 선택 시 사용 */
-body *{
-  outline: 1px dashed gray;
+/* body *{
+  outline: 1px dashed gray;} */
   /* outline: 두께 종류 색상;
     ->border와 달리 주변 요소에 전혀 영향을 주지 않는다
     ->border는 박스 요소에 필수 포함요소지만 outline은 필수 요소가 아니다
     ->요소의 외곽선 바깥으로 보임
     */
-}
+
 
 /* 콘텐츠 파트 최상위 부모 */
 body{
@@ -122,6 +122,7 @@ border-radius: 5px;
 
 #top{
   background-color: #fff;
+  border-bottom: 1px solid rgb(206, 206, 206);
 }
 
 /* 로고박스 */
@@ -166,7 +167,7 @@ margin: 0 auto;
   position: absolute;
   /* gentle absolute */
   z-index: 1; /* li 가상요소 after보다 앞 */
-  background-color: #fff;
+  /* background-color: #fff; */
 
   /* 서브메뉴 숨기기 */
   height: 0;
@@ -209,6 +210,8 @@ margin: 0 auto;
    */
   height: 0px;
   background-color: #fff;
+
+  margin-top: 2px; /* #top의 하단 border를 가리므로 아래쪽으로 이동 */
 
   transition: height 0.4s ease-out;
 }
