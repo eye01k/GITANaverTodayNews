@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>가로네비 서브별 드롭다운 세로형</title>
+    <style>
+      /* ul, ol 초기화 */
+      ul,ol{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        /* 3無 */
+      }
+      /* 옆으로 흐르는 클래스 */
+      .fll>li{
+        float: left;
+      }
+      /* 가상요소로 클리어 세팅 */
+      .fll::after{
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      /* 공사 중 표시 */
+      body *{
+        outline: 2px dotted red;
+      }
+      /* gnb 메뉴 */
+      .gnb{
+        background-color: rgb(63, 151, 251);
+      }
+      .gnb>ul{
+        width: 800px;
+        margin: 0 auto; /* 크기를 가진 block박스 가로중앙정렬 */
+      }
+      .gnb>ul>li{
+        width: 200px;
+        text-align: center;
+      }
+      .gnb>ul>li>a{
+        display: block;
+        /* 디자인 적용을 위해 */
+        width: 200px;
+        line-height: 50px;
+        /* 줄간격으로 글자 세로 중앙정렬 및 높이값 생성 */
+
+        /* 글자색 및 밑줄은 반드시 a요소에서 할것
+        왜냐 부모요소에서 설정하면 a기본설정이 적용됨 */
+        color: white;
+        text-decoration: none;
+
+        /* 마우스 오버 트랜지션 */
+        transition: all .4s;
+      }
+
+      /* li에 마우스 오버 시 a요소 디자인 변겅 */
+      .gnb>ul>li:hover>a{
+        background-color: lightblue;
+        color: navy;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>유형1.가로네비 서브별 드롭다운 세로형</h1>
+
+    <!-- GNB 네비게이션 -->
+    <nav class="gnb">
+      <ul class="fll">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">웹개발</a>
+        </li>
+        <li>
+          <a href="#">게시판</a>
+        </li>
+        <li>
+          <a href="#">프로필</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
