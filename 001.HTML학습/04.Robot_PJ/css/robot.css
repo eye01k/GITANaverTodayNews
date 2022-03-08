@@ -19,7 +19,7 @@ html,body{
 
 body{
   background: url(../images/bg.jpg) no-repeat fixed top/cover;
-  overflow-x: hidden; /* 가로 스크롤 숨기기 */
+  overflow-x: hidden; /* 가로 스크롤 숨기기 - html요소에 주지 않도록 주의(sticky 안됨) */
 }
 
 /* body *{
@@ -67,7 +67,7 @@ h1#logo{
 
   /* 애니메이션 호출 */
   animation: logoAni 2s ease-in-out 2s forwards, 
-  wiggle .7s linear 4s infinite alternate;
+  wiggle .7s ease-in-out 4s infinite alternate;
 }
 
 /* 로고 애니메이션 키프레임 */
@@ -385,8 +385,8 @@ h1#logo{
   transform-origin: top;
 
   /* 팔 애니 */
-  animation: arm1 .4s linear 5s forwards,
-  arm2 .35s linear 5.4s infinite alternate;
+  animation: arm1 .7s ease-in-out 5s forwards,
+  arm2 .35s ease-in-out 5.7s infinite alternate;
 }
 #leg1{
   position: absolute;
@@ -411,7 +411,7 @@ h1#logo{
   opacity: 0;
 
   /* tv애니메이션 */
-  animation: TV .5s cubic-bezier(0.65, 0.05, 0.36, 1) 5s 7 alternate forwards;
+  animation: TV .5s cubic-bezier(0.65, 0.05, 0.36, 1) 5s 5 alternate forwards;
 }
 /* 스크린 */
 #screen{
@@ -467,7 +467,7 @@ h1#logo{
 }
 
 .blink{
-  animation: TV .5s cubic-bezier(0.65, 0.05, 0.36, 1) 6s 7 alternate forwards;
+  animation: TV .5s cubic-bezier(0.65, 0.05, 0.36, 1) 6s 3 alternate forwards;
 }
 
 /* 출처 */
