@@ -19,16 +19,35 @@ html,body{
 
 body{
   background: url(../images/bg.jpg) no-repeat fixed top/cover;
+  overflow-x: hidden; /* 가로 스크롤 숨기기 */
 }
 
 /* body *{
   outline: 2px dashed lime;
 } */
 
+/******************************************** 
+  [요소를 화면 정중앙에 정렬하는 법]
+  1.50%로 밀고 자기 크기의 절반만큼 빼기
+  ->> calc() method 사용
+  -사칙연산이 모두 가능하며 여기서는 유동적인 % 단위에서 특정 px을 빼는 데에 사용함
+  *주의: 사칙연산 기호 앞뒤로 띄어쓰기 필수
+
+  참고) https://www.w3schools.com/css/css_math_functions.asp
+
+
+  2.50%를 밀고 자기 자신 크기의 절반만큼 반대로 이동
+  ->> transform: translate(-50%, -50%) 사용
+
+
+********************************************/
+
 h1#logo{
   position: fixed;
-  top: 50px;
-  left: 50px;
+  top: calc(50% - 102px);
+  left: calc(50% - 102px);
+  z-index: 1; /* 맨 앞으로 나오도록 */
+  transform: scale(2);
   width: 200px;
   height: 200px;
   border: 2px solid #ccc;
@@ -45,7 +64,148 @@ h1#logo{
   background: pink url(../images/robot_03.png) no-repeat;
   background-size: contain;
   background-position: center 10px;
+
+  /* 애니메이션 호출 */
+  animation: logoAni 2s ease-in-out 2s forwards, 
+  wiggle .7s linear 4s infinite alternate;
 }
+
+/* 로고 애니메이션 키프레임 */
+@keyframes logoAni {
+  /* 시작값 = 초기값 이므로 생략*/
+  /* from{
+    top: calc(50% - 102px);
+    left: calc(50% - 102px);
+    transform: scale(2);
+  } */
+  /* 80% */
+  80%{
+    top: 50px;
+    left: 50px;
+    transform: scale(1) rotate(0deg);
+  }
+  /* 80%~100% 구간에 rotate 각도를 20deg로 변경하여 후속 애니와 자연스럽게 연결 */
+
+  /* 끝값 */
+  100%{
+    top: 50px;
+    left: 50px;
+    transform: scale(1) rotate(20deg);
+  }
+} /* logoAni 키프레임1 */
+
+/* 로고 흔들기 키프레임 */
+@keyframes wiggle {
+  0%{
+    transform: rotate(20deg);
+  }
+  100%{
+    transform: rotate(-20deg);
+  }
+}
+
+/* 머리통 날라오기 키프레임 */
+@keyframes headfly {
+  to{
+    left: 0%;
+  }
+}
+
+@keyframes bodyfly {
+  to{
+    left: 0%;
+  }
+}
+
+@keyframes mouth {
+  to{
+    transform: scaleY(.2);
+  }
+}
+@keyframes arm1{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(-150deg);
+  }
+}
+@keyframes arm2 {
+  from{
+    transform: rotate(-150deg);
+  }
+  to{
+    transform: rotate(-130deg);
+  }
+}
+@keyframes TV {
+
+  to{
+    opacity: 1;
+  }
+}
+/* 
+  [CSS 애니메이션]
+  -시간에 따라 CSS설정이 변경되어 애니메이션
+  : 키프레임을 설정하고 이것을 호출하는 방식
+
+  -애니메이션 키프레임 만드는 법
+  키프레임: 애니메이션 장면을 넣는 코드
+
+  1. 두 장면 키프레임
+  @keyframes 키프레임이름{
+    from{시작 css설정}
+    to{끝나는 css설정}
+  }
+
+  또는
+
+  @keyframes 키프레임이름{
+    0%{시작 css설정}
+    100%{끝나는 css설정}
+  }
+
+  *만약 from설정이 초기 설정과 같다면 from 생략 가능
+
+  2.여러 장면 키프레임
+  @keyframes 키프레임이름{
+    0%{시작 css설정}
+    10%{중간 css설정}
+    20%{중간 css설정}
+    ...
+    100%{끝나는 css설정}
+  }
+
+  1) 장면에 대한 시간 계산
+  ->전체시간 * 설정된%/100
+
+  2) 전체시간 셋팅 타이밍
+  ->호출 시에 셋팅
+
+  *설정된 키프레임 호출하는 방법
+  animation: 이시이지반방마
+  (이름 시간 이징 지연 반복 방향 마지막상태)
+
+  (1)이름(animation-name): 키프레임 이름
+
+  (2)시간(animation-duration): 애니메이션 동작 시간 -> 초단위(s)
+
+  (3)이징(animation-timing-function): 이징 가속도 
+
+  (4)지연(animation-delay): 애니메이션 시작 지연(s)
+
+  (5)반복(animation-iteration-count): 애니메이션 반복 횟수 -> 기본값 1, 숫자를 쓰면 그 수만큼 반복
+  ->영원히 반복: infinite 
+
+  (6)방향(animation-direction): 애니메이션은 기본적으로 시작->끝 으로 감
+  ->반복 시 시작과 반대 경로로 애니메이션: alternate- 시작->끝, 끝->시작
+  *주의: 반복횟수가 2회 이상이어야 적용
+  
+  (7)마지막상태(animation-fill-mode): 애니메이션은 기본적으로 끝났을 때 처음 상태로 돌아감
+  ->forwards: 애니메이션 끝 상태로 마무리
+  *주의: infinite일 때는 해당사항 없음
+*/
+
 /* 내용보기 링크 타이틀 */
 .link{
   position: absolute;
@@ -59,6 +219,8 @@ h1#logo{
   color: rgb(96, 255, 96);
   text-decoration: none;
   text-shadow: 2px 2px 2px #000;
+  opacity: 0;
+
 }
 /* 마우스 오버 시 */
 .link a:hover{
@@ -80,6 +242,9 @@ h1#logo{
   color: blue;
   text-decoration: none;
   font-weight: bold;
+  opacity: 0;
+
+  
 }
 /* 버튼 오버 시 */
 .btnTop:hover{
@@ -90,11 +255,15 @@ h1#logo{
 #head{
   position: relative;
   /* 부모 자격 */
+  left: 100%; /* 머리를 화면의 오른쪽 바깥으로 */
   width: 250px;
   height: 250px;
   background: url(../images/metal01.jpg) no-repeat center/cover;
   margin: 0 auto;
   margin-top: 100px;
+
+  /* 머리통 애니메이션 */
+  animation: headfly 1.5s ease-out 3s forwards;
 }
 
 /* 눈 */
@@ -133,6 +302,9 @@ h1#logo{
   width: 120px;
   height: 50px;
   background: url(../images/mouth.png) no-repeat 0/100% 100%;
+
+  /* 입 애니 */
+  animation: mouth .1s linear 6s infinite alternate;
 }
 /* 귀 */
 #ear1{
@@ -155,12 +327,16 @@ h1#logo{
 }
 #body{
   position: relative;
+  left: -100%; /* 몸을 화면의 왼쪽 바깥으로 */
   width: 250px;
   height: 300px;
   background: url(../images/metal01.jpg) no-repeat 0/100% 100% ;
   margin: 0 auto;
   margin-top: 50px; 
   margin-bottom: 300px;
+
+  /* 몸통 애니 */
+  animation: bodyfly 1.5s ease-out 3s forwards;
 }
 #neck{
   position: absolute;
@@ -172,46 +348,54 @@ h1#logo{
 }
 #sholder1{
   position: absolute;
-  left: -70px;
+  left: -90px;
   top: -20px;
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   background: url(../images/metal01.jpg) no-repeat center/100% 100%;
   border-radius: 50px 0 0 50px;
 }
 #sholder2{
   position: absolute;
-  right: -70px;
+  z-index: 1;
+  right: -90px;
   top: -20px;
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   background: url(../images/metal01.jpg) no-repeat center/100% 100%;
   border-radius: 0 50px 50px 0;
 }
 .part{
   width: 50px;
-  height: 200px;
+  height: 260px;
   background: url(../images/metal02.jpg) repeat-y 0/100%;
 }
 
 #arm1{
   position: absolute;
-  top: 50px;
+  z-index: -2;
+  top: 40px;
   left: -50px;
 }
 #arm2{
   position: absolute;
-  top: 50px;
+  z-index: -1;
+  top: 40px;
   right: -50px;
+  transform-origin: top;
+
+  /* 팔 애니 */
+  animation: arm1 .4s linear 5s forwards,
+  arm2 .35s linear 5.4s infinite alternate;
 }
 #leg1{
   position: absolute;
-  bottom: -200px;
+  bottom: -260px;
   left: 0px;
 }
 #leg2{
   position: absolute;
-  bottom: -200px;
+  bottom: -260px;
   right: 0px;
 }
 
@@ -224,6 +408,10 @@ h1#logo{
   width: 200px;
   height: 150px;
   background: url(../images/tv.jpg) no-repeat 0/100% 100%;
+  opacity: 0;
+
+  /* tv애니메이션 */
+  animation: TV .5s cubic-bezier(0.65, 0.05, 0.36, 1) 5s 7 alternate forwards;
 }
 /* 스크린 */
 #screen{
@@ -275,6 +463,11 @@ h1#logo{
   color: lime;
   background-color: rgba(255, 255, 255, 0.589);
   border-radius: 20px;
+  
+}
+
+.blink{
+  animation: TV .5s cubic-bezier(0.65, 0.05, 0.36, 1) 6s 7 alternate forwards;
 }
 
 /* 출처 */
