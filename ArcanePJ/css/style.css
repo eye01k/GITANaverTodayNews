@@ -23,9 +23,9 @@ ul, ol{
   /* 블릿 표시자 없앰 */
 }
 
-body *{
+/* body *{
   outline: 1px dashed gray;
-}
+} */
 
 body{
   background: url(../img/bg1.jpg) no-repeat fixed center/cover;
