@@ -55,7 +55,7 @@ ul,ol{
 }
 /* 메인 영역 */
 #cont{
-  height: 2400px;
+  height: 3600px;
 }
 .GoDown{
   width: 333px;
@@ -70,4 +70,40 @@ ul,ol{
 }
 .GoDown>ul>li>a:hover{
   border-bottom: 1px solid #000;
+}
+#intro{
+  width: 100%;
+  height: 1600px;
+  margin-top: 100px;
+}
+.inImg{
+  width: 100%;
+  height: 550px;
+  background: url(./imgs/about_hero_wide.png) no-repeat center top/cover;
+}
+.inImg p{
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: white;
+  text-align: center;
+  margin-top: 20%;
+}
+#intro h2{
+  text-align: center;
+  font-size: 60px;
+  margin-top: 100px;
+}
+.inDes{
+  margin-top: 100px;
+}
+.boldDes>li{
+  font-size: 26px;
+  padding: 0 67.9px;
+  line-height: 250%;
+}
+.lightDes>li{
+  font-size: 13px;
+  color: rgb(88, 88, 88);
+  padding: 10px 88.3px;
 }
