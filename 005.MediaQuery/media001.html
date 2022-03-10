@@ -51,21 +51,67 @@
 
                 [ 구현방법 ]
 
+                @media only screen and (max-width:최대px) and (min-width:최소px){
+                    CSS코딩구역
+                }
+
+                1)@media: 미디어쿼리 선언부
                 
+                2)only screen(또는 screen): 회피코드->미디어쿼리를 아는 브라우저만 읽도록 함
+                ->only를 쓰면 구버전 user agent 는 미디어쿼리를 읽지 못하게 함 (현재는 only를 쓴 것과 쓰지 않은 것의 차이가 없음)
 
+                3)max-width: 최대 사이즈
+                ->반드시 px단위를 사용, 소괄호 사용
 
+                4)min-width: 최소 사이즈
+                ->반드시 px단위를 사용, 소괄호 사용
+
+                ->최대,최소 사이즈는 표기된 사이즈를 포함함
+
+                ->최대 사이즈만 쓸 경우: 기준 사이즈 이하가 모두 포함됨
+                -큰 사이즈부터 작은 사이즈 순으로 코딩해야 제대로 적용된다 (하위 사이즈가 덮어씀)
+
+                ->최소 사이즈만 쓸 경우: 기준 사이즈 이상이 모두 포함됨
+                -작은 사이즈부터 큰 사이즈 순으로 코딩해야 제대로 적용된다 (상위 사이즈가 덮어씀)
+
+                5) and: 구문 사이 연결자
+                -> 앞뒤로 띄어쓰기 필수
                 __________________________________________
 
                 [ 웹페이지 가로/세로 모드 인식하기 ]
+                1.가로모드
+                (orientation:landscape)
 
+                @media (orientation:landscape){
+                    가로모드 css
+                }
+
+                2.세로모드
+                (orientation:portrait)
+
+                @media (orientation:portrait){
+                    세로모드 css
+                }
+
+                
                 
 
                 __________________________________________    
 
 
                 [ 미디어 쿼리 코딩시 주의사항! ]
+                1. 기존 css 선택자와 동일하게 코딩한다 -> 선택자 우선순위에 영향 받지 않고 덮어쓰기가 원활
 
+                2.max-width로 셋팅했으면 큰 사이즈부터 작은 사이즈 순으로 코딩한다 (min-width) 는 반대
+                ->같은 속성에 대한 덮어쓰기 원활
+
+                3.미디어쿼리를 외부 css 파일로 만들어 사용할 경우 @import 방식으로 호출하면 적용되지 않는다 -> 미디어쿼리는 덮어쓰기 방식이므로 기존 CSS 코드보다 아래에 있어야 하기 때문 =>link방식으로 html코드 상단에 기본 CSS 외부파일보다 아래에서 호출하면 된다
                 
+                예) 
+                <head>
+                    <link rel="stylesheet" href="일반CSS"
+                    <link rel="stylesheet" href="미디어쿼리CSS"    
+                </head>
             */
         /* 초기화 */
         html,
@@ -155,59 +201,202 @@
         /************ 미디어쿼리 적용하기 ************/
 
         /*************** 1200px 이하 ***************/
-        
+        @media screen and (max-width:1200px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+            content: "1200px 이하";
+            color: rgb(208, 251, 65);
+        }
+        /* 기존 이미지 숨기기 */
+        .screen img:first-child{
+            display: none;
+        }
+        /* 다음 이미지 보이기 */
+        .screen img:nth-child(2){
+            display: inline;
+        }
+        }
         /* 1200px이하 */
 
 
 
         /***************** 1100px 이하 *****************/
-        
+        @media screen and (max-width:1100px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+            content: "1100px 이하";
+            color: rgb(251, 217, 65);
+        }
+        /* 기존 이미지 숨기기 */
+        .screen img:nth-child(2){
+            display: none;
+        }
+        /* 다음 이미지 보이기 */
+        .screen img:nth-child(3){
+            display: inline;
+        }
+        }
 
         /* 1100px 이하 */
 
 
 
         /****************** 1000px 이하 ******************/
-        
+        @media screen and (max-width:1000px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+            content: "1000px 이하";
+            color: rgb(167, 65, 251);
+        }
+        /* 기존 이미지 숨기기 */
+        .screen img:nth-child(3){
+            display: none;
+        }
+        /* 다음 이미지 보이기 */
+        .screen img:nth-child(4){
+            display: inline;
+        }
+        }
         /* 1000px이하 */
 
         /*************** 900px 이하 ***************/
-        
+        @media screen and (max-width:900px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+            content: "900px 이하";
+            color: rgb(251, 65, 65);
+        }
+        /* 기존 이미지 숨기기 */
+        .screen img:nth-child(4){
+            display: none;
+        }
+        /* 다음 이미지 보이기 */
+        .screen img:nth-child(5){
+            display: inline;
+        }
+        }
 
         /* 900px 이하 */
 
         /***************** 850px 이하 *****************/
-        
+        @media screen and (max-width:850px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+            content: "850px 이하";
+            color: rgb(65, 251, 226);
+        }
+        /* 기존 이미지 숨기기 */
+        .screen img:nth-child(5){
+            display: none;
+        }
+        /* 다음 이미지 보이기 */
+        .screen img:nth-child(6){
+            display: inline;
+        }
+        }
 
         /* 850px 이하 */
 
         /****************** 830px 이하 ******************/
-        
+        @media screen and (max-width:830px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+            content: "830px 이하";
+            color: rgb(65, 192, 251);
+        }
+        /* 기존 이미지 숨기기 */
+        .screen img:nth-child(6){
+            display: none;
+        }
+        /* 다음 이미지 보이기 */
+        .screen img:nth-child(7){
+            display: inline;
+        }
+        }
 
         /* 830px 이하 */
 
-        /***************** 가로모드 + 830px이하 *****************/
-        
-        /* 가로모드 + 830px이하 */
-
-
-
-
-
+                
         /******************** 810px 이하 ********************/
-        
+        @media screen and (max-width:810px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+            content: "810px 이하";
+            color: rgb(108, 251, 65);
+        }
+        /* 기존 이미지 숨기기 */
+        .screen img:nth-child(7){
+            display: none;
+        }
+        /* 다음 이미지 보이기 */
+        .screen img:nth-child(8){
+            display: inline;
+        }
+        }
         /* 810px 이하 */
 
         /******************* 790px 이하 *******************/
-        
+        @media screen and (max-width:790px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+            content: "790px 이하";
+            color: rgb(251, 232, 65);
+        }
+        /* 기존 이미지 숨기기 */
+        .screen img:nth-child(8){
+            display: none;
+        }
+        /* 다음 이미지 보이기 */
+        .screen img:nth-child(9){
+            display: inline;
+        }
+        }
 
         /* 790px 이하 */
 
         /******************* 770px 이하 *******************/
-        
+        @media screen and (max-width:770px) {
+            /* 출력글자 변경하기 */
+            .tit::after {
+            content: "770px 이하";
+            color: rgb(183, 65, 251);
+        }
+        /* 기존 이미지 숨기기 */
+        .screen img:nth-child(9){
+            display: none;
+        }
+        /* 다음 이미지 보이기 */
+        .screen img:nth-child(10){
+            display: inline;
+        }
+        }
 
         /* 770px 이하 */
 
+        /* 가로모드와 세로모드 변경 코드 */
+
+        /***************** 가로모드 + 1000px이하 *****************/
+        @media screen and (orientation:landscape) and (max-width:1000px) {
+            .bx::after {
+            background: url(./images/oldTVON.png) no-repeat top/auto 60%;
+        }
+            .screen{
+                top: 124px;
+                left: 52%;
+            }
+        }
+        /* 세로모드 + 830px이하 */
+        /***************** 세로모드 + 830px이하 *****************/
+        @media screen and (orientation:portrait) and (max-width:830px) {
+            .bx::after {
+            background: url(./images/oldTVON.png) no-repeat top/auto 60%;
+        }
+            .screen{
+                top: 123px;
+                left: 54%;
+            }
+        }
+        /* 가로모드 + 830px이하 */
         
     </style>
 </head>
