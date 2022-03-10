@@ -11,6 +11,10 @@ html,body{
   margin: 0;
   padding: 0;
 }
+html{
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
 /* 공사중 */
 body *{
   border: 1px dotted #ccc
@@ -40,7 +44,7 @@ ul,ol{
 .gnb a{
   text-decoration: none;
   color: black;
-  font-size: 30px;
+  font-size: 3rem; 
   padding: 0px 40px;
   font-family: 'IBM Plex Sans KR', sans-serif;
 }
@@ -58,12 +62,12 @@ ul,ol{
   height: 3600px;
 }
 .GoDown{
-  width: 333px;
+  max-width: 371px;
   margin: 0 auto;
-  margin-top: 58%;
+  margin-top: 628px;
 }
 .GoDown>ul>li>a{
-  font-size: 24px;
+  font-size: 2.4rem; 
   text-decoration: none;
   color: black;
   padding: 10px 20px;
@@ -78,32 +82,52 @@ ul,ol{
 }
 .inImg{
   width: 100%;
-  height: 550px;
-  background: url(./imgs/about_hero_wide.png) no-repeat center top/cover;
+  height: 75vh;
+  background: url(./imgs/about_hero_wide.png) no-repeat center/cover;
 }
-.inImg p{
-  font-size: 50px;
+/* .inImg p{
+  font-size: 5rem;
   font-weight: bold;
   letter-spacing: 3px;
   color: white;
   text-align: center;
   margin-top: 20%;
+} */
+.want{
+  display: block;
+  width: 40%;
+  margin: 20% auto;
+}
+.arrow{
+  display: block;
+  width: 3%;
+  margin: -80px auto 0;
 }
 #intro h2{
   text-align: center;
-  font-size: 60px;
-  margin-top: 100px;
+  font-size: 6rem;
+  margin: 100px 0;
 }
 .inDes{
-  margin-top: 100px;
+  margin: 100px auto;
+  max-width: 1174px;
+}
+.lightDes{
+  max-width: 1141px;
+  margin: 0 auto;
 }
 .boldDes>li{
-  font-size: 26px;
+  font-size: 2.6rem;
   padding: 0 67.9px;
   line-height: 250%;
 }
 .lightDes>li{
-  font-size: 13px;
+  font-size: 1.3rem;
   color: rgb(88, 88, 88);
   padding: 10px 88.3px;
+}
+.howTo{
+  display: block;
+  width: 77vw;
+  margin: 0 auto;
 }
