@@ -56,17 +56,35 @@
         /* html의 기본글자크기는 16px이다! */
 
         .f1{
+            font-size: 2em;
+            /* 기존 16px * 2em = 32px
             
+                [em 계산법]
+                원하는 px / 상속된 px
 
+                -상속된 px이란 
+                html 문서에서 최상위 부모에 셋팅된 글자 크기가 자식요소로 상속됨
+                ->글자크기 셋팅이 자식요소로 내려간다
+            */
         }
 
         .f2{
-            
+            /* 
+                내가 원하는 px: 24px
+                em = 24px / 상속된 px
+                   = 24px / 32px
+                   = 0.75em
+            */
+            font-size: 0.75em;
         }
 
         .f3{
-            font-size: 0.58em;
-            
+            /* 
+                내가 원하는 px: 14px
+                em = 14px / 24px
+                   = .58em
+            */            
+            font-size: .58em;
         }
 
         /* 
@@ -78,13 +96,13 @@
 
          */
          .rf1{
-             
+            font-size: 2rem;
          }
          .rf2{
-             
+             font-size: 1.5rem;
          }
          .rf3{
-            
+            font-size: .875rem;
          }
 
          /* 
@@ -92,17 +110,22 @@
             즉, 부모요소에서 상속된 글자 크기의 상대적인 크기단위다!
           */
           .pf1{
-              
+              font-size: 200%;
           }
           .pf2{
-              
+              font-size: 75%;
           }
           .pf3{
-              
+              font-size: 58%;
           }
 
           /* 미디어쿼리 */
-          
+          @media screen and (max-width:800px) {
+              /* 최상위 부모의 글자 크기만 변경하면 상대 단위는 모두 변경 */
+              html{
+                  font-size: 14px;
+              }
+          } /* 미디어쿼리 800px 이하 */
 
 
     </style>
