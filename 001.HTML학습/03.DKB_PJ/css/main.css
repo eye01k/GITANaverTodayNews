@@ -17,6 +17,29 @@ html{
 body{
   overflow-x: hidden; /* 가로스크롤 없앰 */
 }
+/* 애니가 진행하는동안 투명막 만들기 */
+body::after{
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  /* background-color: red;
+  opacity: .5; */
+
+  animation: coverDel .1s   8s   forwards;
+}
+
+/* 애니 후 가림막 없애기 */
+@keyframes coverDel {
+  to{
+    height: 0;
+  }
+}
+
 /* 기본 태그 초기화 - 마진, 패딩 없애기 */
 html, body, h1, h2, h3, h4, h5, h6, ol, ul, dl, dt, dd {
   margin: 0;
@@ -133,6 +156,7 @@ border-radius: 5px;
   width: 100%; /* 크기를 화면에 채움 */
   background-color: #fff;
   border-bottom: 1px solid rgb(206, 206, 206);
+  z-index: 999; /* 상단박스 가장 앞으로 */
 
   /* 애니메이션 호출 */
   animation: topAni 1s ease-out 3s   forwards;
@@ -264,6 +288,19 @@ margin: 0 auto;
   height: 80px;
 }
 
+/* 모바일용 햄버거 버튼 */
+.ham{
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 40px;
+  transform: scaleX(1.5);
+
+  /* button 기본 디자인 없애기 */
+  background-color: transparent;
+  border: none;
+}
+
 /* 2. 메인 영역 */
 .cont{
   max-width: 1920px;
@@ -316,8 +353,31 @@ margin: 0 auto;
   /* outline: 3px dotted rgb(48, 255, 41); */
   cursor: pointer;
   /* 마우스 커서 손가락 모양 */
+
+  /* 애니메이션을 위한 초기 설정 */
+  transform: translateY(-100%);
+  opacity: 0;
+
+  animation: chaAni 3s ease-out 4s   forwards;
 }
 
+/* cha 키프레임 */
+@keyframes chaAni {
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.chaAni2{
+  animation-delay: 4.5s;
+}
+.chaAni3{
+  animation-delay: 5s;
+}
+.chaAni4{
+  animation-delay: 5.5s;
+}
 /* 캐릭터 이미지 박스 */
 .ci{
   transition: margin-top .4s ease-out 0s;
