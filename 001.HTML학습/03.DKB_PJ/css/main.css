@@ -369,7 +369,10 @@ margin: 0 auto;
 .ham::before{
   content: '≡';
 }
-
+/* 크롬 브라우저 포커스 아웃라인 없애기 */
+.ham:focus{
+  outline: none;
+}
 
 /* 2. 메인 영역 */
 .cont{
@@ -617,6 +620,7 @@ margin: 0 auto;
 }
 
 .info{/* 속박스 */
+  position: relative; /* 부모 자격 - #sel 선택박스 */
   height: 241px;
   padding: 15px;
   box-sizing: border-box;
@@ -676,4 +680,13 @@ margin: 0 auto;
 /* 하단로고 */
 .blogo{
   text-align: center;
+}
+/* 브랜드 바로가기 선택박스 */
+#sel{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  /* 부모는 .info */
+  font: normal 1.4rem/3.9rem 'Noto Sans KR', sans-serif;
+  padding: 5px;
 }

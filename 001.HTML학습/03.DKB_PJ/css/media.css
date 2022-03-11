@@ -24,7 +24,10 @@
   #dtxt,
   .blink,
   .smenu,
-  .gnb>ul>li.sm::after, .snsbx {
+  .gnb>ul>li.sm::after, 
+  .snsbx,
+  #sel
+  {
     display: none;
   }
 
