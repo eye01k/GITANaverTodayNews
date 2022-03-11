@@ -14,7 +14,9 @@ font-family: 'Noto Sans KR', sans-serif;
 html{
   font-size: 10px; /* rem단위 계산을 쉽게 */
 }
-
+body{
+  overflow-x: hidden; /* 가로스크롤 없앰 */
+}
 /* 기본 태그 초기화 - 마진, 패딩 없애기 */
 html, body, h1, h2, h3, h4, h5, h6, ol, ul, dl, dt, dd {
   margin: 0;
@@ -127,9 +129,20 @@ border-radius: 5px;
 
 #top{
   position: absolute; /* 아래 캐릭터 박스에 영향을 미치지 않도록 */
+  top: -127px; /* 내려오는 애니메이션을 위해 숨겨놓음 */
   width: 100%; /* 크기를 화면에 채움 */
   background-color: #fff;
   border-bottom: 1px solid rgb(206, 206, 206);
+
+  /* 애니메이션 호출 */
+  animation: topAni 1s ease-out 3s   forwards;
+}
+
+/* 상단 박스 키프레임 */
+@keyframes topAni {
+  to{
+    top: 0;
+  }
 }
 
 /* 로고박스 */
@@ -258,6 +271,7 @@ margin: 0 auto;
   height: 800px;
   overflow: hidden;
   /* 자식 요소의 margin-top을 포함하기 위해 */
+  padding-bottom: 150px;
 }
 /* 캐릭터 부모 박스 */
 #cbx{
@@ -443,7 +457,28 @@ margin: 0 auto;
   text-align: justify;
   /* 양쪽 정렬 */
 }
+/* 도깨비 문구 이미지 */
+#dtxt{
+  position: absolute;
+  top: 200px;
+  right: 50px;
+  /* 부모는? 보이는 화면 */
+  width: min(25vw,327px);
 
+  /* 애니메이션 할 속성 */
+  transform: translate(100%,50%);
+  opacity: 0;
+
+  /* 애니메이션 */
+  animation: dtxtAni 2s ease-in-out 1s forwards;
+}
+/* 도깨비 문구 키프레임 */
+@keyframes dtxtAni {
+  to{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
 
 /* 3. 하단 영역 */
 #info{/* 겉박스 */

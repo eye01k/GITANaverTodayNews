@@ -94,7 +94,9 @@ ul,ol{
   margin-top: 20%;
 } */
 .inTit{
-  width: 400px;
+  width: 30%;
+  height: 30%;
+  margin: 200px auto;
   background: url(./imgs/about_title.png) no-repeat center/contain;
 }
 #intro h2{
