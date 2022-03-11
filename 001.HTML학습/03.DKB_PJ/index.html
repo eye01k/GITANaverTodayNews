@@ -9,6 +9,31 @@
   <title>쓸쓸하고 찬란하신(神) 도깨비</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="./css/media.css">
+  <!-- 자바스크립트 구역 -->
+  <script>
+    // JS 주석 1
+    /* JS 주석 2 */
+    // JS 코드 저장공간 -> 함수(호출 시에만 실행)
+    // 함수는 키워드 function을 사용함
+    // 함수형식: function 함수명(){코드}
+    function 바꿔(){
+      //1.함수 호출 확인용 경고창 띄우기
+      alert("나야나");
+      //2.변경대상 선정: .top
+      //변수에 대상을 담자
+      //변수는 데이터가 사는 곳
+      //여기를 봐 var
+      var 대상 = document
+      // 문서 탐색하기
+      // (1) html 문서 전체: document
+      // (2) 문서 내용 중 id요소 가져오기: getElementById(아이디명)
+      // (3) 문서 내용 중 class요소 가져오기: getElementsByClassname(클래스명)
+      // 주의! 클래스는 여러 개 사용하는 것이므로 무조건 순번으로 선택한다. 첫 번째는 0번
+      //---->getElementByClassname(클래스명).item(0)
+      
+
+    } // 바꿔 함수
+  </script>
 </head>
 
 <body class="scbar">
@@ -25,25 +50,27 @@
         <img src="images/tvnlogo2.png" alt="tvn로고">
       </h1>
       <!-- sns메뉴 -->
-      <nav class="sns">
-        <ul>
-          <li>
-            <a href="#">로그인</a>
-          </li>
-          <li>
-            <a href="#">회원가입</a>
-          </li>
-          <li>
-            <a href="#">트위터 바로가기</a>
-          </li>
-          <li>
-            <a href="#">페이스북 바로가기</a>
-          </li>
-          <li>
-            <a href="#">인스타그램 바로가기</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="snsbx ibx">
+        <nav class="sns">
+          <ul>
+            <li>
+              <a href="#">로그인</a>
+            </li>
+            <li>
+              <a href="#">회원가입</a>
+            </li>
+            <li>
+              <a href="#"><span class="ir">트위터 바로가기</span></a>
+            </li>
+            <li>
+              <a href="#"><span class="ir">페이스북 바로가기</span></a>
+            </li>
+            <li>
+              <a href="#"><span class="ir">인스타그램 바로가기</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <!-- gnb 메뉴 -->
       <nav class="gnb">
         <ul>
@@ -108,7 +135,7 @@
         </ul>
       </nav>
       <!-- 모바일용 햄버거 버튼 (ㄷ한자) -->
-      <button class="ham"></button>
+      <button class="ham" onclick="바꿔()"></button>
     </header>
   </div>
   <!-- 2. 메인영역 -->

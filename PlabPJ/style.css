@@ -81,7 +81,6 @@ ul,ol{
   margin-top: 100px;
 }
 .inImg{
-  position: relative;
   width: 100%;
   height: 80vh;
   background: url(./imgs/about_hero_wide.png) no-repeat center/cover;
@@ -94,6 +93,11 @@ ul,ol{
   text-align: center;
   margin-top: 20%;
 } */
+.par{
+  position: relative;
+  width: 98%;
+  height: 98%;
+}
 .altImg{
   position: absolute;
   top:153px;
@@ -109,7 +113,7 @@ ul,ol{
 .arrow{
   width: 60px;
   height: 60px;
-  margin: 100px auto 0;
+  margin: 80px auto 0;
   background: url(./imgs/ic_arrow.svg) no-repeat center/contain;
 }
 #intro h2{
@@ -137,6 +141,6 @@ ul,ol{
 }
 .howTo{
   display: block;
-  width: 77vw;
+  width: 64vw;
   margin: 0 auto;
 }

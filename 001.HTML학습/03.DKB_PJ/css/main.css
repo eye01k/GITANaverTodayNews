@@ -179,7 +179,69 @@ border-radius: 5px;
 #logo img{
   width: 100px;
 }
+/* sns메뉴 */
+.snsbx{
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%); /* x축 방향으로 자기 크기의 절반 반대방향으로 이동(중앙정렬) */
+  width: 1200px;
+  max-width: 100%; /* 1200px이었다가 화면이 작아지면 100%로 변경 */
+  /* outline: 2px dotted blue; */
 
+}
+.sns{
+  float: right;
+  margin-right: 50px;
+  /* outline: 2px dotted red; */
+}
+.sns ul::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.sns li{
+  float: left;
+  margin: 0 10px;
+}
+.sns li:nth-child(2){
+  margin-right: 20px;
+}
+/* sns메뉴용 li 디자인 */
+/* 두번째 li 이후 모든 li형제들 */
+.sns li:nth-child(2)~li{
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/icons.png); background-repeat: no-repeat;
+  margin: 0 2px;
+}
+/* 스프라이츠 기법으로 배경 이미지 조정 */
+.sns li:nth-child(4){
+  background-position: -30px 0;
+}
+.sns li:nth-child(5){
+  background-position: -60px 0;
+}
+.sns li:nth-child(3):hover{
+  background-position: 0px -30px;
+}
+.sns li:nth-child(4):hover{
+  background-position: -30px -30px;
+}
+.sns li:nth-child(5):hover{
+  background-position: -60px -30px;
+}
+.sns a{
+  color: #222;
+  text-decoration: none;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+/* sns 설명글 숨기기 */
+.ir{
+  display: none;
+}
 /* gnb 메뉴 */
 .gnb{
 width: 567px;
