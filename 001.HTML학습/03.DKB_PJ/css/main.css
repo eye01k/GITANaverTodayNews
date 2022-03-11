@@ -299,6 +299,9 @@ margin: 0 auto;
   /* button 기본 디자인 없애기 */
   background-color: transparent;
   border: none;
+
+  /* 모바일 아닐 때 숨김 */
+  display: none;
 }
 
 /* 2. 메인 영역 */
