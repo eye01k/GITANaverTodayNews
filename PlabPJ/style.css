@@ -93,15 +93,9 @@ ul,ol{
   text-align: center;
   margin-top: 20%;
 } */
-.want{
-  display: block;
-  width: 40%;
-  margin: 20% auto;
-}
-.arrow{
-  display: block;
-  width: 3%;
-  margin: -80px auto 0;
+.inTit{
+  width: 400px;
+  background: url(./imgs/about_title.png) no-repeat center/contain;
 }
 #intro h2{
   text-align: center;
