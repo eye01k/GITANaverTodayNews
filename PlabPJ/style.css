@@ -59,7 +59,7 @@ ul,ol{
 }
 /* 메인 영역 */
 #cont{
-  height: 3600px;
+  height: 7000px;
 }
 .GoDown{
   max-width: 371px;
@@ -84,6 +84,13 @@ ul,ol{
   width: 100%;
   height: 80vh;
   background: url(./imgs/about_hero_wide.png) no-repeat center/cover;
+}
+/* 이미지 설명(ir기법으로 숨김) */
+.ir{
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 /* .inImg p{
   font-size: 5rem;
@@ -155,18 +162,22 @@ ul,ol{
 }
 .txtbx h2 strong{
   font-size: 7rem;
+}
+.bb{
   border-bottom: 8px solid #FFC645;
 }
 .txtbx p{
   font-size: 2.7rem;
   margin-top: 32px;
+  width: 924px;
+  font-weight: 200;
 }
 /* 지원 박스 */
 .apply{
   background-color: rgb(29, 63, 134);
   width: 280px;
   border-radius: 20px;
-  margin: 0 auto;
+  margin: 0 auto 70px;
 }
 .apply p{
   color: white;
@@ -174,4 +185,81 @@ ul,ol{
   font-size: 1.7rem;
   margin: 0;
   padding: 10px;
+}
+.manImg{
+  width: 100%;
+}
+.manDes{
+  margin-bottom: 100px;
+}
+.manDes>ul{
+  width: 840px;
+  margin-left: 95px;
+}
+.manDes>ul>li{
+  margin: 0 30px;
+  border-left: 3px solid #FFC645;
+  padding: 0 10px;
+}
+.manDes>ul>li>h3{
+  font-size: 1.8rem;
+}
+.manDes>ul>li>span{
+  font-size: 1.6rem;
+}
+.steps{
+  padding: 50px;
+  margin: 100px 0;
+}
+.steps div:first-child{
+  width: 100%;
+  padding-bottom: 40px;
+  text-align: center;
+}
+.steps h3{
+  display: inline;
+  font-size: 2.8rem;
+  text-align: center;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.steps>ul{
+  width: 100%;
+}
+.steps>ul>li{
+  /* position: relative; */
+  width: 8.8%;
+  padding: 0 20px;
+  background-color: #f0f6ff;
+  border: 1px solid #cad7ec;
+  margin: 0 4%;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  height: 80px;
+}
+.steps>ul>li>p{
+  font-size: 1.6rem;
+  line-height: 8rem;
+  margin: 0;
+}
+/* .steps>ul>li:nth-child(1)~li::before{
+  content:"";
+  display: block;
+  position: absolute;
+  left: inherit;
+  bottom: 0;
+  right: -30px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #3534A5;
+  transform: rotate(-270deg);
+} */
+
+.lightbb{
+  border-bottom: 4px solid #FFC645;
 }
