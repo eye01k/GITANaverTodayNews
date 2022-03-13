@@ -145,4 +145,33 @@ ul,ol{
   width: 64vw;
   margin: 0 auto;
 }
-
+/* 플랩매니저 텍스트 박스 */
+.txtbx{
+  padding: 200px 0 70px 125px;
+}
+.txtbx h2{
+  font-size: 6rem;
+  font-weight: normal;
+}
+.txtbx h2 strong{
+  font-size: 7rem;
+  border-bottom: 8px solid #FFC645;
+}
+.txtbx p{
+  font-size: 2.7rem;
+  margin-top: 32px;
+}
+/* 지원 박스 */
+.apply{
+  background-color: rgb(29, 63, 134);
+  width: 280px;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+.apply p{
+  color: white;
+  text-align: center;
+  font-size: 1.7rem;
+  margin: 0;
+  padding: 10px;
+}
