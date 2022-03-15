@@ -267,3 +267,41 @@ ul,ol{
 .lightbb{
   border-bottom: 4px solid #FFC645;
 }
+.botImg{
+  background: url(./imgs/img_apmanager_1.jpg) no-repeat center/cover;
+  width: 100%;
+  height: 360px;
+}
+.bottxt h2{
+  font-size: 5.4rem;
+  text-align: center;
+  font-weight: normal;
+  line-height: 6.5rem;
+}
+.gnb>ul>li.sm::after{
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  height: 0;
+  transition: height 0.4s ease-out 0s;
+}
+.gnb>ul>li.sm:hover::after{
+  height: 345px;
+}
+.cal{
+  position: absolute;
+  top:85px;
+  left: 435px;
+  z-index: 2;
+  background-color: #fff;
+  width: 570px;
+  height: 0;
+  border-radius: 20px;
+  transition: height 0.4s ease-out 0s;
+}
+.gnb>ul>li.sm:hover .cal{
+  height: 300px;
+}
