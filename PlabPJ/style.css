@@ -62,7 +62,7 @@ ul,ol{
   height: 7000px;
 }
 .GoDown{
-  max-width: 371px;
+  width: 371px;
   margin: 0 auto;
   margin-top: 628px;
 }
@@ -131,10 +131,14 @@ ul,ol{
 }
 .inDes{
   margin: 100px auto;
-  max-width: 1174px;
+  min-width: 1066px;
+}
+.boldDes{
+  width: 1066px;
+  margin: 0 auto;
 }
 .lightDes{
-  max-width: 1141px;
+  width: 1066px;
   margin: 0 auto;
 }
 .boldDes>li{
@@ -149,7 +153,7 @@ ul,ol{
 }
 .howTo{
   display: block;
-  width: 64vw;
+  width: 1000px;
   margin: 0 auto;
 }
 /* 플랩매니저 텍스트 박스 */
