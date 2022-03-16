@@ -278,6 +278,9 @@ ul,ol{
   font-weight: normal;
   line-height: 6.5rem;
 }
+/* .gnb>ul>li.sm>a{
+  pointer-events: none;
+} */
 .gnb>ul>li.sm::after{
   content: '';
   display: block;
@@ -288,7 +291,7 @@ ul,ol{
   height: 0;
   transition: height 0.4s ease-out 0s;
 }
-.gnb>ul>li.sm:hover::after{
+.gnb>ul>li.sm.open::after{
   height: 345px;
 }
 .cal{
@@ -302,6 +305,6 @@ ul,ol{
   border-radius: 20px;
   transition: height 0.4s ease-out 0s;
 }
-.gnb>ul>li.sm:hover .cal{
+.gnb>ul>li.sm.open .cal{
   height: 300px;
 }
