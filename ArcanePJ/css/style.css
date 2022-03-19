@@ -8,7 +8,9 @@ font-family: 'Noto Serif Display', serif;
 font-family: 'Nanum Myeongjo', serif;
 font-family: 'Noto Serif KR', serif;
 */
-
+html{
+  font-size: 10px;
+}
 html, body, h1, h2, h3, h4, h5, h6, ol, ul, dl, dt, dd {
   margin: 0;
   padding: 0;
@@ -92,7 +94,7 @@ body{
 }
 .gnb>ul>li>a{
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1.7rem;
   color: rgb(255, 255, 255);
   font-family: 'Noto Serif KR', serif;
   vertical-align: -37px;
@@ -137,7 +139,7 @@ body{
   position: relative;
   z-index: -1;
   font-family: 'Noto Serif Display', serif;
-  font-size: 50px;
+  font-size: 5rem;
 }
 
 
@@ -153,7 +155,7 @@ body{
 
 .nbx{
   font-family: 'Bebas Neue', cursive;
-  font-size: 200%;
+  font-size: 3.5rem;
   color: rgb(255, 255, 255);
   margin-top: -45px;
   margin-bottom: 0;
@@ -192,7 +194,7 @@ body{
 
 .cd p{
   font-family: 'Nanum Myeongjo', serif;
-  font-size: 16px;
+  font-size: 1.6rem;
   color: white;
   padding: 10px;
   text-align: justify;
@@ -240,6 +242,7 @@ body{
 .info{
   height: 300px;
   text-align: center;
+  font-size: 1.7rem;
 }
 .BRLogo, .netflix{
   display: inline;

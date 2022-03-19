@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+@media screen and (max-width:800px) {
+    html{
+        font-size: 8px;
+    }
+    .gnb{
+        display: none;
+    }
+    .nbx{
+        margin-top: -37px;
+    }
+    .cont{
+        height: auto;
+        padding-bottom: 140px;
+
+    }
+    .cbx{
+        padding-top: 40px;
+    }
+    .cha{
+        width: 46%;
+        margin: 1% 2%;
+    }
+    .cha:hover .ci{
+        margin-top: 0;
+    }
+    .cha:hover .cd{
+        height: 107%;
+    }
+    .cd{
+        z-index: 1;
+    }
+    .terms{
+        width: 308px;
+    }
+    .BLogo img{
+        width: 15%;
+    }
+    .netflix img{
+        padding-bottom: 1%;
+    }
+}
