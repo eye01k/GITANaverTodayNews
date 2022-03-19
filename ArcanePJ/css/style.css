@@ -115,6 +115,23 @@ body{
 .Tbox:hover .gnb>ul>li>a{
   color: black;
 }
+.ham{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 35px;
+  transform: scaleX(1.5);
+  background-color: transparent;
+  border: none;
+
+  display: none;
+}
+.ham::before{
+  content: "≡";
+}
+.ham:focus{
+  outline:none;
+}
 /* 메인 영역 */
 .cont{
   max-width: 1920px;

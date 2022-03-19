@@ -4,9 +4,70 @@
     html{
         font-size: 8px;
     }
+    /* 상단영역 */
     .gnb{
         display: none;
     }
+    .Tbox{
+        background-color: white;
+    }
+    .RLogo{
+        width: 90px;
+    }
+    .ALogo{
+        width: 110px;
+    }
+    .ham{
+        display: block;
+    }
+    .top.on .gnb{
+        display: block;
+    }
+    .top.on .ham::before{
+        content: "×";
+        color: white;
+    }
+    .top.on .ham {
+        position: fixed;
+        z-index: 3;
+        transform: scale(1.5)
+      }
+    .gnb {
+        position: fixed;
+        margin:0;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100vh;
+        background-color: rgb(37, 37, 37);
+      }
+    .top.on .gnb{
+        animation: gnbw 0.3s ease-out 0s forwards;
+    }
+    @keyframes gnbw {
+        to{
+            width: 100%;
+        }
+    }
+    .gnb>ul {
+        margin-top: 20vh;
+        z-index: 3;
+      }
+    
+    .gnb>ul>li {
+        float: none;
+        text-align: center;
+        z-index: 3;
+      }
+    
+    .top.on .gnb>ul>li>a{
+        z-index: 3;
+        color: white;
+        font-size: 4vh;
+        line-height: 15vh;
+      }
+    /* 메인영역 */
     .nbx{
         margin-top: -37px;
     }
@@ -14,6 +75,9 @@
         height: auto;
         padding-bottom: 140px;
 
+    }
+    .city{
+        margin-bottom: 20px;
     }
     .cbx{
         padding-top: 40px;
@@ -39,5 +103,11 @@
     }
     .netflix img{
         padding-bottom: 1%;
+    }
+    .info{
+        background-color: #fff;
+    }
+    .Bbox address, .term{
+        color: black;
     }
 }

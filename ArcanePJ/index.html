@@ -6,6 +6,12 @@
     <title>Arcane</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
+    <script>
+      function change(){
+        var top = document.getElementsByClassName('top').item(0);
+        top.classList.toggle('on')
+      }
+    </script>
   </head>
   <body class="scbar">
     <div class="Tbox">
@@ -20,6 +26,7 @@
             <li><a href="">이야기</a></li>
           </ul>
         </div>
+        <button class="ham" onclick="change()"></button>
       </header>
     </div>
     <div>
