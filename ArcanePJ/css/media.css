@@ -38,17 +38,36 @@
         z-index: 2;
         top: 0;
         right: 0;
-        width: 0;
+        width: 0vw;
         height: 100vh;
         background-color: rgb(37, 37, 37);
       }
     .top.on .gnb{
-        animation: gnbw 0.3s ease-out 0s forwards;
+        animation: gnbw 0.4s ease-out 0s forwards;
     }
     @keyframes gnbw {
         to{
-            width: 100%;
+            width: 100vw;
         }
+    }
+    /* .top.on .gnb::after{
+        content: '';
+        display: block;
+        position: absolute;
+        left: -150px;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.616);
+    } */
+    .top.on .gnb::before{
+        content: '';
+        display: inline-block;
+        margin-top: 18px;
+        margin-left: 33px;
+        width: 40px;
+        height: 50px;
+        background: url(../img/arcane_logo.png) no-repeat center/contain;
     }
     .gnb>ul {
         margin-top: 20vh;
