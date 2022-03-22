@@ -97,6 +97,115 @@
         #wrap>ul>li:nth-child(5){
             background-image: url(./images/m05_bg.jpg);
         }
+
+        /* 타이틀 공통 */
+        .tit{
+            position: absolute;
+            top: 100px;
+            left: calc(50% - 250px);
+            /* 가로 중앙 계산 */
+            width: 500px;
+            height: 100px;
+            border: 5px double white;
+        }
+
+        /* 타이틀 하위 li 공통 */
+        .tit>li{
+            width: 50px;
+            height: 50px;
+            border: 3px solid white;
+            border-radius: 50%;
+            font: bold 14px/50px Verdana;
+            text-align: center;
+            color: white;
+            background-color: red;
+        }
+        /* 타이틀1 */
+        .t1{
+            top: 50px;
+
+            /* flexbox */
+            display: flex;
+            justify-content: space-evenly;
+
+            /* 
+                justify-content 속성
+                -수평 정렬 속성(justify 양쪽정렬이란 뜻)
+                -content는 수평 방향으로 여러 개의 아이템이 있음을 의미
+
+                1) flex-start: 왼쪽 끝부터 다 붙여서 정렬 (기본값)
+                2) flex-end: 오른쪽 끝부터 다 붙여서 정렬
+                3) center: 중앙에 다 붙여서 정렬
+                4) space-between: 아이템이 양쪽 끝에 붙고 사이 간격 일정
+                5) space-around: 각 아이템의 양쪽 간격이 같음
+                6) space-evenly: 아이템 간 간격이 모두 같음
+            */
+            align-items: center;
+
+            /* 
+                align-items 속성
+                -한 줄 수직 정렬 속성
+
+                1) flex-start: 맨 위부터 다 붙여서 정렬 (기본값)
+                2) flex-end: 맨 아래부터 다 붙여서 정렬
+                3) center: 중앙 정렬
+                4) stretch: 세로 방향 꽉 채워 늘림 (단, height가 auto여야 함)
+                5) baseline: 각 요소에 글자가 있다면 글자 아래 기준선에 정렬됨 (글자의 line-height를 변경해보면 됨)
+            */
+        }
+        /* 타이틀2 */
+        .t2{
+            top: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .t2>li:nth-child(2){
+            line-height: 80px;
+        }
+        .t2>li:nth-child(4){
+            line-height: 30px;
+        }
+        .t3{
+            top: 350px;
+            display: flex;
+            align-items: center;
+        }
+        /* 세 번째 li부터 오른쪽 끝으로 */
+        /* 왼쪽 margin auto */
+        .t3>li:nth-child(3){
+            margin-left: auto;
+        }
+
+        .t4{
+            top: 200px;
+            left: 50px;
+            width: 150px;
+            height: 500px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 진행방향의 수직 정렬 */
+        }
+        /* 4번째 li부터 맨 끝으로 보내기 */
+        .t4>li:nth-child(4){
+            margin-top: auto;
+        }
+        .t5{
+            top: 50px;
+            left: 50px;
+            width: 150px;
+
+            display: flex;
+        }
+        /* 자식요소에 flex-shrink 설정으로 크기 유지하기 */
+        .t5>li{
+            flex-shrink: 0;
+
+            /* flex 속성을 자식요소에 셋팅하지 않으면 기본값은 
+            flex: initial (0 1 auto)
+            */
+        }
     </style>
 </head>
 
@@ -110,6 +219,47 @@
             <li></li>
             <li></li>
         </ul>
+        <!-- 타이틀박스 1 -->
+        <ol class="tit t1">
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+        </ol>
+
+        <!-- 타이틀박스 2 -->
+        <ol class="tit t2">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+        <!-- 타이틀박스 3 -->
+        <ol class="tit t3">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+        <!-- 타이틀박스 4 -->
+        <ol class="tit t4">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+        <!-- 타이틀박스 5 -->
+        <ol class="tit t5">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
     </div>
 
 </body>
