@@ -206,6 +206,69 @@
             flex: initial (0 1 auto)
             */
         }
+
+        /* 타이틀6 */
+        .t6{
+            top: 500px;
+            height: 250px;
+
+            /* 플렉스박스 */
+            display: flex;
+            /* 플렉스 옵션 - 랩핑 */
+            flex-wrap: wrap;
+            /* 
+                flex-wrap 속성
+                -박스 가로 크기보다 아이템 요소가 많을 경우 아랫줄로 줄바꿈하는 설정
+                -기본값은 no-Wrap
+
+                -> 이 설정을 하지 않으면 자동적으로 가로크기가 줄어들면서 한 줄에 모두 나옴
+                -> 자식요소의 flex-shrink 가 1로 기본 설정돼있기 때문
+            */
+
+            justify-content: center; /* 진행방향의 수평정렬 */
+            align-content: space-around; 
+            /* 
+            여러 줄일 때 진행방향의 수직정렬
+
+                1) flex-start: 맨위부터 다 붙여서 정렬 (기본값)
+                2) flex-end: 맨아래부터 다 붙여서 정렬
+                3) center: 중앙에 다 붙여서 정렬
+                4) space-between: 아이템이 위아래 끝에 붙고 사이 간격 일정
+                5) space-around: 각 아이템의 위아래 간격이 같음
+                6) space-evenly: 아이템 간 간격이 모두 같음
+
+                비교) 한 줄 수직정렬은? align-items
+             */
+        }
+        /* 글자 수를 맞추기 위해 li에 margin 설정 */
+        .t6>li{
+            margin: 0 14px;
+        }
+
+        /* 타이틀7 */
+        .t7{
+            top: 50px;
+            right: 50px;
+            left: auto; /* 기존 left 해제 */
+            width: 450px;
+            height: auto; /* 높이값 자동 */
+
+            /* 플렉스 박스 */
+            display: flex;
+            flex-wrap: wrap;
+            /* 자동 줄바꿈 */
+            justify-content: space-between;
+        }
+
+        /* 줄바꿈을 위한 li */
+        /* 원리는 줄바꿈할 부분에서 가로크기를 100% 차지하게 해서 줄바꿈함 */
+
+        .t7>li.brk{
+            flex-basis: 100%; /* flex-basis는 flex에서 width와 같다 */
+            height: 0;
+            border: none;
+            /* 기존 디자인을 없애서 안 보이도록 함 */
+        }
     </style>
 </head>
 
@@ -254,6 +317,43 @@
         </ol>
         <!-- 타이틀박스 5 -->
         <ol class="tit t5">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+        <!-- 타이틀박스 6 -->
+        <ol class="tit t6">
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+        </ol>
+
+        <!-- 타이틀박스 7 -->
+        <ol class="tit t7">
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+
+            <li class="brk"></li>
+
             <li>W</li>
             <li>O</li>
             <li>R</li>
