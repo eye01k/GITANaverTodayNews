@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS2-2. 바(var),렛(let),콘스트(const)</title>
+    <script>
+        /* 
+            변수는 바렛콘스트
+
+            [ var ] : 함수 영역 변수
+
+            1. 함수 영역에서 사용하면 지역변수, 바깥 쪽에서 사용하면 전역변수 
+            (지역변수는 함수 내부에서만 사용되는 변수
+            ->다른 함수나 바깥영역에서는 이 변수를 모름
+            / 전역변수는 함수 바깥에 선언되어 어떤 함수에서도 그 변수를 참조하여 쓸 수 있다)
+
+            2. 전역변수와 같은 이름의 변수를 함수에서 값을 주면 덮어쓰기가 된다
+
+            3. 함수영역에서 전역변수와 같은 이름의 변수를 선언하면 전역변수와 다른 지역변수로 관리된다
+
+            => 코딩이 매우 혼란스러워짐
+
+            ________________________________________________________
+
+            [ let ] : 블록 영역 변수 (중괄호는 모두 블록)
+
+            1. let으로 변수를 만들면 전역과 지역을 별도로 관리하여 같은 이름 변수도 별개의 변수로 인식한다
+
+            2. let변수는 선언 후에 아래 쪽에서 사용해야 호출할 수 있다 (var는 위에서 호출하고 아래에서 선언 가능-> 호이스팅(hoisting))
+
+            3. 같은 영역에 같은 이름의 변수를 중복 선언할 수 없다
+
+            [ const ] : 상수(constant) -> 변하지 않는 값
+
+            1. 선언과 동시에 할당해야 한다
+
+            2. 한 번 할당한 값은 변경이 불가능하다
+
+            3. 배열과 객체, 함수를 상수로 만드는 경우가 많다
+            -> 변경불가는 배열형, 객체형, 함수형
+            ->  각 배열의 값, 객체의 값, 함수 전달값은 변경 가능
+
+            4. 기타 특징은 let과 동일함(블록단위변수)
+
+
+
+        */
+
+        //////////////////var 테스트/////////////////////////////
+        //JS에서 중괄호의 의미: 코드를 묶어주는 영역
+
+        //함수 중괄호에서 var
+        function callme(){
+            var usa = "미국"; // 지역변수
+            var korea = "대한민국";
+
+            // 함수 내에서 전역 변수 korea 바꾸기
+            console.log("전역변수 korea를 지역변수로 재선언할당하고 함수 내에서 호출: ", korea);
+
+            // 전역변수 uk와 같은 이름의 지역변수를 선언/할당하면?
+            var uk = "유나이티드 킹덤"
+            // 전역변수 uk는 더이상 사용할 수 없다
+            console.log("전역변수 uk를 함수 내에서: ", uk);
+        } ////////callme 함수
+
+        // 함수 바깥에서 변수 선언과 할당
+        var korea = "한국";
+        var uk = "영국";
+
+        //바깥에서 korea 찍어보기
+        console.log("전역변수 korea 함수 호출 전 바깥에서 호출: ", korea);
+
+        // 함수 호출
+        callme();
+
+        //바깥에서 korea 찍어보기
+        console.log("전역변수 korea를 지역변수로 재선언할당하고 함수 호출 후 바깥에서 호출: ", korea);
+        //바깥에서 uk 찍어보기
+        console.log("전역변수 uk를 지역변수 uk로 재선언할당 후, 함수 호출 후: ", uk);
+
+        // 함수 내 지역변수 usa 찍기
+        // console.log("함수 내 usa 함수 바깥에서: ", usa); // -> Uncaught ReferenceError: usa is not defined
+        // 지역변수는 전역에서 참조할 수 없다
+
+        // if문 중괄호 var
+        if(true){
+            var who = "누구";
+            console.log("if문 안 who: ", who);
+        } ///////////if
+
+        console.log("if문 밖 who: ", who);
+        // if문 안 중괄호 안에서 변수 선언/할당하면 전역변수와 같다
+
+        // for문 중괄호 var
+        for(var i=3; i>0; i--){
+            console.log("for문 안 i: ",i)
+        }
+        console.log("for문 밖 i: ",i)
+        // for문 안 중괄호 안에서 변수 선언/할당하면 전역변수와 같다
+
+        // var는 오직 함수의 중괄호 안에서 선언시에만 지역변수로 사용된다
+
+
+        //////////////////let, const 테스트/////////////////////////
+        var seoul = "서울";
+        var jeju = "제주도";
+        let toktok = "카톡";
+        let sport = "축구";
+
+        // 중괄호 블록영역
+        {
+            // 블록내부에서 전역변수 찍기 앞
+            console.log("블록내부에서 전역변수 찍기 앞");
+            console.log("seoul: ",seoul);
+            // console.log("jeju: ",jeju); -> error: 전역변수 var로 선언된 같은 이름의 변수를 let으로 블록영역에서 선언/할당하면 블록영역의 지역변수가 된다 이 변수보다 위에서 미리 찍을 수 없다 = 전역변수 jeju와 연결이 끊어짐
+            // console.log("toktok: ",toktok); -> error
+            console.log("sport: ",sport);
+
+            // 블록에서 전역변수 재선언
+            var seoul = "강남구"
+            // 전역변수가 다시 선언되어 할당된 결과
+            let jeju = "서귀포" 
+            let toktok = "네이버";
+            // 전역변수 let으로 선언된 같은 이름의 변수를 let으로 블록영역에서 선언/할당하면 블록영역의 지역변수가 된다
+
+            // var sport = "야구"; -> error: let으로 이미 전역변수에 선언된 변수는 블록영역에서 var로 재선언할 수 없다 (var는 전역변수로 선언하는 것과 같기 때문)
+
+            myitem = "곰인형"; // 선언없이 변수 할당 -> 기본적으로 var 선언하여 전역변수로 등록된 것과 같다
+            
+            // 블록내부에서 전역변수 찍기 뒤
+            console.log("블록내부에서 전역변수 찍기 뒤");
+            console.log("seoul: ",seoul);
+            console.log("jeju: ",jeju);
+            console.log("toktok: ",toktok);
+            console.log("sport: ",sport);
+            console.log("myitem: ",myitem);
+        }
+        // 전역에서 전역변수 찍기
+        console.log("전역에서 전역변수 찍기 ");
+        console.log("seoul: ",seoul);
+        console.log("jeju: ",jeju);
+        console.log("toktok: ",toktok);
+        console.log("sport: ",sport);
+        console.log("myitem: ",myitem);
+
+        ////////////////////////////////////////////////
+
+        // 변수 호이스팅(hoisting)
+        cat = "고양이";
+        console.log("cat: ",cat);
+        var cat; // 변수의 선언을 나중에
+
+        // 변수의 선언을 할당 후에 할 수 있는 것을 변수 호이스팅이라 함 -> var인 경우 사용됨 -> 코딩순서에 혼란이 야기됨
+
+        // let을 사용하면 변수 호이스팅이 금지됨
+        let dog; // 할당 위에서 선언
+        dog = "강아지";
+        console.log("dog: ",dog);
+        // let dog;
+        // Uncaught ReferenceError: Cannot access 'dog' before initialization
+
+        ////////////const 테스트///////////////
+        // const fish;
+        // fish = "고등어";
+        // Uncaught SyntaxError: Missing initializer in const declaration
+
+        const fish = "고등어";
+        console.log("fish: ",fish);
+
+        // fish = "참치";
+        // 상수는 재할당 불가
+
+        ///////////////////////////const의 활용///////////////
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
