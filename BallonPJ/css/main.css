@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+@import url(./reset.css);
+@import url(./core.css);
+
+body *{
+    outline: 1px dashed #000;
+}
+body{
+    background: url(../images/ballonBg.jpeg) no-repeat fixed center/cover;
+}
+
+
+.part{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#top{
+    height: 80px;
+}
+#cont{
+    height: 788px;
+}
+#info{
+    height: 100px;
+}
