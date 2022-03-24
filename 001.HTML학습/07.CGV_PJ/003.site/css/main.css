@@ -10,9 +10,9 @@ body{
 }
 
 /* 공사 중 */
-body *{
+/* body *{
     outline: 1px dashed #ccc;
-}
+} */
 
 /* 레이아웃 공통 class */
 .part{
@@ -59,9 +59,51 @@ h1.tit{
 }
 /* GNB li 리스트 */
 .glist>li{
+    position: relative; /* 부모자격: .smenu의 중앙정렬을 위해 */
     padding: 0 10px;
     font-family: 'Jua', sans-serif;
     font-size: 20px;
+}
+/* GNB 서브메뉴 */
+.smenu{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px white;
+}
+/* smenu에 가상요소로 삼각형 만들기 */
+.smenu::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 부모는 .smenu */
+
+    /* 삼각형 만들기 */
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #353535;
+    border-left: 10px solid transparent; /* 양쪽보더는 투명 */
+    border-right: 10px solid transparent; /* 양쪽보더는 투명 */
+/* 서브메뉴 ol */
+.smenu ol{
+    border: 1px solid white;
+    padding: 10px;
+}
+/* 서브메뉴 li */
+.smenu li{
+    font-size: 16px;
+    line-height: 2;
+}
+/* cgv 아트하우스 위쪽 구분선 */
+.bdt{
+    border-top: 1px solid white;
 }
  /* 2. 메인영역  */
 #cont{
