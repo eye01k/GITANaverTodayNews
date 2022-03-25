@@ -431,7 +431,6 @@ margin: 0 auto;
   transform: translateY(-100%);
   opacity: 0;
 
-  animation: chaAni 3s ease-out 4s   forwards;
 }
 
 /* cha 키프레임 */
@@ -442,14 +441,17 @@ margin: 0 auto;
   }
 }
 
+.chaAni1{
+  animation: chaAni 3s ease-out 4s   forwards;
+}
 .chaAni2{
-  animation-delay: 4.5s;
+  animation: chaAni 3s ease-out 4.5s   forwards;
 }
 .chaAni3{
-  animation-delay: 5s;
+  animation: chaAni 3s ease-out 5s   forwards;
 }
 .chaAni4{
-  animation-delay: 5.5s;
+  animation: chaAni 3s ease-out 5.5s   forwards;
 }
 /* 캐릭터 이미지 박스 */
 .ci{

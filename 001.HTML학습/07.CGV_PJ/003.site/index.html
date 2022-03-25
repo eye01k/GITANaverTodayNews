@@ -40,14 +40,61 @@
                     </li>
                     <li>
                         <a href="#">예매</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">빠른 예매</a>
+                                </li>
+                                <li>
+                                    <a href="#">상영시간표</a>
+                                </li>
+                            </ol>
+                        </div>
                     </li>
                     <li>
                         <a href="#">극장</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">CGV 극장</a>
+                                </li>
+                                <li>
+                                    <a href="#">특별관</a>
+                                </li>
+                                <li class="bdt">
+                                    <a href="#">CLUB 서비스</a>
+                                </li>
+                            </ol>
+                        </div>
                     </li>
                     <li>
                         <a href="#">이벤트&amp;컬처</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">이벤트</a>
+                                </li>
+                                <li>
+                                    <a href="#">기프트샵</a>
+                                </li>
+                                <li>
+                                    <a href="#">매거진</a>
+                                </li>
+                            </ol>
+                        </div>
                     </li>
                 </ul>
+                <!-- 영사기 박스 -->
+                <!-- aside : 서브내용을 담는 div와 유사한 요소 -->
+                <aside id="cam">
+                    <!-- 영사기 이미지 -->
+                    <img src="./images/gnb.png" alt="영사기">
+                    <!-- 빔 표시 박스 -->
+                    <div class="beam"></div>
+                </aside>
             </nav>
         </header>
     </div>
@@ -106,7 +153,7 @@
                         <a href="#" onclick="chgMV('BdkSkI61aGo')">
                             <img src="./images/m3.jpg" alt="이터널스">
                             <!-- 영화 정보 -->
-                            <ol class="movtxt">                                
+                            <ol class="movtxt">
                                 <li>이터널스</li>
                                 <li>안젤리나졸리,마동석</li>
                                 <li>액션,판타지</li>
@@ -117,7 +164,7 @@
                         <a href="#" onclick="chgMV('dWEQjU3GCE0')">
                             <img src="./images/m4.jpg" alt="연애빠진로맨스">
                             <!-- 영화 정보 -->
-                            <ol class="movtxt">                                
+                            <ol class="movtxt">
                                 <li>연애 빠진 로맨스</li>
                                 <li>전종서, 손석구</li>
                                 <li>멜로/로맨스,코미디</li>
@@ -128,7 +175,7 @@
                         <a href="#" onclick="chgMV('Y1_Ujpsn1Jc')">
                             <img src="./images/m5.jpg" alt="프렌치디스패치">
                             <!-- 영화 정보 -->
-                            <ol class="movtxt">                                
+                            <ol class="movtxt">
                                 <li>프렌치 디스패치</li>
                                 <li>틸다 스윈튼</li>
                                 <li>코미디,드라마</li>
@@ -139,7 +186,7 @@
                         <a href="#" onclick="chgMV('W7edvITC9g4')">
                             <img src="./images/m6.jpg" alt="스파이더맨노웨이홈">
                             <!-- 영화 정보 -->
-                            <ol class="movtxt">                                
+                            <ol class="movtxt">
                                 <li>스파이더맨:노웨이홈</li>
                                 <li>톰 홀랜드</li>
                                 <li>액션,모험</li>
@@ -153,7 +200,39 @@
     <!-- 3. 하단영역 -->
     <div>
         <footer id="info" class="part">
-
+            <!-- 3-1. 회사정보 -->
+            <address>
+                <img src="./images/blogo.png" alt="하단로고">
+                <span>
+                    (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동) <br>
+                    대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662 <br>
+                    개인정보보호 책임자 : 정종민대표이메일 : cjcgvmaster@cj.netCGV고객센터 : 1544-1122
+                </span>
+            </address>
+            <!-- 3-2. SNS 박스 -->
+            <ul class="sns">
+                <li>
+                    <a href="#" title="페이스북 바로가기" target="_blank">
+                        <span class="ir">
+                            페이스북 바로가기
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="트위터 바로가기" target="_blank">
+                        <span class="ir">
+                            트위터 바로가기
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="인스타그램 바로가기" target="_blank">
+                        <span class="ir">
+                            인스타그램 바로가기
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </footer>
     </div>
 </body>

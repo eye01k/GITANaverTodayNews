@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Door - CSS3 : 3D perspective animation</title>
+    <style>
+        /* 웹폰트 */
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+        /* font-family: 'Comfortaa', cursive; */
+
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #9c0;
+        }
+
+        /* 타이틀 */
+        .tit{
+            font-family: 'Comfortaa', cursive;
+            font-size: 42px;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 2px #222;
+        }
+
+        /* 전체 문 부모 */
+        .cont{
+            position: relative;
+            top: 100px;
+            width: 200px;
+            height: 300px;
+            background-color: #900;
+            margin: 0 auto;
+        }
+
+        /* 문 열었을 때 뚫린 부분 */
+        .frame{
+            position: relative;
+            top: 20px;
+            width: 150px;
+            height: 280px;
+            margin: 0 auto;
+            background: url(./images/seashore.jpg) no-repeat center/auto 100%;
+
+            /* 
+                [ 3D 원근 설정 ]
+                1. 셋팅위치: 3D 원근 설정을 할 대상의 부모요소
+                2. 설정방법: perspective: 수치;
+                - 수치는 px단위로 숫자가 클수록 소실점이 먼 것이므로 각도가 작아짐(이 거리는 기준점에서 소실점까지의 거리임)
+            */
+            perspective: 480px;
+
+            /* 
+                [ view point(관찰자 위치) 변경옵션]
+                perspective-origin: 가로 세로;
+                -가로축: left, center, right, px, % 등
+                -세로축: top, center, bottom, px, % 등
+                -> 두 값 중에 하나만 쓸 수도 있고 복합일 경우 2가지를 같이 셋팅함
+            */
+        }
+        /* 문짝 */
+        .door{
+            position: relative; /* 부모자격 */
+            width: 150px;
+            height: 280px;
+            background-color: #c90;
+
+            /* 문짝 y축으로 회전 */
+            transform: rotateY(0deg);
+
+            /* 문짝 회전축 변경 */
+            transform-origin: left;
+
+            /* 
+                트랜스폼 회전축 변경 속성
+                transform-origin: 가로축 세로축
+                -가로축: left, center, right, px, % 등
+                -세로축: top, center, bottom, px, % 등
+            */
+            animation: openDoor .75s 0s   forwards, doorAni 1.5s ease-in-out .75s  infinite alternate;
+
+            animation-play-state: paused;
+        }
+        .cont:hover .door{
+            animation-play-state: running;
+        }
+        @keyframes openDoor {
+            to{
+                transform: rotateY(60deg);
+            }
+        }
+        @keyframes doorAni {
+            from{
+                transform: rotateY(60deg);
+            }
+            to{
+                transform: rotateY(-60deg);
+            }
+        }
+        .handle{
+            position: absolute;
+            top: 140px;
+            right: 10px;
+            /* 부모는 .door */
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: blue;
+        }
+        #elsa{
+            position: absolute;
+            top: 0;
+            /* 부모는 .frame */
+            width: 150px;
+            height: 280px;
+            overflow: hidden;
+        }
+        #elsa img{
+            margin-left: 130px;
+            margin-top: 20px;
+            transform: rotate(0deg);
+            transform-origin: bottom;
+            
+            animation: elsaAni .75s ease-in-out  infinite alternate;
+            animation-play-state: paused;
+        }
+        .cont:hover #elsa img{
+            animation-play-state: running;
+        }
+        @keyframes elsaAni {
+            to{
+                transform: rotate(-10deg);
+            }
+        }
+        /* 전체 창문 부모 */
+        .cont2{
+            position: absolute;
+            top: 210px;
+            left: 70%;
+            width: 150px;
+            height: 150px;
+            background-color: #900;
+        }
+
+        /* 창문 열었을 때 뚫린 부분 */
+        .frame2{
+            position: relative;
+            top: 10px;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto;
+            background: url(./images/seashore.jpg) no-repeat top/auto 200%;
+
+            /* 
+                [ 3D 원근 설정 ]
+                1. 셋팅위치: 3D 원근 설정을 할 대상의 부모요소
+                2. 설정방법: perspective: 수치;
+                - 수치는 px단위로 숫자가 클수록 소실점이 먼 것이므로 각도가 작아짐(이 거리는 기준점에서 소실점까지의 거리임)
+            */
+            perspective: 500px;
+
+            /* 
+                [ view point(관찰자 위치) 변경옵션]
+                perspective-origin: 가로 세로;
+                -가로축: left, center, right, px, % 등
+                -세로축: top, center, bottom, px, % 등
+                -> 두 값 중에 하나만 쓸 수도 있고 복합일 경우 2가지를 같이 셋팅함
+            */
+        }
+        /* 창문 */
+        .door2{
+            position: relative; /* 부모자격 */
+            width: 130px;
+            height: 130px;
+            background-color: rgba(102, 102, 102, 0.596);
+
+            text-align: center;
+            /* 글자중앙- 글자 진행 방향이 세로일 경우 세로 중앙 */
+            writing-mode: vertical-lr; 
+            /*
+                글자 진행 방향 설정 
+                writing-mode
+                옵션값
+                horizontal-tb 가로 방향, 위에서 아래
+                vertical-lr 세로 방향, 왼쪽에서 오른쪽
+                vertical-rl 세로 방향, 오른쪽에서 왼쪽
+             */
+
+            padding: 0 30px;
+            border: 2px solid red;
+            box-sizing: border-box;
+            /* 창문 x축으로 회전 */
+            transform: rotateX(0deg);
+
+            /* 문짝 회전축 변경 */
+            transform-origin: top;
+
+            /* 
+                트랜스폼 회전축 변경 속성
+                transform-origin: 가로축 세로축
+                -가로축: left, center, right, px, % 등
+                -세로축: top, center, bottom, px, % 등
+            */
+
+            transition: all .4s;
+        }
+        .cont2:hover .door2{
+            transform: rotateX(60deg)
+        }
+    </style>
+</head>
+<body>
+    <h1 class="tit">Open Door</h1>
+
+    <!-- 전체 문 부모 -->
+    <div class="cont">
+        <!-- 문 열었을 때 뚫린 부분 -->
+        <div class="frame">
+            <!-- 문짝 -->
+            <div class="door">
+                <!-- 손잡이 -->
+                <div class="handle"></div>
+            </div>
+            <!-- 엘사 박스 -->
+            <div id="elsa">
+                <img src="./images/elsa.png" alt="엘사">
+            </div>
+        </div>
+    </div>
+    
+    <!-- 전체 창문 부모 -->
+    <div class="cont2">
+        <!-- 창문 열었을 때 뚫린 부분 -->
+        <div class="frame2">
+            <!-- 창문 -->
+            <div class="door2">
+                여기에 <br>
+                마우스 <br>
+                오버해 
+                <!-- 손잡이 -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
