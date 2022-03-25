@@ -17,12 +17,12 @@ body{
 }
 /* 상단영역 */
 #top{
-    height: 80px;
+    height: 100px;
 }
 /* 메인영역 */
 #cont{
     position: relative;
-    height: 800px;
+    height: 820px;
 }
 #screen{
     position: absolute;
@@ -44,5 +44,5 @@ body{
 }
 /* 하단영역 */
 #info{
-    height: 100px;
+    height: 120px;
 }
