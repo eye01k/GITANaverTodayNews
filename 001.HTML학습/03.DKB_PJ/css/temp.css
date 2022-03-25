@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* 도깨비PJ 서브페이지 템플릿 css - template */
+
+/* 외부파일(css파일) 합치기 */
+@import url(./common.css);
+@import url(./core.css);
+@import url(./reset.css);
+
+/* 콘텐츠 영역 최소 높이 설정 */
+.cont{
+    min-height: 600px;
+}

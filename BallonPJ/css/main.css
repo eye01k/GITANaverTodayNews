@@ -10,18 +10,39 @@ body{
     background: url(../images/ballonBg.jpeg) no-repeat fixed center/cover;
 }
 
-
+/* 레이아웃 공통 클래스 */
 .part{
-    max-width: 1200px;
+    max-width: 1700px;
     margin: 0 auto;
 }
-
+/* 상단영역 */
 #top{
     height: 80px;
 }
+/* 메인영역 */
 #cont{
-    height: 788px;
+    position: relative;
+    height: 800px;
 }
+#screen{
+    position: absolute;
+    top: 163px;
+    left: 20px;
+    /* 부모는 main#cont */
+}
+.plist>ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end
+}
+.plist>ul>li{
+    margin: 5px 0;
+}
+.plist>ul>li>a>img{
+    width: 120px;
+    height: 120px;
+}
+/* 하단영역 */
 #info{
     height: 100px;
 }
