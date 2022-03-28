@@ -26,7 +26,7 @@ body{
 }
 #screen{
     position: absolute;
-    top: 163px;
+    top: 185px;
     left: 50px;
     /* 부모는 main#cont */
 }
