@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>JS4-1. 배열 변수과 객체</title>
     <style>
-        h1{
+        h1 {
             text-align: center;
         }
-        body>div{
+
+        body>div {
             width: 1000px;
             height: 80px;
             border: 2px solid #000;
             text-align: center;
-            white-space: nowrap; /* 줄바꿈 방지 */
+            white-space: nowrap;
+            /* 줄바꿈 방지 */
             line-height: 84px;
             margin: 5px auto;
             font-size: 24px;
@@ -23,7 +26,7 @@
             함수명: loadFn
             기능: 로딩 후 실행함수
         */
-        const loadFn = function(){ // 상수 const로 선언하여 익명 함수를 할당하여 사용하는 경우가 아주 많다
+        const loadFn = function () { // 상수 const로 선언하여 익명 함수를 할당하여 사용하는 경우가 아주 많다
 
 
             // let htxt = document.querySelector("h1");
@@ -43,100 +46,357 @@
                 -객체는 독립된 특성을 가지고 있어야 함
                 -객체는 독립된 별도의 기능이 있어야 하고, 명사적 특징과 동사적 특징이 모두 있어야 객체다
             */
-        let arr1 = new Array("1993년 10월 12일", "183cm", "65kg", "너도 인간이니?", 4568, "서강준");
-        // new 키워드로 선언과 할당을 동시에 할 수 있다
-        // 소괄호 안에 콤마로 구분하여 값을 할당할 수 있다
+            let arr1 = new Array("1993년 10월 12일", "183cm", "65kg", "너도 인간이니?", 4568, "서강준");
+            // new 키워드로 선언과 할당을 동시에 할 수 있다
+            // 소괄호 안에 콤마로 구분하여 값을 할당할 수 있다
 
-        // 배열변수에 할당한 데이터 불러오기 
-        // 호출방법: 배열변수명[순번] -> 순번은 0부터
+            // 배열변수에 할당한 데이터 불러오기 
+            // 호출방법: 배열변수명[순번] -> 순번은 0부터
 
-        // 출력대상: #txt1
-        let txt1 = document.querySelector("#txt1");
-        txt1.innerText = `이름:${arr1[5]}`;
-        txt1.innerText += `/키:${arr1[1]}`;
-        txt1.innerText += `/몸무게:${arr1[2]}`;
-        txt1.innerText += `/최근작:${arr1[3]}`;
+            // 출력대상: #txt1
+            let txt1 = document.querySelector("#txt1");
+            txt1.innerText = `이름:${arr1[5]}`;
+            txt1.innerText += `/키:${arr1[1]}`;
+            txt1.innerText += `/몸무게:${arr1[2]}`;
+            txt1.innerText += `/최근작:${arr1[3]}`;
 
-        // 2. 배열의 선언과 할당의 다른 방식
-        // 배열변수명 = [값1,값2,값3,...] -> 보편적인 방식
-        // -> 정적객체
-        let arr2 = ["삼일절",
-                    "태극기",
-                    1919,
-                    function(){
-                        alert("대한독립만세");
-                    }
-                    // function(){} 익명함수(이름없는 함수)
-                    // -> 배열값으로 넣을 수 있음
-                ];
-        
-        // 배열변수 개수 찍기: length
-        console.log("arr2 배열개수: ", arr2.length);
-        
-        // 출력대상: #txt2
-        let txt2 = document.querySelector("#txt2");
-        // 출력할 문자: 삼일절은 1919년에 일제에 항거하여 태극기를 들고 일어난 민중봉기를 기념하는 날이다
-        txt2.innerText = `${arr2[0]}은 ${arr2[2]}년에 일제에 항거하여 ${arr2[1]}를 들고 일어난 민중봉기를 기념하는 날이다`;
-        
-        // 두번째 텍스트 박스에 툴팁 띄우기
-        txt2.title = "여기를 클릭하세요";
+            // 2. 배열의 선언과 할당의 다른 방식
+            // 배열변수명 = [값1,값2,값3,...] -> 보편적인 방식
+            // -> 정적객체
+            let arr2 = ["삼일절",
+                "태극기",
+                1919,
+                function () {
+                    alert("대한독립만세");
+                }
+                // function(){} 익명함수(이름없는 함수)
+                // -> 배열값으로 넣을 수 있음
+            ];
 
-        // 손가락 모양
-        txt2.style.cursor = "pointer";
+            // 배열변수 개수 찍기: length
+            console.log("arr2 배열개수: ", arr2.length);
 
-        // 이벤트 속성을 JS에서 설정하기
-        // 기존엔 html요소에 직접 이벤트 요소를 썼으나 JS코드블록 안에서 요소의 이벤트를 직접 할당한다
-        txt2.onclick= function(){
-            // arr2배열에 있는 함수 호출
-            arr2[3](); // 익명함수더라도 호출 시에는 소괄호 필수
-        };
-        // 선택요소.on이벤트명 = 익명함수;
-        // -> 선택요소에 이벤트가 발생하면 익명함수의 코드가 실행
+            // 출력대상: #txt2
+            let txt2 = document.querySelector("#txt2");
+            // 출력할 문자: 삼일절은 1919년에 일제에 항거하여 태극기를 들고 일어난 민중봉기를 기념하는 날이다
+            txt2.innerText = `${arr2[0]}은 ${arr2[2]}년에 일제에 항거하여 ${arr2[1]}를 들고 일어난 민중봉기를 기념하는 날이다`;
 
-        
-        // 3. 배열을 미리 생성하여 각각 할당하는 방법
-        // 배열변수명 = [] -> 변수가 배열변수로 설정됨
-        // 배열변수명.length = 숫자 -> 숫자만큼 배열이 생성됨
-        // 배열변수명.length 는 배열개수 읽기, 설정 모두 가능
+            // 두번째 텍스트 박스에 툴팁 띄우기
+            txt2.title = "여기를 클릭하세요";
 
-        let arr3 = []; // arr3가 배열변수로 설정됨
-        arr3.length = 8; // arr3가 8개의 공간을 설정함
-        // 각 배열주소에 값 할당
-        arr3[0] = "산";
-        arr3[1] = "할아버지";
-        arr3[2] = "구름모자";
-        arr3[3] = "썼네";
-        arr3[4] = "나비같이";
-        arr3[5] = "훨훨";
-        arr3[6] = "훠얼훨";
-        arr3[7] = "날아서";
+            // 손가락 모양
+            txt2.style.cursor = "pointer";
 
-        // 배열값 전체 찍기: valueOf()
-        // -> 배열값 전체를 콤마로 구분하여 출력
-        console.log("arr3 배열 전체값: ", arr3.valueOf());
-        // 참고로 변수만 찍어도 브라우저가 valueOf()를 해줌
+            // 이벤트 속성을 JS에서 설정하기
+            // 기존엔 html요소에 직접 이벤트 요소를 썼으나 JS코드블록 안에서 요소의 이벤트를 직접 할당한다
+            txt2.onclick = function () {
+                // arr2배열에 있는 함수 호출
+                arr2[3](); // 익명함수더라도 호출 시에는 소괄호 필수
+            };
+            // 선택요소.on이벤트명 = 익명함수;
+            // -> 선택요소에 이벤트가 발생하면 익명함수의 코드가 실행
 
-        // 변수 전체 찍기에서 사이에 구분자 변경하기
-        // join(구분자) -> 구분자는 특수문자 등 구분하는 문자
-        console.log("arr3 배열 구분자 변경: ", arr3.join("^"));
-        // join()을 사용하면 구분자가 변경되고 문자 데이터로 변환된다
 
-        // 배열 사이에 별(★)을 넣어서 출력
-        // 화면 출력 대상: #txt3
-        let txt3 = document.querySelector("#txt3");
+            // 3. 배열을 미리 생성하여 각각 할당하는 방법
+            // 배열변수명 = [] -> 변수가 배열변수로 설정됨
+            // 배열변수명.length = 숫자 -> 숫자만큼 배열이 생성됨
+            // 배열변수명.length 는 배열개수 읽기, 설정 모두 가능
 
-        // 배열값 뒤에 동적으로 배열값 추가
-        // push(값) -> 배열 맨 뒤에 값을 추가
-        arr3.push("김창완 작사");
+            let arr3 = []; // arr3가 배열변수로 설정됨
+            arr3.length = 8; // arr3가 8개의 공간을 설정함
+            // 각 배열주소에 값 할당
+            arr3[0] = "산";
+            arr3[1] = "할아버지";
+            arr3[2] = "구름모자";
+            arr3[3] = "썼네";
+            arr3[4] = "나비같이";
+            arr3[5] = "훨훨";
+            arr3[6] = "훠얼훨";
+            arr3[7] = "날아서";
 
-        // 배열 사이에 별 넣기 - join()
-        txt3.innerText = arr3.join("★");
-        }; 
+            // 배열값 전체 찍기: valueOf()
+            // -> 배열값 전체를 콤마로 구분하여 출력
+            console.log("arr3 배열 전체값: ", arr3.valueOf());
+            // 참고로 변수만 찍어도 브라우저가 valueOf()를 해줌
+
+            // 변수 전체 찍기에서 사이에 구분자 변경하기
+            // join(구분자) -> 구분자는 특수문자 등 구분하는 문자
+            console.log("arr3 배열 구분자 변경: ", arr3.join("^"));
+            // join()을 사용하면 구분자가 변경되고 문자 데이터로 변환된다
+
+            // 배열 사이에 별(★)을 넣어서 출력
+            // 화면 출력 대상: #txt3
+            let txt3 = document.querySelector("#txt3");
+
+            // 배열값 뒤에 동적으로 배열값 추가
+            // push(값) -> 배열 맨 뒤에 값을 추가
+            arr3.push("김창완 작사");
+
+            // 배열 사이에 별 넣기 - join()
+            txt3.innerText = arr3.join("★");
+
+            /* 
+                [객체(object)]
+                
+                - 독립된 속성과 메서드를 가지는 프로그램 단위체
+                - 속성은 명사적 특징, 메서드는 동사적 특징
+
+                (참고: 
+                    브라우저에 이미 만들어져 있는 객체들을 내장객체라고 한다
+                    -> 브라우저 내장객체들
+                    봄(BOM:Browser Object Model)
+
+                    window: 윈도우(브라우저 화면) 표시 관련 객체
+                    document: 문서 구조에 관련된 객체
+                    array: 배열객체
+                    object: 객체를 만들기 위한 객체
+                    date: 날짜객체
+                    math: 수학객체
+                )
+
+                ->>> 내장객체 중 객체를 만들기 위한 객체인 object를 사용하여 객체를 만들어보자
+
+                [객체의 선언]
+                - new Object()
+
+                [객체의 할당]
+                - 중괄호{}를 사용하여 할당코딩을 함
+                - {속성명: 값, 속성명: 값, ...}
+                - 여러 값을 셋팅할 때 콤마로 구분
+                - 배열과 비교하여 이해하기 쉽고 호출하기 쉽다
+                - 객체 스타일로 데이터 구조를 만들고 이런 파일(JSON:확장자.json)로 DB와 데이터 통신을 하는 경우가 많다 
+
+                [객체의 호출]
+                - 객체명[속성명]
+                또는 
+                - 객체명.속성명
+            */
+
+            const SHK = new Object({
+                "너의 이름은?": "김수현",
+                "생일": "1988년 2월 16일",
+                "몸무게": "68kg",
+                "키": "180cm",
+                "성별": "남자",
+                "비밀번호": 7777,
+                "팬레터": function () {
+                    // 1. 메시지 띄우기
+                    alert("오빠, 지금뭐해?");
+
+                    // 2. 배경이미지 넣기
+                    txt4.style.background =
+                        "url(https://file2.nocutnews.co.kr/newsroom/image/2020/01/01/20200101093641185867_0_786_786.jpg) repeat-x top/auto 100%"
+
+                    // 3. 글자색
+                    txt4.style.color = "white";
+
+                    // 4. 글자 그림자
+                    txt4.style.textShadow = "0 0 5px #000";
+
+                    // 5. 글자 내용 변경
+                    txt4.innerText = "김수현 최고 멋쟁이! 승승장구! 화이팅";
+
+                    // 6. 트랜지션
+                    txt4.style.transition = "1s ease-out 1s";
+
+                    // 7. 박스 크게 하기
+                    txt4.style.transform = "scale(1.2)";
+                }
+            });
+
+            // 객체 출력
+            // 대상: #txt4
+            let txt4 = document.querySelector("#txt4");
+
+            txt4.innerText = `당신이 좋아하는 남자배우는? ${SHK["너의 이름은?"]}`;
+            txt4.innerText += `몸무게를 아세요? ${SHK["몸무게"]}`;
+
+
+            // 객체에 셋팅된 함수를 보통 메서드라고 부른다
+            // 메서드 호출
+            txt4.onclick = SHK["팬레터"];
+
+            // title 속성 넣기
+            txt4.title = `여기를 클릭하여 ${SHK["너의 이름은?"]} 팬레터를 확인하세요`;
+
+            // 손가락 커서
+            txt4.style.cursor = "pointer";
+
+            /* 
+                [new 키워드 없이 객체 생성]
+                - 방법: 변수 선언 후 이퀄 뒤에 바로 중괄호 사용
+                예) let obj = {속성명:값,속성명:값,...}
+
+                [객체의 속성 셋팅 시 문자형 또는 변수형 사용]
+
+                1. 문자형 속성 - 따옴표로 싸는 방법
+
+                예) let obj = {"나는나":"호호호","너는너":"하하하"}
+                -> 문자형 속성의 객체 호출시
+                객체명[문자형속성명]
+                예) obj["나는나"]
+
+                2. 변수형 속성 - 따옴표로 싸지 않은 문자
+                예) let obj = {name:"김수현", tall:"186cm"}
+                -> 변수형 속성의 객체 호출 시 
+                객체명.속성명
+                예) obj.name
+                또는
+                obj["name"]
+                -> 반드시 변수형 속성명을 따옴표로 싸서 문자형으로 표시한다
+            */
+
+            // 객체 생성
+            const GU = {
+                name: "공유",
+                tall: "184cm",
+                weight: "74kg",
+                com: "매니지먼트 숲",
+                work: "도깨비, 부산행",
+                // function(){} => ()=>{} 화살표함수
+                msg: (txt) => { // txt는 전달변수
+                    // 1. 메시지 띄우기
+                    alert("팬레터:" + txt);
+
+                    // 2. 공유 이미지 배경에 넣기
+                    txt5.style.background =
+                        "url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Gong_Yoo_%28Sep_2016%29.png/250px-Gong_Yoo_%28Sep_2016%29.png) repeat-x top/auto 100%";
+                        
+                    // 3. 글자색변경
+                    txt5.style.color = "#fff";
+
+                    // 4. 글자그림자(테두리)
+                    txt5.style.textShadow =
+                        "1px 0 #000,-1px 0 #000,0 1px #000,0 -1px #000";
+
+                    // 5. 높이값 설정
+                    txt5.style.height = "100px";
+
+                    // 6. 트랜지션
+                    txt5.style.transition = "2s ease-in-out .5s";
+
+                    // 7. 줄간격
+                    txt5.style.lineHeight = "30px";
+
+                    // 8. 상단패딩
+                    txt5.style.paddingTop = "100px";
+
+                } ///////////////// msg 메서드
+            }; /////////////////GU 객체
+
+            // GU 객체 출력
+            // 출력대상: #txt5
+            let txt5 = document.querySelector("#txt5");
+
+            // 줄간격 조정
+            txt5.style.lineHeight = "24px";
+
+            // 내용 출력
+            txt5.innerHTML = `저는 ${GU.name}입니다. 몸무게는 비밀인데요 그래도 말씀드리자면 ${GU.weight}입니다.ㅎㅎㅎ<br>
+        제 대표작은 ${GU.work}입니다. <br>
+        제 소속사는 모르시는 분들이 많은데 ${GU.com}입니다. 빠이빠이`;
+
+            // 툴팁 띄우기
+            txt5.setAttribute("title", "클릭하여 " + GU.name + "의 팬레터를 확인하세요"); // setAttribute(속성명,속성값)
+
+            // 손가락 커서
+            txt5.style.cursor = "pointer";
+
+            // 공유박스 클릭 시 GU객체 메서드 호출
+            // txt5.onclick = function(){};
+            txt5.onclick = () => {
+                GU.msg("bb\n 최고짱"); // \n은 alert창에서 줄바꿈
+            }; /////// txt5 클릭 함수
+
+            /////////////////////////////////////////
+            // 미션: #txt6는 객체를 만들어서 자유 출력
+            const MyMv = {
+                // 영화 제목
+                title: "닥터 스트레인지: 대혼돈의 멀티버스",
+                // 감독
+                direnctor: "샘 레이미",
+                // 배우
+                actors: "베네딕트 컴버배치, 엘리자베스 올슨",
+                // 장르
+                genre: "모험/판타지",
+                // 관람가
+                ratings: "심의중",
+                // 예고편(메서드)
+                trailer: (txt)=>{
+                    // 메시지 띄우기
+                    console.log(txt);
+
+                    // 영화 박스 만들고 iframe 넣기
+
+                    // 대상: #mvbx
+                    let mvbx = document.querySelector("#mvbx");
+
+                    // 영화 박스에 iframe용 박스 넣기
+                    mvbx.innerHTML = `
+                        <div id="mv">
+                            <!-- 유튜브 아이프레임 -->
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/mI9oyFMUlfg?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            
+                            <!-- 닫기버튼 -->
+                            <span class="cbtn">×</span>
+                        </div>
+                    `;
+
+                    // 삽입된 동영상 박스 #mv CSS 설정
+                    let mv = document.querySelector("#mv");
+                    mv.style.position = "fixed";
+                    mv.style.top = "50%";
+                    mv.style.left = "50%";
+                    mv.style.transform = "translate(-50%, -50%)";
+                    mv.style.width = "700px";
+                    mv.style.height = "450px";
+                    mv.style.backgroundColor = "black";
+
+                    // 닫기 버튼 셋팅
+                    let cbtn = document.querySelector(".cbtn");
+                    cbtn.style.position = "absolute";
+                    cbtn.style.top = "0";
+                    cbtn.style.right = "-70px";
+                    cbtn.style.width = "50px";
+                    cbtn.style.height = "50px";
+                    cbtn.style.backgroundColor = "blue";
+                    cbtn.style.textAlign = "center";
+                    cbtn.style.fontSize = "40px";
+                    cbtn.style.fontWeight = "bold";
+                    cbtn.style.color = "white";
+                    cbtn.style.borderRadius = "50%";
+                    cbtn.style.cursor = "pointer";
+                    cbtn.style.lineHeight = "40px";
+                    
+                    // 닫기 버튼 클릭 시 #mv 지우기
+                    cbtn.onclick = ()=>mv.remove();
+                    // ()=>{실행문};
+                    // 실행문이 하나일 때 중괄호 생략 가능
+                    // ()=>실행문;
+                    // remove() 메서드는 선택 요소를 제거함
+                }
+
+            };////////////// MyMv객체
+            
+            let txt6 = document.querySelector("#txt6");
+
+            txt6.innerHTML = `영화명: ${MyMv.title} 감독: ${MyMv.direnctor} <br> 주연: ${MyMv.actors} 장르: ${MyMv.genre} 등급: ${MyMv.ratings}`;
+
+            txt6.style.lineHeight = "36px";
+
+            txt6.title = `클릭하여 ${MyMv.title} 예고편 보기`;
+
+            txt6.style.cursor = "pointer";
+
+            txt6.onclick = function () {
+                MyMv.trailer("기대중");
+            };
+        }; /////////////////loadFn 함수 
 
 
         // 로드 구역
         // window.addEventListener("load",function(){})
-        window.addEventListener("DOMContentLoaded",loadFn);
+        window.addEventListener("DOMContentLoaded", loadFn);
         // 전달변수 값이 없는 경우 addEventLlinstener에서 함수명만 써도 됨
 
         /* 
@@ -157,6 +417,7 @@
         */
     </script>
 </head>
+
 <body>
     <h1>JS4-1. 배열 변수과 객체</h1>
 
@@ -166,5 +427,9 @@
     <div id="txt4"></div>
     <div id="txt5"></div>
     <div id="txt6"></div>
+
+    <!-- 영화 예고편 동영상 박스 -->
+    <aside id="mvbx"></aside>
 </body>
+
 </html>
