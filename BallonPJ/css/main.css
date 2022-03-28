@@ -4,7 +4,7 @@
 @import url(./core.css);
 
 body *{
-    outline: 1px dashed #000;
+    outline: 1px dashed rgb(120, 255, 86);
 }
 body{
     background: url(../images/ballonBg.jpeg) no-repeat fixed center/cover;
@@ -27,16 +27,54 @@ body{
 #screen{
     position: absolute;
     top: 163px;
-    left: 20px;
+    left: 50px;
     /* 부모는 main#cont */
+}
+#Pimg{
+    position: absolute;
+    top: 0;
+    right: 280px;
+    width: 400px;
+    height: 820px;
+    background-color: red;
 }
 .plist>ul{
     display: flex;
+    position: absolute;
+    top: 7px;
+    right: 50px;
+    /* 부모는 main#cont */
     flex-direction: column;
     align-items: flex-end
 }
 .plist>ul>li{
     margin: 5px 0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.plist>ul>li:nth-child(1){
+    background: rgba(0, 0, 0, 0.5) url(../images/Psg_logo.png) no-repeat center/115%;
+    background-blend-mode: darken;
+}
+.plist>ul>li:nth-child(2){
+    background: rgb(0, 0, 0, .5) url(../images/Bayern_logo.png) no-repeat center/140%;
+    background-blend-mode: darken;
+}
+.plist>ul>li:nth-child(3){
+    background: rgb(0, 0, 0, .5) url(../images/Chelsea_logo.png) no-repeat center/100%;
+    background-blend-mode: darken;
+}
+.plist>ul>li:nth-child(4){
+    background: rgb(0, 0, 0, .5) url(../images/Realmadrid_logo.png) no-repeat bottom/150%;
+    background-blend-mode: darken;
+}
+.plist>ul>li:nth-child(5){
+    background: rgb(0, 0, 0, .5) url(../images/Chelsea_logo.png) no-repeat center/100%;
+    background-blend-mode: darken;
+}
+.plist>ul>li:nth-child(6){
+    background: rgb(0, 0, 0, .5) url(../images/Manchesterunited-logo.png) no-repeat center/110%;
+    background-blend-mode: darken;
 }
 .plist>ul>li>a>img{
     width: 120px;
