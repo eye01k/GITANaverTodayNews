@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>JS의 함수(function)</title>
     <style>
-        body{
+        body {
             background: url(https://www.johnsoncontrols.com/ko_kr/-/media/jci/corp/homepage/images/ent_banner_korea.jpg) no-repeat fixed center/cover;
         }
-        h2{
+
+        h2 {
             font-size: 5vh;
             color: #fff;
             text-shadow: 0 0 5px #000;
             text-align: center;
         }
+
+        button {
+            font-size: 40px;
+        }
     </style>
     <script>
+        // 온라인 상 배경이미지 주소를 배열로 셋팅
         const scene = [
             "https://www.johnsoncontrols.com/ko_kr/-/media/jci/corp/homepage/images/ent_banner_korea.jpg",
+
             "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F1ee63066-4239-11ec-b414-b1f6389ab345.jpg?crop=2667%2C1500%2C0%2C0&resize=1200",
+
             "https://www.bakermckenzie.com/-/media/images/locations/seoul.jpg?sc_lang=en",
+
             "https://www.asml.com/-/media/asml/images/careers/working-at-asml/south-korea/gyeongbokgung_palace_south_korea.jpg?mw=1920&rev=5154661f5c8943bb8c81419c01b327e2&hash=30B844A1D30F8A9B2BB0A2FE6377E953",
+
             "https://images.adsttc.com/media/images/5f73/76e0/63c0/17bc/c900/04e8/large_jpg/HK_1_N3.jpg?1601402564",
         ];
         /* 
@@ -162,21 +173,23 @@
                 아래와 같이 줄여씀!
                 ()=>{}
         */
-        
-        
+
+
         /*////////////////////////////////
             함수명: Korea
             기능: 다른함수호출
-        */////////////////////////////////
-        function Korea(txt){
+        */ ////////////////////////////////
+        function Korea(txt) {
             //1. 함수호출,파라미터 확인
-            
+            alert(txt);
             //2. 다른함수 호출
+            let ri = Ri(txt + '리');
             //"우리"전달
             //3. 리턴값 찍기
+            alert(ri);
             //"우리나라 대한민"
             //4. 리턴값 보내기
-            
+            return ri + '국 만세!!';
             //"우리나라 대한민국 만세!!!"
 
         } ///// Korea함수 ////////////////
@@ -185,34 +198,40 @@
         /*////////////////////////////////
             함수명: Ri
             기능: 다른함수호출
-        */////////////////////////////////
-        function Ri(txt){
+        */ ////////////////////////////////
+        function Ri(txt) {
             //1. 함수호출,파라미터 확인
+            alert(txt);
             // "우리"
             //2. 다른함수 호출
+            let na = Na(txt + '나');
             //"우리나"전달
             //3. 리턴값 찍기
+            alert(na);
             // "우리나라 대한"
             //4. 리턴값 보내기
-            
+            return na + '민';
             //"우리나라 대한민"
-            
+
         } ///// Ri함수 ////////////////
         //////////////////////////////////
 
         /*////////////////////////////////
             함수명: Na
             기능: 다른함수호출
-        */////////////////////////////////
-        function Na(txt){
+        */ ////////////////////////////////
+        function Na(txt) {
             //1. 함수호출,파라미터 확인
+            alert(txt);
             //"우리나"
             //2. 다른함수 호출
+            let ra = Ra(txt + '라');
             //"우리나라"전달
             //3. 리턴값 찍기
+            alert(ra);
             //"우리나라 대"
             //4. 리턴값 보내기
-            
+            return ra + '한';
             //"우리나라 대한"
 
         } ///// Na함수 ////////////////
@@ -221,23 +240,85 @@
         /*////////////////////////////////
             함수명: Ra
             기능: 다른함수호출
-        */////////////////////////////////
-        function Ra(txt){
+        */ ////////////////////////////////
+        function Ra(txt) {
             //1. 함수호출,파라미터 확인
-           // "우리나라"
+            alert(txt);
+            // "우리나라"
 
-            // 2. 리턴값 보내기!
-            
+            // 2. 리턴값 보내기! -> 호출한 곳으로
+            return txt + ' 대';
             // "우리나라 대"
 
         } ///// Ra함수 ////////////////
         //////////////////////////////////
 
+        ////// 아래서 선언한 선언적 함수 호출
+        callMe('함수의 선언 위에서 호출');
+        // 함수 호출 호이스팅: 선언적 함수를 함수 코드보다 위에서 호출하는 것
+        // 선언적 함수는 모든 코드를 읽기 전 미리 VO에 적재함
+
+        ///////// 선언적 함수 /////////
+        function callMe(txt) {
+            console.log('나 불렀어?', txt);
+        } ////////////////////callMe 함수//////////////////
+
+        ////// 위에서 선언한 선언적 함수 호출
+        callMe('함수의 선언 아래에서 호출');
+
+
+        // 아래에서 변수에 할당한 익명함수를 코드 위에서 호출
+        // myHome('아래에서 변수에 할당한 익명함수를 코드 위에서 호출');
+        // -> Uncaught ReferenceError: Cannot access 'myHome' before initialization
+        // -> 익명함수는 미리 읽지 않고 코드가 할당될 때 생성되기 때문에 함수 호출 호이스팅 불가
+
+        // 할당형 익명 함수
+        const myHome = function (txt) {
+            console.log('오 나의 집!', txt);
+        }; //////////////myHome 익명함수/////////////////
+
+        // 위에서 변수에 할당한 익명함수를 코드 아래에서 호출
+        myHome('위에서 변수에 할당한 익명함수를 코드 아래에서 호출');
+
+        // 익명함수를 활용한 배경이미지 변경 셋팅
+        // 전달변수 없이 arguments 배열로 전달값 받기
+        // arguments 전달값 배열은 화살표 함수에서는 사용 불가
+        const chgbg = function(){
+
+            // for문으로 파라미터 변수 문자만큼 h2요소 만들기
+            for(let i=1;i<arguments.length;i++){
+                console.log(arguments[i]);
+                // 화면에 h2요소로 글자 넣기
+                document.body.innerHTML += `<h2>${arguments[i]}</h2>`;
+            } ////////////////for문/////////////////////
+
+            // 첫 번째 파라미터로 배열 순번을 넘김
+            document.body.style.backgroundImage = `url(${scene[arguments[0]]})`;
+            // scene[] -> 배경이미지 배열 변수
+            // arguments[0] -> 파라미터 변수 중 첫 번째
+        }; ///////////////// chgbg 함수/////////////////////
+
+        // 아래 body 태그가 로딩된 후에 함수 호출
+        // 로딩구역: 페이지가 로딩되면 함수가 바로 호출되는 경우 필요
+        window.addEventListener('load',()=>{
+            chgbg(0, '동해물과','백두산이','마르고','닳도록','하느님이','보우하사','우리나라만세');
+        }); /////////////////// load ///////////////////
+
+        // 윈도우를 클릭할 경우 배경이미지 변경
+        let seq = 1; // 배열 순번 변수
+        window.onclick = ()=>{
+            chgbg(seq);
+            seq++;
+            if(seq===scene.length) seq=0;
+            // 배열 순번 변수가 배열 개수와 같아지면 처음으로
+        }; //////////////// 윈도우 클릭 시 발생하는 함수
     </script>
 </head>
+
 <body>
 
-    <button onclick="">우리나라 대한민국 만세 프로젝트 시작!</button>
-    
+    <button onclick="alert(Korea('우'))">우리나라 대한민국 만세 프로젝트 시작!</button>
+
 </body>
+
 </html>
