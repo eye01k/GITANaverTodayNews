@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* 도깨비PJ 인물관계도 css */
+
+/* 외부파일(css파일) 합치기 */
+@import url(./common.css);
+@import url(./core.css);
+@import url(./reset.css);
+
+/* 콘텐츠 영역 겉박스 */
+#cont{
+    background-color: #e9e9e9;
+}
+
+/* 콘텐츠 영역 최소 높이 설정 */
+.cont{
+    min-height: 600px;
+    text-align: center;
+}
+
+/* 콘텐츠 이미지 가로 크기 자동 축소 변경 */
+.cont img{
+    max-width: 100%; /* 최대 가로 크기 100%: 자신의 크기보다 부모가 작아지면 자신의 가로 크기를 100%로 채움 */
+}
