@@ -84,6 +84,11 @@ body{
     background-position: -60px -30px;
   }
   .sns a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* a요소 확장 */
+
     color: #222;
     text-decoration: none;
     font-family: 'Noto Sans KR', sans-serif;
