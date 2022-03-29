@@ -177,7 +177,7 @@ h1.tit{
     background-position: right center;
     background-size: auto 100%;
 
-    outline: 1px dashed lime;
+    /* outline: 1px dashed lime; */
 
     transition: width .5s ease-out;
 
