@@ -199,17 +199,25 @@ h1.tit{
  /* 2. 메인영역  */
 #cont{
     position: relative; /* 부모자격 */
-    height: 788px;
-    background: url(../images/bg.jpg) no-repeat;
+    /* height: 788px; -> 비율유지를 위해 높이값을 없앰 */
+    background: url(../images/bg.jpg) no-repeat 0/cover;
+}
+/* 메인 상영관 이미지와 같은 비율로 padding-top 밀기 설정 */
+/* #cont 는 이미 .rbx 때문에 가상요소가 있음 */
+#cont::before{
+    /* padding-top 비율만 셋팅함 */
+    /* 비율계산: x = 세로*100/가로 */
+    padding-top: 65.66%;
 }
 /* 2-1. 스크린 박스 */
+/* 비율유지박스 자식으로 위치와 크기를 %로 설정하면 부모를 따라 자연스럽게 비율이 유지된다 */
 #screen{
     position: absolute;
-    top: 136px;
-    left: 257px;
+    top: 17.2%;
+    left: 21.4%;
     /* 부모는? #cont */
-    width: 701px;
-    height: 398px;
+    width: 58.4%;
+    height: 50.5%;
     background-color: black;
 }
 /* 스크린 아이프레임 */
@@ -221,7 +229,7 @@ h1.tit{
 /* 2-2. 예고편 선택 메뉴 */
 .mlist{
     position: absolute;
-    bottom: 60px;
+    bottom: 7%;
     left: 50%;
     /* 부모는? #cont */
     transform: translateX(-50%); /* X축 중앙 정렬 */
@@ -233,11 +241,11 @@ h1.tit{
     display: flex;
 }
 .mlist>ul>li{
-    margin: 0 9px;
+    margin: 0 min(1vw,9px);
 }
 .mlist>ul>li>a>img{
-    width: 99px;
-    height: 140px;
+    width: min(8vw,99px);
+    /* height: 140px; */
 }
 
 .movtxt{
@@ -245,13 +253,13 @@ h1.tit{
     top: 100%; /* 부모의 높이값만큼 */
     /* 부모는? .mlist */
 
-    width: 99px;
-    height: 140px;
+    width: min(8vw,99px);
+    height: 100%;
 
     background-color: rgba(0, 0, 0, 0.712);
 
     font-family: 'Cute Font', cursive;
-    font-size: 14px;
+    font-size: min(1.2vw,14px);
     line-height: 2;
     text-align: center;
 
@@ -264,7 +272,7 @@ h1.tit{
 /* 첫번째 li 영화제목 */
 .movtxt>li:nth-child(1){
     color: aqua;
-    font-size: 17px;
+    font-size: min(1.5vw,17px);
     letter-spacing: -1px;
     margin-top: 30%;
 }
