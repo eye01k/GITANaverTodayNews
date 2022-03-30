@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>객체를 위한 for문</title>
     <style>
+        button{
+            font-size: 30px;
+        }
         .minfo {
             display: flex;
             /* 자식요소 박스 옆으로 흐르게! */
@@ -68,7 +71,118 @@
         }; ///////////////// mvi 객체 //////////////////////
 
         /////// 로드구역 ////////////////////////////////
-        
+        window.addEventListener("DOMContentLoaded", ()=>{
+            console.log("로딩완료");
+
+            /* 
+                구현 내용
+                - 버튼을 클릭하면 해당 영화의 정보를 화면에 보여준다
+                - 이벤트 대상: button
+                - 이벤트 종류: click
+                - 이벤트 대상 구분: 클릭된 버튼의 글자 데이터로 구분
+                - 변경대상: .tit .sum .dir .act
+                - 변경내용: 대상의 각 내용에 맞게 객체로부터 정보를 가져와서 셋팅
+            */
+
+            // 대상변수 할당
+            // 이벤트 대상: button
+            let btn = document.querySelectorAll('button');
+            console.log('버튼 개수: ', btn.length);
+
+            // 대상 변수 클릭 설정
+            // for of문 사용
+            for(let x of btn){
+                // x는 버튼 요소 자신
+                // ((중요)) for문에서 let으로 선언된 지역변수는 for문 내부의 익명함수 내부로 전달된다
+                // 반면 var로 선언하면 전역변수로 마지막 값이 덮어씀
+                
+                // 버튼에 click 이벤트 설정
+                x.onclick = ()=>{
+                    // console.log("버튼 텍스트: ",x.innerText);
+
+                    // 1. 버튼 텍스트 읽어오기
+                    let btxt = x.innerText;
+
+                    // 2. 버튼 텍스트에 해당하는 객체 할당하기
+                    let data = mvi[btxt] // 객체명[속성명]
+                    // console.log("할당객체: ", data);
+
+                    // 3. 해당 요소에 데이터 넣기
+                    // for in 문
+                    for(let y in data){
+                        // y변수는 객체의 속성명
+                        // 속성값은 객체[속성명]
+                        // console.log(y);
+                        // console.log(data[y]);
+
+                        // 각 속성명에 해당하는 데이터 셋팅
+                        switch(y){
+                            // 1. 포스터 넣기
+                            case "포스터": document.querySelector(".photo").innerHTML = `<img src='${data[y]}' alt='포스터'>`; break;
+
+                            // 2. 제목 넣기
+                            case '제목': document.querySelector(".tit").innerText = `${data[y]}`; break;
+
+                            // 3. 개요 넣기
+                            case '개요': document.querySelector(".sum").innerText = `${data[y]}`; break;
+
+                            // 4. 감독 넣기
+                            case '감독': document.querySelector(".dir").innerText = `${data[y]}`; break;
+
+                            // 5. 배우 넣기
+                            case '출연': document.querySelector(".act").innerText = `${data[y]}`; break;
+
+                            
+                        } //////// switch case ///////
+
+                        // 영화 한마디 넣기
+                        // for of 문으로 문자데이터 잘라
+                        if(y==="문구"){
+                            // 문구 데이터 담기
+                            let txt = data[y];
+                            console.log("문구: ", txt)
+
+                            // 만들어진 span 태그 문구를 담을 변수
+                            let newtxt ='';
+
+                            // 문구 데이터를 for of문으로 하나씩 자르기
+                            for(let m of txt){
+                                console.log("한글자씩: ",m);
+                                if(m===" "){
+                                    newtxt +="&nbsp;&nbsp;&nbsp;"
+                                } // if 문 //
+                                else newtxt += `<span>${m}</span>`
+                            } /// for of ///
+                            // &nbsp; 는 띄어쓰기 특수문자처리
+                            // 특수문자는 엔퍼센드와 세미콜론 사이에 표현
+                            // No-Break SPace(줄바꿈없는 공백)
+
+                            // 문구 데이터를 대상에 출력
+                            document.querySelector('.show').innerHTML = newtxt;
+
+                            // 영화 한마디 타이틀 보이기
+                            document.querySelector('.showtit').style.display = 'block';
+                        } //////if문/////
+                    } //////// for in 문 ///////////
+                }; ///// click 함수
+            } /////////// for of 문 ////////
+        }); /////////////////로드구역///////////
+
+        /* 
+            [객체를 위한 for in 문]
+
+            -구문
+            for(변수 in 객체){
+                코드
+            }
+
+            -작동원리
+            객체의 개수만큼 순서대로 속성명과 속성값을 가져옴
+
+            -변수는 객체의 속성명
+
+            -객체의 값을 사용하려면 for in 문 안에 객체명[변수] 로 쓰면 됨
+        */
     </script>
 </head>
 
