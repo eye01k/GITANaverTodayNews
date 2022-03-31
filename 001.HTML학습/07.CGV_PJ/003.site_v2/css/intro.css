@@ -66,3 +66,13 @@ html, body{
     transform: scale(2);
     color: chartreuse;
 }
+
+/* 미디어쿼리 600px 이하 */
+@media screen and (max-width:600px) {
+    /* Click here 글자 박스 */
+    #enter span{
+        white-space: nowrap;
+        /* 줄바꿈 방지 */
+        font-size: 6vw;
+    }
+}
