@@ -24,16 +24,36 @@ body{
     position: relative;
     height: 820px;
 }
+.label{
+
+    width: 820px;
+    height: auto;
+
+    position: absolute;
+    top: 46.8%;
+    left: -384px;
+    /* 부모는 #cont */
+
+    /* background-color: #fff; */
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40px;
+    letter-spacing: 20px;
+    word-spacing: 5px;
+    text-align: center;
+    transform: rotate(-90deg);
+
+}
+
 #screen{
     position: absolute;
-    top: 71px;
-    left: 50px;
+    top: 100px;
+    left: 130px;
     /* 부모는 main#cont */
 }
 #Pimg{
     position: absolute;
     top: 0;
-    right: 170px;
+    right: 270px;
     width: 400px;
     height: 820px;
     /* background-color: rgba(0, 0, 0, 0.603); */
@@ -45,6 +65,12 @@ body{
     
     /* position: absolute; */
     /* filter: grayscale(.7) */
+}
+#Pimg img span{
+    display: block;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
 }
 /* #Pimg img:hover::after{
     content: '';
