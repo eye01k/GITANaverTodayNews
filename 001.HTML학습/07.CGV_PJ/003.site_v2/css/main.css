@@ -5,6 +5,9 @@
 @import url(./reset.css);
 @import url(./core.css);
 
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: #000;
 }
@@ -216,7 +219,7 @@ h1.tit{
     top: 17.2%;
     left: 21.4%;
     /* 부모는? #cont */
-    width: 58.4%;
+    width: 58.5%;
     height: 50.5%;
     background-color: black;
 }
