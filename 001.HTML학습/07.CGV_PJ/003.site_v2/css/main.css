@@ -234,14 +234,21 @@ h1.tit{
     /* 부모는? #cont */
     transform: translateX(-50%); /* X축 중앙 정렬 */
 
-    overflow: hidden; /* 영화 설명박스를 숨기기 위해 설정 - 부모자격이 있는 요소에 사용해야함 */
 }
 /* ul flexbox */
 .mlist>ul{
     display: flex;
+    perspective: 480px; /* 원근설정- 적용할 요소의 부모박스에 설정 */
 }
 .mlist>ul>li{
+    position: relative; /* 부모자격 */
+    overflow: hidden; /* 영화 설명박스를 숨기기 위해 설정 - 부모자격이 있는 요소에 사용해야함 */
+
     margin: 0 min(1vw,9px);
+    transform: rotateX(40deg);
+    transform-origin: bottom;
+
+    transition: transform .4s ease-out;
 }
 .mlist>ul>li>a>img{
     width: min(8vw,99px);
@@ -268,6 +275,15 @@ h1.tit{
 /* 부모 li에 마우스 오버 시 설명박스 올라오기 */
 .mlist>ul>li:hover .movtxt{
     top: 0;
+    transition-delay: .4s;
+}
+/* li에 마우스 오버 시 일어남 + 클래스 on을 주면 일어남 */
+
+.mlist>ul>li:hover,
+.mlist>ul>li.on{
+    transform: rotate(0);
+    z-index: 1;
+    outline: 1px solid aquamarine;
 }
 /* 첫번째 li 영화제목 */
 .movtxt>li:nth-child(1){

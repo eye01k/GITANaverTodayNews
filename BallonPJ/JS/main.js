@@ -47,6 +47,9 @@ window.addEventListener("load", ()=>{
             console.log(pbimg.alt);
             // pbimg.style.width = setN[data.substr(1)]+"px";
             console.log(setN[data-1]+"px");
+
+            // pimg.style.backgroundColor = "rgba(0, 0, 0, 0.803)";
         }; // click 함수 //
     } // for문///
+    
 });/// 로드구역 ///

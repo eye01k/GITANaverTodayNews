@@ -14,6 +14,7 @@
 
 /* 1050px 이하 시작 */
 @media screen and (max-width:1050px) {
+
     /* GNB ul */
     .glist {
         flex-direction: column;
@@ -23,14 +24,95 @@
 
         display: none;
     }
+
     /* 마우스 오버 시 서브메뉴 숨기기 */
-    .glist>li:hover .smenu{
+    .glist>li:hover .smenu {
         display: none;
     }
+
     /* gnb에 마우스 오버 시 glist 보이기 */
-    .gnb:hover .glist{
+    .gnb:hover .glist {
         display: flex;
     }
 }
 
 /* 1050px 이하 끝 */
+
+/* 780px 이하 시작 */
+@media screen and (max-width:780px) {
+    #info {
+        height: auto;
+    }
+
+    #info address {
+        text-align: center;
+    }
+
+    #info img {
+        float: none;
+        /* display: block;
+        margin: 0 auto; */
+        margin-right: 0;
+    }
+
+    #info span {
+        display: block;
+    }
+
+    ul.sns {
+        position: static;
+        justify-content: center;
+        padding: 20px 0;
+    }
+    #info address{
+        padding-top: 0;
+        padding-left: 0;
+        padding: 5vw;
+    }
+}
+
+/* 780px 이하 끝 */
+
+/* 600px 이하 시작 */
+@media screen and (max-width:600px) {
+    #cont::before {
+        /* padding-top 비율만 셋팅함 */
+        /* 비율계산: x = 세로*100/가로 */
+        padding-top: 165.66%;
+    }
+
+    #cont {
+        background: url(../images/bg.jpg) no-repeat top/130%;
+    }
+
+    #screen {
+        top: 8.9%;
+        left: 12.9%;
+        width: 75.9%;
+        height: 26.1%;
+    }
+
+    .mlist {
+        width: 90%;
+    }
+
+    /* ul flexbox */
+    .mlist>ul {
+        flex-wrap: wrap;
+    }
+
+    .mlist>ul>li>a>img {
+        width: 26.8vw;
+    }
+
+    .movtxt {
+        width: 26.8vw;
+        font-size: 4vw;
+    }
+
+    .movtxt>li:nth-child(1) {
+        font-size: 5vw;
+    }
+
+}
+/* 600px 이하 끝 */
