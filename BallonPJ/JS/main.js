@@ -27,6 +27,7 @@ window.addEventListener("load", ()=>{
     // console.log(plist);
 
     let data;
+    let setN = [25,33,46,77,88,99];
 
     for(let x of plist){
         // console.log(x.alt);
@@ -40,7 +41,12 @@ window.addEventListener("load", ()=>{
                 case "호날두": data = 06; break;
             }
             console.log(data);
-            pimg.innerHTML = `<img src="images/Big0${data}.png">`;
+            pimg.innerHTML = `<img src="images/Big0${data}.png" alt="선수별 큰 이미지">`;
+
+            let pbimg = document.querySelector("#Pimg img");
+            console.log(pbimg.alt);
+            // pbimg.style.width = setN[data.substr(1)]+"px";
+            console.log(setN[data-1]+"px");
         }; // click 함수 //
     } // for문///
 });/// 로드구역 ///
