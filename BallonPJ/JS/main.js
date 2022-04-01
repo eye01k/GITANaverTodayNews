@@ -28,7 +28,7 @@ window.addEventListener("load", ()=>{
 
     let data;
     // let setN = [25,33,46,77,88,99];
-    const pinfo = {
+    let pinfo = {
         "메시" : {
             "이름" : "리오넬 메시",
             "생년월일" : "1987.06.24",
@@ -91,11 +91,11 @@ window.addEventListener("load", ()=>{
             for(let z in pdata){
                 console.log(z);
                 switch(z){
-                    case "이름" : document.querySelector(".pcont .name").innerText = `${data[z]}`; break;
-                    case "생년월일" : document.querySelector(".pcont .bir").innerText = `${data[z]}`; break;
-                    case "국적" : document.querySelector(".pcont .nat").innerText = `${data[z]}`; break;
-                    case "소속" : document.querySelector(".pcont .club").innerText = `${data[z]}`; break;
-                    case "포지션" : document.querySelector(".pcont .pos").innerText = `${data[z]}`; break;
+                    case "이름" : document.querySelector(".pcont .name").innerText = `${z} : ${pdata[z]}`; break;
+                    case "생년월일" : document.querySelector(".pcont .bir").innerText = `${z}: ${pdata[z]}`; break;
+                    case "국적" : document.querySelector(".pcont .nat").innerText = `${z} : ${pdata[z]}`; break;
+                    case "소속" : document.querySelector(".pcont .club").innerText = `${z} : ${pdata[z]}`; break;
+                    case "포지션" : document.querySelector(".pcont .pos").innerText = `${z} : ${pdata[z]}`; break;
                 } /////////////  switch case
             }
 
