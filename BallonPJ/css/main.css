@@ -92,7 +92,9 @@ body{
     line-height: 40px;
     text-align: center;
 }
-
+.pcont .name{
+    font-size: 24px;
+}
 .plist>ul{
     display: flex;
     position: absolute;

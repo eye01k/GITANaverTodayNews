@@ -30,46 +30,46 @@ window.addEventListener("load", ()=>{
     // let setN = [25,33,46,77,88,99];
     let pinfo = {
         "메시" : {
-            "이름" : "리오넬 메시",
-            "생년월일" : "1987.06.24",
-            "국적" : "아르헨티나",
-            "소속" : "파리생제르망",
-            "포지션" : "CF,RW"
+            "name" : "리오넬 메시",
+            "age" : "1987.06.24",
+            "nationality" : "아르헨티나",
+            "club" : "파리생제르망",
+            "position" : "CF,RW"
         },
         "레반도프스키" : {
-            "이름" : "로베르트 레반도프스키",
-            "생년월일" : "1988.08.21",
-            "국적" : "폴란드",
-            "소속" : "바이에른뮌헨",
-            "포지션" : "ST"
+            "name" : "로베르트 레반도프스키",
+            "age" : "1988.08.21",
+            "nationality" : "폴란드",
+            "club" : "바이에른뮌헨",
+            "position" : "ST"
         },
         "조르지뉴" : {
-            "이름" : "조르지뉴",
-            "생년월일" : "1991.12.20",
-            "국적" : "이탈리아",
-            "소속" : "첼시",
-            "포지션" : "CM"
+            "name" : "조르지뉴",
+            "age" : "1991.12.20",
+            "nationality" : "이탈리아",
+            "club" : "첼시",
+            "position" : "CM"
         },
         "벤제마" : {
-            "이름" : "카림 벤제마",
-            "생년월일" : "1987.12.19",
-            "국적" : "프랑스",
-            "소속" : "레알마드리드",
-            "포지션" : "ST"
+            "name" : "카림 벤제마",
+            "age" : "1987.12.19",
+            "nationality" : "프랑스",
+            "club" : "레알마드리드",
+            "position" : "ST"
         },
         "캉테" : {
-            "이름" : "은골로 캉테",
-            "생년월일" : "1991.03.29",
-            "국적" : "프랑스",
-            "소속" : "첼시",
-            "포지션" : "CDM"
+            "name" : "은골로 캉테",
+            "age" : "1991.03.29",
+            "nationality" : "프랑스",
+            "club" : "첼시",
+            "position" : "CDM"
         },
         "호날두" : {
-            "이름" : "크리스티아누 호날두",
-            "생년월일" : "1985.02.05",
-            "국적" : "포르투갈",
-            "소속" : "맨체스터유나이티드",
-            "포지션" : "ST,LW"
+            "name" : "크리스티아누 호날두",
+            "age" : "1985.02.05",
+            "nationality" : "포르투갈",
+            "club" : "맨체스터유나이티드",
+            "position" : "ST,LW"
         }
     }; /////// pinfo 객체 /////////////
     for(let x of plist){
@@ -91,11 +91,11 @@ window.addEventListener("load", ()=>{
             for(let z in pdata){
                 console.log(z);
                 switch(z){
-                    case "이름" : document.querySelector(".pcont .name").innerText = `${z} : ${pdata[z]}`; break;
-                    case "생년월일" : document.querySelector(".pcont .bir").innerText = `${z}: ${pdata[z]}`; break;
-                    case "국적" : document.querySelector(".pcont .nat").innerText = `${z} : ${pdata[z]}`; break;
-                    case "소속" : document.querySelector(".pcont .club").innerText = `${z} : ${pdata[z]}`; break;
-                    case "포지션" : document.querySelector(".pcont .pos").innerText = `${z} : ${pdata[z]}`; break;
+                    case "name" : document.querySelector(".pcont .name").innerText = `${pdata[z]}`; break;
+                    case "age" : document.querySelector(".pcont .bir").innerText = `${z}: ${pdata[z]}`; break;
+                    case "nationality" : document.querySelector(".pcont .nat").innerText = `${z} : ${pdata[z]}`; break;
+                    case "club" : document.querySelector(".pcont .club").innerText = `${z} : ${pdata[z]}`; break;
+                    case "position" : document.querySelector(".pcont .pos").innerText = `${z} : ${pdata[z]}`; break;
                 } /////////////  switch case
             }
 

@@ -19,11 +19,154 @@
             -색: 웹표시법
             -몇%: 색상 영역 비율
             */
+        }
+        /* 버튼박스 */
+        .btns{
+            text-align: center;
+            padding: 50px;
+        }
+        .btns button{
+            font-size: 40px;
+            border-radius: 10px;
+        }
 
+        /* 큐브 */
+        .cube{
+            position: absolute;
+            top: calc(50% - 150px);
+            left: calc(50% - 150px); /* calc로 큐브 정중앙 정렬 */
+
+            width: 300px;
+            height: 300px;
+
+            /* 
+                [입체 설정]
+                -입체로 설정할 요소의 부모박스에 아래와 같이 설정
+                transform-style: preserve-3d;
+
+                -기본값은 flat, 즉 2D를 의미함
+                -preserve-3d 는 3D 전환 설정
+            */
+            transform-style: preserve-3d;
+
+            /* 입체를 잘보이게 x,y축으로 약간 회전 */
+            transform: rotateX(10deg) rotateY(30deg);
+        }
+
+        /* 큐브 각 면 공통 */
+        .cube>span{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: .8;
+            outline: 1px solid black;
+        }
+        /* 1. 앞면 */
+        .cube>span:first-child{
+            /* background-color: red; */
+            background: url(./images/newyorkCity.jpg) no-repeat right/cover;
+
+            /* 화면방향(z축)으로 이동 */
+            transform: translateZ(150px);
+        }
+        /* 2. 오른쪽면 */
+        .cube>span:nth-child(2){
+            /* background-color: green; */
+            background: url(./images/seoulCity.jpg) no-repeat center/cover;
+
+            /* 화면방향(z축)으로 이동 */
+            transform: rotateY(90deg) translateZ(150px);
+        }
+        /* 3. 뒷면 */
+        .cube>span:nth-child(3){
+            /* background-color: blue; */
+            background: url(./images/parisCity.jpg) no-repeat center/cover;
+
+            /* 화면방향(z축)으로 이동 */
+            transform: rotateY(180deg) translateZ(150px);
+        }
+        /* 4. 왼쪽면 */
+        .cube>span:nth-child(4){
+            /* background-color: yellow; */
+            background: url(./images/cityMain.jpg) no-repeat center/cover;
+
+            /* 화면방향(z축)으로 이동 */
+            transform: rotateY(270deg) translateZ(150px);
+        }
+        /* 5. 윗면 */
+        .cube>span:nth-child(5){
+            /* background-color: purple; */
+            background: url(./images/citys.jpg) no-repeat center/cover;
+
+            /* 화면방향(z축)으로 이동 */
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        /* 6. 아랫면 */
+        .cube>span:nth-child(6){
+            /* background-color: orange; */
+            background: url(./images/img4.jpg) no-repeat center/cover;
+
+            /* 화면방향(z축)으로 이동 */
+            transform: rotateX(270deg) translateZ(150px);
+        }
+        /* 큐브회전 애니메이션 클래스 */
+        .cubeAni{
+            /* 애니메이션 */
+            animation: rolling 5s linear  infinite  ;
+
+            /* 처음에 애니메이션 멈춰있기 */
+            animation-play-state: paused;
+        }
+        /* 클래스 on 추가 시 애니메이션 작동 */
+        .cubeAni.on{
+            animation-play-state: running;
+        }
+
+        /* 큐브회전 키프레임 */
+        @keyframes rolling {
+            to{
+                transform: rotateX(370deg) rotateY(390deg) rotateZ(360deg);
+                /* X축 방향으로 10도만큼 이미 돌아가있으므로 360도에 10도를 더해주고 */
+                /* Y축 방향으로 30도만큼 이미 돌아가있으므로 360도에 30도를 더해준다 */
+            }
         }
     </style>
+    <script>
+        window.addEventListener("DOMContentLoaded",()=>{
+            let cube = document.querySelector(".cube");
+
+            let btns = document.querySelectorAll(".btns button");
+            // console.log(btns.length);
+
+            for(let x of btns){
+                x.onclick = ()=>{
+                    if(x.innerText==="돌아!"){
+                        cube.classList.add("on");
+                    }
+                    else if(x.innerText==="멈춰!"){
+                        cube.classList.remove("on");
+                    }
+                }; /////// click 함수
+            } ///////// for문
+            
+        }); //////////////// 로드구역 ///////////////////////
+    </script>
 </head>
 <body>
-    
+    <!-- 버튼박스 -->
+    <div class="btns">
+        <button>돌아!</button>
+        <button>멈춰!</button>
+    </div>
+
+    <!-- 큐브 -->
+    <div class="cube cubeAni">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </body>
 </html>
