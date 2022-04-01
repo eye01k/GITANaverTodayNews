@@ -18,10 +18,10 @@ body {
 }
 
 /* 상단영역 */
-#top {
-    height: 100px;
-}
 
+#top img{
+    height: 100%;
+}
 /* 메인영역 */
 #cont {
     position: relative;
@@ -133,7 +133,6 @@ body {
 
     /* background-color: rgb(204, 191, 72); */
 
-    color: rgb(0, 0, 0);
 }
 .flx{
     display: flex;
@@ -218,6 +217,3 @@ body {
 }
 
 /* 하단영역 */
-#info {
-    height: 120px;
-}
