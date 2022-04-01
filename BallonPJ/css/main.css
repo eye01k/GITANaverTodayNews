@@ -32,7 +32,7 @@ body {
     justify-content: center;
 }
 .top h1{
-    font-size: 4vw;
+    font-size: 5vw;
     line-height: 150%;
 
     color:darkgoldenrod
@@ -45,8 +45,6 @@ body {
     writing-mode: vertical-rl;
 }
 .label {
-
-
     width: auto;
     height: 100%;
 
@@ -155,7 +153,7 @@ body {
     z-index: -1;
     top: 2%;
     right: 9%;
-    font-size: 5vw;
+    font-size: 4vw;
     line-height: 7vh;
 }
 .bir, .nat, .club, .pos{
