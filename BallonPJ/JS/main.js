@@ -30,46 +30,46 @@ window.addEventListener("load", ()=>{
     // let setN = [25,33,46,77,88,99];
     let pinfo = {
         "메시" : {
-            "name" : "리오넬 메시",
-            "age" : "1987.06.24",
-            "nationality" : "아르헨티나",
-            "club" : "파리생제르망",
-            "position" : "CF,RW"
+            "name" : "LIONEL MESSI",
+            "age" : "34",
+            "nationality" : "ARG",
+            "club" : "Paris-SG",
+            "position" : "Foward"
         },
         "레반도프스키" : {
-            "name" : "로베르트 레반도프스키",
-            "age" : "1988.08.21",
-            "nationality" : "폴란드",
-            "club" : "바이에른뮌헨",
-            "position" : "ST"
+            "name" : "ROBERT LEWANDOWSKI",
+            "age" : "33",
+            "nationality" : "POL",
+            "club" : "Bayern Munich",
+            "position" : "Foward"
         },
         "조르지뉴" : {
-            "name" : "조르지뉴",
-            "age" : "1991.12.20",
-            "nationality" : "이탈리아",
-            "club" : "첼시",
-            "position" : "CM"
+            "name" : "JORJINHO",
+            "age" : "29",
+            "nationality" : "ITA",
+            "club" : "Chelsea",
+            "position" : "Midfielder"
         },
         "벤제마" : {
-            "name" : "카림 벤제마",
-            "age" : "1987.12.19",
-            "nationality" : "프랑스",
-            "club" : "레알마드리드",
-            "position" : "ST"
+            "name" : "KARIM BENZEMA",
+            "age" : "33",
+            "nationality" : "FRA",
+            "club" : "Real Madrid",
+            "position" : "Foward"
         },
         "캉테" : {
-            "name" : "은골로 캉테",
-            "age" : "1991.03.29",
-            "nationality" : "프랑스",
-            "club" : "첼시",
-            "position" : "CDM"
+            "name" : "N'golo Kante",
+            "age" : "30",
+            "nationality" : "FRA",
+            "club" : "Chelsea",
+            "position" : "Midfielder"
         },
         "호날두" : {
-            "name" : "크리스티아누 호날두",
-            "age" : "1985.02.05",
-            "nationality" : "포르투갈",
-            "club" : "맨체스터유나이티드",
-            "position" : "ST,LW"
+            "name" : "CHRISTIANO RONALDO",
+            "age" : "36",
+            "nationality" : "POR",
+            "club" : "Manchester United",
+            "position" : "Forward"
         }
     }; /////// pinfo 객체 /////////////
     for(let x of plist){
@@ -92,10 +92,10 @@ window.addEventListener("load", ()=>{
                 console.log(z);
                 switch(z){
                     case "name" : document.querySelector(".pcont .name").innerText = `${pdata[z]}`; break;
-                    case "age" : document.querySelector(".pcont .bir").innerText = `${z}: ${pdata[z]}`; break;
-                    case "nationality" : document.querySelector(".pcont .nat").innerText = `${z} : ${pdata[z]}`; break;
-                    case "club" : document.querySelector(".pcont .club").innerText = `${z} : ${pdata[z]}`; break;
-                    case "position" : document.querySelector(".pcont .pos").innerText = `${z} : ${pdata[z]}`; break;
+                    case "age" : document.querySelector(".pcont .bir").innerText = `${pdata[z]}`; break;
+                    case "nationality" : document.querySelector(".pcont .nat").innerText = `${pdata[z]}`; break;
+                    case "club" : document.querySelector(".pcont .club").innerText = `${pdata[z]}`; break;
+                    case "position" : document.querySelector(".pcont .pos").innerText = `${pdata[z]}`; break;
                 } /////////////  switch case
             }
 
