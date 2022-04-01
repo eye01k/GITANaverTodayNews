@@ -91,7 +91,7 @@ window.addEventListener("load", ()=>{
             for(let z in pdata){
                 console.log(z);
                 switch(z){
-                    case "name" : document.querySelector(".pcont .name").innerText = `${pdata[z]}`; break;
+                    case "name" : document.querySelector(".name").innerText = `${pdata[z]}`; break;
                     case "age" : document.querySelector(".pcont .bir").innerText = `${pdata[z]}`; break;
                     case "nationality" : document.querySelector(".pcont .nat").innerText = `${pdata[z]}`; break;
                     case "club" : document.querySelector(".pcont .club").innerText = `${pdata[z]}`; break;
