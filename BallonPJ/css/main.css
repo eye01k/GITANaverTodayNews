@@ -131,14 +131,25 @@ body {
     line-height: 40px;
     text-align: center;
 
-    /* background-color: #000; */
+    /* background-color: rgb(204, 191, 72); */
 
+    color: rgb(0, 0, 0);
+}
+.name{
+    position: absolute;
+    top: -80%;
+    right: -70%;
+    font-size: 10vw;
+}
+.bir, .nat, .club, .pos{
+    font-weight: normal;
+    font-size: 2vw;
 }
 
 .pcont .name {
-    font-size: 24px;
+    font-size: 5vw;
+    line-height: 7vh;
 }
-
 .plist>ul {
     display: flex;
     position: absolute;
