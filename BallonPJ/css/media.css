@@ -67,6 +67,10 @@
         /* 패딩탑값 %로 비율에 맞게 각각셋팅 */
         padding-top: 60.58%;
     }
+    .pol .flx{
+        width: 48%;
+        flex-wrap: wrap;
+    }
 }
 
 @media screen and (max-width:300px) {
