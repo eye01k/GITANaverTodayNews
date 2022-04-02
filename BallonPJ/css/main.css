@@ -228,3 +228,28 @@ body {
 }
 
 /* 하단영역 */
+#info img{
+    width: 10%;
+}
+.icons li{
+    width:  30px;
+    height: 30px;
+    
+    background-image: url(../images/icons.png);
+    background-repeat: no-repeat;
+}
+.icons li:nth-child(2){
+    background-position: -30px 0;
+  }
+.icons li:nth-child(3){
+    background-position: -60px 0;
+  }
+.icons li:nth-child(1):hover{
+    background-position: 0px -30px;
+  }
+.icons li:nth-child(2):hover{
+    background-position: -30px -30px;
+  }
+.icons li:nth-child(3):hover{
+    background-position: -60px -30px;
+  }
