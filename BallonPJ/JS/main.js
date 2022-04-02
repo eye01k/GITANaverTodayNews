@@ -27,7 +27,7 @@ window.addEventListener("load", ()=>{
     // console.log(plist);
 
     let data;
-    // let setN = [25,33,46,77,88,99];
+    let setN = [22,26,28,32,30,21];
     let pinfo = {
         "메시" : {
             "name" : "LIONEL MESSI",
@@ -83,13 +83,13 @@ window.addEventListener("load", ()=>{
                 case "캉테": data = 05; break;
                 case "호날두": data = 06; break;
             }
-            // console.log(data);
+            // console.log("data: ", data);
             pimg.innerHTML = `<img src="images/Big0${data}.png" alt="선수별 큰 이미지">`;
 
             let pdata = pinfo[x.alt];
             // console.log(pdata);
             for(let z in pdata){
-                console.log(z);
+                // console.log(z);
                 switch(z){
                     case "name" : document.querySelector(".name").innerText = `${pdata[z]}`; break;
                     case "age" : document.querySelector(".pcont .bir").innerText = `${pdata[z]}`; break;
@@ -102,8 +102,9 @@ window.addEventListener("load", ()=>{
             let pbimg = document.querySelector("#Pimg img");
             pbimg.innerHTML = `<span></span>`;
             // console.log(pbimg.alt);
-            // pbimg.style.width = setN[data.substr(1)]+"px";
-            // console.log(setN[data-1]+"px");
+            // pimg.style.width = setN[data.substr(1)]+"%";
+            pimg.style.width = setN[data-1]+"%";
+            console.log(setN[data-1]+"%");
 
             // pimg.style.backgroundColor = "rgba(0, 0, 0, 0.803)";
         }; // click 함수 //
