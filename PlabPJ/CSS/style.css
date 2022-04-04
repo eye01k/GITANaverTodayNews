@@ -65,7 +65,9 @@ ul,ol{
   position: absolute;
   top: -120px;
   z-index: -1;
-  min-height: 1080px;
+  max-height: 1080px;
+  
+  filter: brightness(50%);
 }
 .GoDown{
   width: 371px;
