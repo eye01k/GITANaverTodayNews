@@ -113,15 +113,27 @@
         /* 흘러가는 글자 박스 */
         .fbx{
             position: absolute;
-            top: 10%;
             width: 100vw;
+        }
+        .fbx1{
+            top: 10%;
+        }
+        .fbx2{
+            bottom: 10%;
         }
         /* 텍스트박스(움직일 박스) */
         .tbx{
             position: relative;
-            left: 0; /* left값이 -100% 될 때까지 애니메이션 */
             width: 200vw; /* 보이는 화면의 2배 */
             display: flex; /* 직계자식 ul이 옆으로 흐름 */
+        }
+        /* 텍스트박스(움직일 박스)1 */
+        .tbx1{
+            left: 0; /* left값이 -100% 될 때까지 애니메이션 */
+        }
+        /* 텍스트박스(움직일 박스)2 */
+        .tbx2{
+            left: -100%; /* left값이 -100% 될 때까지 애니메이션 */
         }
         .tbx ul{
             display: flex; /* 직계자식 li가 옆으로 흐름 */
@@ -141,13 +153,33 @@
 
             outline: 1px dashed red;
         }
+        /* 글자 흐르기 애니메이션 클래스 */
+        .f1{
+            animation: flow1 5s linear  infinite  ;
+        }
+        /* 글자 흐르기 키프레임1 */
+        @keyframes flow1 {
+            to{
+                left: -100%;
+            }
+        }
+        /* 글자 흐르기 애니메이션 클래스 */
+        .f2{
+            animation: flow2 5s linear  infinite  ;
+        }
+        /* 글자 흐르기 키프레임1 */
+        @keyframes flow2 {
+            to{
+                left: 0%;
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- 흘러가는 글자박스1 -->
-    <div class="fbx">
-        <div class="tbx">
+    <div class="fbx fbx1">
+        <div class="tbx tbx1 f1">
             <ul>
                 <li>iPhone 2022</li>
                 <li>iPhone 2022</li>
@@ -170,6 +202,24 @@
         <span></span>
         <span></span>
         <span></span>
+    </div>
+
+    <!-- 흘러가는 글자박스2 -->
+    <div class="fbx fbx2">
+        <div class="tbx tbx2 f2">
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+        </div>
     </div>
 
 </body>
