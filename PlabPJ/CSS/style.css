@@ -7,99 +7,120 @@
    font-family: 'IBM Plex Sans KR', sans-serif;
 */
 
-html,body{
+html,
+body {
   margin: 0;
   padding: 0;
 }
-html{
+
+html {
   font-size: 10px;
   scroll-behavior: smooth;
 }
+
 /* 공사중 */
-body *{
+body * {
   border: 1px dotted #ccc
 }
-ul,ol{
+
+ul,
+ol {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 /* 상단 영역 */
-#Tp{
+/* .top{
   height: 80px;
-}
-.fll::after{
+} */
+/* .fll::after{
   content: "";
   display: block;
   clear: both;
 }
 .fll>li{
   float: left;
+} */
+.fl {
+  display: flex;
+  justify-content: center;
 }
-.gnb{
-  width: 570px;
-  margin: 22px auto;
-}
-.gnb a{
+
+.gnb a {
   text-decoration: none;
   color: white;
-  font-size: 3rem; 
-  padding: 0px 40px;
+  font-size: 2vw;
+  padding: 0px 5vw;
   font-family: 'IBM Plex Sans KR', sans-serif;
 }
+
 /* 상단 메뉴 마우스 오버 시 */
-#Tp:hover{
+.top:hover {
   background-color: black;
   transition: background-color 0.3s ease-out;
 }
-#Tp:hover>.gnb>ul>li>a{
+
+.top:hover>.gnb>ul>li>a {
   color: white;
   transition: color 0.3s ease-out;
 }
+
 /* 메인 영역 */
-#cont{
+/* #cont{
   height: 7000px;
-}
-#bgvideo{
-  position: absolute;
-  top: -120px;
+} */
+#bgvideo {
+  position: relative;
+  top: -1.6%;
   z-index: -1;
   max-height: 1080px;
-  
+
   filter: brightness(50%);
 }
-.GoDown{
-  width: 371px;
+
+.GoDown {
+  /* width: 371px;
   margin: 0 auto;
-  margin-top: 628px;
+  margin-top: 628px; */
+  position: absolute;
+  top: 11%;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.GoDown>ul>li>a{
-  font-size: 2.4rem; 
+
+.GoDown>ul>li>a {
+  font-size: 1.3vw;
   text-decoration: none;
   color: white;
-  padding: 10px 20px;
+  padding: 0 2vw;
 }
-.GoDown>ul>li>a:hover{
+
+.GoDown>ul>li>a:hover {
   border-bottom: 4px solid #fff;
 }
-#intro{
+
+#intro {
+  position: relative;
   width: 100%;
-  height: 1600px;
-  margin-top: 170px;
+  /* height: 1600px; */
+  margin-top: 10%;
 }
-.inImg{
+
+.inImg {
   width: 100%;
   height: 80vh;
   background: url(../imgs/about_hero_wide.png) no-repeat center/cover;
 }
+
 /* 이미지 설명(ir기법으로 숨김) */
-.ir{
+.ir {
   display: block;
   width: 0;
   height: 0;
   overflow: hidden;
 }
+
 /* .inImg p{
   font-size: 5rem;
   font-weight: bold;
@@ -108,127 +129,154 @@ ul,ol{
   text-align: center;
   margin-top: 20%;
 } */
-.par{
+.par {
   position: relative;
-  width: 98%;
-  height: 98%;
-}
-.altImg{
-  position: absolute;
-  top:153px;
-  right:calc(50% - 500px);
-  width: 1000px;
+  width: 100%;
+  height: 100%;
 }
 
-.inTit{
-  width: 600px;
+.altImg {
+  position: absolute;
+  width: 52%;
+  top: 19.8%;
+  /* right: calc(50% - 500px); */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.inTit {
+  width: 34%;
   height: 30%;
-  margin: 300px auto 0;
+  margin: 15.6% auto 0;
   background: url(../imgs/about_title.png) no-repeat center/contain;
 }
-.arrow{
+
+.arrow {
   width: 60px;
-  height: 60px;
+  /* height: 60px; */
   margin: 80px auto 0;
   background: url(../imgs/ic_arrow.svg) no-repeat center/contain;
 }
-#intro h2{
+
+#intro h2 {
   text-align: center;
   font-size: 6rem;
   margin: 100px 0;
 }
-.inDes{
+
+.inDes {
   margin: 100px auto;
   min-width: 1066px;
 }
-.boldDes{
+
+.boldDes {
   width: 1066px;
   margin: 0 auto;
 }
-.lightDes{
+
+.lightDes {
   width: 1066px;
   margin: 0 auto;
 }
-.boldDes>li{
+
+.boldDes>li {
   font-size: 2.6rem;
   padding: 0 67.9px;
   line-height: 250%;
 }
-.lightDes>li{
+
+.lightDes>li {
   font-size: 1.3rem;
   color: rgb(88, 88, 88);
   padding: 10px 88.3px;
 }
-.howTo{
+
+.howTo {
   display: block;
   width: 1000px;
   margin: 0 auto;
 }
+
 /* 플랩매니저 텍스트 박스 */
-.txtbx{
+.txtbx {
   padding: 200px 0 70px 125px;
 }
-.txtbx h2{
+
+.txtbx h2 {
   font-size: 6rem;
   font-weight: normal;
 }
-.txtbx h2 strong{
+
+.txtbx h2 strong {
   font-size: 7rem;
 }
-.bb{
+
+.bb {
   border-bottom: 8px solid #FFC645;
 }
-.txtbx p{
+
+.txtbx p {
   font-size: 2.7rem;
   margin-top: 32px;
   width: 924px;
   font-weight: 200;
 }
+
 /* 지원 박스 */
-.apply{
+.apply {
   background-color: rgb(29, 63, 134);
   width: 280px;
   border-radius: 20px;
   margin: 0 auto 70px;
 }
-.apply p{
+
+.apply p {
   color: white;
   text-align: center;
   font-size: 1.7rem;
   margin: 0;
   padding: 10px;
 }
-.manImg{
+
+.manImg {
   width: 100%;
 }
-.manDes{
+
+.manDes {
   margin-bottom: 100px;
 }
-.manDes>ul{
+
+.manDes>ul {
   width: 840px;
   margin-left: 95px;
 }
-.manDes>ul>li{
+
+.manDes>ul>li {
   margin: 0 30px;
   border-left: 3px solid #FFC645;
   padding: 0 10px;
 }
-.manDes>ul>li>h3{
+
+.manDes>ul>li>h3 {
   font-size: 1.8rem;
 }
-.manDes>ul>li>span{
+
+.manDes>ul>li>span {
   font-size: 1.6rem;
 }
-.steps{
+
+.steps {
   padding: 50px;
   margin: 100px 0;
 }
-.steps div:first-child{
+
+.steps div:first-child {
   width: 100%;
   padding-bottom: 40px;
   text-align: center;
 }
-.steps h3{
+
+.steps h3 {
   display: inline;
   font-size: 2.8rem;
   text-align: center;
@@ -237,10 +285,11 @@ ul,ol{
   margin: 0;
 }
 
-.steps>ul{
+.steps>ul {
   width: 100%;
 }
-.steps>ul>li{
+
+.steps>ul>li {
   /* position: relative; */
   width: 8.8%;
   padding: 0 20px;
@@ -249,13 +298,15 @@ ul,ol{
   margin: 0 4%;
   border-radius: 4px;
   margin-bottom: 30px;
-  height: 80px;
+  /* height: 80px; */
 }
-.steps>ul>li>p{
+
+.steps>ul>li>p {
   font-size: 1.6rem;
   line-height: 8rem;
   margin: 0;
 }
+
 /* .steps>ul>li:nth-child(1)~li::before{
   content:"";
   display: block;
@@ -272,24 +323,27 @@ ul,ol{
   transform: rotate(-270deg);
 } */
 
-.lightbb{
+.lightbb {
   border-bottom: 4px solid #FFC645;
 }
-.botImg{
+
+.botImg {
   background: url(../imgs/img_apmanager_1.jpg) no-repeat center/cover;
   width: 100%;
-  height: 360px;
+  /* height: 360px; */
 }
-.bottxt h2{
+
+.bottxt h2 {
   font-size: 5.4rem;
   text-align: center;
   font-weight: normal;
   line-height: 6.5rem;
 }
+
 /* .gnb>ul>li.sm>a{
   pointer-events: none;
 } */
-.gnb>ul>li.sm::after{
+.gnb>ul>li.sm::after {
   content: '';
   display: block;
   position: absolute;
@@ -299,9 +353,11 @@ ul,ol{
   height: 0;
   transition: height 0.4s ease-out 0s;
 }
-.gnb>ul>li.sm.open::after{
+
+.gnb>ul>li.sm.open::after {
   height: 345px;
 }
+
 /* .cal{
   position: absolute;
   top:85px;
