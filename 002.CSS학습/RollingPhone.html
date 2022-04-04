@@ -40,6 +40,7 @@
             transform-style: preserve-3d;
             /* 입체 변형설정 */
             transform: rotateX(10deg) rotateY(30deg);
+
         }
         /* 폰 각면 공통 */
         .phone span{
@@ -98,15 +99,71 @@
 
             transform: translateZ(-10px) rotateY(180deg);
         }
-        
+        /* 폰 회전 애니메이션 클래스 */
+        .phoneAni{
+            animation: rolling 5s ease-in-out  infinite alternate  ;
+        }
+        /* 폰 회전 키프레임 */
+        @keyframes rolling {
+            to{
+                transform: rotateX(370deg) rotateY(-330deg);
+            }
+        }
 
+        /* 흘러가는 글자 박스 */
+        .fbx{
+            position: absolute;
+            top: 10%;
+            width: 100vw;
+        }
+        /* 텍스트박스(움직일 박스) */
+        .tbx{
+            position: relative;
+            left: 0; /* left값이 -100% 될 때까지 애니메이션 */
+            width: 200vw; /* 보이는 화면의 2배 */
+            display: flex; /* 직계자식 ul이 옆으로 흐름 */
+        }
+        .tbx ul{
+            display: flex; /* 직계자식 li가 옆으로 흐름 */
+            flex: 1; /* 등분할 */
+
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+        }
+        .tbx li{
+            flex: 1; /* 등분할 */
+            text-align: center;
+            font-family: "Anton";
+            font-size: 4vw;
+            color: #d3d3d3;
+
+            outline: 1px dashed red;
+        }
     </style>
 </head>
 
 <body>
-
+    <!-- 흘러가는 글자박스1 -->
+    <div class="fbx">
+        <div class="tbx">
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+        </div>
+    </div>
     <!-- 폰박스 -->
-    <div class="phone">
+    <div class="phone phoneAni">
         <span></span>
         <span></span>
         <span></span>
