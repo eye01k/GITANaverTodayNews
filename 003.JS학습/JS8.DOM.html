@@ -205,11 +205,11 @@
                 ////////////////////////////////////////////
 
                 // 변경대상: #div02 ul
-               
+               let ctg = document.querySelector("#div02 ul");
                 // ctg -> current target! 현재 타겟!
 
                 // 이미지설명 배열변수
-               
+               let ialt = ["아이언맨", "딱딱이", "토르", "닥스", "스타로드"];
 
 
                 /////////////////////////////////////////////
@@ -218,7 +218,29 @@
                 // 이벤트 대상: .nbt
                 // 변경 대상: #div02 ul -> ctg 변수에 할당!
                 /////////////////////////////////////////////
+                document.querySelector(".nbt").onclick = ()=>{
+                    // console.log("새 리스트 생성");
 
+                    // 새로운 li 생성하여 변수에 할당
+                    let ne = document.createElement("li");
+                    // createElement() 는 메모리상에 생성
+
+                    // 이미지 번호 랜덤
+                    // 랜덤 수 만들기: 1~5 사이의 난수
+                    let rnum = Math.ceil(Math.random()*5);
+                    console.log(rnum);
+
+                    // 메모리 상에 생성된 li에 이미지 넣기
+                    ne.innerHTML = `<img src="images/ab${rnum}.jpg" alt="${ialt[rnum-1]}">`;
+
+                    // 새로운 li요소에 title속성으로 툴팁 넣기
+
+                    // li 클릭 시 삭제
+
+                    // 변경대상(ctg)에 새로운 li 맨 뒤에 추가
+                    // appendChild(요소) - 맨 뒤에 요소 추가
+                    ctg.appendChild(ne);
+                }; //////// click
                
 
                 ///////////////////////////////////////////////
@@ -366,12 +388,21 @@
             height: 0;
             overflow: hidden;
         }
-
+        #div02{
+            width: 600px;
+            padding: 10px;
+        }
         #div02 ul {
+            display: flex;
+            flex-wrap: wrap;
+
             margin: 0;
             padding: 10px;
             list-style: none;
             text-align: center;
+        }
+        #div02 ul li{
+            padding: 10px;
         }
     </style>
 
