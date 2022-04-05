@@ -104,12 +104,13 @@ ol {
   position: relative;
   width: 100%;
   /* height: 1600px; */
-  margin-top: 10%;
+  margin-top: 300px;
 }
 
 .inImg {
+  position: relative;
   width: 100%;
-  height: 80vh;
+  height: 36vw;
   background: url(../imgs/about_hero_wide.png) no-repeat center/cover;
 }
 
@@ -152,63 +153,63 @@ ol {
 }
 
 .arrow {
-  width: 60px;
-  /* height: 60px; */
-  margin: 80px auto 0;
+  width: 34%;
+  height: 3vw;
+  margin: 5% auto 0;
   background: url(../imgs/ic_arrow.svg) no-repeat center/contain;
 }
 
 #intro h2 {
   text-align: center;
-  font-size: 6rem;
-  margin: 100px 0;
+  font-size: 4vw;
+  margin: 5% 0;
 }
 
 .inDes {
-  margin: 100px auto;
-  min-width: 1066px;
+  margin: 5% auto;
+  /* min-width: 1066px; */
 }
 
 .boldDes {
-  width: 1066px;
+  /* width: 1066px; */
   margin: 0 auto;
 }
 
 .lightDes {
-  width: 1066px;
+  /* width: 1066px; */
   margin: 0 auto;
 }
 
 .boldDes>li {
-  font-size: 2.6rem;
-  padding: 0 67.9px;
+  font-size: 2vw;
+  padding: 0 4%;
   line-height: 250%;
 }
 
 .lightDes>li {
-  font-size: 1.3rem;
+  font-size: 1vw;
+  padding: 1% 6%;
   color: rgb(88, 88, 88);
-  padding: 10px 88.3px;
 }
 
 .howTo {
   display: block;
-  width: 1000px;
+  width: 80%;
   margin: 0 auto;
 }
 
 /* 플랩매니저 텍스트 박스 */
 .txtbx {
-  padding: 200px 0 70px 125px;
+  padding: 7% 0 4% 5%;
 }
 
 .txtbx h2 {
-  font-size: 6rem;
+  font-size: 3.2vw;
   font-weight: normal;
 }
 
 .txtbx h2 strong {
-  font-size: 7rem;
+  font-size: 3.6vw;
 }
 
 .bb {
@@ -216,16 +217,16 @@ ol {
 }
 
 .txtbx p {
-  font-size: 2.7rem;
-  margin-top: 32px;
-  width: 924px;
+  font-size: 1.4vw;
+  /* margin-top: 32px;
+  width: 924px; */
   font-weight: 200;
 }
 
 /* 지원 박스 */
 .apply {
   background-color: rgb(29, 63, 134);
-  width: 280px;
+  width: 320px;
   border-radius: 20px;
   margin: 0 auto 70px;
 }
@@ -233,9 +234,9 @@ ol {
 .apply p {
   color: white;
   text-align: center;
-  font-size: 1.7rem;
+  font-size: 2.7rem;
   margin: 0;
-  padding: 10px;
+  padding: 14px;
 }
 
 .manImg {
@@ -243,36 +244,38 @@ ol {
 }
 
 .manDes {
-  margin-bottom: 100px;
+  margin-bottom: 8%;
 }
-
-.manDes>ul {
-  width: 840px;
-  margin-left: 95px;
+.manDes .fl{
+  justify-content: flex-start;
+  margin-left: 3%;
 }
 
 .manDes>ul>li {
-  margin: 0 30px;
+  margin: 0 2%;
   border-left: 3px solid #FFC645;
-  padding: 0 10px;
+  padding: 0 1%;
 }
 
 .manDes>ul>li>h3 {
-  font-size: 1.8rem;
+  font-size: 1.5vw;
 }
 
 .manDes>ul>li>span {
-  font-size: 1.6rem;
+  font-size: 1.1vw;
+}
+.manDes p{
+  font-size: .8vw;
 }
 
 .steps {
-  padding: 50px;
-  margin: 100px 0;
+  padding: 4%;
+  margin: 8% 0;
 }
 
 .steps div:first-child {
   width: 100%;
-  padding-bottom: 40px;
+  padding-bottom: 3%;
   text-align: center;
 }
 
@@ -292,12 +295,12 @@ ol {
 .steps>ul>li {
   /* position: relative; */
   width: 8.8%;
-  padding: 0 20px;
+  padding: 0 1%;
   background-color: #f0f6ff;
   border: 1px solid #cad7ec;
   margin: 0 4%;
   border-radius: 4px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   /* height: 80px; */
 }
 
