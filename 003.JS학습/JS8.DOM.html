@@ -254,7 +254,18 @@
                 /////////////////////////////////////////////
 
                 // 기존 li 삭제 셋팅대상
-                
+                let del = ctg.querySelectorAll("li");
+
+                // 대상 클릭 시 삭제 셋팅
+                for(let x of del){
+                    let ximg = x.querySelector("img");
+
+                    // 기존 img 에 title 속성 넣기
+                    ximg.title = ximg.alt + (ximg.alt === "아이언맨"? "을":"를") + " 클릭하시면 삭제됩니다";
+
+                    // 기존 li 클릭 시 지우기
+                    x.onclick = ()=> x.remove();
+                } //////////// for of
 
 
 
@@ -271,7 +282,16 @@
                 // 사용 메서드: appendChild(요소)
                 // -> 기존요소를 선택하면 이동이 됨!
                 /////////////////////////////////////////////////
-               
+                document.querySelector(".mvl").onclick = ()=> {
+                    // console.log("맨뒤로");
+
+                    // 이동 대상: 변수 ctg 아래 li 중 첫 번째 요소
+                    let fele = ctg.querySelectorAll("li")[0];
+                    // fele -> first element
+
+                    // 맨 뒤로 이동: appendChild(요소)
+                    ctg.appendChild(fele);
+                }; ///// click
 
 
                 /// 맨뒤요소 맨앞으로 이동하기 ///////////////////////
@@ -284,7 +304,25 @@
                 // 넣을놈 - 마지막 li요소
                 // 넣을놈전놈 - 맨처음 li요소
                 //////////////////////////////////////////////////
+                document.querySelector(".mvf").onclick = () => {
+                    // console.log("맨앞으로");
 
+                    // 이동대상: 변수 ctg 아래 li 요소들
+                    let eles = ctg.querySelectorAll("li");
+
+                    // 맨 앞으로 이동
+                    // insertBefore(넣을 놈,넣을 놈 전 놈)
+                    // insertBefore(맨뒤li,맨앞li)
+                    ctg.insertBefore(eles[eles.length - 1], eles[0])
+                    // 맨뒤 li: eles[마지막 번호] 
+                    // -> eles[개수-1]
+                    // -> eles[eles.length-1]
+                    // ※ 배열과 객체의 마지막 번호는 항상 [개수 - 1] 이다
+
+                    // 맨앞 li eles[0]
+
+
+                }; ////////// click
                
 
 
