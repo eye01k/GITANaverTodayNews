@@ -17,7 +17,7 @@
                 ////////////////////////////////////////////////////////
 
                 // 이벤트 대상: .smenu
-                
+                let smenu = document.querySelectorAll(".smenu");
                 // console.log("메뉴개수:",smenu.length);
 
                 // 이벤트종류: mouseover / mouseout
@@ -26,7 +26,33 @@
                 // 특이사항: 각 서브메뉴의 높이 만큼 높이값 트랜지션주기!
 
                 // 마우스 오버/아웃시 이벤트를 for of문으로 걸어보자!
-                
+                for(let x of smenu){
+                    // x는 각 .smenu
+                    x.onmouseover = ()=>{
+                        // 오버 시 a 요소 텍스트 찍기
+                        // console.log(x.querySelector("a").innerText);
+
+                        // 1. 하위 div 요소(서브메뉴박스) 변수 할당
+                        let tg = x.querySelector("div");
+
+                        // 2. 서브메뉴 ol 요소의 높이값 읽어오기
+                        let hv = tg.querySelector("ol").offsetHeight;
+                        // console.log(hv);
+
+                        // 3. 서브메뉴 열리기
+                        tg.style.height = (hv+10)+"px";
+                        tg.style.transition = "height .4s ease-out";
+                    }; /////// mouseover /////
+
+                    // 2. 마우스 아웃 시
+                    x.onmouseout = ()=> {
+                        // 1. 하위 div 요소(서브메뉴박스) 변수 할당
+                        let tg = x.querySelector("div");
+
+                        // 2. 서브메뉴 열리기
+                        tg.style.height = 0;
+                    }; /////// mouseout
+                } /////// for of ///////
               
 
                 /******************************************************** 
@@ -42,10 +68,104 @@
                 /////////////////////////////////////////////////////////
 
                 // 이벤트 대상: .smenu ol a
-                
+                let link = document.querySelectorAll(".smenu ol a");
+                // console.log(link.length);
+
+
                 // 이벤트 종류: click
                 // 변경내용: 클릭시 새창으로 사이트열기
-                
+                for(let y of link){
+                    // 클릭 이벤트 설정
+                    y.onclick = () => {
+                        // 1. a 요소 텍스트 읽어오기
+                        let txt = y.innerText;
+                        // console.log(txt);
+
+                        // 2. 각 a요소별 이동할 url 주소 셋팅
+
+                        let url;
+                        switch(txt){
+                            case "Google":
+                                url = "http://www.google.com";
+                                break;
+                            case "Naver":
+                                url = "http://www.naver.com";
+                                break;
+                            case "Daum":
+                                url = "http://www.daum.net";
+                                break;
+                            case "Nate":
+                                url = "http://www.nate.com";
+                                break;
+                            case "SK":
+                                url = "http://www.sktelecom.com";
+                                break;
+                            case "KT":
+                                url = "http://www.kt.com";
+                                break;
+                            case "Uplus":
+                                url = "http://www.uplus.co.kr";
+                                break;
+                            case "CGV":
+                                url = "http://www.cgv.co.kr";
+                                break;
+                            case "MEGABOX":
+                                url = "http://www.megabox.co.kr";
+                                break;
+                            case "LOTTE CINEMA":
+                                url = "https://www.lottecinema.co.kr/NLCHS";
+                                break;
+                            case "GMARKET":
+                                url = "http://www.gmarket.co.kr";
+                                break;
+                            case "11번가":
+                                url = "http://www.11st.co.kr";
+                                break;
+                            case "Auction":
+                                url = "http://www.auction.co.kr";
+                                break;
+                            case "스토어팜":
+                                url = "https://shopping.naver.com/";
+                                break;
+                            case "인터파크":
+                                url = "http://www.interpark.co.kr";
+                                break;
+                            case "쿠팡":
+                                url = "http://www.coopang.co.kr";
+                                break;
+                            case "Apple":
+                                url = "http://www.apple.com";
+                                break;
+                            case "Samsung":
+                                url = "http://www.samsung.com";
+                                break;
+                            case "넷마블":
+                                url = "http://www.netmarble.net";
+                                break;
+                            case "넥슨":
+                                url = "https://www.nexon.com";
+                                break;
+                            case "IMC":
+                                url = "http://www.imc.co.kr";
+                                break;
+                        } ///////// switch case
+
+                        // 3. 페이지 이동
+                        // y.href = url;
+                        // y.target = "_blank";
+
+                        // location.href = 주소 -> 현재 창 페이지 이동 
+                        // window.open() -> 새 창 열기
+                        window.open().location.href = url;
+
+                        // 4. a요소 기본 이동 속성 막기
+                        return false;
+                        // retutn 키워드는 함수에서 사용할 경우 만나는 순간 함수를 빠져나가고 return 아래쪽 코드는 실행하지 않는다
+                        // return 뒤의 값을 가지고 함수를 호출한 곳으로 돌아감
+                        // false를 가지고 함수를 호출한 a요소로 돌아가면 a의 기본 속성을 막을 수 있다
+
+                    }; ///////// onclick
+                } /////// for of
 
 
                 // html 컬렉션 참고:
