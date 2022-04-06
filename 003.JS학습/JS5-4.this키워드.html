@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>JS5-6.this 키워드</title>
+    <title>JS5-4.this 키워드</title>
     <script>
         /******************************************** 
             [ this 키워드란 무엇인가? ]
@@ -23,6 +23,48 @@
 
         ********************************************/
 
+        // 엄격모드
+        // "use strict";
+        
+
+        // 객체 메서드에서 객체자신을 의미
+        const obj = {
+            name: "김종서",
+
+            // 객체 안 익명 메서드
+            fn1: function(){
+                console.log("객체 안 익명 메서드: ", this);        
+                console.log("객체 안 익명 메서드 name: ", this.name);        
+            },
+
+            // 객체 안 화살표함수 메서드
+            fn2: ()=>{
+                console.log("객체 안 화살표 함수 메서드: ", this);        
+                console.log("객체 안 화살표 함수 메서드 name: ", this.name);        
+                // this 는 window 객체를 의미하므로 내부 속성에 접근 불가
+                console.log("객체 안 화살표 함수 메서드 name: ", obj.name);        
+                // 이미 obj 객체가 전역 등록되었으므로 객체명을 직접 사용 가능
+            }
+        };
+
+        // 객체 메서드 호출
+        obj.fn1();
+        obj.fn2();
+
+        // 단독으로 전역객체(window)를 의미
+        console.log("단독으로: ", this);
+
+        // 함수에서 전역객체(window)를 의미
+        // (함수)() -> 함수 자신을 바로 실행
+        (function(){
+            console.log("함수1: ", this);
+            // 엄격모드에서 this는 undefined
+        })();
+
+        (()=>{
+            console.log("함수2: ", this);
+            // 엄격모드에서도 화살표 함수에서의 this는 window 객체를 의미한다
+        })();
         
     </script>
 </head>

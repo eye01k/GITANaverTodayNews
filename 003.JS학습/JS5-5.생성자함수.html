@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>JS5-4.생성자함수</title>
@@ -40,10 +41,25 @@
             그냥 return 키워드만 쓰면 자동으로 this가 반환됨)
 
         */
-        
+
+        function MovieInfo(tit,sum,dir,act,des) {
+            this.제목 = tit;
+            this.개요 = sum;
+            this.감독 = dir;
+            this.출연 = act;
+            this.문구 = des;
+        } ///////// MovieInfo
+
+        // "제목": "조제",
+        // "개요": "멜로/로맨스, 드라마",
+        // "감독": "김종관",
+        // "출연": "한지민, 남주혁",
+        // "문구": "조제 보러 오세요"
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
