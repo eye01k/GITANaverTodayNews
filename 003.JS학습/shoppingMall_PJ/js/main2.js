@@ -11,14 +11,14 @@ window.addEventListener("load", () => {
         3. 변경 대상: 슬라이드 박스(#slide)
         4. 기능흐름: 
         (1) 오른쪽버튼 클릭시 다음슬라이드가
-        나타나도록 슬라이드박스의 left값을
+        나타나도록 슬라이드박스의 top값을
         -100%로 이동시킨다!
         ->이 때, 바깥에 나가있는 첫 번째 슬라이드 li를 잘라서 맨 뒤로 보낸다
-        동시에 left 값을 0으로 변경
+        동시에 top 값을 0으로 변경
 
         (2) 왼쪽버튼 클릭시 
-        먼저 맨 뒤의 슬라이드 li를 맨 앞으로 이동시킨다. 이 때 left 값을 -100%로 변경
-        이후 left 값을 0으로 변경하여 애니메이션
+        먼저 맨 뒤의 슬라이드 li를 맨 앞으로 이동시킨다. 이 때 top 값을 -100%로 변경
+        이후 top 값을 0으로 변경하여 애니메이션
 
         5. 추가기능: 슬라이드 위치표시 블릿
         - 블릿대상 : .indic li
@@ -78,8 +78,8 @@ window.addEventListener("load", () => {
             // 2-1. 오른쪽 버튼
             if(dir){ // dir===1 이면 true
 
-                // (1) 슬라이드박스의 left값을 -100%로 이동시킨다!
-                slide.style.left = "-100%";
+                // (1) 슬라이드박스의 top값을 -100%로 이동시킨다!
+                slide.style.top = "-100%";
                 slide.style.transition = ".6s ease-out";
 
                 // 슬라이드 이동 후(.6초 후) (2),(3)을 한 번 실행 
@@ -89,8 +89,8 @@ window.addEventListener("load", () => {
                     // appendChild(요소) - 선택요소 맨 뒤 이동
                     slide.appendChild(sli[0]);
 
-                    // (3) 동시에 left 값을 0으로 변경
-                    slide.style.left = "0";
+                    // (3) 동시에 top 값을 0으로 변경
+                    slide.style.top = "0";
                     slide.style.transition = "none";
                 },600); ///// setTimeout
             } /////// if
@@ -102,14 +102,14 @@ window.addEventListener("load", () => {
                 // insertBefore(넣을놈,넣을놈전놈)
                 slide.insertBefore(sli[sli.length-1],sli[0]);
 
-                // (2) 이 때 left 값을 -100%로 변경
-                slide.style.left = "-100%";
+                // (2) 이 때 top 값을 -100%로 변경
+                slide.style.top = "-100%";
                 slide.style.transition = "none";
 
-                // (3)이후 left 값을 0으로 변경하여 애니메이션
+                // (3)이후 top 값을 0으로 변경하여 애니메이션
                 // 주의: 위의 설정코드와 분리를 위해 setTimeout으로 약간의 시차를 준다
                 setTimeout(()=>{
-                    slide.style.left = "0";
+                    slide.style.top = "0";
                     slide.style.transition = ".6s ease-out";
                 },10); //// setTimeout
             } /////// else
