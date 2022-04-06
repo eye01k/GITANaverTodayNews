@@ -42,6 +42,9 @@ window.addEventListener("load", () => {
             // 전달값 및 호출 확인
             console.log("전달값: ",dir)
 
+            // 1.5 슬라이드 li 요소들 변수 할당
+            let sli = slide.querySelectorAll("li");
+
             // 방향 분기
             // 2-1. 오른쪽 버튼
             if(dir){ // dir===1 이면 true
@@ -55,7 +58,7 @@ window.addEventListener("load", () => {
                 setTimeout(()=>{
                     // (2) 바깥에 나가있는 첫 번째 슬라이드 li를 잘라서 맨 뒤로 보낸다
                     // appendChild(요소) - 선택요소 맨 뒤 이동
-                    slide.appendChild(slide.querySelectorAll("li")[0]);
+                    slide.appendChild(sli[0]);
 
                     // (3) 동시에 left 값을 0으로 변경
                     slide.style.left = "0";
@@ -65,7 +68,21 @@ window.addEventListener("load", () => {
 
             // 2-2. 왼쪽 버튼
             else{
-                
+                // li 요소
+                // (1) 먼저 맨 뒤의 슬라이드 li를 맨 앞으로 이동
+                // insertBefore(넣을놈,넣을놈전놈)
+                slide.insertBefore(sli[sli.length-1],sli[0]);
+
+                // (2) 이 때 left 값을 -100%로 변경
+                slide.style.left = "-100%";
+                slide.style.transition = "none";
+
+                // (3)이후 left 값을 0으로 변경하여 애니메이션
+                // 주의: 위의 설정코드와 분리를 위해 setTimeout으로 약간의 시차를 준다
+                setTimeout(()=>{
+                    slide.style.left = "0";
+                    slide.style.transition = ".6s ease-out";
+                },10); //// setTimeout
             } /////// else
 
         }; /////// goSlide
