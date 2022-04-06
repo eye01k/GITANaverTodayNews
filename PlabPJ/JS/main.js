@@ -6,6 +6,21 @@ window.addEventListener("DOMContentLoaded", ()=>{
     tg[0].onclick = ()=>{
         sm[0].classList.add("open");
     }; //// click //////
-}); //////////////// load /////////////////
 
+    let appbx = document.querySelector(".apply");
+
+    window.addEventListener("scroll", ()=>{
+        let scVal = this.scrollY;
+        console.log(scVal);
+
+        if(scVal>=3406){
+            appbx.style.position = "fixed";
+            appbx.style.top = "80%";      
+        } ////// if
+        else {
+            appbx.style.position = "absolute";
+            appbx.style.top = "13%";
+        }
+    }); //////// scroll
+}); //////////////// load /////////////////
 

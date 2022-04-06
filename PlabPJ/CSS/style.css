@@ -19,9 +19,9 @@ html {
 }
 
 /* 공사중 */
-body * {
+/* body * {
   border: 1px dotted #ccc
-}
+} */
 
 ul,
 ol {
@@ -47,10 +47,14 @@ ol {
   justify-content: center;
 }
 
+.gnb {
+  margin-top: 22px;
+}
+
 .gnb a {
   text-decoration: none;
   color: white;
-  font-size: 2vw;
+  font-size: 1.5vw;
   padding: 0px 5vw;
   font-family: 'IBM Plex Sans KR', sans-serif;
 }
@@ -84,7 +88,7 @@ ol {
   margin: 0 auto;
   margin-top: 628px; */
   position: absolute;
-  top: 11%;
+  top: 7.5%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -94,6 +98,7 @@ ol {
   text-decoration: none;
   color: white;
   padding: 0 2vw;
+  padding-bottom: 7%;
 }
 
 .GoDown>ul>li>a:hover {
@@ -198,9 +203,15 @@ ol {
   margin: 0 auto;
 }
 
+#manager {
+  position: relative;
+  margin-top: 300px;
+}
+
 /* 플랩매니저 텍스트 박스 */
+
 .txtbx {
-  padding: 7% 0 4% 5%;
+  padding: 7% 0 10% 5%;
 }
 
 .txtbx h2 {
@@ -225,10 +236,13 @@ ol {
 
 /* 지원 박스 */
 .apply {
+  position: absolute;
+  top: 13%;
+  left: calc(50% - 160px);
   background-color: rgb(29, 63, 134);
   width: 320px;
   border-radius: 20px;
-  margin: 0 auto 70px;
+  /* margin: 0 auto 70px; */
 }
 
 .apply p {
@@ -241,12 +255,14 @@ ol {
 
 .manImg {
   width: 100%;
+  margin-top: 100px;
 }
 
 .manDes {
   margin-bottom: 8%;
 }
-.manDes .fl{
+
+.manDes .fl {
   justify-content: flex-start;
   margin-left: 3%;
 }
@@ -264,7 +280,8 @@ ol {
 .manDes>ul>li>span {
   font-size: 1.1vw;
 }
-.manDes p{
+
+.manDes p {
   font-size: .8vw;
 }
 
@@ -302,11 +319,12 @@ ol {
   border-radius: 4px;
   /* margin-bottom: 30px; */
   /* height: 80px; */
+  text-align: center;
 }
 
 .steps>ul>li>p {
-  font-size: 1.6rem;
-  line-height: 8rem;
+  font-size: .9vw;
+  line-height: 5vw;
   margin: 0;
 }
 
@@ -333,14 +351,14 @@ ol {
 .botImg {
   background: url(../imgs/img_apmanager_1.jpg) no-repeat center/cover;
   width: 100%;
-  /* height: 360px; */
+  height: 36vw;
 }
 
 .bottxt h2 {
-  font-size: 5.4rem;
+  font-size: 3.2vw;
   text-align: center;
   font-weight: normal;
-  line-height: 6.5rem;
+  line-height: 4.5vw;
 }
 
 /* .gnb>ul>li.sm>a{

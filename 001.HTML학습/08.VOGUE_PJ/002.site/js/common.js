@@ -10,6 +10,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // 상단영역 #top 변수에 할당
     let topA = document.querySelector("#top");
 
+    let tbtn = document.querySelector(".tbtn");
+
     /* 
         [윈도우 스크롤 이벤트 함수]
         -스크롤 이벤트: scroll
@@ -44,5 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if(scTop>=100) topA.classList.add("on");
         else topA.classList.remove("on");
         
+        if(scTop>=200) tbtn.classList.add("show");
+        else tbtn.classList.remove("show");
     }); ////////// scroll
 }); ////////////////// load
