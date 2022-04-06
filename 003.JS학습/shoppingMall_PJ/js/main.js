@@ -50,9 +50,10 @@ window.addEventListener("load", () => {
                 slide.style.left = "-100%";
                 slide.style.transition = ".6s ease-out";
 
-                // (2) 바깥에 나가있는 첫 번째 슬라이드 li를 잘라서 맨 뒤로 보낸다
+                // 슬라이드 이동 후(.6초 후) (2),(3)을 한 번 실행 
                 // 일정시간 후 한 번 실행하는 함수 - setTimeout
                 setTimeout(()=>{
+                    // (2) 바깥에 나가있는 첫 번째 슬라이드 li를 잘라서 맨 뒤로 보낸다
                     // appendChild(요소) - 선택요소 맨 뒤 이동
                     slide.appendChild(slide.querySelectorAll("li")[0]);
 
@@ -60,12 +61,11 @@ window.addEventListener("load", () => {
                     slide.style.left = "0";
                     slide.style.transition = "none";
                 },600); ///// setTimeout
-
-                
             } /////// if
+
             // 2-2. 왼쪽 버튼
             else{
-
+                
             } /////// else
 
         }; /////// goSlide
