@@ -127,6 +127,23 @@ ol {
   overflow: hidden;
 }
 
+.inImg section {
+  position: relative;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-400px);
+  width: 800px;
+  height: 144px;
+  margin: 0;
+  overflow: hidden;
+  border: 2px dashed red;
+}
+#slide{
+  position: absolute;
+  top: 0;
+  left: -11.7%
+}
+
 /* .inImg p{
   font-size: 5rem;
   font-weight: bold;
@@ -141,19 +158,20 @@ ol {
   height: 100%;
 }
 
-.altImg {
+
+/* .altImg {
   position: absolute;
   width: 52%;
   top: 19.8%;
-  /* right: calc(50% - 500px); */
+  right: calc(50% - 500px);
   left: 50%;
   transform: translateX(-50%);
-}
+} */
 
 .inTit {
   width: 34%;
   height: 30%;
-  margin: 15.6% auto 0;
+  margin: 4% auto 0;
   background: url(../imgs/about_title.png) no-repeat center/contain;
 }
 
