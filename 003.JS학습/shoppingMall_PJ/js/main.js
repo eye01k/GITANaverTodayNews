@@ -158,8 +158,8 @@ window.addEventListener("load", () => {
         2. 사용자가 버튼을 조작할 시 자동호출 멈춤
         3. 일정시간 버튼조작이 없으면 다시 자동호출 
     */
-    // 인터발용 변수
-    let autoI;
+   // 인터발용 변수
+   let autoI;
 
     // 인터발 호출 함수
     const autoCall = () => {
@@ -172,11 +172,24 @@ window.addEventListener("load", () => {
     // 인터발 호출 함수 최초 호출
     autoCall();
 
+    // 타임아웃용 변수
+    let autoT; // 타임아웃을 지우기 위해 선언
+
     // 인터발 삭제 함수
     // 슬라이드 이동 버튼 클릭 시 호출
     const clearAuto = () => {
-        // 1. 인터발 지우기
+
+        console.log("인터발 지우기");
+
+        // 1. 인터발 지우기 + 타임아웃 지우기
         clearInterval(autoI);
+        clearTimeout(autoT);
+        // 한 번씩 셋팅되는 타임아웃을 지우지 않으면 여러 개 작동하여 실행쓰나미가 발생한다
+
+        // 2. 일정시간 후 다시 인터발 호출하기
+        autoT = setTimeout(autoCall,4000);
+        // 4초 후 autoCall()함수 호출
+
     }; //////// clearAuto
 
     

@@ -57,7 +57,10 @@ window.addEventListener("load", () => {
         기능: 슬라이드를 왼쪽/오른쪽으로 이동
     *****************/
 
-        const goSlide = dir => { // dir: 이동 방향(1-오른쪽, 0-왼쪽)
+        const goSlide = (dir,gb) => { 
+            // dir: 이동 방향(1-오른쪽, 0-왼쪽)
+            // gb - 구분코드(인터발 호출일 때만 값을 받아옴)
+
 
             // 잠금상태 확인
             console.log("잠금상태",prot);
@@ -70,6 +73,9 @@ window.addEventListener("load", () => {
 
             // 전달값 및 호출 확인
             // console.log("전달값: ",dir)
+            // 버튼 클릭 시 gb 전달값이 없으므로 undefined가 되어 !gb는 true
+            if(!gb) clearAuto(); // 인터발함수 지우기
+
 
             // 1.5 슬라이드 li 요소들 변수 할당
             let sli = slide.querySelectorAll("li");
@@ -142,6 +148,39 @@ window.addEventListener("load", () => {
     // 왼쪽 버튼 클릭 시
     abtn[0].onclick = () => goSlide(0);
 
+    // 인터발용 변수
+   let autoI;
+
+   // 인터발 호출 함수
+   const autoCall = () => {
+       // 인터발 자동호출
+       autoI = setInterval(()=>goSlide(1,1),2500);
+       // 특정 상황에서 지우기 위해 변수에 할당
+
+   }; //////// autoCall
+
+   // 인터발 호출 함수 최초 호출
+   autoCall();
+
+   // 타임아웃용 변수
+   let autoT; // 타임아웃을 지우기 위해 선언
+
+   // 인터발 삭제 함수
+   // 슬라이드 이동 버튼 클릭 시 호출
+   const clearAuto = () => {
+
+       console.log("인터발 지우기");
+
+       // 1. 인터발 지우기 + 타임아웃 지우기
+       clearInterval(autoI);
+       clearTimeout(autoT);
+       // 한 번씩 셋팅되는 타임아웃을 지우지 않으면 여러 개 작동하여 실행쓰나미가 발생한다
+
+       // 2. 일정시간 후 다시 인터발 호출하기
+       autoT = setTimeout(autoCall,4000);
+       // 4초 후 autoCall()함수 호출
+
+   }; //////// clearAuto
     
 
 }); ///////////// load //////////////////////
