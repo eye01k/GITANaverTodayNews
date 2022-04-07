@@ -1,6 +1,10 @@
 @charset "utf-8";
 /* Vogue PJ 공통 모듈 CSS */
 
+
+html{
+    scroll-behavior: smooth;
+}
 /************************** 상단영역 **************************/
 #top{
     position: relative; /* z-index를 위한 포지션 */

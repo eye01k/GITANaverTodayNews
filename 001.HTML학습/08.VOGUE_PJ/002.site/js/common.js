@@ -43,13 +43,42 @@ window.addEventListener("DOMContentLoaded", () => {
         // 상단메뉴 슬림 변경
         // 1. 스크롤 위치값이 100 이상일 때 #top에 클래스 on 부여
         // 2. 스크롤 위치값이 100 미만일 때 #top에 클래스 on 제거
-        if(scTop>=100) topA.classList.add("on");
+        if (scTop >= 100) topA.classList.add("on");
         else topA.classList.remove("on");
-        
+
         // 위로가기 버튼 보이기
         // 1. 스크롤 위치값이 200 초과일 때 #top에 클래스 show 부여
         // 2. 스크롤 위치값이 200 이하일 때 #top에 클래스 show 제거
-        if(scTop>200) tbtn.classList.add("show");
+        if (scTop > 200) tbtn.classList.add("show");
         else tbtn.classList.remove("show");
+
+        // 등장 액션 클래스 주기
+
+
+
+
+
+
+
     }); ////////// scroll
+
+    /* 
+        원리:
+        scAct 변수에 .scAct를 담고 요소의 개수만큼 scPos변수에 위치값을 셋팅한다
+    */
+
+    // 스크롤 등장 대상요소
+    let scAct = document.querySelectorAll(".scAct");
+
+    // 스크롤 대상별 위치 배열
+    let scPos = [];
+
+    // 대상 요소만큼 for문 돌기
+    for(let i=0; i<scAct.length; i++){
+        scPos[i] = scAct[i].offsetTop;
+    } ////////// for /////////
+    
+    console.log(scPos);
+
+    
 }); ////////////////// load
