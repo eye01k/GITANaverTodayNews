@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid1 - Gallery</title>
     <style>
-        
-
         /**************************************************** 
         [그리드 디스플레이]
         - 가로,세로 양방향 레이아웃을 위한 디스플레이 속성
@@ -45,6 +43,11 @@
         justify-items -> 가로방향 다중 정렬 (flex에 없음!)
         align-items -> 세로방향 다중 정렬
 
+        ______________________________________________________________________
+
+        그리드 사용 예시 사이트
+        https://www.matchroomboxing.com/
+
     ****************************************************/
         /* 타이틀 */
         .tit {
@@ -53,9 +56,9 @@
         }
 
         /* 그리드 박스 */
-        .grid{
+        .grid {
             display: grid;
-            grid-template-columns: repeat(5,1fr);
+            grid-template-columns: repeat(5, 1fr);
             /* grid-template-columns: 100px 200px 300px; */
             /* grid-template-columns: 1fr 3fr 5fr 2fr; */
 
@@ -74,29 +77,31 @@
         }
 
         /* 그리드 각박스 */
-        .grid>div{
-            position: relative; /* 부모자격 */
+        .grid>div {
+            position: relative;
+            /* 부모자격 */
             border: 2px solid #ccc;
         }
 
         /* 가상요소before로 패딩탑 사용 비율만들기 */
-        .grid>div::before{
+        .grid>div::before {
             content: '';
             display: block;
             padding-top: 150%;
         }
 
         /* 내용 이미지 */
-        .grid>div>img{
+        .grid>div>img {
             position: absolute;
             top: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 비디오,이미지 요소 비율 유지하며 배경처럼 채우기 */
+            object-fit: cover;
+            /* 비디오,이미지 요소 비율 유지하며 배경처럼 채우기 */
         }
 
         /* 상품설명박스 */
-        .grid aside{
+        .grid aside {
             position: absolute;
             bottom: 0;
             width: 100%;
@@ -105,26 +110,77 @@
             background-color: rgba(0, 0, 0, 0.534);
         }
 
+        .grid aside h2 {
+            font-size: min(24px, 1.8vw);
+        }
+
+        .grid aside h3 {
+            font-size: min(18px, 1.4vw);
+        }
+
 
         /* 미디어쿼리 - 1100px 이하 */
+        @media screen and (max-width:1100px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+                /* 4개 컬럼 구성 */
+            }
+        }
 
         /* 1100px 이하 */
 
         /* 미디어쿼리 - 1000px 이하 */
+        @media screen and (max-width:1000px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+                /* 4개 컬럼 구성 */
+            }
+        }
+
         /* 1000px 이하 */
 
         /* 미디어쿼리 - 800px 이하 */
+        @media screen and (max-width:800px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                /* 4개 컬럼 구성 */
+            }
+
+            .grid aside h2 {
+                font-size: 3vw;
+            }
+
+            .grid aside h3 {
+                font-size: 2vw;
+            }
+            .tit {
+                font-size: 5vw;
+            }
+        }
 
         /* 800px 이하 */
 
         /* 미디어쿼리 - 600px 이하 */
+        @media screen and (max-width:600px) {
+            .grid {
+                grid-template-columns: repeat(1, 1fr);
+                /* 4개 컬럼 구성 */
+            }
+
+            .grid aside h2 {
+                font-size: 4vw;
+            }
+
+            .grid aside h3 {
+                font-size: 3.5vw;
+            }
+
+            .tit {
+                font-size: 6vw;
+            }
+        }
 
         /* 600px 이하 */
-
-
-
-
-
     </style>
 </head>
 
