@@ -57,11 +57,14 @@ window.addEventListener("load", () => {
         기능: 슬라이드를 왼쪽/오른쪽으로 이동
     *****************/
 
-        const goSlide = dir => { // dir: 이동 방향(1-오른쪽, 0-왼쪽)
+        const goSlide = (dir,gb) => { 
+            // dir: 이동 방향(1-오른쪽, 0-왼쪽)
+            // gb - 구분코드(인터발 호출일 때만 값을 받아옴)
 
+            
             // 잠금상태 확인
             console.log("잠금상태",prot);
-
+            
             // 0. 광클 금지
             if(prot) return; // 돌아가
             prot = 1; // 잠금
@@ -69,7 +72,11 @@ window.addEventListener("load", () => {
             // .6초 후 잠금 해제
 
             // 전달값 및 호출 확인
-            // console.log("전달값: ",dir)
+            console.log("전달값: ",dir,gb);
+
+            // 버튼 클릭 시 gb 전달값이 없으므로 undefined가 되어 !gb는 true
+            if(!gb) clearAuto(); // 인터발함수 지우기
+
 
             // 1.5 슬라이드 li 요소들 변수 할당
             let sli = slide.querySelectorAll("li");
@@ -137,10 +144,40 @@ window.addEventListener("load", () => {
 
 
     // 오른쪽 버튼 클릭 시
-    abtn[1].onclick = () => goSlide(1);
+    abtn[1].onclick = () => {
+        goSlide(1)
+        // clearAuto()
+    };
 
     // 왼쪽 버튼 클릭 시
     abtn[0].onclick = () => goSlide(0);
+
+    /* 
+        [인터발 자동호출의 조건]
+        1. 일정시간 간격으로 슬라이드가 넘어감
+        2. 사용자가 버튼을 조작할 시 자동호출 멈춤
+        3. 일정시간 버튼조작이 없으면 다시 자동호출 
+    */
+    // 인터발용 변수
+    let autoI;
+
+    // 인터발 호출 함수
+    const autoCall = () => {
+        // 인터발 자동호출
+        autoI = setInterval(()=>goSlide(1,1),2500);
+        // 특정 상황에서 지우기 위해 변수에 할당
+
+    }; //////// autoCall
+
+    // 인터발 호출 함수 최초 호출
+    autoCall();
+
+    // 인터발 삭제 함수
+    // 슬라이드 이동 버튼 클릭 시 호출
+    const clearAuto = () => {
+        // 1. 인터발 지우기
+        clearInterval(autoI);
+    }; //////// clearAuto
 
     
 
