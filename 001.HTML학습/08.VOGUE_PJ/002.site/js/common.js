@@ -40,13 +40,16 @@ window.addEventListener("DOMContentLoaded", () => {
             로 바꿔서 위와 동일함!
 
         */
-
+        // 상단메뉴 슬림 변경
         // 1. 스크롤 위치값이 100 이상일 때 #top에 클래스 on 부여
         // 2. 스크롤 위치값이 100 미만일 때 #top에 클래스 on 제거
         if(scTop>=100) topA.classList.add("on");
         else topA.classList.remove("on");
         
-        if(scTop>=200) tbtn.classList.add("show");
+        // 위로가기 버튼 보이기
+        // 1. 스크롤 위치값이 200 초과일 때 #top에 클래스 show 부여
+        // 2. 스크롤 위치값이 200 이하일 때 #top에 클래스 show 제거
+        if(scTop>200) tbtn.classList.add("show");
         else tbtn.classList.remove("show");
     }); ////////// scroll
 }); ////////////////// load
