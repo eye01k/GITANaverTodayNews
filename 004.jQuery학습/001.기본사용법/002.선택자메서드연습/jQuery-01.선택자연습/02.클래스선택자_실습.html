@@ -12,7 +12,26 @@
     // 글자크기 50px 배경색 각각 lime, yellow, pink색으로
     // 또한 margin-left값을 100px로
     // 1초간격으로 1초동안 변경되게 설정하시오!
-
+    $(".tit").click(()=>{
+      $(".group li:first-child").css({
+        fontSize: "50px",
+        backgroundColor: "lime",
+        marginLeft: "100px",
+        transition: "1s"
+      })
+      $(".group li:nth-child(2)").css({
+        fontSize: "50px",
+        backgroundColor: "yellow",
+        marginLeft: "100px",
+        transition: "1s 1s"
+      })
+      $(".group li:nth-child(3)").css({
+        fontSize: "50px",
+        backgroundColor: "pink",
+        marginLeft: "100px",
+        transition: "1s 2s"
+      })
+    });
     
 
 

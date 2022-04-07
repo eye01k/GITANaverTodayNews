@@ -98,7 +98,36 @@
   
   ****************************************************/
 
-    
+    /* 제이쿼리 로딩구역 */
+    $(() => {
+      // $(선택자).이벤트 메서드()
+      // 클릭 메서드 -> click()
+      $("header>h2").click(() => {
+        console.log("나,클릭!");
+
+        // 변경대상: h1
+        // 선택자.css({속성:값,...})
+        $("h1").css({
+          backgroundColor: "yellow",
+          border: "10px dotted blue",
+          fontSize: "70px",
+          transition: "2s"
+        }); /////////// h1 css
+
+        // 추가미션: nav태그의 배경색은 녹색
+        // 테두리는 2px 빨간색 데쉬선, 글자크기 40px
+        // 글자색은 파란색, 트랜지션 4초 ease-in-out
+        $("nav").css({
+          backgroundColor: "green",
+          border: "2px dashed red",
+          fontSize: "40px",
+          color: "blue",
+          transition: "4s ease-in-out"
+        }); //////// nav css
+
+      }); ///////// h2 click //////
+
+    }); /////////////////JQB////////////////
   </script>
 
 
