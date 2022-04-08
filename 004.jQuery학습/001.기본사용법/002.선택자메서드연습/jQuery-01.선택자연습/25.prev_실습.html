@@ -33,6 +33,7 @@ $(document).ready(function(e) {
       backgroundColor: "lime"
     }, 500)
     .prev() // 이전 형제요소 -> 여기서는 div
+    .find("p") // div 의 자손 p
     .delay(1500) // 지연 1.5초
     .animate({
       backgroundColor: "green"
