@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
         let scVal = this.scrollY;
         console.log(scVal);
         
-        if(scVal >=bxPos+800){
+        if(scVal + appbx.offsetTop >=bxPos){
             appbx.style.position = "fixed";
             appbx.style.top = "80%";      
         } ////// if
