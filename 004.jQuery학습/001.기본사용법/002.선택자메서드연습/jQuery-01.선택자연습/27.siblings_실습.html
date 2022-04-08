@@ -37,8 +37,24 @@
       // class 넣는 메서드 addClass("클래스명")
       tg.find("img:nth-child(7n+1)").addClass("my");
      
+      // 미션: 미니언즈 이미지 300개를 셋팅하고 
+      //    미니언즈 중 하나를 클릭하면 클릭된 이미지만 
+      //    width를 200px로 변경, 나머지는 모두 50px로 
+      //    변경되도록 애니메이션 하시오.
 
-
+      tg.find("img").click(function(){
+        $(this).animate({
+          width: "200px"
+        },800).siblings().animate({
+          width: "50px"
+        },800);
+        
+        $(this).css({
+          border: "none"
+        }).siblings(".my").css({
+          border: "5px dotted orange"
+        });
+      }); ///////// click
 
     }); //jQuery실행구역
   </script>
