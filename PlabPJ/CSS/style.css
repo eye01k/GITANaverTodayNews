@@ -261,7 +261,8 @@ ol {
 
 /* 지원 박스 */
 .apply {
-  position: absolute;
+  position: sticky;
+  top: calc(100% - 100px);
   left: 50%;
   transform: translateX(-50%);
   width: 20%;
