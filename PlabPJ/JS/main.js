@@ -10,20 +10,23 @@ window.addEventListener("DOMContentLoaded", ()=>{
     }
 
 
-    let appbx = document.querySelector(".apply");
-
+    
     window.addEventListener("scroll", ()=>{
         let scVal = this.scrollY;
-        console.log(scVal);
-
-        if(scVal>=2444){
-            appbx.style.position = "fixed";
-            appbx.style.top = "80%";      
-        } ////// if
-        else {
-            appbx.style.position = "absolute";
-            appbx.style.top = "13%";
-        }
+        // console.log(scVal);
+        
+        // if(scVal>=bxPos){
+        //     appbx.style.position = "fixed";
+        //     appbx.style.top = "80%";      
+        // } ////// if
+        // else {
+        //     appbx.style.position = "absolute";
+        //     appbx.style.top = "13%";
+        // }
     }); //////// scroll
+    
+    let txtbx = document.querySelector(".txtbx");
+    let bxPos = txtbx.offsetTop;
+    console.log("지원박스 포지션: ", bxPos);
 }); //////////////// load /////////////////
 

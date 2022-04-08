@@ -55,10 +55,16 @@ window.addEventListener("DOMContentLoaded", () => {
         // 등장 액션 클래스 주기
 
         // 현재 스크롤 위치가 등장할 요소의 위치범위에 도달하면 클래스 on 부여
-        if(scTop > scPos[0]-winH && scTop < scPos[0]){
-            scAct[0].classList.add("on");
-        }
+        // if(scTop > scPos[0]-winH && scTop < scPos[0]){
+        //     scAct[0].classList.add("on");
+        // }
+        // else if(scTop > scPos[1]-winH && scTop < scPos[1]){
+        //     scAct[1].classList.add("on");
+        // }
 
+
+        // 등장요소 위치값 배열만큼 체크하는 함수 호출
+        scPos.forEach((val,idx)=>scAction(idx));
 
 
 
@@ -68,7 +74,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     /* 
         원리:
-        scAct 변수에 .scAct를 담고 요소의 개수만큼 scPos변수에 위치값을 셋팅한다
+        1) scAct 변수에 .scAct를 담고 요소의 개수만큼 scPos변수에 위치값을 셋팅한다
+
+        2) 등장요소의 위치의 이전부터 위치값 사이 범위에 스크롤이 통과할 때 등장할 요소가 나타나도록 함수로 체크한다
     */
 
     // 스크롤 등장 대상요소
@@ -88,5 +96,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const winH = window.innerHeight / 3*2;
     console.log("윈도우 높이의 2/3: ",winH);
 
-    
+    /* 
+        함수명: scAction
+        기능: 스크롤 위치값이 설정범위에 들어가면 해당 순번의 요소가 등장
+    */
+   const scAction = seq => { //// seq는 순번
+    // console.log("순번: ",seq);
+
+    if(scTop > scPos[seq]-winH && scTop < scPos[seq]){
+        scAct[seq].classList.add("on");
+    }
+   }; /////// scAction
 }); ////////////////// load
