@@ -17,7 +17,25 @@
           다른형제요소 중 특정요소만 선택됨!
 
       */
+      // 전체 박스
+      let tg = $("#container");
 
+      // 요소 추가 메서드 append(추가 요소)
+
+      // 미니언즈 50개 셋팅하기
+      // for(시;한;증){}
+      for(let i=0; i<50; i++){
+        tg.append('<img src="mini.jpg" alt="미니언즈">');
+      } ////////// for
+
+      // 미니언즈 크기 줄이기
+      tg.find("img").css({
+          width: "100px"
+      }); ///////// img css
+
+      // 미니언즈 중 7n+1 번째 이미지에 클래스 my 넣기
+      // class 넣는 메서드 addClass("클래스명")
+      tg.find("img:nth-child(7n+1)").addClass("my");
      
 
 
@@ -57,7 +75,7 @@
 
 <body>
   <div id="container">
-
+    
 
 
 
