@@ -5,12 +5,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
     console.log("로딩완료");
 
+    startSS();
     // 스크롤 값 변수
     let scTop;
     // 상단영역 #top 변수에 할당
     let topA = document.querySelector("#top");
 
     let tbtn = document.querySelector(".tbtn");
+
+    // 위로가기 버튼 클릭 시 맨 위로 이동
+    // 부드러운 스크롤 위치변수 pos값을 0 주면 됨
+    tbtn.onclick = () => {
+        pos = 0;
+
+        return false;
+    }; /////// click
 
     /* 
         [윈도우 스크롤 이벤트 함수]
@@ -24,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
         scTop = this.scrollY;
         // scrollY - 세로축 스크롤 위치값 리턴
         // this는 화살표 함수에서 window 객체임
-        console.log("스위: ", scTop);
+        // console.log("스위: ", scTop);
 
         /* 
          [윈도우 세로 스크롤 위치값 가져오는 방법]

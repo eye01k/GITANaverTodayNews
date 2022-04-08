@@ -2,9 +2,9 @@
 /* Vogue PJ 공통 모듈 CSS */
 
 
-html{
-    scroll-behavior: smooth;
-}
+/* html{
+    scroll-behavior: smooth; -> 부드러운 스크롤 시 사용 안 함
+} */
 /************************** 상단영역 **************************/
 #top{
     position: relative; /* z-index를 위한 포지션 */
