@@ -13,20 +13,21 @@ window.addEventListener("DOMContentLoaded", ()=>{
     
     window.addEventListener("scroll", ()=>{
         let scVal = this.scrollY;
-        // console.log(scVal);
+        console.log(scVal);
         
-        // if(scVal>=bxPos){
-        //     appbx.style.position = "fixed";
-        //     appbx.style.top = "80%";      
-        // } ////// if
-        // else {
-        //     appbx.style.position = "absolute";
-        //     appbx.style.top = "13%";
-        // }
+        if(scVal>=bxPos){
+            appbx.style.position = "fixed";
+            appbx.style.top = "80%";      
+        } ////// if
+        else {
+            appbx.style.position = "absolute";
+            appbx.style.top = "13%";
+        }
     }); //////// scroll
     
-    let txtbx = document.querySelector(".txtbx");
-    let bxPos = txtbx.offsetTop;
+    let appbx = document.querySelector(".apply");
+    let bxPos = appbx.getBoundingClientRect().top
+    ;
     console.log("지원박스 포지션: ", bxPos);
 }); //////////////// load /////////////////
 
