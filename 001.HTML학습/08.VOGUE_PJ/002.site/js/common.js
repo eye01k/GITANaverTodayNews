@@ -54,6 +54,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // 등장 액션 클래스 주기
 
+        // 현재 스크롤 위치가 등장할 요소의 위치범위에 도달하면 클래스 on 부여
+        if(scTop > scPos[0]-winH && scTop < scPos[0]){
+            scAct[0].classList.add("on");
+        }
 
 
 
@@ -79,6 +83,10 @@ window.addEventListener("DOMContentLoaded", () => {
     } ////////// for /////////
     
     console.log(scPos);
+
+    // 스크롤 등장 위치 조정값: 윈도우 화면 크기의 2/3
+    const winH = window.innerHeight / 3*2;
+    console.log("윈도우 높이의 2/3: ",winH);
 
     
 }); ////////////////// load
