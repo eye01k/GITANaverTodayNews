@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <title> Traversal- prev </title>
 <!-- jQuery library -->
-<script src="jquery-1.7.2.min.js"></script>
+<script src="jquery-3.6.0.min.js"></script>
 <script src="jquery-ui-1.8.23.custom.min.js"></script>
+<!-- 색상 애니메이션은 JQuery UI 필수 -->
 <script>
 $(document).ready(function(e) {
   /* 
@@ -15,7 +16,28 @@ $(document).ready(function(e) {
 	
 	// 미션: 마지막 p태그를 클릭하면 0.5초 간격으로 
   //      이전 형제요소의 배경색을 차례로 넣으시오.(p태그만!)
-  
+  $("#container").children("p").last().click(function(){
+    console.log("마지막 p");
+    $(this) // 클릭된 마지막 p 태그
+    .animate({
+      backgroundColor:"red"},500
+    )
+    .prev() // 이전 형제요소
+    .delay(500) // 지연 .5초
+    .animate({
+      backgroundColor: "yellow"
+    }, 500)
+    .prev() // 이전 형제요소
+    .delay(1000) // 지연 1초
+    .animate({
+      backgroundColor: "lime"
+    }, 500)
+    .prev() // 이전 형제요소 -> 여기서는 div
+    .delay(1500) // 지연 1.5초
+    .animate({
+      backgroundColor: "green"
+    }, 500)
+  }); //////// click
 
   // 추가미션:
   // .sub 아래 마지막 p태그를 클릭하면
