@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
         let scVal = this.scrollY;
         console.log(scVal);
         
-        if(scVal>=bxPos){
+        if(scVal + appbx.offsetTop>=bxPos){
             appbx.style.position = "fixed";
             appbx.style.top = "80%";      
         } ////// if
@@ -25,7 +25,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
         }
     }); //////// scroll
     
+    // let txtbx = document.querySelector(".txtbx");
+    // console.log(txtbx.offsetHeight);
     let appbx = document.querySelector(".apply");
+    console.log(appbx.offsetTop);
     let bxPos = appbx.getBoundingClientRect().top
     ;
     console.log("지원박스 포지션: ", bxPos);

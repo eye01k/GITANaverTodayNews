@@ -49,8 +49,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
+            width: 40%;
+            /* height: 300px; */
             /* width: 40%; */
             /* 가로크기 유동적변경! */
             min-width: 150px;
@@ -60,11 +60,11 @@
         }
 
         /* 비율밀기 */
-        /* .btns::before {
+        .btns::before {
             content: '';
             display: block;
             padding-top: 100%;
-        } */
+        }
 
         /* svg셋팅 */
         .btns svg {
@@ -72,19 +72,50 @@
             top: 0;
             width: 100%;
             height: 100%;
+
+            transform: rotate(-90deg);
+            /* circle 요소에 transform 적용 불가 */
         }
 
 
         /* circle 설정 */
         .c1 {
-            
+            fill: none;
+            /* 채우기 - 기본색은 검정, 투명(transparent), none(없음) */
+            stroke: red;
+            /* 선색  */
+            stroke-width: 20;
+            /* px단위 */
+
+            stroke-linecap: round;
+            /* 선 끝 둥글게 */
+
+            stroke-dasharray: 310%;
+            /* 선 공백 셋팅 속성. 값: 선 공백 선 공백 */
+            /* 
+            [ 선 공백 셋팅을 이용해서 svg 선 그리기 애니메이션 하기 ] 
+            1. 선 공백 셋팅에서 선이 모두 차지하도록 값을 찾는다
+            -> 쉽게 찾는 방법: 50%를 줘본다
+            -> 몇 조각인지 본다
+            -> 모두 선으로 채우려면 6배
+            50% * 6 = 300%
+            -> 모자라면 수치를 늘림
+            -> 왜 선으로 다 채워지게 했을까
+            -> 다음에 있는 공백을 밀어서 선을 숨기기 위해
+            -> stroke-dashoffset 으로 민다
+            -> 선 공백의 시작점을 셋팅할 수 있는데 선으로 채워진 선 공백값을 넣으면 공백부터 시작
+            -> 이 값을 0으로 만들면서 애니메이션 한다
+            */
+            stroke-dashoffset: 310%;
+
+            transition: stroke-dashoffset .7s ease-in-out;
 
         }
 
         /* .c1에 마우스 오버시 
         선부터 시작하는 위치로 변경함! */
         .btns:hover .c1 {
-            
+            stroke-dashoffset: 0;
         }
 
         /* 두번째 원 */
@@ -94,7 +125,7 @@
 
         .btns2 .c1 {
             stroke: black;
-            stroke-dasharray: 20;
+            stroke-dasharray: 50;
         }
 
         .btns2:hover .c1 {
@@ -108,8 +139,14 @@
 
         /* 네번째 원 */
         .btns4 {
-            width: 150px;
+            width: 20%;
+            min-width: 75px;
             background-image: url(images/wan.jpg);
+        }
+
+        .btns4 svg {
+            width: 200%;
+            transform: rotate(0deg);
         }
 
         .btns4::before {
@@ -122,19 +159,20 @@
             top: -50px;
             width: 100%;
         }
-        .marvel{
+
+        .marvel {
             position: fixed;
-            top:10%;
+            top: 10%;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1;
             /* outline: 1px solid red; */
-            
+
             width: 20%;
         }
 
         /* svg text 박스 */
-        .svgtxt{
+        .svgtxt {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -152,37 +190,79 @@
 <body>
     <!-- svg 마블로고 -->
     <div class="marvel">
-        
+
     </div>
 
 
     <!-- 4등분박스 -->
     <ul class="cbx">
         <li>
+            <!-- 아이언맨 박스 -->
             <div class="btns">
-                
+                <svg viewBox="0 0 300 300">
+                    <!-- 
+                        viewBox 속성을 셋팅해야 크기가 자유롭게 축소, 확대 변경된다
+                        viweBox="x축 y축 가로크기 세로크기"
+                        (가로 세로는 원본크기)
+                        viewBox 속성은 대소문자를 구분한다
+                        (소문자로 써도 브라우저가 자동으로 대문자로 변환해줌)
+                     -->
+                    <circle class="c1" cx="150" cy="150" r="140">
+
+                    </circle>
+                </svg>
             </div>
         </li>
         <li>
             <div class="btns btns2">
-                
+                <svg viewBox="0 0 300 300">
+                    <circle class="c1" cx="150" cy="150" r="140">
+
+                    </circle>
+                </svg>
             </div>
         </li>
         <li>
             <div class="btns btns3">
-                
+                <svg viewBox="0 0 300 300">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="red" />
+                            <stop offset="30%" stop-color="pink" />
+                            <stop offset="60%" stop-color="orange" />
+                            <stop offset="100%" stop-color="blue" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="c1" cx="150" cy="150" r="140" style="stroke: url(#grad1)">
+                        <!-- circle에 스타일 적용으로 
+                            stroke:url(#그라데이션 아이디) -> 선에 적용
+                            fill:url(#그라데이션 아이디) -> 면에 적용
+                        -->
+                    </circle>
+                </svg>
             </div>
         </li>
         <li>
             <div class="btns btns4">
-                
+                <svg viewBox="0 0 300 300">
+                    <defs>
+                        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="red" />
+                            <stop offset="30%" stop-color="orange" />
+                            <stop offset="60%" stop-color="purple" />
+                            <stop offset="100%" stop-color="green" />
+                        </linearGradient>
+                    </defs>
+                    <ellipse class="c1" cx="75" cy="150" rx="140" ry="65" transform="rotate(-90,75,150)"
+                        style="stroke: url(#grad2)"></ellipse>
+                </svg>
             </div>
         </li>
     </ul>
 
     <!-- svg text -->
     <div class="svgtxt">
-        
+
     </div>
 
     <!-- 
@@ -260,10 +340,62 @@
         </svg>
         
 
+        [ svg 태그요소란? ]
+        - SVG를 그리는 공간
+        - 하위요소로 그릴 수 있는 여러가지 도형 포멧이 있음
+        1. 사각형 <rect>
+        2. 원 <circle>
+        3. 타원 <ellipse>
+        4. 직선 <line>
+        5. 다중선 <polyline>
+        6. 다각형 <polygon>
+        7. 선 <path> - 직선,곡선 등 다양한 선표현
 
+        [ svg 공통 속성 - 선과 면으로 된 벡터그래픽 ]
+        1. 채우기색 : fill
+        2. 선두께 : stroke-width
+        3. 선색 : stroke
+
+        [ svg  축소확대용 속성 ]
+        viewBox 속성: (주의! 속성명 B대문자 필수! 대소문자구분!)
+        - 형식 : viewBox="x축위치 y축위치 width크기 height크기"
+        - 위의 형식의 값은 4가지이고 각 값은 띄어쓰기로 구분한다!
+        - 각 속성값의 특성
+            1) x축위치, y축위치는 양수값은 스테이지 바깥쪽방향이동
+                                음수값은 스테이지 안쪽방향이동
+            -> 스테이지 보다 큰 svg 이미지가 있다면 위치를 이동해서
+            특정 이미지만 보이게 하는데 사용한다!!!
+
+            2) width크기, height크기는 svg원본 크기를 지정하는 부분이다.(현재 보이는 영역의 스테이지 크기설정)
+            -> 이 값의 width크기를 실제크기와 다르게 조정할 경우
+            값이 원본보다 커지면 보이는 벡터이미지는 작게 표현된다!
+            (값이 작아지면 크게표현됨)
+            -> height 크기는 벡터 그래픽의 세로영역을 확장하는데 사용
+
+            [ viewBox의 가장 일반적인 셋팅은? ]
+            viewBox="0 0 원래가로크기 원래세로크기"
+            -> 이 셋팅을 하면 스테이지가 크기 변경을 할때 svg의
+            크기를 비율을 유지하여 축소확대를 하게된다!
+
+        [ rect 요소 - 사각형을 그리는 svg ]
+        1. 구성속성: 
+            (1) 가로크기 - width
+            (2) 세로크기 - height
+            (3) x축위치 - x
+            (3) y축위치 - y
+        2. 표현법:
+          - svg 요소 하위에 rect 요소를 코딩한다
+
+        [ polygon 요소 - 다각형을 그리는 svg ]
+        1. 구성속성:
+            - points : 다각형의 점들의 좌표값을 셋팅함
+        2. 좌표값 표현
+            - points의 값으로 아래와 같이 표기함
+            points="x1,y1 x2,y2 x3,y3 ..."
+            - x,y좌표를 콤마로 구분하고 다른좌표는 띄어쓰기로 구분함
      -->
 
-     
+
 
 </body>
 
