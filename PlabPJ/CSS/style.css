@@ -82,13 +82,31 @@ ol {
 
   filter: brightness(50%);
 }
-
+.matbx{
+  position: absolute;
+  top: 1.3%;
+  left: 0;
+  width: 100%;
+}
+.mlist{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.mlist li{
+  width: 30%;
+}
+.mlist img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .GoDown {
   /* width: 371px;
   margin: 0 auto;
   margin-top: 628px; */
   position: absolute;
-  top: 7.5%;
+  top: 8%;
   left: 50%;
   transform: translateX(-50%);
 }
