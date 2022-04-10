@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     let top = document.querySelector(".top");
 
-    let GoDown = document.querySelector(".Godown");
+    let GoDown = document.querySelector(".GoDown");
 
     let bgvideo = document.querySelector("#bgvideo");
 
@@ -27,7 +27,13 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         // 변경대상: .top .Go .GoDown - display: none , #bgvideo - fliter: brightness(15%) , .matbx - classList.add("on")
 
-        Go.style.display = "none"
+        Go.style.display = "none";
+        GoDown.style.display = "none";
+        top.style.display = "none";
+        bgvideo.style.filter = "brightness(15%)";
+
+        matbx.classList.add("on");
+        
 
     }; ////// onclick
 
