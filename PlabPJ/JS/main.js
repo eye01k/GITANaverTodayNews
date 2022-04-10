@@ -6,12 +6,34 @@ window.addEventListener("DOMContentLoaded", ()=>{
     for(let x of sm){
         x.querySelector("a").onclick = ()=>{
             x.classList.add("open");
-        };
-    }
+        }; ///// onclick
+    } //// for
+
+
+    // Go! 클릭 함수
+
+    // 이벤트대상: div.Go 
+    let Go = document.querySelector(".Go");
+
+    let top = document.querySelector(".top");
+
+    let GoDown = document.querySelector(".Godown");
+
+    let bgvideo = document.querySelector("#bgvideo");
+
+    let matbx = document.querySelector(".matbx");
+
+    Go.onclick = ()=>{
+
+        // 변경대상: .top .Go .GoDown - display: none , #bgvideo - fliter: brightness(15%) , .matbx - classList.add("on")
+
+        
+
+    }; ////// onclick
+
 
     // 변경대상: #slide top값
     let slide = document.querySelector("#slide");
-
     
     // 이미지 변경 함수
     const chgImg = () => {
