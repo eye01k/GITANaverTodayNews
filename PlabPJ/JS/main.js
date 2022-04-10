@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         // 변경대상: .top .Go .GoDown - display: none , #bgvideo - fliter: brightness(15%) , .matbx - classList.add("on")
 
-        
+        Go.style.display = "none"
 
     }; ////// onclick
 

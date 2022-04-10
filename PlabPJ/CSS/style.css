@@ -1,17 +1,17 @@
 @charset "utf-8";
 
 
+@import url(./core.css);
+@import url(./reset.css);
+
+
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Black+Han+Sans&display=swap');
 
 /* font-family: 'Black Han Sans', sans-serif;
    font-family: 'IBM Plex Sans KR', sans-serif;
 */
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
+
 
 html {
   font-size: 10px;
@@ -23,12 +23,7 @@ html {
   border: 1px dotted #ccc
 } */
 
-ul,
-ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+
 
 /* 상단 영역 */
 /* .top{
@@ -88,6 +83,9 @@ ol {
   right: 6%;
 
   animation: jump .5s ease-in-out  infinite alternate;
+}
+.Go:hover{
+  cursor: pointer;
 }
 .Go h2{
   font-size: 4vw;
