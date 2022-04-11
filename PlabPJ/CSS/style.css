@@ -97,7 +97,7 @@ html {
   color: white;
   text-align: center;
 
-  animation: jump .5s ease-in-out infinite alternate;
+  animation: jump .5s ease-out infinite alternate;
 }
 
 .Go svg {
