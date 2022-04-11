@@ -42,6 +42,14 @@ html {
   justify-content: center;
 }
 
+#logo {
+  position: absolute;
+  top: 24%;
+  left: 2%;
+  width: 10%;
+  height: 55%;
+}
+
 .gnb {
   margin-top: 22px;
 }
@@ -77,26 +85,31 @@ html {
 
   filter: brightness(50%);
 }
-.Go{
+
+.Go {
   position: absolute;
   top: 5.5%;
   right: 6%;
 
-  animation: jump .5s ease-in-out  infinite alternate;
+  animation: jump .5s ease-in-out infinite alternate;
 }
-.Go:hover{
+
+.Go:hover {
   cursor: pointer;
 }
-.Go h2{
+
+.Go h2 {
   font-size: 4vw;
   color: white;
 }
+
 @keyframes jump {
-  to{
+  to {
     transform: translateY(-10%);
   }
 }
-.matbx{
+
+.matbx {
   position: absolute;
   top: 1%;
   right: -100%;
@@ -106,23 +119,27 @@ html {
   transition: right .6s ease-out;
 }
 
-.matbx.on{
+.matbx.on {
   right: 0;
 }
-.mlist{
+
+.mlist {
   display: flex;
   width: 100%;
   height: 100%;
   justify-content: space-evenly;
 }
-.mlist li{
+
+.mlist li {
   width: 30%;
 }
-.mlist img{
+
+.mlist img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .GoDown {
   /* width: 371px;
   margin: 0 auto;
