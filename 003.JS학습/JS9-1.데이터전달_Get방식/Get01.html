@@ -83,7 +83,30 @@
             // 로딩구역 확인
             console.log("로딩완료!!!");
 
-            
+            // a요소 click 이벤트 설정
+            // 대상: #gnb a
+            let gnb = document.querySelectorAll("#gnb a");
+            // console.log("개수: ", gnb.length);
+
+            // 각 a요소 클릭 셋팅
+            for(let x of gnb){
+                x.onclick = ()=>{
+                    // 1. 클릭된 a요소 텍스트 읽어오기
+                    let txt = x.innerText;
+                    console.log(txt);
+
+                    // 2. 페이지 이동
+                    // location.href = 이동할 페이지 주소
+                    // 자기 자신창에서 변경
+                    location.href = "Get02.html?shop="+escape(txt);
+                    // Get02.html?키=값
+                    // -> get방식으로 데이터 넘기기
+                    // 2byte 문자인 한글은 1byte로 처리하는 url에서 깨지므로 JS내장함수인 escape()로 1byte 규칙 문자열로 변환하여 보내준다
+                    // 받는 페이지에서 본 문자를 unescape()로 풀어줘야한다
+                    
+                }; /////// onclick
+            } /////// for of
+
 
 
 
