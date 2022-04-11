@@ -30,10 +30,13 @@
 
       // 미션: a를 클릭하면 부모들 중 p태그는 배경색을 노란색, 
       // div태그는 배경색을 녹색으로 지정하시오.
-      $("a").click(function(){
+      $("a").click(function(e){
+
+        e.stopPropagation(); // 이벤트 버블링 막기
+
         $(this).parents("p").animate({
           backgroundColor: "yellow"
-        },500).parents("div").animate({
+        },500).parents("#sub").animate({
           backgroundColor: "green"
         },500);
       }); ///// click
