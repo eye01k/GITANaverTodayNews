@@ -42,13 +42,6 @@ html {
   justify-content: center;
 }
 
-#logo {
-  position: absolute;
-  top: 24%;
-  left: 2%;
-  width: 10%;
-  height: 55%;
-}
 
 .gnb {
   margin-top: 22px;
@@ -91,7 +84,6 @@ html {
   top: 5.5%;
   right: 6%;
 
-  animation: jump .5s ease-in-out infinite alternate;
 }
 
 .Go:hover {
@@ -101,6 +93,8 @@ html {
 .Go h2 {
   font-size: 4vw;
   color: white;
+
+  animation: jump .5s ease-in-out infinite alternate;
 }
 
 @keyframes jump {
