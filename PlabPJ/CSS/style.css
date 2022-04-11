@@ -289,7 +289,7 @@ html {
 .arrow {
   width: 34%;
   height: 3vw;
-  margin: 5% auto 0;
+  margin: 8% auto 0;
   background: url(../imgs/ic_arrow.svg) no-repeat center/contain;
 }
 
@@ -340,7 +340,7 @@ html {
 /* 플랩매니저 텍스트 박스 */
 
 .txtbx {
-  padding: 7% 0 10% 5%;
+  padding: 0% 0 10% 5%;
 }
 
 .txtbx h2 {
@@ -366,7 +366,7 @@ html {
 /* 지원 박스 */
 .apply {
   position: sticky;
-  top: calc(100% - 100px);
+  top: calc(100% - 200px);
   left: 50%;
   transform: translateX(-50%);
   width: 20%;
