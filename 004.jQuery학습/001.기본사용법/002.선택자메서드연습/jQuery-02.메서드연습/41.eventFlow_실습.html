@@ -13,20 +13,24 @@
 		//대한민국전체
 		$("body").click(function(){ 
 			$(this).css({backgroundColor:"blue"});
+			e.stopPropagation();
 		});///// click ////////////
 		
 		//친척네집
 		$("div").click(function(e){
 			$(this).css({backgroundColor:"green"});
+			e.stopPropagation();
 		});///// click ////////////
 		
 		//엄마집
 		$("p").click(function(e){
+			e.stopPropagation();
 			$(this).css({backgroundColor:"yellow"});
 		});///// click ////////////
 		
 		//아들방
 		$("a").click(function(e){
+			e.stopPropagation();
 			$(this).css({backgroundColor:"red"});
 		});///// click ////////////
 		
