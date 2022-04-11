@@ -36,6 +36,41 @@
 				position: "absolute",
 				left: "0"
 			})
+			.first() // 이미지 중 첫번재 이미지 선택
+			.css({width: "300px"})
+			.next() // 두번째 이미지
+			.css({width: "250px"})
+			.next() // 세번째 이미지
+			.css({width: "200px"})
+			.next() // 네번째 이미지
+			.css({width: "150px"})
+			.next() // 다섯번째 이미지
+			.css({width: "100px"})
+			// 애니메이션 주기
+			// 마지막 이미지에서 부모로 이동
+			.parent() // 부모인 두번째 p태그
+			.find("img") // 5개의 이미지
+			.eq(1) // 두번째 이미지
+			.delay(1000) // 1초 후
+			.animate({left: "300px"},400) // 위치이동 애니메이션
+			.next() // 세번째 이미지
+			.delay(1400) // 1.4초 후
+			.animate({left: "550px"},300) // 위치이동 애니메이션
+			.next() // 네번째 이미지
+			.delay(1700) // 1.7초 후
+			.animate({left: "750px"},200) // 위치이동 애니메이션
+			.next() // 다섯번째 이미지
+			.delay(1900) // 1.9초 후
+			.animate({left: "900px"},100) // 위치이동 애니메이션
+
+			// 짝홀수 이동 애니메이션
+			// 마지막 이미지부터 다시 부모로 이동
+			.parent() // 부모인 두번째 p태그
+			.find("img:even") // nth-child()를 쓰지 않을 경우 0부터
+			.delay(2000) // 위의 총 애니메이션 시간 + 2초 딜레이
+			.animate({top: "200px"},500) // 아래로 이동
+
+			
 
 			// $("#main>p").eq(1).html("<img>").css({
 			// 	position: "absolute"
