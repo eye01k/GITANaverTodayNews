@@ -84,6 +84,9 @@ html {
   max-height: 1080px;
 
   filter: brightness(50%);
+
+  transition: filter .4s ease-out;
+
 }
 
 .Go {
@@ -130,11 +133,16 @@ html {
   width: 100%;
   height: 7%;
 
-  transition: right .6s ease-out;
+  transition: right .4s ease-out;
 }
 
 .matbx.on {
   right: 0;
+}
+
+.matbx img {
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 20%, black 90%, transparent 100%);
+
 }
 
 .mlist {
@@ -146,6 +154,20 @@ html {
 
 .mlist li {
   width: 30%;
+  position: relative;
+}
+
+.mlist h3 {
+  color: white;
+  text-decoration: none;
+  font-size: 3vw;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  /* bottom: 45%; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .mlist img {
