@@ -129,7 +129,16 @@
     </style>
     <script src="jquery-1.7.2.min.js"></script>
     <script>
-        
+        $(()=>{
+
+            // 햄버거 버튼 클릭 시 버튼 자신 class="on" 넣기/빼기 (toggle)
+            // + .gbx에 class="on" 넣기/빼기 (toggle)
+            $(".ham").click(function(){
+                $(this).toggleClass("on");
+                $(".gbx").toggleClass("on");
+            }); ///////// click
+
+        }); ////////// JQB
     </script>
 </head>
 

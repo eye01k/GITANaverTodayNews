@@ -19,7 +19,7 @@
 		$("#main>p").first().click(function(){
 
 			// 호출확인
-			console.log("나야나");
+			// console.log("나야나");
 
 			// this = 첫번째 p태그
 			$(this) // 출발
@@ -78,7 +78,8 @@
 			.delay(2000) // 2초 딜레이
 			.animate({top: "50px"},500); // 위로 이동
 
-			
+			////// html 태그 찍어보기 //////////
+			console.log("현재 html: ", $("#main").html());
 
 			// $("#main>p").eq(1).html("<img>").css({
 			// 	position: "absolute"
