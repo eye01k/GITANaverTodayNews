@@ -23,17 +23,37 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     let matbx = document.querySelector(".matbx");
 
+    let lArrow = document.querySelector(".lArrow");
+
     Go.onclick = ()=>{
 
         // 변경대상: .top .Go .GoDown - display: none , #bgvideo - fliter: brightness(15%) , .matbx - classList.add("on")
+
+        matbx.style.transition = "right .4s ease-out";
+        lArrow.style.transition = "left .4s ease-out";
 
         Go.style.display = "none";
         GoDown.style.display = "none";
         top.style.display = "none";
         bgvideo.style.filter = "brightness(15%)";
+        lArrow.style.left = "2%"
 
         matbx.classList.add("on");
         
+
+    }; ////// onclick
+
+    lArrow.onclick = () => {
+
+        Go.style.display = "block";
+        GoDown.style.display = "block";
+        top.style.display = "block";
+        bgvideo.style.filter = "brightness(50%)";
+        lArrow.style.left = "102%"
+
+        lArrow.style.transition = "none";
+        matbx.style.transition = "none";
+        matbx.classList.remove("on");
 
     }; ////// onclick
 
