@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* Vogue PJ 카테고리 템플릿 CSS */
+
+/* 외부파일 합치기 */
+@import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css);
+
+/* 1-1.서브타이틀 */
+.stit{
+    font-family: pist;
+    font-size: 50px;
+    padding: 40px 0 20px;
+    text-align: center;
+    font-weight: normal;
+}
+/* 1-2.서브메뉴(LNB-Local Navigation Bar) */
+.lnb{
+    padding: 5px 0 50px;
+}
+.lnb ul{
+    display: flex;
+    flex-wrap: wrap; /* flex 자동 줄바꿈 */
+    justify-content: center;
+}
+.lnb li{
+    margin: 0 10px;
+}
+.lnb a{
+    font-family: nbg;
+    font-size: 18px;
+    color: #333;
+    transition: color .5s;
+}
+.lnb li:first-child a,
+.lnb a:hover{
+    color: red;
+}
+
+.bg1-1{
+    background-image: url(../images/fashion/cont1-1a.jpg);
+}
+.bg1-2{
+    background-image: url(../images/fashion/cont1-2a.jpg);
+}
+.bg1-3{
+    background-image: url(../images/fashion/cont1-3a.jpg);
+}
+.bg2-1{
+    background-image: url(../images/fashion/cont2-1a.jpg);
+}
+.bg2-2{
+    background-image: url(../images/fashion/cont2-2a.jpg);
+}
+.bg2-3{
+    background-image: url(../images/fashion/cont2-3a.jpg);
+}
