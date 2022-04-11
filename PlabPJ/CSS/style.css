@@ -42,9 +42,16 @@ html {
   justify-content: center;
 }
 
+.logo {
+  position: absolute;
+  top: 24%;
+  left: 2%;
+  width: 10%;
+  height: 55%;
+}
 
 .gnb {
-  margin-top: 22px;
+  margin-top: 2.3%;
 }
 
 .gnb a {
@@ -82,8 +89,10 @@ html {
 .Go {
   position: absolute;
   top: 5.5%;
-  right: 6%;
+  right: 3%;
 
+  width: 20%;
+  height: 3%;
 }
 
 .Go:hover {
@@ -93,8 +102,19 @@ html {
 .Go h2 {
   font-size: 4vw;
   color: white;
+  text-align: center;
 
   animation: jump .5s ease-in-out infinite alternate;
+}
+
+.Go svg {
+  fill: white;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
 }
 
 @keyframes jump {
