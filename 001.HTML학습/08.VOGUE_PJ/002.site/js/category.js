@@ -50,6 +50,14 @@ $(() => {
 else{
     $(".lnb").remove();
 } /////////// else
+
+// 4. 콘텐츠 타이틀 넣기
+// 대상: .cbx h2
+let cbxtit = $(".cbx h2");
+// each() 메서드를 사용하여 h2 요소의 순번에 맞게 내용을 넣어준다
+cbxtit.each((idx,ele)=>{
+    $(ele).html(data["타이틀"][idx]);
+}); ////////// each
     
 
 }); //////////// JQB
