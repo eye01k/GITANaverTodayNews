@@ -42,5 +42,18 @@
     .pt1.rbx::before {
         padding-top: 150%;
     }
+    /* 8. (두개 된)세개짜리 박스 비율 변경 */
+    .pt3.rbx::before {
+        padding-top: 75%;
+    }
+    /* 9. 콘텐츠 타이틀 크기 조정 */
+    .cbx h2{
+        font-size: 5vw;
+        padding: 10vw;
+    }
+    /* 10. 박스에 마우스 오버 시 보더 두께 변경 */
+    .cbx:hover::after {
+        border: 4vw solid red;
+    }
 }
 /* 모바일 미디어쿼리 - 500px 이하 끝 */
