@@ -39,7 +39,6 @@ html {
 } */
 .fl {
   display: flex;
-  justify-content: space-evenly;
 }
 .tmenu{
   width: 100%;
@@ -66,3 +65,32 @@ html {
 } */
 
 /* 메인 영역 */
+.daybx{
+  padding: 1vw;
+}
+.week li{
+  font-size: 1vw;
+}
+.week.fl{
+  justify-content: space-around;
+}
+.selbx{
+  padding: 1vw;
+}
+.select{
+  margin-left: 4vw;
+}
+.select li{
+  padding: 0 1vw;
+  margin: 0 1vw;
+  border: 1px solid #ccc;
+  border-radius: 10px
+}
+.select a{
+  text-decoration: none;
+  color: black;
+  font-size: 1vw;
+}
+.match{
+  flex-direction: column;
+}
