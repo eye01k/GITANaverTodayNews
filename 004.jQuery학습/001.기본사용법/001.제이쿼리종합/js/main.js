@@ -31,6 +31,13 @@ $(() => {
     // 주사기 이미지
     let inj = `<img src="images/inj.png" alt="주사기" class="inj">`;
 
+    // 미니언즈 가로위치 보정값
+    // 윈도우 가로크기의 5%
+    let win5 = $(window).width()*.05;
+    console.log("윈도우 가로크기의 5%",win5);
+    // width() 가로크기, height() 세로크기
+    // -> 단위없는 px 숫자값 리턴
+
     /* 
          2. 초기화 셋팅
     */
@@ -102,7 +109,7 @@ $(() => {
             // 화면에서의 top값
             let tgtop = tg.offset().top;
             // 화면에서의 left값
-            let tgleft = tg.offset().left;
+            let tgleft = tg.offset().left+win5;
             // console.log(tgtop,tgleft);
             /* 
                 offset() 메서드
@@ -120,9 +127,20 @@ $(() => {
 
             */
 
-        }); /////// click
+            // 4. 미니언즈 이동하기
+            // 대상: .mi
+            mi.animate({
+                top: tgtop+"px",
+                left: tgleft+"px"
+            },2000, // 시간
+            "easeInOutBack", // 이징
+            ()=>{ // 함수
 
-    // 3-1. "들어가기" 버튼 클릭 이벤트 끝
+            }); ////// animate
+
+        }); /////// click
+        // 3-1. "들어가기" 버튼 클릭 이벤트 끝
+
 
     // 3-2. "옆방으로" 버튼 클릭 이벤트 시작
 
