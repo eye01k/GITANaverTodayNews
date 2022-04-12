@@ -87,73 +87,86 @@ $(() => {
     */
 
     // 버튼 클릭 시 공통 기능 함수
-    const miniAct = () => {
-        
+    const miniAct = (ele,seq,call) => {
+        // ele - 호출하는 버튼 자신(this 키워드)
+        // seq - 이동할 빌딩 li 순번
+        // call - 이동 후 콜백함수
+
+        // 1. 클릭된 버튼 자신 없애기
+        $(ele).slideUp();
+        // slideUp(시간,이징,함수) -> height 값이 0이 되면서 애니메이션 후 display none
+        // <-> slideDown(시간,이징,함수)
+
+        // 2. 메시지 지우기
+        msg.fadeOut(200);
+        // fadeOut(시간,이징,함수)
+        // opacity 가 0이 되면서 애니메이션 후 display none
+        // <-> fadeIn(시간,이징,함수)
+
+        // 3. 미니언 위치 이동: 이동할 빌딩 li의 위치를 알아내기
+        // 이동할 li 타겟 -> bd
+        let tg = bd.eq(seq); // seq 순번방
+        // eq(순번) -> 선택요소들 중 몇번째 요소를 선택
+        // eq는 sequence로부터 나옴
+
+        // 화면에서의 top값
+        let tgtop = tg.offset().top;
+        // 화면에서의 left값
+        let tgleft = tg.offset().left+win5;
+        // console.log(tgtop,tgleft);
+        /* 
+            offset() 메서드
+            - 기준: 윈도우 화면
+            - 요소의 위치나 크기 정보를 담고 있음
+            - offset().top -> 요소의 top값
+            - offset().left -> 요소의 left값
+            
+            ____________________________________________
+            position() 메서드
+            - 기준: 포지션이 있는 부모박스
+            - 요소의 위치나 크기 정보를 담고 있음
+            - position().top -> 요소의 top값
+            - position().left -> 요소의 left값
+
+        */
+
+        // 4. 미니언즈 이동하기
+        // 대상: .mi
+        mi.animate({
+            top: tgtop+"px",
+            left: tgleft+"px"
+        },
+        2000, // 시간
+        "easeInOutBack", // 이징
+        call // 콜백함수
+        ); ////// animate
+
+        // animate({css설정},시간,이징,함수)
+        // -> css변경을 애니메이션해주는 메서드
+        // transition 설정 불필요
+
     }; /////////// miniAct 함수
 
     // 3-1. "들어가기" 버튼 클릭 이벤트 시작
     $(btns).first() // 버튼들 중 첫번째
         .click(function () {
-            // 1. 클릭된 버튼 자신 없애기
-            $(this).slideUp();
-            // slideUp(시간,이징,함수) -> height 값이 0이 되면서 애니메이션 후 display none
-            // <-> slideDown(시간,이징,함수)
 
-            // 2. 메시지 지우기
-            msg.fadeOut(200);
-            // fadeOut(시간,이징,함수)
-            // opacity 가 0이 되면서 애니메이션 후 display none
-            // <-> fadeIn(시간,이징,함수)
-
-            // 3. 미니언 위치 이동: 이동할 빌딩 li의 위치를 알아내기
-            // 이동할 li 타겟 -> bd
-            let tg = bd.eq(8); // 8번방
-            // eq(순번) -> 선택요소들 중 몇번째 요소를 선택
-            // eq는 sequence로부터 나옴
-
-            // 화면에서의 top값
-            let tgtop = tg.offset().top;
-            // 화면에서의 left값
-            let tgleft = tg.offset().left+win5;
-            // console.log(tgtop,tgleft);
-            /* 
-                offset() 메서드
-                - 기준: 윈도우 화면
-                - 요소의 위치나 크기 정보를 담고 있음
-                - offset().top -> 요소의 top값
-                - offset().left -> 요소의 left값
-                
-                ____________________________________________
-                position() 메서드
-                - 기준: 포지션이 있는 부모박스
-                - 요소의 위치나 크기 정보를 담고 있음
-                - position().top -> 요소의 top값
-                - position().left -> 요소의 left값
-
-            */
-
-            // 4. 미니언즈 이동하기
-            // 대상: .mi
-            mi.animate({
-                top: tgtop+"px",
-                left: tgleft+"px"
-            },2000, // 시간
-            "easeInOutBack", // 이징
-            ()=>{ // 함수
+            // 콜백 함수 (미니언 이동 후 실행)
+            let callFn = ()=>{ 
                 // 5. 메시지 변경
                 msg
                 .text("와~! 아늑하다! 옆방으로 가보자!") // 메시지 텍스트 변경
                 .fadeIn(200); // 메시지 나타나기
-
+    
                 // 6. 다음버튼 보이기
-                btns.eq(1).delay(1000).slideDown();
+                $(this) // 클릭된 버튼
+                .next() // 다음 버튼
+                .delay(1000).slideDown();
                 // delay(시간) -> 애니메이션 메서드 앞에 사용
-            }); ////// animate
+            }; /////// 콜백함수 끝
 
-            // animate({css설정},시간,이징,함수)
-            // -> css변경을 애니메이션해주는 메서드
-            // transition 설정 불필요
-
+            // 공통기능함수 호출
+            miniAct(this,8,callFn);
         }) /////// click
         // 3-1. "들어가기" 버튼 클릭 이벤트 끝
 
