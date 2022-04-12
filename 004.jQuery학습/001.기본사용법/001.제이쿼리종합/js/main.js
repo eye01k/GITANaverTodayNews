@@ -294,14 +294,44 @@ $(() => {
                         // 2-1. 7번방 좀비 5번방으로 이동
                         bd.eq(7).find(".mz").animate({bottom: tg.height()+"px"},500,"easeOutElastic")
                         // 2-2. 주인공에게 달려오기
-                        .animate({right: tg.width()*1.2+"px"},1500,"easeInElastic")
+                        .animate({right: tg.width()*1.2+"px"},1500,"easeOutBounce",()=>{ // 콜백함수 - 물린 후
+                            // 3. 주인공 사색
+                            mi.css({
+                                filter: "grayscale(100%)"
+                            });
+
+                            // 4. 메시지 지우기
+                            msg.hide();
+
+                            // 5. 2초 뒤에 좀비 되기
+                            setTimeout(()=>{
+                                // 5-1. 좀비 이미지로 변경
+                                mi.find("img")
+                                .attr("src","images/mz1.png");
+                                // attr(속성명, 속성값)
+                                // -> 속성값 변경 메서드
+                                // 비교) JS의 setAttribute()
+
+                                // 참고) 속성값 가져오기 - attr(속성명)
+                                // 비교) JS의 getAttribute()
+
+                                // 5-2. 좀비 메시지
+                                msg.html("나도 좀비;;; <br> 어서 치료 주사를..!!")
+                                .css({
+                                    left: "100%"
+                                })// 말풍선 위치 변경
+                                .fadeIn(); // 메시지 보이기
+
+                                // 6. 다음버튼 보이기
+                                $(this) // 클릭된 버튼
+                                    .next() // 다음 버튼
+                                    .delay(1000).slideDown();
+                                // delay(시간) -> 애니메이션 메서드 앞에 사용
+                            },2000);
+                            
+                        }) // 좀비 animate
                     });
 
-                // 2. 다음버튼 보이기
-                $(this) // 클릭된 버튼
-                    .next() // 다음 버튼
-                    .delay(1000).slideDown();
-                // delay(시간) -> 애니메이션 메서드 앞에 사용
             }; /////// 콜백함수 끝
 
             // 공통기능함수 호출
