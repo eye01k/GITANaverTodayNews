@@ -39,17 +39,33 @@ html {
 } */
 .fl {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
-
+.tmenu{
+  width: 100%;
+  height: 100%;
+}
+.tmenu>div{
+  width: 40%;
+}
 .logo {
-  position: absolute;
+  /* position: absolute;
   top: 31%;
-  left: 2%;
+  left: 2%; */
   width: 10%;
-  height: 36%;
+  height: 100%;
 }
 
+.searchbx {
+  color: #3E5463;
+  font-size: 14px;
+  background: none;
+  border: none;
+  vertical-align: super;
+  width: 100%;
+  padding: 0px;
+  line-height: 24px;
+}
 
 
 /* 상단 메뉴 마우스 오버 시 */
@@ -115,16 +131,18 @@ html {
     transform: translateY(-10%);
   }
 }
-.lArrow{
-    position: absolute;
-    width: 4%;
-    top: -1.3%;
-    left: 102%;
 
-    fill: white;
-    /* transition: left .4s ease-out; */
+.lArrow {
+  position: absolute;
+  width: 4%;
+  top: -1.3%;
+  left: 102%;
+
+  fill: white;
+  /* transition: left .4s ease-out; */
 
 }
+
 .matbx {
   position: absolute;
   top: 1%;
