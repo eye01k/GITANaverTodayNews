@@ -105,3 +105,9 @@ html {
 .match span{
   font-size: 2vw;
 }
+.match span p{
+  font-size: 1vw;
+}
+.sigbtn{
+  width: 10%;
+}
