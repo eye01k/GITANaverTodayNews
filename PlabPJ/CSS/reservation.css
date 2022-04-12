@@ -94,3 +94,14 @@ html {
 .match{
   flex-direction: column;
 }
+.match li{
+  border-bottom: 1px solid #ccc;
+  margin: 1vw;
+  justify-content: space-between;
+
+}
+.match.fl{
+}
+.match span{
+  font-size: 2vw;
+}
