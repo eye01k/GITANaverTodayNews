@@ -141,7 +141,8 @@ $(() => {
                 .fadeIn(200); // 메시지 나타나기
 
                 // 6. 다음버튼 보이기
-                btns.eq(1).slideDown();
+                btns.eq(1).delay(1000).slideDown();
+                // delay(시간) -> 애니메이션 메서드 앞에 사용
             }); ////// animate
 
             // animate({css설정},시간,이징,함수)
