@@ -289,6 +289,9 @@ $(() => {
                     .fadeIn(200,()=>{
                         // 2. 좀비 달려오기
                         // 7번방 좀비 - bd.eq(7).find(".mz")
+
+                        // 2-1. 7번방 좀비 5번방으로 이동
+                        bd.eq(7).find(".mz").animate({bottom: bd.eq(7).height()+"px"},500,"easeOutElastic")
                     });
 
                 // 2. 다음버튼 보이기
