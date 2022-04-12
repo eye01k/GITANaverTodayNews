@@ -55,5 +55,8 @@
     .cbx:hover::after {
         border: 4vw solid red;
     }
+    .cbx::after {
+        transition: none;
+    }
 }
 /* 모바일 미디어쿼리 - 500px 이하 끝 */
