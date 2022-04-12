@@ -1,21 +1,21 @@
 window.addEventListener("DOMContentLoaded", ()=>{
 
-    // let tg = document.querySelectorAll(".gnb>ul>li>a")
-    let sm = document.querySelectorAll("li.sm");
-    
-    for(let x of sm){
-        x.querySelector("a").onclick = ()=>{
-            x.classList.add("open");
-        }; ///// onclick
-    } //// for
+    let top = document.querySelector(".top");
+
+    let logo = document.querySelector(".logo");
+
+    top.onmouseover = ()=>{
+        logo.classList.remove("fwh");
+    }; ////////// top 마우스 오버
+    top.onmouseout = ()=>{
+        logo.classList.add("fwh");
+    } /////// top 마우스 아웃
 
 
     // Go! 클릭 함수
 
     // 이벤트대상: div.Go 
     let Go = document.querySelector(".Go");
-
-    let top = document.querySelector(".top");
 
     let GoDown = document.querySelector(".GoDown");
 

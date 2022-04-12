@@ -52,14 +52,14 @@ html {
   /* position: absolute;
   top: 31%;
   left: 2%; */
-  width: 10%;
+  width: 15%;
   height: 100%;
 }
 
 .searchbx {
   color: #3E5463;
   font-size: 14px;
-  background: none;
+  background-color: #ccc;
   border: none;
   vertical-align: super;
   width: 100%;
@@ -70,14 +70,14 @@ html {
 
 /* 상단 메뉴 마우스 오버 시 */
 .top:hover {
-  background-color: black;
+  background-color: white;
   transition: background-color 0.3s ease-out;
 }
 
-.top:hover>.gnb>ul>li>a {
+/* .top:hover>.gnb>ul>li>a {
   color: white;
   transition: color 0.3s ease-out;
-}
+} */
 
 /* 메인 영역 */
 /* #cont{
