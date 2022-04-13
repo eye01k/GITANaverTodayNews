@@ -8,8 +8,9 @@ $(()=>{
     $(".logo a").click(()=>location.href = "index.html");
 
     // gnb메뉴 a요소 클릭 시 링크 연결하기
-
-    $(".gnb a").click(function(e){
+    // 그룹선택(,)으로 모바일 메뉴도 동시에 처리
+    
+    $(".gnb a, .mognb a").click(function(e){
 
         // a요소 기본 기능 막기
         e.preventDefault();
@@ -24,5 +25,7 @@ $(()=>{
         if(txt!== "search") location.href ="category.html?cat="+txt;
 
     }); /////// click
+
+
 
 }); ////////////////////// JQB
