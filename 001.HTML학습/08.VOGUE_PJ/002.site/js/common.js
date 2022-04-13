@@ -1,19 +1,51 @@
 // Vogue PJ 공통 JS
 
-$(()=>{
+$(() => {
     // 햄버거 버튼 클릭 시 모바일 메뉴 보이기
     // 이벤트 대상: .hbtn
     // 모바일 메뉴: #mobx
-    $(".hbtn").click(()=>{
+    $(".hbtn").click(() => {
         $("#mobx").slideToggle(300)
     });
 
     // 검색 버튼 클릭 시 모바일 메뉴 보이기
     // 이벤트 대상: .sbtn
     // 모바일 메뉴: .mos
-    $(".sbtn").click(()=>{
+    $(".sbtn").click(() => {
         $(".mos").slideToggle(300)
     });
+
+    // 로그인, 회원가입, 갤러리 아이콘 넣기
+    // 대상: .sns a:last-child
+    // 변경내용: 대상요소 앞에 a요소 삽입 -> before(요소): 선택요소 앞에 형제요소로 삽입
+    // after(요소): 대상요소 뒤에 형제요소로 삽입
+    $(".sns a").each(function(){
+        $(this).attr("title",$(this).text().trim()); // a요소 각각에 title속성 셋팅
+    })
+    .last().before(`
+    <a href="#" class="fi fi-person" title="로그인">
+        <span class="ir">
+            로그인
+        </span>
+    </a>
+    <a href="#" class="fi fi-male" title="회원가입">
+        <span class="ir">
+            회원가입
+        </span>
+    </a>
+    <a href="#" class="fi  fi-area-chart" title="갤러리">
+        <span class="ir">
+            갤러리
+        </span>
+    </a>`); //////////// before()
+
+    // 로그인, 회원가입, 갤러리 클릭 시 페이지 이동
+    $(".sns a").click(function(){
+        let txt = $(this).text().trim();
+        console.log("클릭된 sns 텍스트: ", txt)
+    }); ////////// click
+
+
 }) ///////////////JQB
 
 ////// 로드구역 //////////
@@ -31,16 +63,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // 위로가기 버튼 클릭 시 맨 위로 이동
     // 모바일에서 스크롤없이 스와이프 이동 시에도 맨 위로 이동하도록 설정함
-    $(".tbtn").click(()=>{
+    $(".tbtn").click(() => {
         $("html,body").animate({
             scrollTop: "0"
-        },300);
+        }, 300);
 
         // 스크롤 위치값 업데이트
-        pos=0;
+        pos = 0;
     }); //////// click
 
-    
+
     // 부드러운 스크롤 위치변수 pos값을 0 주면 됨
     // tbtn.onclick = () => {
     //     pos = 0;
@@ -100,7 +132,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
         // 등장요소 위치값 배열만큼 체크하는 함수 호출
-        scPos.forEach((val,idx)=>scAction(idx));
+        scPos.forEach((val, idx) => scAction(idx));
 
 
 
@@ -122,25 +154,25 @@ window.addEventListener("DOMContentLoaded", () => {
     let scPos = [];
 
     // 대상 요소만큼 for문 돌기
-    for(let i=0; i<scAct.length; i++){
+    for (let i = 0; i < scAct.length; i++) {
         scPos[i] = scAct[i].offsetTop;
     } ////////// for /////////
-    
+
     console.log(scPos);
 
     // 스크롤 등장 위치 조정값: 윈도우 화면 크기의 2/3
-    const winH = window.innerHeight / 3*2;
-    console.log("윈도우 높이의 2/3: ",winH);
+    const winH = window.innerHeight / 3 * 2;
+    console.log("윈도우 높이의 2/3: ", winH);
 
     /* 
         함수명: scAction
         기능: 스크롤 위치값이 설정범위에 들어가면 해당 순번의 요소가 등장
     */
-   const scAction = seq => { //// seq는 순번
-    // console.log("순번: ",seq);
+    const scAction = seq => { //// seq는 순번
+        // console.log("순번: ",seq);
 
-    if(scTop > scPos[seq]-winH && scTop < scPos[seq]){
-        scAct[seq].classList.add("on");
-    }
-   }; /////// scAction
+        if (scTop > scPos[seq] - winH && scTop < scPos[seq]) {
+            scAct[seq].classList.add("on");
+        }
+    }; /////// scAction
 }); ////////////////// load
