@@ -6,7 +6,7 @@ $(()=>{
 
     $(".week p").each((idx,ele)=>{
         // console.log(idx);
-        $(ele).text(today.getDate()+idx);
+        $(ele).text(today.setDate(today.getDate()+idx));
     });
 
     let week =["일", "월", "화", "수", "목", "금", "토"]
