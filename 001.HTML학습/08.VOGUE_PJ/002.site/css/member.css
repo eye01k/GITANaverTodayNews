@@ -17,6 +17,7 @@
 
 /* 서브 콘텐츠 영역 */
 .scont {
+    font-family: "nbg";
     min-height: 600px;
     margin-bottom: 100px;
 
@@ -151,7 +152,7 @@ select:focus {
     /* 오른쪽 위치! */
     margin-right: 40px;
     margin-top: 6px;
-    font: bold 16px 'ng';
+    font: bold 16px 'nbg';
     cursor: pointer;
 }
 
