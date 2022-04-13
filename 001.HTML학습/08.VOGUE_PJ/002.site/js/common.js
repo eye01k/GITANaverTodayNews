@@ -30,12 +30,23 @@ window.addEventListener("DOMContentLoaded", () => {
     let tbtn = document.querySelector(".tbtn");
 
     // 위로가기 버튼 클릭 시 맨 위로 이동
-    // 부드러운 스크롤 위치변수 pos값을 0 주면 됨
-    tbtn.onclick = () => {
-        pos = 0;
+    // 모바일에서 스크롤없이 스와이프 이동 시에도 맨 위로 이동하도록 설정함
+    $(".tbtn").click(()=>{
+        $("html,body").animate({
+            scrollTop: "0"
+        },300);
 
-        return false;
-    }; /////// click
+        // 스크롤 위치값 업데이트
+        pos=0;
+    }); //////// click
+
+    
+    // 부드러운 스크롤 위치변수 pos값을 0 주면 됨
+    // tbtn.onclick = () => {
+    //     pos = 0;
+
+    //     return false;
+    // }; /////// click
 
     /* 
         [윈도우 스크롤 이벤트 함수]
