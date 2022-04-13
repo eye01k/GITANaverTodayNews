@@ -40,14 +40,17 @@ html {
 .fl {
   display: flex;
 }
-.tmenu{
+
+.tmenu {
   width: 100%;
   height: 100%;
   justify-content: space-evenly;
 }
-.tmenu>div{
+
+.tmenu>div {
   width: 40%;
 }
+
 .logo {
   /* position: absolute;
   top: 31%;
@@ -66,49 +69,65 @@ html {
 } */
 
 /* 메인 영역 */
-.daybx{
+.daybx {
   padding: 1vw;
 }
-.week li{
+
+.week li {
   font-size: 1vw;
 }
-.week.fl{
+
+.week.fl {
   justify-content: space-around;
 }
-.selbx{
+
+.selbx {
   padding: 1vw;
 }
-.select{
+
+.select {
   margin-left: 4vw;
 }
-.select li{
+
+.select li {
   padding: 0 1vw;
   margin: 0 1vw;
   border: 1px solid #ccc;
   border-radius: 10px
 }
-.select a{
+
+.select a {
   text-decoration: none;
   color: black;
   font-size: 1vw;
 }
-.match{
+
+.match {
   flex-direction: column;
 }
-.match li{
+
+.match li {
   border-bottom: 1px solid #ccc;
   margin: 1vw;
   justify-content: space-between;
 
 }
-.match.fl{
-}
-.match span{
+
+.match.fl {}
+
+.match span {
   font-size: 1vw;
 }
-.match span p{
+
+.match span p {
   font-size: 1vw;
 }
-.sigbtn{
-  width: 10%;
+
+.sigbtn {
+  width: 7%;
+  border: 1px solid #1570FF;
+  background-color: #1570FF;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
 }
