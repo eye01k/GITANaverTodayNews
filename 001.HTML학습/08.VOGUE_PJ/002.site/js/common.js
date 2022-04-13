@@ -1,5 +1,21 @@
 // Vogue PJ 공통 JS
 
+$(()=>{
+    // 햄버거 버튼 클릭 시 모바일 메뉴 보이기
+    // 이벤트 대상: .hbtn
+    // 모바일 메뉴: #mobx
+    $(".hbtn").click(()=>{
+        $("#mobx").slideToggle(300)
+    });
+
+    // 검색 버튼 클릭 시 모바일 메뉴 보이기
+    // 이벤트 대상: .sbtn
+    // 모바일 메뉴: .mos
+    $(".sbtn").click(()=>{
+        $(".mos").slideToggle(300)
+    });
+}) ///////////////JQB
+
 ////// 로드구역 //////////
 window.addEventListener("DOMContentLoaded", () => {
 
