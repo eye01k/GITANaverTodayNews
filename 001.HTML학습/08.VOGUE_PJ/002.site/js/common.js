@@ -15,14 +15,8 @@ $(() => {
         $(".mos").slideToggle(300)
     });
 
-    // 로그인, 회원가입, 갤러리 아이콘 넣기
-    // 대상: .sns a:last-child
-    // 변경내용: 대상요소 앞에 a요소 삽입 -> before(요소): 선택요소 앞에 형제요소로 삽입
-    // after(요소): 대상요소 뒤에 형제요소로 삽입
-    $(".sns a").each(function(){
-        $(this).attr("title",$(this).text().trim()); // a요소 각각에 title속성 셋팅
-    })
-    .last().before(`
+    // 로그인, 회원가입, 갤러리 html코드
+    let htcode = `
     <a href="#" class="fi fi-person" title="로그인">
         <span class="ir">
             로그인
@@ -37,10 +31,25 @@ $(() => {
         <span class="ir">
             갤러리
         </span>
-    </a>`); //////////// before()
+    </a>
+    `;
+
+    // 로그인, 회원가입, 갤러리 아이콘 넣기
+    // 대상: .sns a:last-child
+    // 변경내용: 대상요소 앞에 a요소 삽입 -> before(요소): 선택요소 앞에 형제요소로 삽입
+    // after(요소): 대상요소 뒤에 형제요소로 삽입
+    $(".sns a").each(function(){
+        $(this).attr("title",$(this).text().trim()); // a요소 각각에 title속성 셋팅
+    })
+    .last().before(htcode); //////////// before()
+
+    // 모바일에 요소 추가
+    $(".mosns a").last().before(htcode)
+    .parent().find("a").eq(3).after("<br>");
 
     // 로그인, 회원가입, 갤러리 클릭 시 페이지 이동
-    $(".sns a").click(function(e){
+    // 클릭 시 구조가 동일한 모바일도 같이 셋팅
+    $(".sns a, mosns a").click(function(e){
         // 기본 기능 막기
         e.preventDefault();
 
