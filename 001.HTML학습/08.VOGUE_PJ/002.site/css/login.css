@@ -17,6 +17,7 @@
 /* 서브 콘텐츠 영역 */
 .scont{
     min-height: 600px;
+    font-family: nbg;
 }
 #cont{
     background-color: #e9e9e9;
