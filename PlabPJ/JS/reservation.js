@@ -39,6 +39,7 @@ $(()=>{
     // 지역 옵션 버튼 클릭 시 지역 메뉴 슬라이드업
     $(".selbx a").first().click(()=>{
         // console.log("나야나");
-        $(".region").slideToggle();
+        $(".region").slideDown();
+
     }); ///// 지역 click
 }); //////////// JQB
