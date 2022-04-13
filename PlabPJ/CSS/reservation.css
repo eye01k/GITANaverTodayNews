@@ -70,7 +70,7 @@ html {
 
 /* 메인 영역 */
 .daybx {
-  padding: 1vw;
+  padding: 1vw 10vw;
 }
 
 .week li {
@@ -86,7 +86,7 @@ html {
 }
 
 .select {
-  margin-left: 4vw;
+  margin-left: 8vw;
 }
 
 .select li {
@@ -101,7 +101,9 @@ html {
   color: black;
   font-size: 1vw;
 }
-
+.matchbx{
+  margin: 0 10vw;
+}
 .match {
   flex-direction: column;
 }
@@ -131,7 +133,7 @@ html {
   border-radius: 5px;
   text-align: center;
 
-  line-height: 3vw;
-  height: 3vw;
+  line-height: 2vw;
+  height: 2vw;
   margin: auto 0;
 }
