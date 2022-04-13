@@ -40,9 +40,28 @@ $(() => {
     </a>`); //////////// before()
 
     // 로그인, 회원가입, 갤러리 클릭 시 페이지 이동
-    $(".sns a").click(function(){
+    $(".sns a").click(function(e){
+        // 기본 기능 막기
+        e.preventDefault();
+
+        // 내부 텍스트 읽어오기
         let txt = $(this).text().trim();
         console.log("클릭된 sns 텍스트: ", txt)
+
+        // 텍스트에 맞게 페이지 연결
+        let url;
+        switch(txt){
+            case "로그인" : url="login"; break;
+            case "회원가입" : url="member"; break;
+            case "갤러리" : url="gallery"; break;
+            default : url = "esc";
+        } /////// switch case
+
+        // 페이지 보내기
+        if(url!=="esc"){
+            location.href = url+".html";
+        }
+        
     }); ////////// click
 
 
