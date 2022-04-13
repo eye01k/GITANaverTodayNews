@@ -50,7 +50,7 @@ $(() => {
 
     // 로그인, 회원가입, 갤러리 클릭 시 페이지 이동
     // 클릭 시 구조가 동일한 모바일도 같이 셋팅
-    $(".sns a, mosns a").click(function(e){
+    $(".sns a, .mosns a").click(function(e){
         // 기본 기능 막기
         e.preventDefault();
 
