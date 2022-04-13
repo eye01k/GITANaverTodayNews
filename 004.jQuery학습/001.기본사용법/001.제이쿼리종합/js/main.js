@@ -44,10 +44,10 @@ $(() => {
 
     // 2-1. 버튼 셋팅: 모든 버튼 숨기고 첫번째 버튼만 보이게 함
     // 버튼들.숨겨().첫번째().보여()
-    // btns.hide().first().show();
+    btns.hide().first().show();
 
     // 중간 테스트를 위한 버튼 보이기 셋팅
-    btns.hide().eq(0).show();
+    // btns.hide().eq(7).show();
 
     // 2-2. 빌딩 숫자 셋팅: 
     // -> 모든 빌딩 li를 순서대로 돌면서 순번 넣기 + 좀비 넣기
@@ -344,16 +344,45 @@ $(() => {
 
             // 콜백 함수 (미니언 이동 후 실행)
             let callFn = () => {
-                // 1. 메시지 변경
-                msg
-                    .text("굿굿~") // 메시지 텍스트 변경
-                    .fadeIn(200); // 메시지 나타나기
 
-                // 2. 다음버튼 보이기
-                $(this) // 클릭된 버튼
-                    .next() // 다음 버튼
-                    .delay(1000).slideDown();
-                // delay(시간) -> 애니메이션 메서드 앞에 사용
+                // 1. 주사기 돌리기
+                // 주의: transform은 animate에서 사용불가
+                // transform은 css로 transition으로 구현
+                $(".inj").css({
+                    transform: "rotate(-150deg)",
+                    transition: ".5s ease-out 1s",
+                    zIndex: "9999"
+                }); ////// 주사기 css
+
+                // 2. 주인공 미니언즈 이미지 변경
+                setTimeout(()=>{
+                    // 2-1. 미니언즈 흑백 모드 풀어주기
+                    mi.css({
+                        filter: "grayscale(0%)"
+                    })
+                    // 2-2. 미니언즈 이미지 변경
+                    .find("img").attr("src","images/m2.png");
+
+                    // 2-3. 주사기 이미지 없애기
+                    $(".inj").remove();
+                    // remove() - 태그 지우기
+
+                    // 3. 메시지 변경
+                    msg
+                        .text("치료 완료!") // 메시지 텍스트 변경
+                        .fadeIn(200) // 메시지 나타나기
+                        .delay(1000).fadeIn(200,()=>{
+                            msg.html("이제 조금만 더 <br> 가면 탈출이닷!");
+                        }); //////// fadeIn
+    
+                    // 4. 다음버튼 보이기
+                    $(this) // 클릭된 버튼
+                        .next() // 다음 버튼
+                        .delay(2000).slideDown();
+                    // delay(시간) -> 애니메이션 메서드 앞에 사용
+
+                },1500); ///// 미니언즈 이미지 변경 timeout
+
             }; /////// 콜백함수 끝
 
             // 공통기능함수 호출
@@ -368,7 +397,7 @@ $(() => {
             let callFn = () => {
                 // 1. 메시지 변경
                 msg
-                    .text("굿굿~") // 메시지 텍스트 변경
+                    .text("어서 위층으로 가자!") // 메시지 텍스트 변경
                     .fadeIn(200); // 메시지 나타나기
 
                 // 2. 다음버튼 보이기
@@ -390,7 +419,7 @@ $(() => {
             let callFn = () => {
                 // 1. 메시지 변경
                 msg
-                    .text("굿굿~") // 메시지 텍스트 변경
+                    .text("헬기를 부르자!") // 메시지 텍스트 변경
                     .fadeIn(200); // 메시지 나타나기
 
                 // 2. 다음버튼 보이기
@@ -412,14 +441,63 @@ $(() => {
             let callFn = () => {
                 // 1. 메시지 변경
                 msg
-                    .text("굿굿~") // 메시지 텍스트 변경
+                    .text("도와줘요!!!") // 메시지 텍스트 변경
                     .fadeIn(200); // 메시지 나타나기
 
-                // 2. 다음버튼 보이기
-                $(this) // 클릭된 버튼
-                    .next() // 다음 버튼
-                    .delay(1000).slideDown();
-                // delay(시간) -> 애니메이션 메서드 앞에 사용
+                // 2. 좀비들의 추격
+                // -> 1번방에 숨겨진 좀비들이 나옴
+                // -> bd.eq(1).find("mz")
+                bd.eq(1).find(".mz").fadeIn(200,function(){
+                    // 2-1. 좀비들 움직이기
+                    $(this)
+                    .animate({
+                        right: bd.eq(1).width()*1.3+"px" // li보다 조금 더 이동
+                    },5000,"easeInOutQuint");
+
+                    // 2-2. 헬기 등장
+                    $(".heli").animate({
+                        left: "20%"
+                    },3000,"easeOutBack",function(){
+                        // 3. 주인공이 탄 헬기 이미지로 변경
+                        $(this).attr("src","images/heli2.png");
+                        // 4. 원래 주인공 이미지 지우기
+                        mi.hide(); // display:none 처리
+                    }) ///////// animate
+                    // 헬기 애니메이션 이어짐
+                    .delay(1000)
+                    .animate({
+                        left: "70%"
+                    },5000,"easeInOutQuart",function(){
+                        // 7. 헬기 조종사 좀비로 변경
+                        $(this).attr("src","images/heli3.png");
+                    }) //////////// animate
+                    // 헬기 애니 이어짐
+                    // 8. 아주 천천히 화면 밖으로 나감
+                    .animate({
+                        left: "100%"
+                    },10000,"easeInOutSine",()=>{
+                        // 9. 타이틀에 미리 지정한 클래스를 추가하여 간판이 떨어짐
+                        // 대상: .tit
+                        let tit = $(".tit"); 
+
+                        // 9-1. 간판 중간 떨어짐
+                        tit.addClass("on");
+
+                        // 9-2. 3초 후 간판 완전히 떨어짐
+                        setTimeout(()=>{
+                            // 간판클래스 추가
+                            tit.addClass("on2");
+
+                            // 10. 건물에 클래스 추가하여 건물 무너짐
+                            // 대상: .building
+                            // bd 변수 (.building li) -> 한 단계 위의 부모로 올라가면 됨 (parent())
+                            bd.parent().addClass("on");
+                        },3000); /////// timeout
+
+                    })
+                }); /////// fadeIn
+
+
             }; /////// 콜백함수 끝
 
             // 공통기능함수 호출
