@@ -42,6 +42,7 @@ $(() => {
         $(this).attr("title",$(this).text().trim()); // a요소 각각에 title속성 셋팅
     })
     .last().before(htcode); //////////// before()
+    // 마지막 a요소(카카오스토리) 앞에 코드 삽입
 
     // 모바일에 요소 추가
     $(".mosns a").last().before(htcode)
