@@ -130,4 +130,8 @@ html {
   color: white;
   border-radius: 5px;
   text-align: center;
+
+  line-height: 3vw;
+  height: 3vw;
+  margin: auto 0;
 }
