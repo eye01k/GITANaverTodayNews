@@ -1,2 +1,2 @@
-// Vogue PJ 회원가입 페이지 JS
+// Vogue PJ 갤러리 페이지 JS
 
