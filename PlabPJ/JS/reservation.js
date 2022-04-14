@@ -1,18 +1,18 @@
 $(() => {
 
-    // var swiper = new Swiper(".mySwiper", {
-    //     slidesPerView: 1,
-    //     spaceBetween: 30,
-    //     loop: true,
-    //     pagination: {
-    //         el: ".swiper-pagination",
-    //         clickable: true,
-    //     },
-    //     navigation: {
-    //         nextEl: ".swiper-button-next",
-    //         prevEl: ".swiper-button-prev",
-    //     },
-    // });
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
 
     // Date() 객체를 이용해서 날짜 찍기
     // 변경대상: .week p
