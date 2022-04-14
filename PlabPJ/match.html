@@ -4,7 +4,8 @@
 <head>
   <title>플랩풋볼: 소셜 축구, 풋살 용병 모임</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="./CSS/reservation.css">
+  <link rel="stylesheet" href="./CSS/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./CSS/match.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <link rel="stylesheet" href="./CSS/core.css"> -->
   <!-- <script src="./JS/main.js"> -->
@@ -12,15 +13,16 @@
   <!-- 제이쿼리 라이브러리 + 제이쿼리 UI -->
   <script src="./JS/jquery-3.6.0.min.js"></script>
   <script src="./JS/jquery-ui.min.js"></script>
-  <script src="./JS/reservation copy.js"></script>
+  <script src="./JS/swiper-bundle.min.js"></script>
+  <script src="./JS/match.js"></script>
 
   </script>
 </head>
 
 <body>
   <!-- 상단영역 -->
-  <div id="top" class="rbx rbx1">
-    <header class="top rbxIn">
+  <div id="top">
+    <header class="top">
       <div class="fl tmenu">
         <div>
           <svg class="logo">
@@ -35,8 +37,24 @@
     </header>
   </div>
   <!-- 메인영역 -->
-  <div id="cont" class="rbx rbx2">
-    <main class="cont rbxIn">
+  <div id="cont">
+    <main class="cont">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div>
+          <div class="swiper-slide">Slide 6</div>
+          <div class="swiper-slide">Slide 7</div>
+          <div class="swiper-slide">Slide 8</div>
+          <div class="swiper-slide">Slide 9</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
       <div class="daybx">
         <ul class="week fl">
           <li>
@@ -140,12 +158,106 @@
           </li>
         </ul>
       </div>
+      <div class="drkb"></div>
+      <div class="slideMenu region">
+        <div class="SMhead">
+          <h2>지역</h2>
+        </div>
+        <div class="SMbody">
+          <ul class="fl">
+            <li>
+              <a href="#">내 지역</a>
+              <span>편집하기</span>
+            </li>
+            <li>
+              <a href="#">서울</a>
+            </li>
+            <li>
+              <a href="#">경기/강원</a>
+            </li>
+            <li>
+              <a href="#">인천</a>
+            </li>
+            <li>
+              <a href="#">대전/세종/충청</a>
+            </li>
+            <li>
+              <a href="#">대구/경북</a>
+            </li>
+            <li>
+              <a href="#">부산/울산/경남</a>
+            </li>
+            <li>
+              <a href="#">광주/전라</a>
+            </li>
+            <li>
+              <a href="#">제주</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="slideMenu gender">
+        <div class="SMhead">
+          <h2>성별</h2>
+        </div>
+        <div class="SMbody">
+          <ul class="fl">
+            <li>
+              <span>
+                <input type="checkbox" id="chkbx" name="chkbx">
+                <label for="chkbx">남자</label>
+              </span>
+            </li>
+            <li>
+              <span>
+                <input type="checkbox" id="chkbx" name="chkbx">
+                <label for="chkbx">여자</label>
+            </span>
+            </li>
+            <li>
+              <span>
+                <input type="checkbox" id="chkbx" name="chkbx">
+                <label for="chkbx">남녀 모두</label>
+            </span>
+            </li>
+          </ul>
+          <span>적용하기</span>
+        </div>
+      </div>
+      <div class="slideMenu level">
+        <div class="SMhead">
+          <h2>레벨</h2>
+        </div>
+        <div class="SMbody">
+          <ul class="fl">
+            <li>
+              <span>
+                <input type="checkbox" id="chkbx" name="chkbx">
+                <label for="chkbx">비기너3 이하</label>
+              </span>
+            </li>
+            <li>
+              <span>
+                <input type="checkbox" id="chkbx" name="chkbx">
+                <label for="chkbx">아마추어2 이상</label>
+            </span>
+            </li>
+            <li>
+              <span>
+                <input type="checkbox" id="chkbx" name="chkbx">
+                <label for="chkbx">일반</label>
+            </span>
+            </li>
+          </ul>
+          <span>적용하기</span>
+        </div>
+      </div>
     </main>
   </div>
 
   <!-- 하단영역 -->
-  <div id="info" class="rbx rbx3">
-    <footer class="info rbxIn">
+  <div id="info">
+    <footer class="info">
 
     </footer>
   </div>
