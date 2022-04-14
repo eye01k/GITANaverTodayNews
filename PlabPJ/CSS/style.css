@@ -38,7 +38,6 @@ html {
   float: left;
 } */
 .fl {
-  display: flex;
   justify-content: space-evenly;
 }
 .tmenu{
@@ -98,33 +97,30 @@ html {
 .Go {
   position: absolute;
   top: 2.5%;
-  right: 3%;
+  right: 4%;
 
-  width: 7%;
+  width: 3%;
   height: 2%;
+
+  animation: play .6s ease-out infinite alternate;
+
+}
+
+@keyframes play {
+  to{
+    right: 5%
+  }
 }
 
 .Go:hover {
   cursor: pointer;
 }
-
-
 .Go svg {
   fill: white;
   position: absolute;
-  top: 20%;
-  right: 15%;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
-  animation: play .5s ease-out infinite alternate;
-
-}
-@keyframes play {
-  to{
-    right: 7%
-  }
 }
 
 .lArrow {

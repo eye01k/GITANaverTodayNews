@@ -38,9 +38,7 @@ html {
 .fll>li{
   float: left;
 } */
-.fl {
-  display: flex;
-}
+
 
 .tmenu {
   max-width: 1024px;
