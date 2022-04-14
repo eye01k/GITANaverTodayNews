@@ -80,7 +80,7 @@ $(() => {
 ////// 로드구역 //////////
 window.addEventListener("DOMContentLoaded", () => {
 
-    console.log("로딩완료");
+    // console.log("로딩완료");
 
     startSS();
     // 스크롤 값 변수
@@ -187,11 +187,11 @@ window.addEventListener("DOMContentLoaded", () => {
         scPos[i] = scAct[i].offsetTop;
     } ////////// for /////////
 
-    console.log(scPos);
+    // console.log(scPos);
 
     // 스크롤 등장 위치 조정값: 윈도우 화면 크기의 2/3
     const winH = window.innerHeight / 3 * 2;
-    console.log("윈도우 높이의 2/3: ", winH);
+    // console.log("윈도우 높이의 2/3: ", winH);
 
     /* 
         함수명: scAction
