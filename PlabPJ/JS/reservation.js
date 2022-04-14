@@ -1,18 +1,18 @@
 $(() => {
 
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
+    // var swiper = new Swiper(".mySwiper", {
+    //     slidesPerView: 1,
+    //     spaceBetween: 30,
+    //     loop: true,
+    //     pagination: {
+    //         el: ".swiper-pagination",
+    //         clickable: true,
+    //     },
+    //     navigation: {
+    //         nextEl: ".swiper-button-next",
+    //         prevEl: ".swiper-button-prev",
+    //     },
+    // });
 
     // Date() 객체를 이용해서 날짜 찍기
     // 변경대상: .week p
@@ -28,7 +28,10 @@ $(() => {
 
     $(".week p").each((idx, ele) => {
         // console.log(idx);
-        addDay.setDate(today.getDate() + idx);
+        if(idx===0) 
+        addDay.setDate(addDay.getDate())
+        else
+        addDay.setDate(addDay.getDate() + 1);
         // setDate(오늘날짜+날수) -> 변경된 날짜가됨!
 
         // addDay.setDate(today.getDate()+(idx+15)); 

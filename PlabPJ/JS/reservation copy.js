@@ -25,8 +25,8 @@ $(()=>{
         // -> 날짜를 더해서 다음달과 경계날짜가 잘나오는지 살펴봄!
 
         // addDay에 날짜를 더해서 아래에서 getDate()로 날짜 추출!
-        // $(ele).text(addDay.getDate())
-        $(ele).text(addDay.toLocaleDateString())
+        $(ele).text(addDay.getDate())
+        // $(ele).text(addDay.toLocaleDateString())
         // p태그 다음 형제인 span태그에 요일 넣기!
         // (더해진 날짜의 요일을 바로구해옴!)
         .next().text(week[addDay.getDay()]);
