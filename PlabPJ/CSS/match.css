@@ -184,6 +184,7 @@ html {
   position: fixed;
   left: 0;
   bottom: 0;
+  z-index: 999;
   border-radius: 20px 20px 0px 0px;
   background-color: #fff;
   /* border: 2px solid black; */
@@ -257,6 +258,7 @@ html {
 
 .drkb {
   position: fixed;
+  z-index: 99;
   top: 0;
   width: 100vw;
   height: 100vh;
