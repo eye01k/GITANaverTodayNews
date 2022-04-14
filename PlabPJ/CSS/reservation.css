@@ -110,6 +110,8 @@ html {
 
 .daybx {
   padding: 10px 30px;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .week li {
@@ -117,12 +119,13 @@ html {
 }
 
 .week.fl {
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .selbx {
   padding: 10px 15px 0px 15px;
   margin: 0 auto;
+  max-width: 1024px;
 }
 .select li {
   margin-left: 5px;
@@ -135,11 +138,12 @@ html {
 .select a {
   text-decoration: none;
   color: black;
-  font-size: 1vw;
+  font-size: 12px;
 }
 
 .matchbx {
-  margin: 0 10vw;
+  margin: 0 auto;
+  max-width: 1024px;
 }
 
 .match {
@@ -148,7 +152,7 @@ html {
 
 .match li {
   border-bottom: 1px solid #ccc;
-  margin: 1vw;
+  margin: 15px;
   justify-content: space-between;
 
 }
@@ -156,23 +160,23 @@ html {
 .match.fl {}
 
 .match span {
-  font-size: 1vw;
+  font-size: 15px;
 }
 
 .match span p {
-  font-size: 1vw;
+  font-size: 16px;
 }
 
 .sigbtn {
-  width: 7%;
+  width: 100px;
   border: 1px solid #1570FF;
   background-color: #1570FF;
   color: white;
   border-radius: 5px;
   text-align: center;
 
-  line-height: 2vw;
-  height: 2vw;
+  line-height: 32px;
+  height: 32px;
   margin: auto 0;
 }
 
