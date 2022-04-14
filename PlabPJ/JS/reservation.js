@@ -46,9 +46,7 @@ $(()=>{
     }); ///// 지역 click
 
     $(".drkb").click(function(){
-        $(this).css({
-            display : "none"
-        });
+        $(this).hide();
 
         $(".region").slideUp();
     });
