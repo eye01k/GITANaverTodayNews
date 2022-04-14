@@ -26,9 +26,10 @@ html {
 
 
 /* 상단 영역 */
-.top{
+.top {
   height: 100px;
 }
+
 /* .fll::after{
   content: "";
   display: block;
@@ -106,12 +107,13 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
+
 .daybx {
-  padding: 1vw 10vw;
+  padding: 10px 30px;
 }
 
 .week li {
-  font-size: 1vw;
+  font-size: 16px;
 }
 
 .week.fl {
@@ -119,18 +121,15 @@ html {
 }
 
 .selbx {
-  padding: 1vw;
+  padding: 10px 15px 0px 15px;
+  margin: 0 auto;
 }
-
-.select {
-  margin-left: 8vw;
-}
-
 .select li {
-  padding: 0 1vw;
-  margin: 0 1vw;
+  margin-left: 5px;
+  padding: 5px 12px;
   border: 1px solid #ccc;
-  border-radius: 10px
+  border-radius: 20px;
+  font-size: 14px;
 }
 
 .select a {
@@ -181,7 +180,7 @@ html {
   height: 65vh;
 }
 
-.gender .level{
+.gender .level {
   height: 45vh;
 }
 
@@ -248,7 +247,8 @@ html {
   font-size: 16px;
 }
 
-.level>.SMbody>span, .gender>.SMbody>span {
+.level>.SMbody>span,
+.gender>.SMbody>span {
   background-color: #1570FF;
   color: #fff;
   border-radius: 10px;
