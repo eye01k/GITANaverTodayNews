@@ -54,7 +54,8 @@ $(()=>{
         */
        if(cv === ""){
         // 메시지 출력
-        $(this).siblings(".msg").text("필수 입력!");
+        $(this).siblings(".msg").text("필수 입력!")
+        .removeClass("on");
         // 형제요소들 중 클래스가 msg인 요소 선택
 
        } ////////////////// 빈 값 체크 if
@@ -68,19 +69,56 @@ $(()=>{
             if(!vReg(cv,cid)){ // !(NOT) true면 false로, false면 true로
                 $(this).siblings(".msg")
                 .text("영문자로 시작하는 6~20글자 영문자/숫자")
+                .removeClass("on"); // 클래스 on을 넣으면 글자색 녹색
             } ////////// if: 아이디 검사 불통과
             
             else{
                 $(this).siblings(".msg")
                 .text("사용 가능한 아이디입니다")
+                .addClass("on");
             } /////// else: 아이디 검사 통과
         } ////////////// else if(아이디 검사)
+        
+
+       /* 
+            3. 비밀번호일 경우 유효성 검사
+            -검사 기준: 특수문자,문자,숫자포함 형태의 5~15자리
+       */
+        else if(cid === "mpw"){
+            // console.log("검사결과",vReg(cv,cid))
+            if(!vReg(cv,cid)){ // !(NOT) true면 false로, false면 true로
+                $(this).siblings(".msg")
+                .text("특수문자,문자,숫자포함 형태의 5~15자리");
+            } ////////// if: 비밀번호 검사 불통과
+            
+            else{
+                $(this).siblings(".msg")
+                .empty();
+            } /////// else: 비밀번호 검사 통과
+        } ////////////// else if(비밀번호 검사)
+
+       /* 
+            4. 비밀번호 확인일 경우 유효성 검사
+            -검사 기준: 입력된 비밀번호와 일치 여부
+       */
+        else if(cid === "mpw2"){
+            if(cv!==$("#mpw").val()){ // 비밀번호확인값과 비밀번호값이 같지 않으면 
+                $(this).siblings(".msg")
+                .text("비밀번호가 일치하지 않습니다");
+            } ////////// if: 비밀번호 확인 검사 불통과
+            
+            else{
+                $(this).siblings(".msg")
+                .empty();
+            } /////// else: 비밀번호 확인 검사 통과
+        } ////////////// else if(비밀번호 확인 검사)
         
 
        /////// 통과 시 메시지 지우기
        else {
         $(this).siblings(".msg").empty();
        } ///////// else(유효성 검사 통과)
+
     }); /////////// blur
 }); ////////////////JQB
 
