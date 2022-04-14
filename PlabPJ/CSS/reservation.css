@@ -26,9 +26,9 @@ html {
 
 
 /* 상단 영역 */
-/* .top{
-  height: 80px;
-} */
+.top{
+  height: 100px;
+}
 /* .fll::after{
   content: "";
   display: block;
@@ -42,9 +42,10 @@ html {
 }
 
 .tmenu {
-  width: 100%;
+  max-width: 1024px;
   height: 100%;
   justify-content: space-evenly;
+  margin: 0 auto;
 }
 
 .tmenu>div {
@@ -55,7 +56,7 @@ html {
   /* position: absolute;
   top: 31%;
   left: 2%; */
-  width: 15%;
+  width: 70px;
   height: 100%;
 }
 
@@ -69,6 +70,42 @@ html {
 } */
 
 /* 메인 영역 */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
 .daybx {
   padding: 1vw 10vw;
 }

@@ -4,6 +4,7 @@
 <head>
   <title>플랩풋볼: 소셜 축구, 풋살 용병 모임</title>
   <meta charset="utf-8">
+  <!-- <link rel="stylesheet" href="./CSS/swiper-bundle.min.css"> -->
   <link rel="stylesheet" href="./CSS/reservation.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <link rel="stylesheet" href="./CSS/core.css"> -->
@@ -12,6 +13,7 @@
   <!-- 제이쿼리 라이브러리 + 제이쿼리 UI -->
   <script src="./JS/jquery-3.6.0.min.js"></script>
   <script src="./JS/jquery-ui.min.js"></script>
+  <!-- <script src="./JS/swiper-bundle.min.js"></script> -->
   <script src="./JS/reservation.js"></script>
 
   </script>
@@ -19,8 +21,8 @@
 
 <body>
   <!-- 상단영역 -->
-  <div id="top" class="rbx rbx1">
-    <header class="top rbxIn">
+  <div id="top">
+    <header class="top">
       <div class="fl tmenu">
         <div>
           <svg class="logo">
@@ -35,8 +37,24 @@
     </header>
   </div>
   <!-- 메인영역 -->
-  <div id="cont" class="rbx rbx2">
-    <main class="cont rbxIn">
+  <div id="cont">
+    <main class="cont">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div>
+          <div class="swiper-slide">Slide 6</div>
+          <div class="swiper-slide">Slide 7</div>
+          <div class="swiper-slide">Slide 8</div>
+          <div class="swiper-slide">Slide 9</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
       <div class="daybx">
         <ul class="week fl">
           <li>
@@ -238,8 +256,8 @@
   </div>
 
   <!-- 하단영역 -->
-  <div id="info" class="rbx rbx3">
-    <footer class="info rbxIn">
+  <div id="info">
+    <footer class="info">
 
     </footer>
   </div>
