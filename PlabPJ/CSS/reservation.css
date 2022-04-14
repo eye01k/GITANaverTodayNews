@@ -101,9 +101,11 @@ html {
   color: black;
   font-size: 1vw;
 }
-.matchbx{
+
+.matchbx {
   margin: 0 10vw;
 }
+
 .match {
   flex-direction: column;
 }
@@ -136,4 +138,82 @@ html {
   line-height: 2vw;
   height: 2vw;
   margin: auto 0;
+}
+.region{
+  height: 65vh;
+}
+.gender{
+  height: 45vh;
+}
+.slideMenu {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-radius: 20px 20px 0px 0px;
+  background-color: #fff;
+  /* border: 2px solid black; */
+  overflow-y: auto;
+
+  display: none;
+}
+
+.SMhead h2 {
+  width: 100%;
+  text-align: left;
+  font-weight: 700;
+  font-size: 18px;
+  color: #222836;
+  padding: 25px;
+}
+
+.SMbody ul {
+  flex-direction: column;
+  padding: 0px 25px;
+
+}
+
+.SMbody li {
+  box-shadow: inset 0px -1px 0px #dce3e8;
+  margin: 10px 0px;
+  height: 44px;
+  line-height: 44px;
+}
+
+.region .SMbody span {
+  width: 68px;
+  font-size: 12px;
+  /* height: 32px; */
+  line-height: 6px;
+  display: inline-block;
+  float: right;
+  background-color: #1570FF;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  box-shadow: none;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.SMbody a {
+  text-decoration: none;
+  color: #222836;
+  font-size: 16px;
+}
+
+.SMbody label {
+  color: #222836;
+  font-size: 16px;
+}
+
+.drkb {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.521);
+
+  display: none;
 }

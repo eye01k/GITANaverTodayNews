@@ -16,7 +16,8 @@ $(()=>{
         addDay.setDate(today.getDate()+idx);
         // setDate(오늘날짜+날수) -> 변경된 날짜가됨!
 
-        // addDay.setDate(today.getDate()+idx+15); 
+        // addDay.setDate(today.getDate()+(idx+15)); 
+        // console.log(addDay.getDate());
         // -> 날짜를 더해서 다음달과 경계날짜가 잘나오는지 살펴봄!
 
         // addDay에 날짜를 더해서 아래에서 getDate()로 날짜 추출!
@@ -34,4 +35,28 @@ $(()=>{
     //     num++;
     //     if(num>6)num=0;
     // });
+
+    // 지역 옵션 버튼 클릭 시 지역 메뉴 슬라이드업
+    $(".selbx a").first().click(()=>{
+        // console.log("나야나");
+        $(".region").slideDown();
+
+        $(".drkb").show();
+
+    }); ///// 지역 click
+
+    $(".selbx a").eq(3).click(()=>{
+        // console.log("나야나");
+        $(".gender").slideDown();
+
+        $(".drkb").show();
+
+    }); ///// 성별 click
+
+    $(".drkb").click(function(){
+        $(this).hide();
+
+        $(".region").slideUp();
+        $(".gender").slideUp();
+    });
 }); //////////// JQB

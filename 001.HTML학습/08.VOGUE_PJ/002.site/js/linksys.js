@@ -2,7 +2,7 @@
 
 $(()=>{
 
-    console.log("로딩완료");
+    // console.log("로딩완료");
 
     // 메인로고 클릭 시 메인페이지로 이동
     $(".logo a").click(()=>location.href = "index.html");
