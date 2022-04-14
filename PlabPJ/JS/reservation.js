@@ -41,5 +41,15 @@ $(()=>{
         // console.log("나야나");
         $(".region").slideDown();
 
+        $(".drkb").show();
+
     }); ///// 지역 click
+
+    $(".drkb").click(function(){
+        $(this).css({
+            display : "none"
+        });
+
+        $(".region").slideUp();
+    });
 }); //////////// JQB
