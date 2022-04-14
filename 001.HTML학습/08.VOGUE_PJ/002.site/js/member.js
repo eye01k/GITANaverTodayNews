@@ -16,4 +16,19 @@ $(()=>{
         >> 제이쿼리 선택 표현법  
         대괄호: 속성 선택, != 같지 않다(제이쿼리 전용)
     */
+
+    $(`input[type=text][id!=email2][class!=search],
+    input[type=password]`)
+    .blur(function(){
+
+        // 방금 블러 발생한 요소의 id는?
+        let cid = $(this).attr("id");
+        // attr(속성명) -> 해당 속성명의 속성값 읽어옴
+
+        // 블러 발생한 요소의 입력값은?
+        let cv = $(this).val();
+        // val() -> 선택요소에 입력된 값을 읽어옴
+
+        console.log("블러발생",cid,cv);
+    }); /////////// blur
 }); ////////////////JQB
