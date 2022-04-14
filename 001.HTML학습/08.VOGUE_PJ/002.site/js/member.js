@@ -322,13 +322,21 @@ $(() => {
             // DB에 입력완료 시 위의 메시지를 띄워준다
 
             // 로그인 페이지로 이동
-            location.href = "login.html";
+            location.replace("login.html");
+            // location.href = "login.html";
+            /* 
+                회원가입 후 이전 페이지로 돌아가지 못하도록
+                location.replace(주소)를 사용하여 페이지 캐쉬를 삭제
+                -> 좀더 안전한 보안을 유지한다
+            */
+
+
         } /////// if: 통과 시
         else {
 
             // 메시지 띄우기
             alert("입력을 수정하세요");
-            
+
         } /////// else: 불통과 시
     }); ///////// click
 
