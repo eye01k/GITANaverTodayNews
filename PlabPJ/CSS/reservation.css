@@ -139,12 +139,15 @@ html {
   height: 2vw;
   margin: auto 0;
 }
-.region{
+
+.region {
   height: 65vh;
 }
-.gender{
+
+.gender .level{
   height: 45vh;
 }
+
 .slideMenu {
   width: 100%;
   position: fixed;
@@ -206,6 +209,18 @@ html {
 .SMbody label {
   color: #222836;
   font-size: 16px;
+}
+
+.level>.SMbody>span, .gender>.SMbody>span {
+  background-color: #1570FF;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 15px;
+  width: 80%;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  line-height: 54px;
 }
 
 .drkb {

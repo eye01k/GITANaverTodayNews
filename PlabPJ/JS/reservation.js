@@ -53,10 +53,19 @@ $(()=>{
 
     }); ///// 성별 click
 
+    $(".selbx a").eq(4).click(()=>{
+        // console.log("나야나");
+        $(".level").slideDown();
+
+        $(".drkb").show();
+
+    }); ///// 레벨 click
+
     $(".drkb").click(function(){
         $(this).hide();
 
         $(".region").slideUp();
         $(".gender").slideUp();
+        $(".level").slideUp();
     });
 }); //////////// JQB
