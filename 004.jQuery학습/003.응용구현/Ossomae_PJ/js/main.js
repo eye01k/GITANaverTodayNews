@@ -31,10 +31,17 @@ $(()=>{
 
         // 자동넘김 지우기
         clearInterval(autoI);
+        clearTimeout(autoT); // 쓰나미 실행 방지
+        // 일정시간 후 자동넘김 호출
+        autoT = setTimeout(autoCall,2000);
+
     }); //////////////////버튼 클릭
 
     // 인터발용 변수
     let autoI;
+    // 타임아웃용 변수
+    let autoT;
+
     // 자동넘김 함수
     const autoCall = ()=>{
         autoI = setInterval(()=>{
