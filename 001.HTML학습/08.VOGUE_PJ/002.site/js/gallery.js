@@ -5,16 +5,16 @@ $(() => {
     // console.log("로딩완료");
 
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        slidesPerGroup: 3,
-        loop: true,
-        loopFillGroupWithBlank: true,
-        pagination: {
+        slidesPerView: 3, // 한 화면당 슬라이드 개수
+        spaceBetween: 30, // 슬라이드 사이 간격(px)
+        slidesPerGroup: 1, // 슬라이드 묶음 개수(넘기는 단위)
+        loop: true, // 무한루프(기본값은 false)
+        loopFillGroupWithBlank: true, // 남는 자리 빈 슬라이드로 채우기
+        pagination: { // 하단 블릿 설정
             el: ".swiper-pagination",
             clickable: true,
         },
-        navigation: {
+        navigation: { // 양쪽 이동 버튼
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
