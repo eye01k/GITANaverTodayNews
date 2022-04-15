@@ -58,6 +58,9 @@
 .fl {
     display: flex;
   }
+.flsb{
+    justify-content: space-between;
+}  
   /* 드래그 선택 막기 */
 .disel {
     /* 선택 안 되게 하기 */
