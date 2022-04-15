@@ -129,7 +129,7 @@ $(() => {
                         error: function(xhr,status,error){
                             alert("연결 실행 실패: ",error);
                         } //////// error
-                    })
+                    }); ///////// ajax
 
                     $(this).siblings(".msg")
                         .text("사용 가능한 아이디입니다")
