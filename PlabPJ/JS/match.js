@@ -3,6 +3,7 @@ $(() => {
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
         spaceBetween: 30,
+
         loop: true,
         pagination: {
             el: ".swiper-pagination",
@@ -15,7 +16,8 @@ $(() => {
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
-          },
+        },
+
     });
 
     // Date() 객체를 이용해서 날짜 찍기
@@ -32,10 +34,10 @@ $(() => {
 
     $(".week p").each((idx, ele) => {
         // console.log(idx);
-        if(idx===0) 
-        addDay.setDate(addDay.getDate())
+        if (idx === 0)
+            addDay.setDate(addDay.getDate())
         else
-        addDay.setDate(addDay.getDate() + 1);
+            addDay.setDate(addDay.getDate() + 1);
         // setDate(오늘날짜+날수) -> 변경된 날짜가됨!
 
         // addDay.setDate(today.getDate()+(idx+15)); 
