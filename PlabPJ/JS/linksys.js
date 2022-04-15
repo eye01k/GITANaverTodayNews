@@ -14,5 +14,7 @@ $(()=>{
         let txt = $(this).find("img").attr("alt");
 
         console.log(txt);
+
+        if(txt!=="TeamLeague") location.href = "match.html?cat="+txt;
     }); // 매치메뉴 클릭 시
 }); ///////////////////JQB

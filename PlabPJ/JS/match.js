@@ -20,6 +20,20 @@ $(() => {
 
     });
 
+
+    let pm = location.href;
+    
+    pm = pm.split("?")[1].split("=")[1];
+    console.log(pm);
+
+    if(pm==="Rental"){
+        $(".select").children().last().remove();
+        $(".select").children().last().remove();
+        $(".select").children().eq(1).text("예약 가능");
+        $(".select").children().eq(2).text("프로모션");
+    }
+
+
     // Date() 객체를 이용해서 날짜 찍기
     // 변경대상: .week p
     let today = new Date();
