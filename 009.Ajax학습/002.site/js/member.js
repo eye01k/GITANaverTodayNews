@@ -314,21 +314,56 @@ $(() => {
         console.log("통과여부: ", pass);
 
         // 4. 검사결과에 따라 메시지 보이기 및 처리
-        if(pass){ //// 통과 시
+        if (pass) { //// 통과 시
 
             /* 
                 [Ajax를 이용한 POST방식으로 DB에 데이터 입력하기]
 
                 AJAX = ASynchronous Javascript And XML
+
+                -비동기통신이란?
+                페이지가 새로고침되지 않고 그대로 유지되면서 일부만 서버 통신을 하는 것을 말한다
+
+                -제이쿼리는 POST방식으로 ajax를 할 수 있다
+
+                [POST 방식 ajax 메서드]
+                $.post(URL,data,callback)
+                $.post(전송할 페이지,전송할 데이터,전송 후 실행 함수)
+
             */
 
+            $.post(
+                // 1. 전송할 페이지
+                "/process/ins.php",
+                // 2. 전송할 데이터
+                {
+                    // 1. 아이디
+                    "mid" : $("#mid").val(),
+                    // 2. 비번
+                    "mpw" : $("#mpw").val(),
+                    // 3. 이름
+                    "mnm" : $("#mnm").val(),
+                    // 4. 성별(radio 버튼)
+                    "gen" : $(":radio[name=gen]:checked").val(),
+                    // 5-1. 이메일 앞주소
+                    "email1" : $("#email1").val(),
+                    // 5-2. 이메일 뒷주소
+                    "seleml" : $("#seleml").val(),
+                    // 5-3. 직접입력 이메일 뒷주소
+                    "email2" : $("#email2").val()
+                },
+                // 3. 전송 후 실행 함수
+                function (res) {
+                    console.log("실행결과: ",res);
+                }); //////////// post
+
             // 메시지 띄우기
-            alert("회원가입을 축하드립니다!");
+            // alert("회원가입을 축하드립니다!");
             // 원래는 post방식으로 DB에 회원정보를 입력 후 
             // DB에 입력완료 시 위의 메시지를 띄워준다
 
             // 로그인 페이지로 이동
-            location.replace("login.php");
+            // location.replace("login.php");
             // location.href = "login.php";
             /* 
                 회원가입 후 이전 페이지로 돌아가지 못하도록
