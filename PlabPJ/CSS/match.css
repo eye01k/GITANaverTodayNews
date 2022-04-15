@@ -57,6 +57,8 @@ html {
   left: 2%; */
   width: 70px;
   height: 100%;
+
+  cursor: pointer;
 }
 
 
