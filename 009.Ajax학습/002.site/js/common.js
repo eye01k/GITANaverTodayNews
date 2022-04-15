@@ -11,7 +11,7 @@ console.log(pgnm);
 
 // 인덱스 페이지에서만 슬림 슬라이드 클래스를 넣기 위한 코드
 let slim = 0;
-if(pgnm==="index.php" || pgnm === "category.php") slim = 1; // 인덱스 페이지면 1로 변경
+if(pgnm==="index.php" || pgnm === "category.php" || pgnm.indexOf(".")===-1) slim = 1; // 인덱스 페이지면 1로 변경
 
 
 $(() => {
