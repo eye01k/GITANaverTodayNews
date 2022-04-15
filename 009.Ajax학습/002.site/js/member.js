@@ -121,6 +121,16 @@ $(() => {
                         // (6) 성공처리: 중복안됨 ok,중복 no ,
                         success: function(res){
                             console.log("결과: ",res);
+                            if(res==="ok"){
+                                $("#mid").siblings(".msg")
+                                .text("사용 가능한 아이디입니다")
+                                .addClass("on");
+                            } //////// if: 사용가능한 아이디
+                            else{
+                                $("#mid").siblings(".msg")
+                                .text("사용 중인 아이디입니다")
+                                .removeClass("on");
+                            } /////////// else: 사용불가능한 아이디
                         },  /////////// success
                         // (7) 실패처리
                         // xhr - HMLHttpRequest 객체
@@ -131,9 +141,7 @@ $(() => {
                         } //////// error
                     }); ///////// ajax
 
-                    $(this).siblings(".msg")
-                        .text("사용 가능한 아이디입니다")
-                        .addClass("on");
+                   
                 } /////// else: 아이디 검사 통과
             } ////////////// else if(아이디 검사)
 
