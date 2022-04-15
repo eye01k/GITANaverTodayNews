@@ -80,6 +80,57 @@ $(() => {
 
                 } ////////// if: 아이디 검사 불통과
                 else {
+                    // 아이디 중복 여부 검사
+                    /* 
+                        [ajax로 중복아이디 검사하기]
+                        ajax 처리 유형 2가지
+
+                        1) POST 방식 처리 메서드
+                        - $.post(url,data,callback)
+
+                        2) GET 방식 처리 메서드
+                        - $.get(url,callback)
+                        - url에 데이터가 포함됨
+
+                        3) 위의 두 가지 유형 중 선택 처리
+                        - $.ajax({
+                            (1) 전송할 페이지,
+                            (2) 전송방식,
+                            (3) 보낼 데이터,
+                            (4) 전송할 데이터 타입,
+                            (5) 비동기 옵션,
+                            (6) 성공처리,
+                            (7) 실패처리
+                        })
+                    */
+
+                    $.ajax({
+                        // (1) 전송할 페이지,
+                        url: "process/chkID.php",
+                        // (2) 전송방식,
+                        type: "post",
+                        // (3) 보낼 데이터,
+                        data: {
+                            "mid": $("#mid").val()
+                        },
+                        // (4) 전송할 데이터 타입,
+                        dataType: "html",
+                        // (5) 비동기 옵션,
+                        // 비동기 옵션을 꺼야(false) 전역변수 pass에 값을 업데이트할 수 있다
+                        async: false,
+                        // (6) 성공처리: 중복안됨 ok,중복 no ,
+                        success: function(res){
+                            console.log("결과: ",res);
+                        },  /////////// success
+                        // (7) 실패처리
+                        // xhr - HMLHttpRequest 객체
+                        // status - 실패 상태 코드번호
+                        // error - 에러 결과 메시지
+                        error: function(xhr,status,error){
+                            alert("연결 실행 실패: ",error);
+                        } //////// error
+                    })
+
                     $(this).siblings(".msg")
                         .text("사용 가능한 아이디입니다")
                         .addClass("on");
