@@ -316,6 +316,12 @@ $(() => {
         // 4. 검사결과에 따라 메시지 보이기 및 처리
         if(pass){ //// 통과 시
 
+            /* 
+                [Ajax를 이용한 POST방식으로 DB에 데이터 입력하기]
+
+                AJAX = ASynchronous Javascript And XML
+            */
+
             // 메시지 띄우기
             alert("회원가입을 축하드립니다!");
             // 원래는 post방식으로 DB에 회원정보를 입력 후 
