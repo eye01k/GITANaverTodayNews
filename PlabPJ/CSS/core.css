@@ -58,3 +58,10 @@
 .fl {
     display: flex;
   }
+  /* 드래그 선택 막기 */
+.disel {
+    /* 선택 안 되게 하기 */
+    user-select: none;
+    /* 드래그 안 되게 하기 */
+    -webkit-user-drag: none;
+}

@@ -12,6 +12,10 @@ $(() => {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
     });
 
     // Date() 객체를 이용해서 날짜 찍기
