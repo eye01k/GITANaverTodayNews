@@ -32,7 +32,7 @@ $(()=>{
             // ajax post방식으로 로그인 처리 페이지 호출
             $.post(
                 // 1. 전송할 페이지
-                "process.loginSet.php",
+                "process/loginSet.php",
 
                 // 2. 보낼 데이터
                 {
