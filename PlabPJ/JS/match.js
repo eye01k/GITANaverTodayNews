@@ -29,8 +29,8 @@ $(() => {
     if(pm==="Rental"){
         $(".select").children().last().remove();
         $(".select").children().last().remove();
-        $(".select").children().eq(1).text("예약 가능");
-        $(".select").children().eq(2).text("프로모션");
+        $(".select").children().eq(1).find("a").text("예약 가능");
+        $(".select").children().eq(2).find("a").text("프로모션");
     }
 
 
