@@ -130,6 +130,9 @@ $(() => {
                                 $("#mid").siblings(".msg")
                                 .text("사용 중인 아이디입니다")
                                 .removeClass("on");
+
+                                // 불통과
+                                pass = false;
                             } /////////// else: 사용불가능한 아이디
                         },  /////////// success
                         // (7) 실패처리
