@@ -289,6 +289,9 @@ html {
   font-size: 12px;
   margin: 0 5px 0 0;
 }
+.Rental .matchbx div{
+  padding: 10px 0;
+}
 .Rental .rental{
   font-size: 14px;
     border-radius: 10px;
