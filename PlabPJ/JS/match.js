@@ -22,15 +22,52 @@ $(() => {
 
 
     let pm = location.href;
-    
+
     pm = pm.split("?")[1].split("=")[1];
     console.log(pm);
 
-    if(pm==="Rental"){
+    if (pm === "Rental") {
         $(".select").children().last().remove();
         $(".select").children().last().remove();
         $(".select").children().eq(1).find("a").text("예약 가능");
         $(".select").children().eq(2).find("a").text("프로모션");
+
+        $(".cont").addClass(pm);
+
+        $(".match").find("li").removeClass("fl").html(`
+        <div class="fl flsb">
+              <h2>구장 이름</h2>
+              <span class="sigbtn">구장정보</span>
+            </div>
+            <div class="fl">
+              <p class="esp">구장</p>
+              <p>크기</p>
+              <p>실내/실외</p>
+              <p>잔디</p>
+            </div>
+            <div>
+              <ul class="fl">
+                <li class="rental">
+                  <p>시간1</p>
+                </li>
+                <li class="rental">
+                  <p>시간2</p>
+                </li>
+                <li class="rental">
+                  <p>시간3</p>
+                </li>
+                <li class="rental">
+                  <p>시간4</p>
+                </li>
+                <li class="rental">
+                  <p>시간5</p>
+                </li>
+                <li class="rental">
+                  <p>시간6</p>
+                </li>
+              </ul>
+            </div>
+        `);
     }
 
 
