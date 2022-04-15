@@ -1,5 +1,19 @@
 // Vogue PJ 공통 JS
 
+// 현재 페이지 이름 알아내기
+let pgnm = $(location).attr("pathname");
+// 슬래쉬 단위로 자르기
+pgnm = pgnm.split("/");
+//마지막 배열값(페이지 이름) 읽기
+pgnm = pgnm[pgnm.length-1];
+// JS방식: window.location.pathname -> host 제외한 경로
+console.log(pgnm);
+
+// 인덱스 페이지에서만 슬림 슬라이드 클래스를 넣기 위한 코드
+let slim = 0;
+if(pgnm==="index.html") slim = 1; // 인덱스 페이지면 1로 변경
+
+
 $(() => {
     // 햄버거 버튼 클릭 시 모바일 메뉴 보이기
     // 이벤트 대상: .hbtn
@@ -138,9 +152,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
         */
         // 상단메뉴 슬림 변경
-        // 1. 스크롤 위치값이 100 이상일 때 #top에 클래스 on 부여
+        // 1. 스크롤 위치값이 100 이상이고 slim이 1일 때(index.html일 때) #top에 클래스 on 부여
         // 2. 스크롤 위치값이 100 미만일 때 #top에 클래스 on 제거
-        if (scTop >= 100) topA.classList.add("on");
+        if (scTop >= 100 && slim) topA.classList.add("on");
         else topA.classList.remove("on");
 
         // 위로가기 버튼 보이기
