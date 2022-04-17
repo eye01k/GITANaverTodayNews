@@ -72,6 +72,10 @@ html {
   background-color: white;
   transition: background-color 0.3s ease-out;
 }
+.top.on {
+  background-color: white;
+  transition: background-color 0.3s ease-out;
+}
 
 /* .top:hover>.gnb>ul>li>a {
   color: white;

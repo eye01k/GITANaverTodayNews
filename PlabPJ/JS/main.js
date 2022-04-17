@@ -34,11 +34,16 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         Go.style.display = "none";
         GoDown.style.display = "none";
-        // top.style.display = "none";
+        top.classList.add("on");
         bgvideo.style.filter = "brightness(15%)";
         lArrow.style.left = "2%"
+        logo.classList.remove("fwh");
 
         matbx.classList.add("on");
+
+        top.onmouseout = ()=>{
+            logo.classList.remove("fwh");
+        };
         
 
     }; ////// onclick
@@ -47,13 +52,15 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         Go.style.display = "block";
         GoDown.style.display = "block";
-        top.style.display = "block";
+        top.classList.remove("on");
         bgvideo.style.filter = "brightness(50%)";
         lArrow.style.left = "102%"
 
         lArrow.style.transition = "none";
         matbx.style.transition = "none";
         matbx.classList.remove("on");
+        logo.classList.add("fwh");
+
 
     }; ////// onclick
 
