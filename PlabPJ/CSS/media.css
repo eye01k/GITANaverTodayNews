@@ -84,8 +84,9 @@
     height: 550px;
   }
   .lArrow{
-    top: -2%;
-    width: 6%;
+    top: -50px;
+    width: 22px;
+ }
   }
   .mlist h3 {
     font-size: 7vw;
@@ -144,6 +145,9 @@
   }
   .apply{
     width: 50%;
+  }
+  .apply p{
+    font-size: 3vw;
   }
   .manDes .fl {
     margin-left: 0;
