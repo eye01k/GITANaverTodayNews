@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         Go.style.display = "none";
         GoDown.style.display = "none";
-        top.style.display = "none";
+        // top.style.display = "none";
         bgvideo.style.filter = "brightness(15%)";
         lArrow.style.left = "2%"
 
