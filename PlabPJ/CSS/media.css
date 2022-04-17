@@ -15,6 +15,11 @@
 
 /* 800px 미디어쿼리 */
 @media screen and (max-width:800px) {
+  .rbx2::before {
+    content: '';
+    display: block;
+    padding-top: 600.64%;
+  }
   #top{
     height: 70px;
   }
@@ -32,6 +37,9 @@
   }
   .GoDown>ul>li>a{
     font-size: 18px;
+  }
+  .lArrow{
+    top: -1%;
   }
   .Go{
     top: 300px;
@@ -56,5 +64,54 @@
   }
   .mlist li:last-child img{
     object-position: 0 -55px;
+  }
+  .txtbx{
+    padding-top: 7%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .rbx2::before {
+    content: '';
+    display: block;
+    padding-top: 700.64%;
+  }
+  #bgvideo{
+    height: 600px;
+  }
+  .GoDown{
+    top: 515px;
+  }
+  .GoDown>ul>li>a{
+    font-size: 15px;
+  }
+  .lArrow{
+  .inImg{
+    height: 70vw;
+  }
+  .inImg section{
+    width: 85%;
+    padding-top: 12.2%;
+  }
+  .inTit {
+    width: 65%;
+    margin: 7% auto 0;
+  }
+  .arrow {
+    height: 6vw;
+    margin: 20% auto 0;
+  }
+  #intro h2 {
+    font-size: 10vw;
+      margin: 8% 0;
+  }
+  .boldDes>li {
+    font-size: 3vw;
+  }
+  .lightDes>li {
+    font-size: 2.7vw;
+  }
+  .howTo{
+    width: 90%;
   }
 }
