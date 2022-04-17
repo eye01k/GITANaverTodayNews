@@ -74,18 +74,28 @@
   .rbx2::before {
     content: '';
     display: block;
-    padding-top: 700.64%;
+    padding-top: 900.64%;
   }
   #bgvideo{
     height: 600px;
   }
+  .matbx {
+    top: 34px;
+    height: 550px;
+  }
+  .lArrow{
+    top: -2%;
+    width: 6%;
+  }
+  .mlist h3 {
+    font-size: 7vw;
+    }
   .GoDown{
     top: 515px;
   }
   .GoDown>ul>li>a{
     font-size: 15px;
   }
-  .lArrow{
   .inImg{
     height: 70vw;
   }
@@ -113,5 +123,51 @@
   }
   .howTo{
     width: 90%;
+  }
+  .txtbx{
+    padding-top: 20%;
+  }
+  .txtbx h2 {
+    font-size: 7.2vw;
+  }
+  .txtbx h2 strong {
+    font-size: 8.6vw;
+  }
+  .txtbx p {
+    font-size: 3.4vw;
+  }
+  .manImg {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-top: 20px;
+  }
+  .apply{
+    width: 50%;
+  }
+  .manDes .fl {
+    margin-left: 0;
+  }
+  .manDes>ul>li>h3 {
+    font-size: 3vw;
+  }
+  .manDes>ul>li {
+    margin: 0px 1%;
+  }
+  .steps {
+    padding: 0%;
+    margin: 8% 0;
+  }
+  .steps div:first-child {
+  padding-bottom: 4%;
+  }
+  .steps>ul>li {
+   width: 15.8%;
+    padding: 0 0%;
+  margin: 0 0%;
+  }
+  .bottxt h2 {
+    font-size: 5.2vw;
+    line-height: 6.5vw;
   }
 }
