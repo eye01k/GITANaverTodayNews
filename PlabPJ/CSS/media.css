@@ -87,91 +87,90 @@
     top: -50px;
     width: 22px;
  }
-  }
-  .mlist h3 {
-    font-size: 7vw;
-    }
-  .GoDown{
-    top: 515px;
-  }
-  .GoDown>ul>li>a{
-    font-size: 15px;
-  }
-  .inImg{
-    height: 70vw;
-  }
-  .inImg section{
-    width: 85%;
-    padding-top: 12.2%;
-  }
-  .inTit {
-    width: 65%;
-    margin: 7% auto 0;
-  }
-  .arrow {
-    height: 6vw;
-    margin: 20% auto 0;
-  }
-  #intro h2 {
-    font-size: 10vw;
-      margin: 8% 0;
-  }
-  .boldDes>li {
-    font-size: 3vw;
-  }
-  .lightDes>li {
-    font-size: 2.7vw;
-  }
-  .howTo{
-    width: 90%;
-  }
-  .txtbx{
-    padding-top: 20%;
-  }
-  .txtbx h2 {
-    font-size: 7.2vw;
-  }
-  .txtbx h2 strong {
-    font-size: 8.6vw;
-  }
-  .txtbx p {
-    font-size: 3.4vw;
-  }
-  .manImg {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin-top: 20px;
-  }
-  .apply{
-    width: 50%;
-  }
-  .apply p{
-    font-size: 3vw;
-  }
-  .manDes .fl {
-    margin-left: 0;
-  }
-  .manDes>ul>li>h3 {
-    font-size: 3vw;
-  }
-  .manDes>ul>li {
-    margin: 0px 1%;
-  }
-  .steps {
-    padding: 0%;
-    margin: 8% 0;
-  }
-  .steps div:first-child {
-  padding-bottom: 4%;
-  }
-  .steps>ul>li {
-   width: 15.8%;
-    padding: 0 0%;
-  margin: 0 0%;
-  }
-  .bottxt h2 {
-    font-size: 5.2vw;
-    line-height: 6.5vw;
-  }
+ .mlist h3 {
+   font-size: 7vw;
+   }
+ .GoDown{
+   top: 515px;
+ }
+ .GoDown>ul>li>a{
+   font-size: 15px;
+ }
+ .inImg{
+   height: 70vw;
+ }
+ .inImg section{
+   width: 85%;
+   padding-top: 12.2%;
+ }
+ .inTit {
+   width: 65%;
+   margin: 7% auto 0;
+ }
+ .arrow {
+   height: 6vw;
+   margin: 20% auto 0;
+ }
+ #intro h2 {
+   font-size: 10vw;
+     margin: 8% 0;
+ }
+ .boldDes>li {
+   font-size: 3vw;
+ }
+ .lightDes>li {
+   font-size: 2.7vw;
+ }
+ .howTo{
+   width: 90%;
+ }
+ .txtbx{
+   padding-top: 20%;
+ }
+ .txtbx h2 {
+   font-size: 7.2vw;
+ }
+ .txtbx h2 strong {
+   font-size: 8.6vw;
+ }
+ .txtbx p {
+   font-size: 3.4vw;
+ }
+ .manImg {
+   width: 100%;
+   height: 300px;
+   object-fit: cover;
+   margin-top: 20px;
+ }
+ .apply{
+   width: 50%;
+ }
+ .apply p{
+   font-size: 3vw;
+ }
+ .manDes .fl {
+   margin-left: 0;
+ }
+ .manDes>ul>li>h3 {
+   font-size: 3vw;
+ }
+ .manDes>ul>li {
+   margin: 0px 1%;
+ }
+ .steps {
+   padding: 0%;
+   margin: 8% 0;
+ }
+ .steps div:first-child {
+ padding-bottom: 4%;
+ }
+ .steps>ul>li {
+  width: 15.8%;
+   padding: 0 0%;
+ margin: 0 0%;
+ }
+ .bottxt h2 {
+   font-size: 5.2vw;
+   line-height: 6.5vw;
+ }
 }
