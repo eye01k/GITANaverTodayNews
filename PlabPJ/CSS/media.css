@@ -68,6 +68,10 @@
   .txtbx{
     padding-top: 7%;
   }
+  .steps>ul>li {
+    width: 11.8%;
+    margin: 0 3%;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -173,4 +177,11 @@
    font-size: 5.2vw;
    line-height: 6.5vw;
  }
+}
+@media screen and (max-width: 400px) {
+  .rbx2::before {
+    content: '';
+    display: block;
+    padding-top: 1000.64%;
+  }
 }
