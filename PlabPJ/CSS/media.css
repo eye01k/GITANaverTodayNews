@@ -235,6 +235,12 @@
     display: block;
     padding-top: 1000.64%;
   }
+  .GoDown{
+    width: 200px;
+  }
+  .GoDown>ul>li>a{
+    font-size: 14px;
+  }
   .manDes>ul>li>h3{
     padding-bottom: 10px;
   }

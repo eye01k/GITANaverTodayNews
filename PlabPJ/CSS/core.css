@@ -6,7 +6,9 @@
 
 
 /************* 2. 공통 class *************/
-
+html, body{
+    overflow-x: hidden;
+}
 /* 비율유지박스 class */
 .rbx {
     position: relative;
