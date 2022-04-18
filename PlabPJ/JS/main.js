@@ -1,13 +1,13 @@
-window.addEventListener("DOMContentLoaded", ()=>{
+window.addEventListener("DOMContentLoaded", () => {
 
     let top = document.querySelector(".top");
 
     let logo = document.querySelector(".logo");
 
-    top.onmouseover = ()=>{
+    top.onmouseover = () => {
         logo.classList.remove("fwh");
     }; ////////// top 마우스 오버
-    top.onmouseout = ()=>{
+    top.onmouseout = () => {
         logo.classList.add("fwh");
     } /////// top 마우스 아웃
 
@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     let lArrow = document.querySelector(".lArrow");
 
-    Go.onclick = ()=>{
+    Go.onclick = () => {
 
         // 변경대상: .top .Go .GoDown - display: none , #bgvideo - fliter: brightness(15%) , .matbx - classList.add("on")
 
@@ -41,10 +41,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         matbx.classList.add("on");
 
-        top.onmouseout = ()=>{
+        top.onmouseout = () => {
             logo.classList.remove("fwh");
         };
-        
+
 
     }; ////// onclick
 
@@ -61,39 +61,41 @@ window.addEventListener("DOMContentLoaded", ()=>{
         matbx.classList.remove("on");
         logo.classList.add("fwh");
 
-
+        top.onmouseout = () => {
+            logo.classList.add("fwh");
+        } /////// top 마우스 아웃        
     }; ////// onclick
 
 
     // 변경대상: #slide top값
     let slide = document.querySelector("#slide");
-    
+
     // 이미지 변경 함수
     const chgImg = () => {
-        
+
         // top값을 -100%로 이동
         slide.style.top = "-100%";
         slide.style.transition = ".6s ease-out";
-        
+
         // #slide li 요소 변수 할당
         let sli = slide.querySelectorAll("li")
 
         // 맨 앞 이미지를 맨 뒤로 보내고 top값을 0으로 바꿈
-        setTimeout(()=>{
+        setTimeout(() => {
             slide.appendChild(sli[0]);
 
             slide.style.top = 0;
             slide.style.transition = "none";
-        },600); ///////// setTimeout
+        }, 600); ///////// setTimeout
     }; //////////// chgImg
 
-    setInterval(()=>chgImg(), 1200);
+    setInterval(() => chgImg(), 1200);
 
-    
+
     // window.addEventListener("scroll", ()=>{
     //     let scVal = this.scrollY;
     //     console.log(scVal);
-        
+
     //     if(scVal + appbx.offsetTop >=bxPos){
     //         appbx.style.position = "fixed";
     //         appbx.style.top = "80%";      
@@ -103,7 +105,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
     //         appbx.style.top = "13%";
     //     }
     // }); //////// scroll
-    
+
     // let txtbx = document.querySelector(".txtbx");
     // console.log(txtbx.offsetHeight);
     // let appbx = document.querySelector(".apply");
@@ -112,4 +114,3 @@ window.addEventListener("DOMContentLoaded", ()=>{
     // ;
     // console.log("지원박스 포지션: ", bxPos);
 }); //////////////// load /////////////////
-
