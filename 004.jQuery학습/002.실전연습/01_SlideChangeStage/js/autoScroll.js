@@ -143,6 +143,12 @@ $(()=>{
        $("html, body").stop().animate({
            scrollTop: pgpos+"px"
        },dur_sc,easing_sc);
+
+       /* 
+            4. 현재 메뉴 표시하기 : gnb, 사이드 표시자
+       */
+        $(".gnb li").eq(pno).addClass("on").siblings().removeClass("on");
+        $(".indic li").eq(pno).addClass("on").siblings().removeClass("on");
     }); /////////////mousewheel
 
     // 공통 a요소 기본 이동 막기
