@@ -65,6 +65,12 @@ $(()=>{
     // 자동스크롤 구현
     $(document).on("mousewheel DOMMouseScroll",
     function(e){
+
+        // 광스크롤 막기
+        if (prot_sc) return;
+        prot_sc = 1; // 막기
+        setTimeout(()=>prot_sc=0,dur_sc);
+
         // e.preventDefault();
 
         // console.log("스크롤링");
@@ -87,6 +93,25 @@ $(()=>{
        // 변수 = 속성값1 || 속성값2
        // -> 두 가지 값 중 undefined가 아닌 값, 즉, true 처리가 되는 값이 할당된다
     //    console.log("휠 델타값: ",delta);
+
+
+    /* 
+        1.5. 파이어폭스 방향 반대로 전환하기
+        -> 현재 브라우저가 파이어폭스인지 어떻게 알지?
+        navigator.userAgent 
+        -> 브라우저 정보 표시
+        -> 브라우저 정보에 "firefox"라는 문자가 있으면 파이어폭스
+        -> 정규식으로 해당 문자가 있는지 구분하기
+        /문자/i -> 대소문자 구분 x
+        -> 정규식.test(값) -> 값에 정규식 문자가 있으면 true
+        -> /firefox/i.test(navigator.userAgent);
+        -> 브라우저 정보에 "firefox" 문자가 있으면 true
+    */
+    // console.log("브라우저 정보: ",navigator.userAgent);
+
+    // 파이어폭스 브라우저에서 delta(휠 방향정보)가 반대가 됨
+    if(/firefox/i.test(navigator.userAgent)) delta = -delta;
+
 
        /* 
             2. 방향에 따른 페이지 번호 증감하기
