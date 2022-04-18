@@ -55,22 +55,18 @@
             padding: 0;
             font-size: 100%;
         }
+        /* 페이지 부모박스 .wrap display: flex */
+        .wrap{
+            display: flex;
+        }
 
         /* 공통 class */
-
-        /* 페이지 최상위부모 */
-        .wrap{
-            width: 700%;/* 7개 페이지크기만큼 */
-            height: 100%;
-        }
 
         /* 페이지 공통 class */
         .page {
             /* 한페이지 보이는 화면 채우기 */
-            width: 14.285%;/* 100vw; */
-            /* 보이는 화면크기만큼 - %일 경우 1/7등분인 14.285%임 */
-            height: 100%;
-            float: left;/* 옆으로 흐르게 */
+            width: 100vw;
+            height: 100vh;
             /* 
                 width: 100vw;
                 height: 100vh;
@@ -82,6 +78,7 @@
                 데스트탑에서는 100%를 사용하는게 좋다!
                 (이유는 가로스크롤바가 생기게 되므로!)
              */
+             flex-shrink: 0; /* 기본값: 1 - 부모박스가 작아지면 작아짐 */
         }
 
         /* IR(배경이미지 설명 숨기기) class */
@@ -227,11 +224,11 @@
             display: none;
         }
     </style>
-    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script src="js/autoScroll_Horizontal.js"></script>
+    <script src="js/autoScroll_HR.js"></script>
     <script>
-        
+       
     </script>
 </head>
 
