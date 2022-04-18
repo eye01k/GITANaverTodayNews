@@ -145,14 +145,17 @@ $(()=>{
        },dur_sc,easing_sc);
     }); /////////////mousewheel
 
-    // 메뉴 클릭 시 스크롤 이동 애니메이션
-    // 대상: .gnb a
-    $(".gnb a").click(function(e){
-        // a 기본 이동 막기
-        e.preventDefault();
+    // 공통 a요소 기본 이동 막기
+    $("a").click(function(e){
+        e.preventDefault;
+    });
 
-        // 1. 순번 찍기 (부모인 li의 순번)
-        let idx = $(this).parent().index();
+    // 메뉴 클릭 시 스크롤 이동 애니메이션
+    // 대상: .gnb li
+    $(".gnb li, .indic li").click(function(){
+
+        // 1. 순번 찍기
+        let idx = $(this).index();
         console.log("메뉴 순번: ",idx);
 
         // 2. idx 순번을 pno 전역 페이지 번호에 넣기
@@ -167,6 +170,7 @@ $(()=>{
 
         // 4. 현재 페이지 메뉴에 클래스 on 넣기
         $(".gnb li").eq(pno).addClass("on").siblings().removeClass("on");
+        $(".indic li").eq(pno).addClass("on").siblings().removeClass("on");
 
         // $(this).parent().addClass("on").siblings().removeClass("on");
 
