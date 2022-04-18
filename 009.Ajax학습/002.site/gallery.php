@@ -25,6 +25,8 @@
 </head>
 
 <body>
+    <!-- 로그인 세션 인클루드 -->
+    <?php include "inc/login_session.inc" ?>
     <!-- 1. 상단영역 인클루드 -->
     <?php include "inc/top.inc" ?>
     <!-- 메인영역 -->

@@ -90,11 +90,16 @@ session_start();
         if (auth === "A" || auth === "S") {
             $(".sns a").eq(4)
                 .after(
-              `<a href="#" class="fi fi-user-secret" title="관리자">
-                 <span class="ir" style="color:red">
+              `<a href="#" class="fi fi-user-secret" title="관리자" style="color:red">
+                 <span class="ir">
                      관리자
                  </span>
               </a>`);
+
+              // 추가된 관리자 버튼에 링크 셋팅
+              $(".sns a").eq(5).click(()=>{
+                location.href = "admin/index.php"
+              });
         } /////////// if /////////////////
 
 
