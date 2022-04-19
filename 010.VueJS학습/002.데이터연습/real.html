@@ -10,9 +10,8 @@
     <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
     <script>
-
         //////////// 로딩구역 /////////////////////
-        window.addEventListener("DOMContentLoaded",()=>{
+        window.addEventListener("DOMContentLoaded", () => {
 
             console.log("로딩완료");
 
@@ -22,15 +21,14 @@
                     vals: {}
                     // json 데이터가 객체임
                 }, ////// data
-                mounted: function(){
+                mounted: function () {
                     axios.get("real.json")
-                    .then(x => this.vals = x);
+                        .then(x => this.vals = x);
                 } ///// mounted
             }); ///////// Vue
-           
+
         }); ///////////// 로딩구역 ////////////////////////
         //////////////////////////////////////////////////
-        
     </script>
 
 
@@ -56,6 +54,18 @@
          -->
         <li v-for="(v,n) in vals.data">
             <h2>{{v.제목}}</h2>
+            <!-- 
+                    속성명은 문자형이지만 아래 두가지로 사용 가능 
+                    v.제목 or v["제목"]
+            -->
+            <!-- 메뉴의 값이 "없음"이 아니면 출력 -->
+            <ol v-if="v.메뉴!=='없음'">
+                <li v-for="(v2,i) in v.메뉴">{{v2}}</li>
+                <!-- 
+                    v-for에서
+                    데이터 값이 배열이 아닌 문자일 경우 문자를 한 글자씩 잘라서 배열로 만들어 반복시킴
+                 -->
+            </ol>
         </li>
     </ul>
 </body>
