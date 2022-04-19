@@ -33,7 +33,15 @@
             
 
             // 3. 이벤트 사용하기 /////////////////////
-            
+            new Vue({
+                el: "#app3",
+                methods: {
+                    myClick: function(e){
+
+                    }
+                }
+                // methods 속성은 함수 기능을 구현하여 할당함
+            }); ////////// Vue
 
             // 4. 입력 양식과 동기화하기 /////////
             
@@ -86,7 +94,7 @@
 
     <h2>3. 이벤트 사용하기</h2>
     <div id="app3">
-       
+       <button v-on:click="myClick">Click</button>
     </div>
 
     <hr>
