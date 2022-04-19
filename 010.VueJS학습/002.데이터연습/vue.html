@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue JS 데이터 바인딩 연습</title>
     <!-- 뷰JS 프레임워크 스텐드얼론 버전 가져오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
     
     <script>
        /************************************************************ 
@@ -34,6 +36,35 @@
 
             console.log("로딩완료!");
 
+            //// 데이터 바인딩을 위한 Vue인스턴스 생성하기
+            new Vue({
+                el:"#app",
+                data: {
+                    vals: [] // json 데이터를 담을 변수 -> 가져올 데이터가 배열이므로 배열로 셋팅
+                }, ////// data
+                // mounted 속성: Vue 인스턴스가 메모리에 읽혀지면 실행하는 함수 구역
+                // mounted '읽혀들여진'
+                mounted: function(){
+                    // 외부파일을 가져오기 위해 axios 라이브러리를 사용함
+                    // 당연히 상단에 라이브러리가 있어야함
+                    axios // 엑시오스 객체
+                    .get("test.json")
+                    .then(res=>this.vals = res);
+
+                    /* 
+                        axios.get(제이슨파일).then(내부로 값 전달)
+
+                        res => this.vals = res
+
+                        해석: 제이슨에서 가져온 파일 내용을 res변수로 함수 내부에 전달
+                        이 값을 Vue JS에 셋팅된 데이터변수 vals에 집어 넣어라
+
+                        this.vals는 Vue 인스턴스 내부의 데이터 변수
+                    */
+
+                } ///////mounted
+            }); ////////// Vue
+
            
 
        }); //////////////// 로딩구역 /////////////////////////
@@ -46,7 +77,13 @@
 <body>
     <h1>Vue JS 데이터 바인딩 연습</h1>
     <div id="app">
-        
+        <ul>
+            <li v-for="(v,i) in vals.data">
+                순번: {{i}} <br>
+                no 데이터: {{v.no}} <br>
+                title 데이터: {{v.title}}
+            </li>
+        </ul>
     </div>
 </body>
 </html>
