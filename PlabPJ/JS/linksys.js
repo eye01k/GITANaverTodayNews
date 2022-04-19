@@ -6,6 +6,10 @@ $(()=>{
         location.href = "index.html";
     }); // 로고 클릭 시 메인페이지로
 
+    $(".sns a").first().click(()=>{
+        location.href = "login.html";
+    }); //////// click
+
     $(".mlist a").click(function(e){
 
         // a요소 기본 기능 막기
