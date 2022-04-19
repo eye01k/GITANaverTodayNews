@@ -144,6 +144,16 @@ $(() => {
         $(".level").slideUp();
     });
 
+    // let mdata;
+
+    // $(".week").find("li").eq(0).click(()=>{
+    //   mdata = "match_data1.json"
+    // });
+
+    // $(".week").find("li").eq(1).click(()=>{
+    //   mdata = "match_data2.json"
+    // });
+
     new Vue({
       el: "#matchbx",
       data: {
@@ -151,7 +161,7 @@ $(() => {
       },
       mounted: function(){
         axios
-        .get("match_data.json")
+        .get("match_data1.json")
         .then(res => this.vals = res);
       }
     });
