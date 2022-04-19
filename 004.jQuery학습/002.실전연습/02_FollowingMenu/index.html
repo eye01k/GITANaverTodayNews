@@ -170,13 +170,39 @@
 					// 자기자신(li)의 opacity: 1
 					$(this).stop().fadeTo(200,1);
 					// fadeTo(시간,오파,이징,함수);
-					$("span",this).stop().delay(100).fadeIn(200);
+					$("span",this).stop().fadeIn(200);
 					// $(this).find("span") === $("span",this)
 					// $(this).children("span") === $(">span",this)
 				},
 				function(){
 					$(this).stop().fadeTo(200,.7);
-					$("span",this).stop().delay(100).fadeOut(200);
+					$("span",this).stop().fadeOut(200);
+				})
+
+				// 이어서 click 설정하기
+				.click(function(e){
+
+					e.stopPropagation();
+					// li 클릭 시 상위 요소로 click 이벤트가 버블링되는 것을 막음
+					// JS에서는 하단에 return false로 처리
+
+					// span 텍스트 읽어오기
+					let txt = $("span",this).text();
+					console.log(txt);
+
+					// 이동할 주소
+					let url;
+
+					switch(txt){
+						case "Google" : url="https://www.google.com"; break;
+						case "Naver" : url="https://naver.com"; break;
+						case "Daum" : url="https://daum.net"; break;
+					}
+
+					// url 새창 열기
+					window.open().location.href = url;
+					// window.open() -> 새 창 열기
+					// location.href = url -> 페이지 이동
 				});
 
 
