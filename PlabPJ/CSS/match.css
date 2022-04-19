@@ -171,8 +171,8 @@ html {
 
 .match li {
   border-bottom: 1px solid #ccc;
-  margin: 15px;
-  justify-content: space-around;
+  margin: 15px 40px;
+  justify-content: space-between;
   align-items: center;
 }
 
