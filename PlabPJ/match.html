@@ -22,7 +22,11 @@
   <script src="./JS/linksys.js"></script>
   <script src="./JS/match.js"></script>
 
-  </script>
+  <!-- Vue Js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
+
 </head>
 
 <body>
@@ -129,67 +133,17 @@
           </li>
         </ul>
       </div>
-      <div class="matchbx">
+      <div id="matchbx">
         <ul class="fl match">
-          <li class="fl">
+          <li v-for="(v,i) in vals.data" class="fl">
             <span>
-              <b>시간</b>
+              <b>{{v.시간}}</b>
             </span>
             <span>
-              <p>구장</p>
-              <small>레벨</small>
+              <p>{{v.구장}}</p>
+              <small>{{v.레벨}}</small>
             </span>
-            <span class="sigbtn">버튼</span>
-          </li>
-          <li class="fl">
-            <span>
-              <b>시간</b>
-            </span>
-            <span>
-              <p>구장</p>
-              <small>레벨</small>
-            </span>
-            <span class="sigbtn">버튼</span>
-          </li>
-          <li class="fl">
-            <span>
-              <b>시간</b>
-            </span>
-            <span>
-              <p>구장</p>
-              <small>레벨</small>
-            </span>
-            <span class="sigbtn">버튼</span>
-          </li>
-          <li class="fl">
-            <span>
-              <b>시간</b>
-            </span>
-            <span>
-              <p>구장</p>
-              <small>레벨</small>
-            </span>
-            <span class="sigbtn">버튼</span>
-          </li>
-          <li class="fl">
-            <span>
-              <b>시간</b>
-            </span>
-            <span>
-              <p>구장</p>
-              <small>레벨</small>
-            </span>
-            <span class="sigbtn">버튼</span>
-          </li>
-          <li class="fl">
-            <span>
-              <b>시간</b>
-            </span>
-            <span>
-              <p>구장</p>
-              <small>레벨</small>
-            </span>
-            <span class="sigbtn">버튼</span>
+            <span class="sigbtn">신청하기</span>
           </li>
         </ul>
       </div>

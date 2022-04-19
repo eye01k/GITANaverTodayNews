@@ -18,12 +18,18 @@
   <script src="./JS/jquery-ui.min.js"></script>
   <script src="./JS/swiper-bundle.min.js"></script>
   <script src="./JS/linksys.js"></script>
-  <script src="./JS/match.js"></script>
+  <script src="./JS/match copy.js"></script>
 
   <!-- Vue Js -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
 
+  <script>
+    
+     ///// Vue
   </script>
+  
 </head>
 
 <body>
@@ -130,53 +136,15 @@
           </li>
         </ul>
       </div>
-      <div class="matchbx">
+      <div id="matchbx">
         <ul class="fl match">
-          <li class="fl">
-            <span>시간</span>
+          <li v-for="(v,i) in vals.data" class="fl">
             <span>
-              <p>구장</p>
-              <small>레벨</small>
+              <b>{{v.시간}}</b>
             </span>
-            <span class="sigbtn">버튼</span>
-          </li>
-          <li class="fl">
-            <span>시간</span>
             <span>
-              <p>구장</p>
-              <small>레벨</small>
-            </span>
-            <span class="sigbtn">버튼</span>
-          </li>
-          <li class="fl">
-            <span>시간</span>
-            <span>
-              <p>구장</p>
-              <small>레벨</small>
-            </span>
-            <span class="sigbtn">버튼</span>
-          </li>
-          <li class="fl">
-            <span>시간</span>
-            <span>
-              <p>구장</p>
-              <small>레벨</small>
-            </span>
-            <span class="sigbtn">버튼</span>
-          </li>
-          <li class="fl">
-            <span>시간</span>
-            <span>
-              <p>구장</p>
-              <small>레벨</small>
-            </span>
-            <span class="sigbtn">버튼</span>
-          </li>
-          <li class="fl">
-            <span>시간</span>
-            <span>
-              <p>구장</p>
-              <small>레벨</small>
+              <p>{{v.구장}}</p>
+              <small>{{v.레벨}}</small>
             </span>
             <span class="sigbtn">버튼</span>
           </li>
