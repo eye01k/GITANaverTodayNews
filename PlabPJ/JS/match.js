@@ -147,7 +147,8 @@ $(() => {
     // let mdata;
 
     // $(".week").find("li").eq(0).click(()=>{
-    //   mdata = "match_data1.json"
+       // mdata = "match_data1.json"
+       // console.log("나야나");
     // });
 
     // $(".week").find("li").eq(1).click(()=>{
