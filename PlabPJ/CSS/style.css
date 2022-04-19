@@ -26,6 +26,28 @@ html {
 
 
 /* 상단 영역 */
+.sns a {
+  width: 16px;
+  height: 16px;
+  /* .fi 설정에 inline-block 되어 있음 (크기 적용됨) */
+
+  font-size: 16px;
+  text-align: center;
+  vertical-align: top;
+  line-height: 16px;
+  color: white;
+
+  /* 위치조정 */
+  margin-top: 14px;
+  margin-right: 16px;
+
+  transition: opacity .2s;
+}
+
+/* a요소 오버 시 */
+.sns a:hover {
+  opacity: .8;
+}
 /* .top{
   height: 80px;
 } */
@@ -70,6 +92,10 @@ html {
 /* 상단 메뉴 마우스 오버 시 */
 .top:hover {
   background-color: white;
+  transition: background-color 0.3s ease-out;
+}
+.top:hover a{
+  color: black;
   transition: background-color 0.3s ease-out;
 }
 .top.on {
