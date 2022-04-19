@@ -7,6 +7,13 @@
     <script>
         function wClose(){
 
+            // window.opener - 팝업창을 연 부모창 윈도우
+
+            // 부모창 요소 글자 바꾸기
+            window.opener
+            .document.querySelector("#my").innerText = "cameback"
+            // 현재 창 닫기
+            window.close();
             
         } //////// wClose함수 //////
     </script>
