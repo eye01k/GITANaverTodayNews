@@ -116,13 +116,23 @@
 				사용메서드: mousemove()
 			***********************************************/
 			let mbx = $("#mbx");
+
+			// #mbx박스 크기의 절반
+			let hz = mbx.width() / 2;
+
 			$("body").mousemove((e)=>{
 
 				// 1. 마우스 위치값 정보 알아내기
 				// x좌표: e.pageX / y좌표: e.pageY
-				let posX = e.pageX;
-				let posY = e.pageY;
+				let posX = e.pageX - hz;
+				let posY = e.pageY - hz;
 				console.log(`x: ${posX}/ y: ${posY}`);
+
+				// 2. 변경대상이 마우스 포인터 위치로 이동
+				mbx.css({
+					top: posY+"px",
+					left: posX+"px"
+				});
 			}); /////////// mousemove
 
 
