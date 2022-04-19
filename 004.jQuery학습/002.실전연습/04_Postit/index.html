@@ -64,6 +64,14 @@
 	<script>
 		$(() => { /////////// jQB ////////////////////////
 
+			// 대상 변수 할당
+			let dg = $(".draggable");
+			dg.draggable({
+				cursor: "move", // 커서 모양 이동중 표시
+				stack: ".draggable", // 드래그 대상 상위 처리(선택요소명을 씀)
+				opacity: .7 // 이동 중 투명도 설정
+			}); ////// draggable
+
 			// [ 드래그 기능 적용하기 ]
 			// 제이쿼리 UI의 draggable() 메서드를 호출함
 			// 대상: .draggable
@@ -74,14 +82,18 @@
 			// 이벤트와 함수를 묶어주는 메서드를 사용함!
 			// -> on(이벤트명,함수)
 			// 대상: .draggable
-			
+			dg.on("dragstart",function(){
+				$(this).addClass("invert");
+			}); ///////////// dragstart	
 
 			/// 2. 드래그가 끝날때 배경이미지 class로 변경하기
 			// 이벤트 종류: dragstop (드래그끝날때 발생하는 이벤트)
 			// 이벤트와 함수를 묶어주는 메서드를 사용함!
 			// -> on(이벤트명,함수)
 			// 대상: .draggable
-			
+			dg.on("dragstop",function(){
+				$(this).removeClass("invert");
+			}); ///////////// dragstop	
 
 
 			//// 드롭할때 발생하는 이벤트 처리하기 ///////
