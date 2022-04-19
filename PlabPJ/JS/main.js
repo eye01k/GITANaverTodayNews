@@ -25,6 +25,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let lArrow = document.querySelector(".lArrow");
 
+    let sns = document.querySelector(".sns");
+
     Go.onclick = () => {
 
         // 변경대상: .top .Go .GoDown - display: none , #bgvideo - fliter: brightness(15%) , .matbx - classList.add("on")
@@ -45,6 +47,8 @@ window.addEventListener("DOMContentLoaded", () => {
             logo.classList.remove("fwh");
         };
 
+        sns.classList.add("on");
+
 
     }; ////// onclick
 
@@ -63,7 +67,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
         top.onmouseout = () => {
             logo.classList.add("fwh");
-        } /////// top 마우스 아웃        
+        } /////// top 마우스 아웃
+        
+        sns.classList.remove("on");
     }; ////// onclick
 
 
