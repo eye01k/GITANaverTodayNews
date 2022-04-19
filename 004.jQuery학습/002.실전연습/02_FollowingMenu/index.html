@@ -115,7 +115,15 @@
 				중요정보: 마우스 포인터의 x,y 위치값
 				사용메서드: mousemove()
 			***********************************************/
-			
+			let mbx = $("#mbx");
+			$("body").mousemove((e)=>{
+
+				// 1. 마우스 위치값 정보 알아내기
+				// x좌표: e.pageX / y좌표: e.pageY
+				let posX = e.pageX;
+				let posY = e.pageY;
+				console.log(`x: ${posX}/ y: ${posY}`);
+			}); /////////// mousemove
 
 
 		}); //////////////////////////// jQB /////////////////////
