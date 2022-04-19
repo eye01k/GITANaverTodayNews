@@ -29,6 +29,29 @@ html {
 .top {
   height: 100px;
 }
+.sns a {
+  width: 16px;
+  height: 16px;
+  /* .fi 설정에 inline-block 되어 있음 (크기 적용됨) */
+
+  font-size: 16px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 16px;
+  color: black;
+
+  /* 위치조정 */
+  margin-top: 8px;
+  margin-right: 10px;
+
+  transition: opacity .2s;
+}
+.tmenu>div:nth-child(1){
+  flex-basis: 60px;
+}
+.tmenu>div:nth-child(2){
+  flex-basis: 600px;
+}
 
 /* .fll::after{
   content: "";
@@ -45,10 +68,6 @@ html {
   height: 100%;
   justify-content: space-between;
   margin: 0 auto;
-}
-
-.tmenu>div {
-  width: 40%;
 }
 
 .logo {
