@@ -126,6 +126,13 @@ html {
 
 .week li {
   font-size: 16px;
+  width: 16%;
+  text-align: center;
+}
+.week li:first-child {
+  background-color: #1570FF;
+  color: white;
+  border-radius: 40px;
 }
 
 .week.fl {
