@@ -37,7 +37,40 @@
                 el: "#app3",
                 methods: {
                     myClick: function(e){
+                        console.log("click");
+                        // 함수 전달변수 e
+                        // 함수 호출 시 아무것도 안 보내고 변수를 하나만 쓰면 이벤트 전달 변수
+                        // e.target 은 호출한 요소 자신
+                        e.target.innerText = "hohoho";
+                        e.target.style.fontSize = "60px";
+                        e.target.style.transition = "2s";
 
+                        // 4초 후에 새로운 요소 추가
+                        setTimeout(()=>{
+                            this.$el.innerHTML += `<div id="my">하하하</div>`
+                        },4000);
+                        /* 
+                            [Vue 의 methods 속성 내부의 함수에서의 this 키워드]
+                            this는 Vue로 생성된 인스턴스(new 키워드로 생성된 메모리 상의 객체) 자신을 말한다
+
+                            하위 속성 선택요소인 element를 선택하려면 $el 이라고 표현한다
+                            -> 여기서는 선택된 부모요소인 "#app3"를 말한다
+
+                            [인스턴스 속성: instance properties]
+                            - $el : Vue 인스턴스가 관리하는 컴포넌트 인스턴스인 루트 DOM 요소
+                            - $data : 컴포넌트 인스턴스의 데이터 객체
+                        */
+                    },
+                    myOver: function(){
+                        // 함수 전달변수 e를 쓰지 않아도 event라는 키워드를 사용하면 이벤트 전달값을 셋팅할 수 있다
+                        // event.target 으로 쓰면 이 함수를 호출한 이벤트가 발생한 요소 자신
+                        event.target.innerText = "오버하지마";
+                        // 나를 불러줘 div#call 글자 바꾸기
+                        this.$el.querySelector("#call").innerText = "지금 너를 불렀어";
+                    },
+                    myClick2: function(txt){
+                        // txt는 함수호출 시 전달값 받는 변수
+                        event.target.innerText = `내가 ${txt}야!`;
                     }
                 }
                 // methods 속성은 함수 기능을 구현하여 할당함
@@ -94,7 +127,15 @@
 
     <h2>3. 이벤트 사용하기</h2>
     <div id="app3">
-       <button v-on:click="myClick">Click</button>
+       <!-- <button v-on:click="myClick">Click</button> -->
+       <button @click="myClick">Click</button>
+       <button @mouseover="myOver" @click="myClick2('후계자')">오버해봐</button>
+       <div id="call">나를 불러줘</div>
+       <!-- 
+           v-on:이벤트명 (v-on:을 줄여서 @)
+           이벤트와 함수를 연결해주는 뷰JS 속성
+           값은 내가 만든 methods 안의 함수명을 써준다
+        -->
     </div>
 
     <hr>
