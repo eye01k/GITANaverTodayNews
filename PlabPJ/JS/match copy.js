@@ -157,15 +157,15 @@ $(() => {
 
     let txt;
 
-    new Vue({
+    let db = new Vue({
       el: "#cont",
       data: {
-        vals: [],
+        vals: {},
         days: txt
       },
       mounted: function(){
         axios
-        .get("match_data1.json")
+        .get("match_data1 copy.json")
         .then(res => this.vals = res);
       }
     });
@@ -173,5 +173,7 @@ $(() => {
     $(".week li").click(function(){
       txt = $(this).find("span").text();
       console.log(txt);
+
+      db.$data.days = txt;
     }); //// click
 }); //////////// JQB

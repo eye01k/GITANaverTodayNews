@@ -134,14 +134,14 @@
         </ul>
       </div>
       <div id="matchbx">
-        <ul class="fl match">
-          <li v-for="(v,i) in vals.data" class="fl">
+        <ul class="fl match" v-for="(v,n) in vals.data" v-if="n===days">
+          <li class="fl" v-for="(v2,i) in v">
             <span>
-              <b>{{v.시간}}</b>
+              <b>{{v2.시간}}</b>
             </span>
             <span>
-              <p>{{v.구장}}</p>
-              <small>{{v.레벨}}</small>
+              <p>{{v2.구장}}</p>
+              <small>{{v2.레벨}}</small>
             </span>
             <span class="sigbtn">신청하기</span>
           </li>
