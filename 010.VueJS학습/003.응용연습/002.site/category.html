@@ -250,6 +250,11 @@
                 -> 데이터를 바인드할 때 클래스명을 추가함
                 -> 클래스명은 pm값과 동일 -> data.catName
              -->
+
+             <!-- 탭타이틀 변경 메서드 호출 -->
+             {{chgTit(v.제목)}}
+             <!-- 콧수염으로 Vue 메서드도 호출 가능 -->
+
             <!-- 카테고리 페이지 top 영역 -->
             <header class="ctop">
                 <!-- 1-1.서브타이틀 -->
@@ -343,6 +348,35 @@
     <a href="#" class="tbtn fi fi-angle-up">
         <span class="ir">위로가기버튼</span>
     </a>
+    <!-- 뷰JS 전용 GNB -->
+    <nav class="VueGnb">
+        <!-- 타이틀 -->
+        <h2>SPA 체험존</h2>
+        <!-- 메뉴 -->
+        <ul>
+            <li>
+                <a href="#">FASHION</a>
+            </li>
+            <li>
+                <a href="#">BEAUTY</a>
+            </li>
+            <li>
+                <a href="#">LIVING</a>
+            </li>
+            <li>
+                <a href="#">PEOPLE</a>
+            </li>
+            <li>
+                <a href="#">VIDEO</a>
+            </li>
+            <li>
+                <a href="#">RUNWAY</a>
+            </li>
+            <li>
+                <a href="#">SHOPPING</a>
+            </li>
+        </ul>
+    </nav>
 </body>
 
 </html>
