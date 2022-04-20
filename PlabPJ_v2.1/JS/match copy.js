@@ -113,7 +113,7 @@ $(() => {
 
     // 지역 옵션 버튼 클릭 시 지역 메뉴 슬라이드업
     $(".selbx a").first().click(() => {
-        // console.log("나야나");
+        console.log("나야나");
         $(".region").slideDown();
 
         $(".drkb").show();
@@ -155,7 +155,11 @@ $(() => {
     //   mdata = "match_data2.json"
     // });
 
-    let txt;
+    
+}); //////////// JQB
+
+$(()=>{
+  let txt;
 
     let db = new Vue({
       el: "#cont",
@@ -176,4 +180,4 @@ $(() => {
 
       db.$data.days = txt;
     }); //// click
-}); //////////// JQB
+});
