@@ -27,6 +27,9 @@
     width: 70px;
     fill: black;
   }
+  .sns a{
+    color: black;
+  }
   #bgvideo{
     position: static;
     height: 670px;
@@ -130,6 +133,9 @@
     content: '';
     display: block;
     padding-top: 860.64%;
+  }
+  .sns{
+    display: none;
   }
   #bgvideo{
     height: 600px;
