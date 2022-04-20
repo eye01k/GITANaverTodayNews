@@ -112,9 +112,7 @@ $(() => {
     // });
 
     // 지역 옵션 버튼 클릭 시 지역 메뉴 슬라이드업
-    $(".selbx a").first().click((e) => {
-        e.preventDefault();
-
+    $(".selbx a").first().click(() => {
         // console.log("나야나");
         $(".region").slideDown();
 
@@ -122,9 +120,7 @@ $(() => {
 
     }); ///// 지역 click
 
-    $(".selbx a").eq(3).click((e) => {
-        e.preventDefault();
-
+    $(".selbx a").eq(3).click(() => {
         // console.log("나야나");
         $(".gender").slideDown();
 
@@ -132,9 +128,7 @@ $(() => {
 
     }); ///// 성별 click
 
-    $(".selbx a").eq(4).click((e) => {
-        e.preventDefault();
-        
+    $(".selbx a").eq(4).click(() => {
         // console.log("나야나");
         $(".level").slideDown();
 
