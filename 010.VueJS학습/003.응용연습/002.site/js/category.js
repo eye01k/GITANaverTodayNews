@@ -19,14 +19,17 @@ window.addEventListener("DOMContentLoaded", () => {
     console.log("로딩완료");
 
     new Vue({
-        el: "#app",
+        el: "#cont", // 바인딩할 대상(변경요소를 포함하는 부모요소)-> 아이디만 적용됨
         data: {
-            vals: {}
+            vals: {},
             // json 데이터가 객체임
+            catName: pm
+            // 파라미터로 넘어온 값을 Vue 데이터변수에 넣기
         }, ////// data
         mounted: function () {
-            axios.get("real.json")
-                .then(x => this.vals = x);
+            axios // 엑시오스 객체
+            .get("js/real.json") // 파일 읽기
+            .then(x => this.vals = x); // 할당(x변수로 전달)
         } ///// mounted
     }); ///////// Vue
 
