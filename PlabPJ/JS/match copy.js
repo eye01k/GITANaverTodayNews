@@ -21,54 +21,54 @@ $(() => {
     });
 
 
-    let pm = location.href;
+    // let pm = location.href;
 
-    pm = pm.split("?")[1].split("=")[1];
-    console.log(pm);
+    // pm = pm.split("?")[1].split("=")[1];
+    // console.log(pm);
 
-    if (pm === "Rental") {
-        $(".select").children().last().remove();
-        $(".select").children().last().remove();
-        $(".select").children().eq(1).find("a").text("예약 가능");
-        $(".select").children().eq(2).find("a").text("프로모션");
+    // if (pm === "Rental") {
+    //     $(".select").children().last().remove();
+    //     $(".select").children().last().remove();
+    //     $(".select").children().eq(1).find("a").text("예약 가능");
+    //     $(".select").children().eq(2).find("a").text("프로모션");
 
-        $(".cont").addClass(pm);
+    //     $(".cont").addClass(pm);
 
-        $(".match").find("li").removeClass("fl").html(`
-        <div class="fl flsb">
-              <h2>구장 이름</h2>
-              <span class="sigbtn">구장정보</span>
-            </div>
-            <div class="fl">
-              <p class="esp">구장</p>
-              <p>크기</p>
-              <p>실내/실외</p>
-              <p>잔디</p>
-            </div>
-            <div>
-              <ul class="fl">
-                <li class="rental">
-                  <p>시간1</p>
-                </li>
-                <li class="rental">
-                  <p>시간2</p>
-                </li>
-                <li class="rental">
-                  <p>시간3</p>
-                </li>
-                <li class="rental">
-                  <p>시간4</p>
-                </li>
-                <li class="rental">
-                  <p>시간5</p>
-                </li>
-                <li class="rental">
-                  <p>시간6</p>
-                </li>
-              </ul>
-            </div>
-        `);
-    }
+    //     $(".match").find("li").removeClass("fl").html(`
+    //     <div class="fl flsb">
+    //           <h2>구장 이름</h2>
+    //           <span class="sigbtn">구장정보</span>
+    //         </div>
+    //         <div class="fl">
+    //           <p class="esp">구장</p>
+    //           <p>크기</p>
+    //           <p>실내/실외</p>
+    //           <p>잔디</p>
+    //         </div>
+    //         <div>
+    //           <ul class="fl">
+    //             <li class="rental">
+    //               <p>시간1</p>
+    //             </li>
+    //             <li class="rental">
+    //               <p>시간2</p>
+    //             </li>
+    //             <li class="rental">
+    //               <p>시간3</p>
+    //             </li>
+    //             <li class="rental">
+    //               <p>시간4</p>
+    //             </li>
+    //             <li class="rental">
+    //               <p>시간5</p>
+    //             </li>
+    //             <li class="rental">
+    //               <p>시간6</p>
+    //             </li>
+    //           </ul>
+    //         </div>
+    //     `);
+    // }
 
 
     // Date() 객체를 이용해서 날짜 찍기
@@ -155,8 +155,10 @@ $(() => {
     //   mdata = "match_data2.json"
     // });
 
+    let txt;
+
     new Vue({
-      el: "#matchbx",
+      el: "#cont",
       data: {
         vals: []
       },
@@ -166,4 +168,9 @@ $(() => {
         .then(res => this.vals = res);
       }
     });
+
+    $(".week li").click(function(){
+      txt = $(this).find("span").text();
+      console.log(txt);
+    }); //// click
 }); //////////// JQB
