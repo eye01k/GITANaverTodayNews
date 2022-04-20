@@ -160,7 +160,8 @@ $(() => {
     new Vue({
       el: "#cont",
       data: {
-        vals: []
+        vals: [],
+        days: txt
       },
       mounted: function(){
         axios
