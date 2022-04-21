@@ -129,7 +129,7 @@ html {
   width: 16%;
   text-align: center;
 }
-.week li:first-child {
+.week li.on {
   background-color: #1570FF;
   color: white;
   border-radius: 40px;

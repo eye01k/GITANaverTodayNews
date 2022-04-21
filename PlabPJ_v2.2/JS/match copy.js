@@ -16,6 +16,9 @@ $(() => {
   });
 
   $(".week li").click(function () {
+
+    $(this).addClass("on").siblings().removeClass("on");
+
     txt = $(this).find("span").text();
     console.log(txt);
 
