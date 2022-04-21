@@ -16,13 +16,15 @@ $(() => {
   });
 
   $(".week li").click(function () {
-
-    $(this).addClass("on").siblings().removeClass("on");
+    if(pm!=="Rental"){
+      $(this).addClass("on").siblings().removeClass("on");
 
     txt = $(this).find("span").text();
     console.log(txt);
 
     db.$data.days = txt;
+  } //// if
+    
   }); //// click
 
   var swiper = new Swiper(".mySwiper", {
@@ -58,7 +60,9 @@ $(() => {
     $(".select").children().eq(2).find("a").text("프로모션");
 
     $(".cont").addClass(pm);
+  } ////// if
 
+  let rentFn = function () {
     $(".match").find("li").removeClass("fl").html(`
         <div class="fl flsb">
               <h2>구장 이름</h2>
@@ -67,33 +71,16 @@ $(() => {
             <div class="fl">
               <p class="esp">구장</p>
               <p>크기</p>
-              <p>실내/실외</p>
-              <p>잔디</p>
             </div>
             <div>
               <ul class="fl">
                 <li class="rental">
                   <p>시간1</p>
                 </li>
-                <li class="rental">
-                  <p>시간2</p>
-                </li>
-                <li class="rental">
-                  <p>시간3</p>
-                </li>
-                <li class="rental">
-                  <p>시간4</p>
-                </li>
-                <li class="rental">
-                  <p>시간5</p>
-                </li>
-                <li class="rental">
-                  <p>시간6</p>
-                </li>
               </ul>
             </div>
         `);
-  }
+  }; ////// rentFn
 
 
   // Date() 객체를 이용해서 날짜 찍기
