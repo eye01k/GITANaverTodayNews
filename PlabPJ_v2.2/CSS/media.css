@@ -126,11 +126,6 @@
 }
 
 @media screen and (max-width: 550px) {
-  .rbx2::before {
-    content: '';
-    display: block;
-    padding-top: 860.64%;
-  }
   .sns{
     display: none;
   }
@@ -138,11 +133,11 @@
     height: 600px;
   }
   .matbx {
-    top: 34px;
-    height: 550px;
+    top: 120px;
+    height: 480px;
   }
   .lArrow{
-    top: -50px;
+    top: 25px;
     width: 22px;
  }
  .mlist h3 {
@@ -233,11 +228,6 @@
  }
 }
 @media screen and (max-width: 400px) {
-  .rbx2::before {
-    content: '';
-    display: block;
-    padding-top: 880.64%;
-  }
   .GoDown{
     width: 200px;
   }
