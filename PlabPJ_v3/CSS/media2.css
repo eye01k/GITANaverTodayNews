@@ -15,6 +15,9 @@
 
 
 @media screen and (max-width: 550px) {
+  .sns{
+    display: none;
+  }
   .tmenu {
     justify-content: space-around;
   }

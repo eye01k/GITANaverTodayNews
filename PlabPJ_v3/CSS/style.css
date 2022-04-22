@@ -265,7 +265,7 @@ html {
   position: relative;
   width: 100%;
   /* height: 1600px; */
-  margin-top: 30%;
+  margin-top: 300px;
 }
 
 .inImg {
@@ -394,7 +394,7 @@ html {
 
 #manager {
   position: relative;
-  margin-top: 30%;
+  margin-top: 300px;
 }
 
 /* 플랩매니저 텍스트 박스 */

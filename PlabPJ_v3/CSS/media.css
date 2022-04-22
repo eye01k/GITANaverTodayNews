@@ -15,12 +15,9 @@
 
 /* 800px 미디어쿼리 */
 @media screen and (max-width:800px) {
-  .rbx2::before {
-    content: '';
-    display: block;
-    padding-top: 600.64%;
-  }
+  
   #top{
+    background-color: white;
     height: 70px;
   }
   .logo{
@@ -42,7 +39,7 @@
     font-size: 18px;
   }
   .lArrow{
-    top: -1%;
+    top: 0.7%;
   }
   .Go{
     top: 300px;
@@ -50,10 +47,10 @@
   }
   .matbx {
     position: absolute;
-    top: 50px;
+    top: 120px;
     right: -100%;
     width: 100%;
-    height: 600px;
+    height: 550px;
   }
   .mlist{
     flex-direction: column;
@@ -129,11 +126,6 @@
 }
 
 @media screen and (max-width: 550px) {
-  .rbx2::before {
-    content: '';
-    display: block;
-    padding-top: 860.64%;
-  }
   .sns{
     display: none;
   }
@@ -141,11 +133,11 @@
     height: 600px;
   }
   .matbx {
-    top: 34px;
-    height: 550px;
+    top: 120px;
+    height: 480px;
   }
   .lArrow{
-    top: -50px;
+    top: 25px;
     width: 22px;
  }
  .mlist h3 {
@@ -236,11 +228,6 @@
  }
 }
 @media screen and (max-width: 400px) {
-  .rbx2::before {
-    content: '';
-    display: block;
-    padding-top: 880.64%;
-  }
   .GoDown{
     width: 200px;
   }
