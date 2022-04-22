@@ -25,7 +25,9 @@ $(() => {
   console.log(pm);
 
   let rentFn = function () {
-    $("#matchbx").find("ul").remove().parent().html(`
+    $("#matchbx").find("ul").remove();
+
+    $("#matchbx").html(`
     <ul class="fl match" v-for="(v,n) in vals2.data" v-if="n===days">
           <li v-for="(v2,n2) in v">
             <div class="fl flsb">
@@ -92,16 +94,6 @@ $(() => {
     },
 
   });
-
-
-    
-  
-
-
-  
-
-  
-
 
   // Date() 객체를 이용해서 날짜 찍기
   // 변경대상: .week p
