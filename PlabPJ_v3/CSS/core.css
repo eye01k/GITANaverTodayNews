@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CGV PJ 공통핵심 CSS - core.css */
+/* 웹폰트, 공용클래스 */
+
+/*********** 1. 웹폰트 : CDN ***********/
+
+
+/************* 2. 공통 class *************/
+html, body{
+    overflow-x: hidden;
+}
+/* 비율유지박스 class */
+.rbx {
+    position: relative;
+    /* 비율유지속박스의 부모자격 */
+}
+
+/* 비율생성 가상요소 */
+.rbx1::before {
+    content: '';
+    display: block;
+    /* 패딩탑값 %로 비율에 맞게 각각셋팅 */
+    padding-top: 6%;
+}
+
+.rbx2::before {
+    content: '';
+    display: block;
+    /* 패딩탑값 %로 비율에 맞게 각각셋팅 */
+    padding-top: 494.94%;
+}
+
+.rbx3::before {
+    content: '';
+    display: block;
+    /* 패딩탑값 %로 비율에 맞게 각각셋팅 */
+    padding-top: 23.58%;
+}
+
+/* 비율유지속박스 */
+.rbxIn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* IR(Image Replacement) 클래스 */
+.ir {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.fwh{
+    fill: white;
+}
+.fl {
+    display: flex;
+  }
+.flsb{
+    justify-content: space-between;
+}  
+.flww{
+    flex-wrap: wrap;
+}
+.flww>p:nth-child(2){
+    margin-right: 50px;
+}
+  /* 드래그 선택 막기 */
+.disel {
+    /* 선택 안 되게 하기 */
+    user-select: none;
+    /* 드래그 안 되게 하기 */
+    -webkit-user-drag: none;
+}
