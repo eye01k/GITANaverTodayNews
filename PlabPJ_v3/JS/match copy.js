@@ -6,12 +6,16 @@ $(() => {
     el: "#cont",
     data: {
       vals: {},
+      vals2: {},
       days: txt
     },
     mounted: function () {
       axios
         .get("match_data1 copy.json")
-        .then(res => this.vals = res);
+        .then(res => this.vals = res),
+      axios
+        .get("rental_data1.json")
+        .then(res => this.vals2 = res);
     }
   });
 
@@ -48,19 +52,19 @@ $(() => {
   });
 
 
-  let pm = location.href;
+  // let pm = location.href;
 
-  pm = pm.split("?")[1].split("=")[1];
-  console.log(pm);
+  // pm = pm.split("?")[1].split("=")[1];
+  // console.log(pm);
 
-  if (pm === "Rental") {
-    $(".select").children().last().remove();
-    $(".select").children().last().remove();
-    $(".select").children().eq(1).find("a").text("예약 가능");
-    $(".select").children().eq(2).find("a").text("프로모션");
+  // if (pm === "Rental") {
+  //   $(".select").children().last().remove();
+  //   $(".select").children().last().remove();
+  //   $(".select").children().eq(1).find("a").text("예약 가능");
+  //   $(".select").children().eq(2).find("a").text("프로모션");
 
-    $(".cont").addClass(pm);
-  } ////// if
+  //   $(".cont").addClass(pm);
+  // } ////// if
 
   let rentFn = function () {
     $(".match").find("li").removeClass("fl").html(`

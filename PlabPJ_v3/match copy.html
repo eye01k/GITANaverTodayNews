@@ -135,15 +135,22 @@
       </div>
       <div id="matchbx">
         <ul class="fl match" v-for="(v,n) in vals.data" v-if="n===days">
-          <li class="fl" v-for="(v2,i) in v">
-            <span>
-              <b>{{v2.시간}}</b>
-            </span>
-            <span>
-              <p>{{v2.구장}}</p>
-              <small>{{v2.레벨}}</small>
-            </span>
-            <span class="sigbtn">신청하기</span>
+          <li class="fl" v-for="(v2,n2) in v">
+            <div class="fl flsb">
+              <h2>{{n2}}</h2>
+              <span class="sigbtn">구장정보</span>
+            </div>
+            <div class="fl">
+              <p class="esp">구장</p>
+              <p>크기</p>
+            </div>
+            <div>
+              <ul class="fl">
+                <li class="rental">
+                  <p>시간1</p>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>
