@@ -24,17 +24,6 @@ $(() => {
   pm = pm.split("?")[1].split("=")[1];
   console.log(pm);
 
-  if (pm === "Rental") {
-    $(".select").children().last().remove();
-    $(".select").children().last().remove();
-    $(".select").children().eq(1).find("a").text("예약 가능");
-    $(".select").children().eq(2).find("a").text("프로모션");
-
-    $(".cont").addClass(pm);
-
-    $(".match").find("li").removeClass("fl");
-  }
-
   let rentFn = function () {
     $("#matchbx").find("ul").remove().parent().html(`
     <ul class="fl match" v-for="(v,n) in vals2.data" v-if="n===days">
@@ -58,6 +47,19 @@ $(() => {
         </ul>
         `);
   }; ////// rentFn
+
+  if (pm === "Rental") {
+    $(".select").children().last().remove();
+    $(".select").children().last().remove();
+    $(".select").children().eq(1).find("a").text("예약 가능");
+    $(".select").children().eq(2).find("a").text("프로모션");
+
+    $(".cont").addClass(pm);
+
+    $(".match").find("li").removeClass("fl");
+
+    rentFn();
+  }
 
 
   $(".week li").click(function () {
