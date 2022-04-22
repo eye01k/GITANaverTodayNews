@@ -19,37 +19,21 @@ $(() => {
     }
   });
 
-  $(".week li").click(function () {
+  let pm = location.href;
 
-      $(this).addClass("on").siblings().removeClass("on");
+  pm = pm.split("?")[1].split("=")[1];
+  console.log(pm);
 
-    txt = $(this).find("span").text();
-    console.log(txt);
+  if (pm === "Rental") {
+    $(".select").children().last().remove();
+    $(".select").children().last().remove();
+    $(".select").children().eq(1).find("a").text("예약 가능");
+    $(".select").children().eq(2).find("a").text("프로모션");
 
-    db.$data.days = txt;
-      
-  }); //// click
+    $(".cont").addClass(pm);
 
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-
-  });
-
+    $(".match").find("li").removeClass("fl");
+  }
 
   let rentFn = function () {
     $("#matchbx").find("ul").remove().parent().html(`
@@ -75,24 +59,44 @@ $(() => {
         `);
   }; ////// rentFn
 
-  let pm = location.href;
 
-  pm = pm.split("?")[1].split("=")[1];
-  console.log(pm);
+  $(".week li").click(function () {
+
+      $(this).addClass("on").siblings().removeClass("on");
+
+    txt = $(this).find("span").text();
+    console.log(txt);
+
+    db.$data.days = txt;
+
+  }); //// click
+
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+
+  });
 
 
-  if (pm === "Rental") {
-    $(".select").children().last().remove();
-    $(".select").children().last().remove();
-    $(".select").children().eq(1).find("a").text("예약 가능");
-    $(".select").children().eq(2).find("a").text("프로모션");
+    
+  
 
-    $(".cont").addClass(pm);
 
-    $(".match").find("li").removeClass("fl");
-
-    rentFn();
-  } ////// if
+  
 
   
 
