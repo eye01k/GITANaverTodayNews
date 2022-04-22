@@ -52,7 +52,7 @@ $(() => {
 
 
   let rentFn = function () {
-    $("#matchbx").empty().html(`
+    $("#matchbx").find("ul").remove().parent().html(`
     <ul class="fl match" v-for="(v,n) in vals2.data" v-if="n===days">
           <li v-for="(v2,n2) in v">
             <div class="fl flsb">
