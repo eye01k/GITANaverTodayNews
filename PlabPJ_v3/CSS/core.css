@@ -66,7 +66,7 @@ html{
 .flww{
     flex-wrap: wrap;
 }
-.flww ul{
+.flww div{
     overflow-x: auto;
 }
 .flww>p:nth-child(2){
