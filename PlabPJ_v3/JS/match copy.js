@@ -19,49 +19,49 @@ $(() => {
     }
   });
 
-  let pm = location.href;
+  // let pm = location.href;
 
-  pm = pm.split("?")[1].split("=")[1];
-  console.log(pm);
+  // pm = pm.split("?")[1].split("=")[1];
+  // console.log(pm);
 
-  let rentFn = function () {
-    $("#matchbx").find("ul").remove();
+  // let rentFn = function () {
+  //   $("#matchbx").find("ul").remove();
 
-    $("#matchbx").html(`
-    <ul class="fl match" v-for="(v,n) in vals2.data" v-if="n===days">
-          <li v-for="(v2,n2) in v">
-            <div class="fl flsb">
-              <h2>{{n2}}</h2>
-              <span class="sigbtn">구장정보</span>
-            </div>
-            <div class="fl flww" v-for="(v3,i) in v2">
-              <p class="esp">{{v3.분류}}</p>
-              <p>{{v3.정보}}</p>
-              <div>
-                <ul class="fl">
-                  <li class="rental" v-for="(v4,i2) in v3.시간">
-                    <p>{{v4}}</p>
-                  </li>
-                </ul>
-              </div>
-            </div>     
-          </li>
-        </ul>
-        `);
-  }; ////// rentFn
+  //   $("#matchbx").html(`
+  //   <ul class="fl match" v-for="(v,n) in vals2.data" v-if="n===days">
+  //         <li v-for="(v2,n2) in v">
+  //           <div class="fl flsb">
+  //             <h2>{{n2}}</h2>
+  //             <span class="sigbtn">구장정보</span>
+  //           </div>
+  //           <div class="fl flww" v-for="(v3,i) in v2">
+  //             <p class="esp">{{v3.분류}}</p>
+  //             <p>{{v3.정보}}</p>
+  //             <div>
+  //               <ul class="fl">
+  //                 <li class="rental" v-for="(v4,i2) in v3.시간">
+  //                   <p>{{v4}}</p>
+  //                 </li>
+  //               </ul>
+  //             </div>
+  //           </div>     
+  //         </li>
+  //       </ul>
+  //       `);
+  // }; ////// rentFn
 
-  if (pm === "Rental") {
-    $(".select").children().last().remove();
-    $(".select").children().last().remove();
-    $(".select").children().eq(1).find("a").text("예약 가능");
-    $(".select").children().eq(2).find("a").text("프로모션");
+  // if (pm === "Rental") {
+  //   $(".select").children().last().remove();
+  //   $(".select").children().last().remove();
+  //   $(".select").children().eq(1).find("a").text("예약 가능");
+  //   $(".select").children().eq(2).find("a").text("프로모션");
 
-    $(".cont").addClass(pm);
+  //   $(".cont").addClass(pm);
 
-    $(".match").find("li").removeClass("fl");
+  //   $(".match").find("li").removeClass("fl");
 
-    rentFn();
-  }
+  //   rentFn();
+  // }
 
 
   $(".week li").click(function () {

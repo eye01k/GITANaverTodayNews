@@ -6,7 +6,7 @@
 
 
 /************* 2. 공통 class *************/
-html, body{
+html{
     overflow-x: hidden;
 }
 /* 비율유지박스 class */
@@ -65,6 +65,9 @@ html, body{
 }  
 .flww{
     flex-wrap: wrap;
+}
+.flww ul{
+    overflow-x: auto;
 }
 .flww>p:nth-child(2){
     margin-right: 50px;

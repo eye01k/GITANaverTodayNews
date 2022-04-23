@@ -10,15 +10,20 @@ $(()=>{
         location.href = "login.html";
     }); //////// click
 
-    $(".mlist a").click(function(e){
+    $(".mlist li").eq(0).find("a").click(function(e){
 
         // a요소 기본 기능 막기
         e.preventDefault();
 
-        let txt = $(this).find("img").attr("alt");
+        location.href = "match copy.html"
+        
+    }); // 매치메뉴 클릭 시
+    $(".mlist li").eq(1).find("a").click(function(e){
 
-        console.log(txt);
+        // a요소 기본 기능 막기
+        e.preventDefault();
 
-        if(txt!=="TeamLeague") location.href = "match copy.html?cat="+txt;
+        location.href = "rental.html"
+        
     }); // 매치메뉴 클릭 시
 }); ///////////////////JQB
