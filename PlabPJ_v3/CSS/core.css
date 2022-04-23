@@ -70,7 +70,7 @@ html{
     overflow-x: auto;
 }
 .flww>p:nth-child(2){
-    margin-right: 50px;
+    margin-right: 100px;
 }
   /* 드래그 선택 막기 */
 .disel {
