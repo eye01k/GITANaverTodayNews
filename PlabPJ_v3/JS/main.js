@@ -119,4 +119,15 @@ window.addEventListener("DOMContentLoaded", () => {
     // let bxPos = appbx.getBoundingClientRect().top
     // ;
     // console.log("지원박스 포지션: ", bxPos);
+
+    let rnum = Math.random();
+
+    rnum *= 6;
+    
+    rnum = Math.ceil(rnum);
+    console.log(rnum);
+
+    let bgvd = document.querySelector("#bgvideo");
+
+    bgvd.setAttribute("src",`./videos/video0${rnum}.mp4`)
 }); //////////////// load /////////////////
