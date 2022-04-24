@@ -64,6 +64,7 @@ $(() => {
   // }
 
 
+
   $(".week li").click(function () {
 
       $(this).addClass("on").siblings().removeClass("on");
@@ -126,6 +127,17 @@ $(() => {
       .next().text(week[addDay.getDay()]);
 
   });
+
+  let dayOfToday = function(){
+    txt = $(".week li:first").find("span").text();
+    console.log("gdgd: ",txt);
+
+    $(".week li:first").addClass("on").siblings().removeClass("on");
+
+  };
+  dayOfToday();
+  
+  db.$data.days = txt;
 
 
   // let num = today.getDay();
