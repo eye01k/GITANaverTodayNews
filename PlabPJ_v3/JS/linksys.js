@@ -30,8 +30,6 @@ $(()=>{
     $(".mobtn").click(()=>{
         $(".mobx").slideToggle();
 
-        $("html").css({
-            overflow: "hidden"
-        });
+        $("body").toggleClass("on");
     }); ///// 모바일메뉴 클릭
 }); ///////////////////JQB

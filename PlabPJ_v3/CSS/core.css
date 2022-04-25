@@ -9,6 +9,10 @@
 html{
     overflow-x: hidden;
 }
+body.on{
+    height: 100vh;
+    overflow-y: hidden;
+}
 /* 비율유지박스 class */
 .rbx {
     position: relative;
@@ -146,7 +150,7 @@ html{
 }
 /* 입력양식 공통 */
 .minput input{
-    width: 320px;
+    width: 260px;
     height: 36px;
     border: 1px solid #737373;
     border-radius: 5px;
@@ -175,7 +179,7 @@ input:focus{
 }
 /* 서브밋 버튼 */
 #sbtn{
-    width: 145px;
+    width: 110px;
     height: 130px;
     border: 1px solid #737373;
     border-radius: 5px;
