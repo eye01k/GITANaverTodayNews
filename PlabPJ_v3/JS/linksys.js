@@ -27,9 +27,11 @@ $(()=>{
         
     }); // 매치메뉴 클릭 시
 
-    $(".mobtn").click(()=>{
+    $(".mobtn").click(function(){
         $(".mobx").slideToggle();
 
         $("body").toggleClass("on");
+
+
     }); ///// 모바일메뉴 클릭
 }); ///////////////////JQB
