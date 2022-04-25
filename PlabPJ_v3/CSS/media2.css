@@ -18,6 +18,12 @@
   .sns{
     display: none;
   }
+  .mobtn{
+    display: block;
+    font-size: 15px;
+    top: 25px;
+    transform: translateY(0);
+  }
   .tmenu {
     justify-content: space-around;
   }

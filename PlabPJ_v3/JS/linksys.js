@@ -26,4 +26,12 @@ $(()=>{
         location.href = "rental.html"
         
     }); // 매치메뉴 클릭 시
+
+    $(".mobtn").click(()=>{
+        $(".mobx").slideToggle();
+
+        $("html").css({
+            overflow: "hidden"
+        });
+    }); ///// 모바일메뉴 클릭
 }); ///////////////////JQB

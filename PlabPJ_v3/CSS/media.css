@@ -129,6 +129,9 @@
   .sns{
     display: none;
   }
+  .mobtn{
+    display: block;
+  }
   #bgvideo{
     height: 600px;
   }
