@@ -164,7 +164,7 @@ body.on{
 .minput label{
     display: inline-block;
     /* 디자인적용과 한줄에 오게함! */
-    width: 150px;
+    width: 20vw;
     font-size: 20px;
     font-weight: bold;
     color: #737373;
@@ -197,14 +197,14 @@ input:focus{
 /* 버튼영역 */
 .btnbx{
     position: absolute;
-    top: 95px;
+    top: 60px;
     right: 10px;
     /* 부모는? .login */
 }
 /* 서브밋 버튼 */
 #sbtn{
-    width: 110px;
-    height: 130px;
+    width: 17vw;
+    height: 100px;
     border: 1px solid #737373;
     border-radius: 5px;
     background-image: linear-gradient(to bottom, #ddd, #555);
@@ -281,4 +281,28 @@ input:focus{
 }
 .info .fl{
     justify-content:flex-start
+}
+
+@media screen and (max-width: 445px){
+    /* 버튼영역 */
+.btnbx{
+    position: absolute;
+    top: 95px;
+    right: 10px;
+    /* 부모는? .login */
+}
+/* 서브밋 버튼 */
+#sbtn{
+    width: 110px;
+    height: 130px;
+    border: 1px solid #737373;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, #ddd, #555);
+    font-size: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 0 #666;
+}
+.minput label{
+    width: 150px;
+}
 }

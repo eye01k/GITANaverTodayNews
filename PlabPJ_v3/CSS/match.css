@@ -50,7 +50,7 @@ html {
   flex-basis: 60px;
 }
 .tmenu>div:nth-child(2){
-  flex-basis: 397px;
+  flex-basis: 65%;
 }
 
 /* .fll::after{
@@ -66,7 +66,7 @@ html {
 .tmenu {
   max-width: 1024px;
   height: 100%;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 0 auto;
 }
 

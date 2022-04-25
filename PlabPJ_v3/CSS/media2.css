@@ -20,7 +20,7 @@
   }
   .mobtn{
     display: block;
-    font-size: 15px;
+    font-size: 20px;
     top: 25px;
     transform: translateY(0);
   }
@@ -32,9 +32,9 @@
     height: 70px;
   }
 
-  .logo {
+  /* .logo {
     width: 50px;
-  }
+  } */
   .daybx {
     padding: 5px 25px;
   }
